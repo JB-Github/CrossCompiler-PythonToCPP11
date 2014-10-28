@@ -52,19 +52,19 @@ rel_module : '.'* module | '.'+ ;
 ////-------------------------------------------------------------
 
 block_stmt : block_head block | ifelse | trycatch ;//| func_block ;
-block_head :  loop | func | class_ | with ;
+block_head :  loop | func | class_ | with_ ;
 
 loop: (while_ | for_) (else_ block)? ;
 while_ : 'while' expr ;
 for_ : 'for' varlist 'in' exprlist ;
 
-with : 'with' alias_list ;
+with_ : 'with' alias_list ;
 alias_list : alias (',' alias)* ;
 alias : expr ('as' var)? ;
 
-ifelse : if_ block (elif block)* (else_ block)? ;
+ifelse : if_ block (elif_ block)* (else_ block)? ;
 if_ : 'if' expr ;
-elif : 'elif' expr ;
+elif_ : 'elif' expr ;
 else_ : 'else' ;
 
 block
@@ -76,10 +76,10 @@ block
 class_ : 'class' Var ('(' exprlist? ')')? ;//exprlist??
 
 trycatch
-	: 'try' block (except block)+ (else_ block)? ('finally' block)?
+	: 'try' block (except_ block)+ (else_ block)? ('finally' block)?
 	| 'try' block 'finally' block
 ;
-except : 'except' expr (','|'as') var ; //pruefen!!
+except_ : 'except' expr (','|'as') var ; //pruefen!!
 
 //func_block : func BlockBegin func_stmt+ BlockEnd ;
 //func_stmt : stmt | 'return' expr ';' ;
@@ -109,7 +109,7 @@ exprlist : expr (',' expr)* ','? ;
 expr
 	//Brackets
 	: expr '(' (arglist? | gen_expr) ')' //#funccall //Semantics!!
-	| expr ('[' slice ']')	//#index
+	| expr ('[' slice_ ']')	//#index
 	| '(' expr ')'
 
 	| expr '.' expr 		//#attr
@@ -117,7 +117,7 @@ expr
 	| ('+'|'-'|'~') expr	//#unary
 
 	//Arithmetic
-	| expr '**'<assoc=right> expr
+	| <assoc=right> expr '**' expr
 	| expr '%' expr
 	| expr '//' expr //Reihenfolge?!
 	| expr '/' expr
@@ -141,12 +141,12 @@ expr
 
 
 	| generator
-	| lambda
+	| lambda_
 
-	| expr if_ else_ expr	//#ternary ////funktioniert nicht in Kombination mit generator!!
+	| <assoc=right> expr if_ else_ expr	//#ternary ////funktioniert nicht in Kombination mit generator!!
 ;
 
-lambda : 'lambda' arglist? ':' expr ;
+lambda_ : 'lambda' arglist? ':' expr ;
 
 generator: list_gen | dict_gen | iter_gen ;
 list_gen : '[' gen_expr ']' ;
@@ -156,22 +156,22 @@ gen_expr : expr (for_ if_?)+ ;
 
 ////-------------------------------------------------------------
 
-val :  var | number | string | list | tuple | dict | set  ; //Reihenfolge beachten!!
+val :  var | number | string | list_ | tuple_ | dict_ | set_  ; //Reihenfolge beachten!!
 
 op_cmp : 'in' | 'not' 'in' | 'is' | 'is' 'not' | '<' | '<=' | '>' | '>=' | '<>' | '!=' | '==' ;
 
-slice
+slice_
 	: expr (':' expr?)? (':' expr?)?
 	| expr? (':' expr?)? ':' expr
 	| ':' ':'?
 ;//unschoen!!
 
-list : '[' exprlist? ']' ;
-tuple : '(' expr',' exprlist? ')' ; //Trailing Comma??
-set : '{' exprlist '}' ;
+list_ : '[' exprlist? ']' ;
+tuple_ : '(' expr',' exprlist? ')' ; //Trailing Comma??
+set_ : '{' exprlist '}' ;
 
 
-dict : '{' dictlist? '}' ;
+dict_ : '{' dictlist? '}' ;
 dictlist : dictitem (',' dictitem )* ','?;
 dictitem : expr ':' expr ;
 
@@ -214,7 +214,7 @@ var
 	: Var
 	| '(' var ')' //immer???
 	| var '.' var
-	| var '[' slice ']'
+	| var '[' slice_ ']'
 ;
 simple_var
 	: Var
@@ -223,8 +223,7 @@ simple_var
 
 number : Int | Float;
 string : Str;
-//key : Keyword;
-//operator : Operator;
+
 
 
 ////-------------------------------------------------------------

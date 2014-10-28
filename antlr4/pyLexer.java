@@ -1,4 +1,4 @@
-// Generated from py.g4 by ANTLR 4.2
+// Generated from py.g4 by ANTLR 4.4
 import org.antlr.v4.runtime.Lexer;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.Token;
@@ -10,6 +10,8 @@ import org.antlr.v4.runtime.misc.*;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
 public class pyLexer extends Lexer {
+	static { RuntimeMetaData.checkVersion("4.4", RuntimeMetaData.VERSION); }
+
 	protected static final DFA[] _decisionToDFA;
 	protected static final PredictionContextCache _sharedContextCache =
 		new PredictionContextCache();
@@ -31,18 +33,17 @@ public class pyLexer extends Lexer {
 	};
 
 	public static final String[] tokenNames = {
-		"<INVALID>",
-		"'+='", "'%='", "'finally'", "'del'", "'!='", "'{'", "'while'", "'**'", 
-		"'^='", "'>>'", "'='", "'^'", "'<<='", "'for'", "'|='", "'('", "'-='", 
-		"','", "'/='", "'global'", "'>='", "'<'", "'//'", "']'", "'assert'", "'~'", 
-		"'<>'", "'**='", "'+'", "'/'", "'*='", "'def'", "'as'", "'continue'", 
-		"'&='", "'exec'", "'return'", "'class'", "'>>='", "';'", "'}'", "'if'", 
-		"'try'", "'<='", "'except'", "'break'", "'//='", "'from'", "'&'", "'print'", 
-		"'is'", "'yield'", "'*'", "'.'", "'lambda'", "':'", "'['", "'=='", "'|'", 
-		"'elif'", "'with'", "'>'", "'or'", "'pass'", "'%'", "'else'", "'in'", 
-		"')'", "'and'", "'not'", "'-'", "'import'", "'raise'", "':$blockbegin'", 
-		"'$blockend'", "Keyword", "Operator", "Var", "Int", "Float", "Comment", 
-		"Space", "Str"
+		"'\\u0000'", "'\\u0001'", "'\\u0002'", "'\\u0003'", "'\\u0004'", "'\\u0005'", 
+		"'\\u0006'", "'\\u0007'", "'\b'", "'\t'", "'\n'", "'\\u000B'", "'\f'", 
+		"'\r'", "'\\u000E'", "'\\u000F'", "'\\u0010'", "'\\u0011'", "'\\u0012'", 
+		"'\\u0013'", "'\\u0014'", "'\\u0015'", "'\\u0016'", "'\\u0017'", "'\\u0018'", 
+		"'\\u0019'", "'\\u001A'", "'\\u001B'", "'\\u001C'", "'\\u001D'", "'\\u001E'", 
+		"'\\u001F'", "' '", "'!'", "'\"'", "'#'", "'$'", "'%'", "'&'", "'''", 
+		"'('", "')'", "'*'", "'+'", "','", "'-'", "'.'", "'/'", "'0'", "'1'", 
+		"'2'", "'3'", "'4'", "'5'", "'6'", "'7'", "'8'", "'9'", "':'", "';'", 
+		"'<'", "'='", "'>'", "'?'", "'@'", "'A'", "'B'", "'C'", "'D'", "'E'", 
+		"'F'", "'G'", "'H'", "'I'", "'J'", "'K'", "'L'", "'M'", "'N'", "'O'", 
+		"'P'", "'Q'", "'R'", "'S'"
 	};
 	public static final String[] ruleNames = {
 		"T__72", "T__71", "T__70", "T__69", "T__68", "T__67", "T__66", "T__65", 

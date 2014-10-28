@@ -1,7 +1,7 @@
 
 
 x if x else y;
-#[x for x in range(11) if x%2];
+[x for x in range(11) if x%2];
 #2+4*3;
 
 #a,b[0]=1,2;
