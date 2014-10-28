@@ -16,6 +16,18 @@ public class pyBaseListener implements pyListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterTuple_(@NotNull pyParser.Tuple_Context ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitTuple_(@NotNull pyParser.Tuple_Context ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterElse_(@NotNull pyParser.Else_Context ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -35,6 +47,18 @@ public class pyBaseListener implements pyListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitFor_(@NotNull pyParser.For_Context ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterSet_(@NotNull pyParser.Set_Context ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitSet_(@NotNull pyParser.Set_Context ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -88,18 +112,6 @@ public class pyBaseListener implements pyListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterLambda(@NotNull pyParser.LambdaContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitLambda(@NotNull pyParser.LambdaContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterBlock_stmt(@NotNull pyParser.Block_stmtContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -119,18 +131,6 @@ public class pyBaseListener implements pyListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitKparamlist(@NotNull pyParser.KparamlistContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterSlice(@NotNull pyParser.SliceContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitSlice(@NotNull pyParser.SliceContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -184,13 +184,13 @@ public class pyBaseListener implements pyListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterDict(@NotNull pyParser.DictContext ctx) { }
+	@Override public void enterElif_(@NotNull pyParser.Elif_Context ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitDict(@NotNull pyParser.DictContext ctx) { }
+	@Override public void exitElif_(@NotNull pyParser.Elif_Context ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -239,6 +239,18 @@ public class pyBaseListener implements pyListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitStmts(@NotNull pyParser.StmtsContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterList_(@NotNull pyParser.List_Context ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitList_(@NotNull pyParser.List_Context ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -328,25 +340,13 @@ public class pyBaseListener implements pyListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterElif(@NotNull pyParser.ElifContext ctx) { }
+	@Override public void enterLambda_(@NotNull pyParser.Lambda_Context ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitElif(@NotNull pyParser.ElifContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterList(@NotNull pyParser.ListContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitList(@NotNull pyParser.ListContext ctx) { }
+	@Override public void exitLambda_(@NotNull pyParser.Lambda_Context ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -395,18 +395,6 @@ public class pyBaseListener implements pyListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitKarg(@NotNull pyParser.KargContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterExcept(@NotNull pyParser.ExceptContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitExcept(@NotNull pyParser.ExceptContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -532,18 +520,6 @@ public class pyBaseListener implements pyListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterTuple(@NotNull pyParser.TupleContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitTuple(@NotNull pyParser.TupleContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterIter_gen(@NotNull pyParser.Iter_genContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -616,6 +592,18 @@ public class pyBaseListener implements pyListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterExcept_(@NotNull pyParser.Except_Context ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitExcept_(@NotNull pyParser.Except_Context ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterVarlist(@NotNull pyParser.VarlistContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -623,6 +611,18 @@ public class pyBaseListener implements pyListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitVarlist(@NotNull pyParser.VarlistContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterDict_(@NotNull pyParser.Dict_Context ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitDict_(@NotNull pyParser.Dict_Context ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -664,13 +664,13 @@ public class pyBaseListener implements pyListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterSet(@NotNull pyParser.SetContext ctx) { }
+	@Override public void enterWith_(@NotNull pyParser.With_Context ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitSet(@NotNull pyParser.SetContext ctx) { }
+	@Override public void exitWith_(@NotNull pyParser.With_Context ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -712,6 +712,18 @@ public class pyBaseListener implements pyListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterSlice_(@NotNull pyParser.Slice_Context ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitSlice_(@NotNull pyParser.Slice_Context ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterProg(@NotNull pyParser.ProgContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -719,18 +731,6 @@ public class pyBaseListener implements pyListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitProg(@NotNull pyParser.ProgContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterWith(@NotNull pyParser.WithContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitWith(@NotNull pyParser.WithContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

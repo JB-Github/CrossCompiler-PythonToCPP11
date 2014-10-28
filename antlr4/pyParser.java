@@ -45,14 +45,14 @@ public class pyParser extends Parser {
 		RULE_prog = 0, RULE_stmt = 1, RULE_single_stmt = 2, RULE_stmts = 3, RULE_import_ = 4, 
 		RULE_id_list = 5, RULE_id_alias = 6, RULE_mod_list = 7, RULE_mod_alias = 8, 
 		RULE_module = 9, RULE_rel_module = 10, RULE_block_stmt = 11, RULE_block_head = 12, 
-		RULE_loop = 13, RULE_while_ = 14, RULE_for_ = 15, RULE_with = 16, RULE_alias_list = 17, 
-		RULE_alias = 18, RULE_ifelse = 19, RULE_if_ = 20, RULE_elif = 21, RULE_else_ = 22, 
-		RULE_block = 23, RULE_class_ = 24, RULE_trycatch = 25, RULE_except = 26, 
+		RULE_loop = 13, RULE_while_ = 14, RULE_for_ = 15, RULE_with_ = 16, RULE_alias_list = 17, 
+		RULE_alias = 18, RULE_ifelse = 19, RULE_if_ = 20, RULE_elif_ = 21, RULE_else_ = 22, 
+		RULE_block = 23, RULE_class_ = 24, RULE_trycatch = 25, RULE_except_ = 26, 
 		RULE_assign = 27, RULE_assign_stmt = 28, RULE_aug_assign = 29, RULE_aug_op = 30, 
 		RULE_varlist = 31, RULE_vartuple = 32, RULE_exprlist = 33, RULE_expr = 34, 
-		RULE_lambda = 35, RULE_generator = 36, RULE_list_gen = 37, RULE_iter_gen = 38, 
+		RULE_lambda_ = 35, RULE_generator = 36, RULE_list_gen = 37, RULE_iter_gen = 38, 
 		RULE_dict_gen = 39, RULE_gen_expr = 40, RULE_val = 41, RULE_op_cmp = 42, 
-		RULE_slice = 43, RULE_list = 44, RULE_tuple = 45, RULE_set = 46, RULE_dict = 47, 
+		RULE_slice_ = 43, RULE_list_ = 44, RULE_tuple_ = 45, RULE_set_ = 46, RULE_dict_ = 47, 
 		RULE_dictlist = 48, RULE_dictitem = 49, RULE_func = 50, RULE_paramlist = 51, 
 		RULE_pos_paramlist = 52, RULE_pos_paramtuple = 53, RULE_kparamlist = 54, 
 		RULE_kparam = 55, RULE_arglist = 56, RULE_pos_arglist = 57, RULE_pos_arg = 58, 
@@ -61,14 +61,14 @@ public class pyParser extends Parser {
 	public static final String[] ruleNames = {
 		"prog", "stmt", "single_stmt", "stmts", "import_", "id_list", "id_alias", 
 		"mod_list", "mod_alias", "module", "rel_module", "block_stmt", "block_head", 
-		"loop", "while_", "for_", "with", "alias_list", "alias", "ifelse", "if_", 
-		"elif", "else_", "block", "class_", "trycatch", "except", "assign", "assign_stmt", 
-		"aug_assign", "aug_op", "varlist", "vartuple", "exprlist", "expr", "lambda", 
-		"generator", "list_gen", "iter_gen", "dict_gen", "gen_expr", "val", "op_cmp", 
-		"slice", "list", "tuple", "set", "dict", "dictlist", "dictitem", "func", 
-		"paramlist", "pos_paramlist", "pos_paramtuple", "kparamlist", "kparam", 
-		"arglist", "pos_arglist", "pos_arg", "karglist", "karg", "var", "simple_var", 
-		"number", "string"
+		"loop", "while_", "for_", "with_", "alias_list", "alias", "ifelse", "if_", 
+		"elif_", "else_", "block", "class_", "trycatch", "except_", "assign", 
+		"assign_stmt", "aug_assign", "aug_op", "varlist", "vartuple", "exprlist", 
+		"expr", "lambda_", "generator", "list_gen", "iter_gen", "dict_gen", "gen_expr", 
+		"val", "op_cmp", "slice_", "list_", "tuple_", "set_", "dict_", "dictlist", 
+		"dictitem", "func", "paramlist", "pos_paramlist", "pos_paramtuple", "kparamlist", 
+		"kparam", "arglist", "pos_arglist", "pos_arg", "karglist", "karg", "var", 
+		"simple_var", "number", "string"
 	};
 
 	@Override
@@ -1012,11 +1012,11 @@ public class pyParser extends Parser {
 		public LoopContext loop() {
 			return getRuleContext(LoopContext.class,0);
 		}
+		public With_Context with_() {
+			return getRuleContext(With_Context.class,0);
+		}
 		public FuncContext func() {
 			return getRuleContext(FuncContext.class,0);
-		}
-		public WithContext with() {
-			return getRuleContext(WithContext.class,0);
 		}
 		public Block_headContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -1060,7 +1060,7 @@ public class pyParser extends Parser {
 			case T__12:
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(269); with();
+				setState(269); with_();
 				}
 				break;
 			default:
@@ -1232,27 +1232,27 @@ public class pyParser extends Parser {
 		return _localctx;
 	}
 
-	public static class WithContext extends ParserRuleContext {
+	public static class With_Context extends ParserRuleContext {
 		public Alias_listContext alias_list() {
 			return getRuleContext(Alias_listContext.class,0);
 		}
-		public WithContext(ParserRuleContext parent, int invokingState) {
+		public With_Context(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_with; }
+		@Override public int getRuleIndex() { return RULE_with_; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof pyListener ) ((pyListener)listener).enterWith(this);
+			if ( listener instanceof pyListener ) ((pyListener)listener).enterWith_(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof pyListener ) ((pyListener)listener).exitWith(this);
+			if ( listener instanceof pyListener ) ((pyListener)listener).exitWith_(this);
 		}
 	}
 
-	public final WithContext with() throws RecognitionException {
-		WithContext _localctx = new WithContext(_ctx, getState());
-		enterRule(_localctx, 32, RULE_with);
+	public final With_Context with_() throws RecognitionException {
+		With_Context _localctx = new With_Context(_ctx, getState());
+		enterRule(_localctx, 32, RULE_with_);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
@@ -1379,14 +1379,11 @@ public class pyParser extends Parser {
 	}
 
 	public static class IfelseContext extends ParserRuleContext {
-		public List<ElifContext> elif() {
-			return getRuleContexts(ElifContext.class);
+		public List<Elif_Context> elif_() {
+			return getRuleContexts(Elif_Context.class);
 		}
 		public BlockContext block(int i) {
 			return getRuleContext(BlockContext.class,i);
-		}
-		public ElifContext elif(int i) {
-			return getRuleContext(ElifContext.class,i);
 		}
 		public Else_Context else_() {
 			return getRuleContext(Else_Context.class,0);
@@ -1396,6 +1393,9 @@ public class pyParser extends Parser {
 		}
 		public If_Context if_() {
 			return getRuleContext(If_Context.class,0);
+		}
+		public Elif_Context elif_(int i) {
+			return getRuleContext(Elif_Context.class,i);
 		}
 		public IfelseContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -1426,7 +1426,7 @@ public class pyParser extends Parser {
 			while (_la==T__13) {
 				{
 				{
-				setState(307); elif();
+				setState(307); elif_();
 				setState(308); block();
 				}
 				}
@@ -1495,27 +1495,27 @@ public class pyParser extends Parser {
 		return _localctx;
 	}
 
-	public static class ElifContext extends ParserRuleContext {
+	public static class Elif_Context extends ParserRuleContext {
 		public ExprContext expr() {
 			return getRuleContext(ExprContext.class,0);
 		}
-		public ElifContext(ParserRuleContext parent, int invokingState) {
+		public Elif_Context(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_elif; }
+		@Override public int getRuleIndex() { return RULE_elif_; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof pyListener ) ((pyListener)listener).enterElif(this);
+			if ( listener instanceof pyListener ) ((pyListener)listener).enterElif_(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof pyListener ) ((pyListener)listener).exitElif(this);
+			if ( listener instanceof pyListener ) ((pyListener)listener).exitElif_(this);
 		}
 	}
 
-	public final ElifContext elif() throws RecognitionException {
-		ElifContext _localctx = new ElifContext(_ctx, getState());
-		enterRule(_localctx, 42, RULE_elif);
+	public final Elif_Context elif_() throws RecognitionException {
+		Elif_Context _localctx = new Elif_Context(_ctx, getState());
+		enterRule(_localctx, 42, RULE_elif_);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
@@ -1687,20 +1687,20 @@ public class pyParser extends Parser {
 	}
 
 	public static class TrycatchContext extends ParserRuleContext {
+		public List<Except_Context> except_() {
+			return getRuleContexts(Except_Context.class);
+		}
 		public BlockContext block(int i) {
 			return getRuleContext(BlockContext.class,i);
 		}
-		public ExceptContext except(int i) {
-			return getRuleContext(ExceptContext.class,i);
+		public Except_Context except_(int i) {
+			return getRuleContext(Except_Context.class,i);
 		}
 		public Else_Context else_() {
 			return getRuleContext(Else_Context.class,0);
 		}
 		public List<BlockContext> block() {
 			return getRuleContexts(BlockContext.class);
-		}
-		public List<ExceptContext> except() {
-			return getRuleContexts(ExceptContext.class);
 		}
 		public TrycatchContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -1734,7 +1734,7 @@ public class pyParser extends Parser {
 				do {
 					{
 					{
-					setState(347); except();
+					setState(347); except_();
 					setState(348); block();
 					}
 					}
@@ -1784,30 +1784,30 @@ public class pyParser extends Parser {
 		return _localctx;
 	}
 
-	public static class ExceptContext extends ParserRuleContext {
+	public static class Except_Context extends ParserRuleContext {
 		public ExprContext expr() {
 			return getRuleContext(ExprContext.class,0);
 		}
 		public VarContext var() {
 			return getRuleContext(VarContext.class,0);
 		}
-		public ExceptContext(ParserRuleContext parent, int invokingState) {
+		public Except_Context(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_except; }
+		@Override public int getRuleIndex() { return RULE_except_; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof pyListener ) ((pyListener)listener).enterExcept(this);
+			if ( listener instanceof pyListener ) ((pyListener)listener).enterExcept_(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof pyListener ) ((pyListener)listener).exitExcept(this);
+			if ( listener instanceof pyListener ) ((pyListener)listener).exitExcept_(this);
 		}
 	}
 
-	public final ExceptContext except() throws RecognitionException {
-		ExceptContext _localctx = new ExceptContext(_ctx, getState());
-		enterRule(_localctx, 52, RULE_except);
+	public final Except_Context except_() throws RecognitionException {
+		Except_Context _localctx = new Except_Context(_ctx, getState());
+		enterRule(_localctx, 52, RULE_except_);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
@@ -2229,6 +2229,9 @@ public class pyParser extends Parser {
 		public Gen_exprContext gen_expr() {
 			return getRuleContext(Gen_exprContext.class,0);
 		}
+		public Slice_Context slice_() {
+			return getRuleContext(Slice_Context.class,0);
+		}
 		public List<Op_cmpContext> op_cmp() {
 			return getRuleContexts(Op_cmpContext.class);
 		}
@@ -2238,20 +2241,17 @@ public class pyParser extends Parser {
 		public GeneratorContext generator() {
 			return getRuleContext(GeneratorContext.class,0);
 		}
+		public Lambda_Context lambda_() {
+			return getRuleContext(Lambda_Context.class,0);
+		}
 		public Op_cmpContext op_cmp(int i) {
 			return getRuleContext(Op_cmpContext.class,i);
 		}
 		public ValContext val() {
 			return getRuleContext(ValContext.class,0);
 		}
-		public LambdaContext lambda() {
-			return getRuleContext(LambdaContext.class,0);
-		}
 		public Else_Context else_() {
 			return getRuleContext(Else_Context.class,0);
-		}
-		public SliceContext slice() {
-			return getRuleContext(SliceContext.class,0);
 		}
 		public ArglistContext arglist() {
 			return getRuleContext(ArglistContext.class,0);
@@ -2327,7 +2327,7 @@ public class pyParser extends Parser {
 				break;
 			case 6:
 				{
-				setState(436); lambda();
+				setState(436); lambda_();
 				}
 				break;
 			}
@@ -2521,7 +2521,7 @@ public class pyParser extends Parser {
 						if (!(precpred(_ctx, 22))) throw new FailedPredicateException(this, "precpred(_ctx, 22)");
 						{
 						setState(493); match(T__16);
-						setState(494); slice();
+						setState(494); slice_();
 						setState(495); match(T__49);
 						}
 						}
@@ -2574,30 +2574,30 @@ public class pyParser extends Parser {
 		return _localctx;
 	}
 
-	public static class LambdaContext extends ParserRuleContext {
+	public static class Lambda_Context extends ParserRuleContext {
 		public ExprContext expr() {
 			return getRuleContext(ExprContext.class,0);
 		}
 		public ArglistContext arglist() {
 			return getRuleContext(ArglistContext.class,0);
 		}
-		public LambdaContext(ParserRuleContext parent, int invokingState) {
+		public Lambda_Context(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_lambda; }
+		@Override public int getRuleIndex() { return RULE_lambda_; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof pyListener ) ((pyListener)listener).enterLambda(this);
+			if ( listener instanceof pyListener ) ((pyListener)listener).enterLambda_(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof pyListener ) ((pyListener)listener).exitLambda(this);
+			if ( listener instanceof pyListener ) ((pyListener)listener).exitLambda_(this);
 		}
 	}
 
-	public final LambdaContext lambda() throws RecognitionException {
-		LambdaContext _localctx = new LambdaContext(_ctx, getState());
-		enterRule(_localctx, 70, RULE_lambda);
+	public final Lambda_Context lambda_() throws RecognitionException {
+		Lambda_Context _localctx = new Lambda_Context(_ctx, getState());
+		enterRule(_localctx, 70, RULE_lambda_);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
@@ -2890,23 +2890,23 @@ public class pyParser extends Parser {
 		public NumberContext number() {
 			return getRuleContext(NumberContext.class,0);
 		}
+		public Dict_Context dict_() {
+			return getRuleContext(Dict_Context.class,0);
+		}
 		public StringContext string() {
 			return getRuleContext(StringContext.class,0);
 		}
 		public VarContext var() {
 			return getRuleContext(VarContext.class,0);
 		}
-		public TupleContext tuple() {
-			return getRuleContext(TupleContext.class,0);
+		public Tuple_Context tuple_() {
+			return getRuleContext(Tuple_Context.class,0);
 		}
-		public ListContext list() {
-			return getRuleContext(ListContext.class,0);
+		public Set_Context set_() {
+			return getRuleContext(Set_Context.class,0);
 		}
-		public SetContext set() {
-			return getRuleContext(SetContext.class,0);
-		}
-		public DictContext dict() {
-			return getRuleContext(DictContext.class,0);
+		public List_Context list_() {
+			return getRuleContext(List_Context.class,0);
 		}
 		public ValContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -2949,25 +2949,25 @@ public class pyParser extends Parser {
 			case 4:
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(548); list();
+				setState(548); list_();
 				}
 				break;
 			case 5:
 				enterOuterAlt(_localctx, 5);
 				{
-				setState(549); tuple();
+				setState(549); tuple_();
 				}
 				break;
 			case 6:
 				enterOuterAlt(_localctx, 6);
 				{
-				setState(550); dict();
+				setState(550); dict_();
 				}
 				break;
 			case 7:
 				enterOuterAlt(_localctx, 7);
 				{
-				setState(551); set();
+				setState(551); set_();
 				}
 				break;
 			}
@@ -3085,30 +3085,30 @@ public class pyParser extends Parser {
 		return _localctx;
 	}
 
-	public static class SliceContext extends ParserRuleContext {
+	public static class Slice_Context extends ParserRuleContext {
 		public List<ExprContext> expr() {
 			return getRuleContexts(ExprContext.class);
 		}
 		public ExprContext expr(int i) {
 			return getRuleContext(ExprContext.class,i);
 		}
-		public SliceContext(ParserRuleContext parent, int invokingState) {
+		public Slice_Context(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_slice; }
+		@Override public int getRuleIndex() { return RULE_slice_; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof pyListener ) ((pyListener)listener).enterSlice(this);
+			if ( listener instanceof pyListener ) ((pyListener)listener).enterSlice_(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof pyListener ) ((pyListener)listener).exitSlice(this);
+			if ( listener instanceof pyListener ) ((pyListener)listener).exitSlice_(this);
 		}
 	}
 
-	public final SliceContext slice() throws RecognitionException {
-		SliceContext _localctx = new SliceContext(_ctx, getState());
-		enterRule(_localctx, 86, RULE_slice);
+	public final Slice_Context slice_() throws RecognitionException {
+		Slice_Context _localctx = new Slice_Context(_ctx, getState());
+		enterRule(_localctx, 86, RULE_slice_);
 		int _la;
 		try {
 			setState(597);
@@ -3209,27 +3209,27 @@ public class pyParser extends Parser {
 		return _localctx;
 	}
 
-	public static class ListContext extends ParserRuleContext {
+	public static class List_Context extends ParserRuleContext {
 		public ExprlistContext exprlist() {
 			return getRuleContext(ExprlistContext.class,0);
 		}
-		public ListContext(ParserRuleContext parent, int invokingState) {
+		public List_Context(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_list; }
+		@Override public int getRuleIndex() { return RULE_list_; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof pyListener ) ((pyListener)listener).enterList(this);
+			if ( listener instanceof pyListener ) ((pyListener)listener).enterList_(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof pyListener ) ((pyListener)listener).exitList(this);
+			if ( listener instanceof pyListener ) ((pyListener)listener).exitList_(this);
 		}
 	}
 
-	public final ListContext list() throws RecognitionException {
-		ListContext _localctx = new ListContext(_ctx, getState());
-		enterRule(_localctx, 88, RULE_list);
+	public final List_Context list_() throws RecognitionException {
+		List_Context _localctx = new List_Context(_ctx, getState());
+		enterRule(_localctx, 88, RULE_list_);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
@@ -3257,30 +3257,30 @@ public class pyParser extends Parser {
 		return _localctx;
 	}
 
-	public static class TupleContext extends ParserRuleContext {
+	public static class Tuple_Context extends ParserRuleContext {
 		public ExprContext expr() {
 			return getRuleContext(ExprContext.class,0);
 		}
 		public ExprlistContext exprlist() {
 			return getRuleContext(ExprlistContext.class,0);
 		}
-		public TupleContext(ParserRuleContext parent, int invokingState) {
+		public Tuple_Context(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_tuple; }
+		@Override public int getRuleIndex() { return RULE_tuple_; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof pyListener ) ((pyListener)listener).enterTuple(this);
+			if ( listener instanceof pyListener ) ((pyListener)listener).enterTuple_(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof pyListener ) ((pyListener)listener).exitTuple(this);
+			if ( listener instanceof pyListener ) ((pyListener)listener).exitTuple_(this);
 		}
 	}
 
-	public final TupleContext tuple() throws RecognitionException {
-		TupleContext _localctx = new TupleContext(_ctx, getState());
-		enterRule(_localctx, 90, RULE_tuple);
+	public final Tuple_Context tuple_() throws RecognitionException {
+		Tuple_Context _localctx = new Tuple_Context(_ctx, getState());
+		enterRule(_localctx, 90, RULE_tuple_);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
@@ -3310,27 +3310,27 @@ public class pyParser extends Parser {
 		return _localctx;
 	}
 
-	public static class SetContext extends ParserRuleContext {
+	public static class Set_Context extends ParserRuleContext {
 		public ExprlistContext exprlist() {
 			return getRuleContext(ExprlistContext.class,0);
 		}
-		public SetContext(ParserRuleContext parent, int invokingState) {
+		public Set_Context(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_set; }
+		@Override public int getRuleIndex() { return RULE_set_; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof pyListener ) ((pyListener)listener).enterSet(this);
+			if ( listener instanceof pyListener ) ((pyListener)listener).enterSet_(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof pyListener ) ((pyListener)listener).exitSet(this);
+			if ( listener instanceof pyListener ) ((pyListener)listener).exitSet_(this);
 		}
 	}
 
-	public final SetContext set() throws RecognitionException {
-		SetContext _localctx = new SetContext(_ctx, getState());
-		enterRule(_localctx, 92, RULE_set);
+	public final Set_Context set_() throws RecognitionException {
+		Set_Context _localctx = new Set_Context(_ctx, getState());
+		enterRule(_localctx, 92, RULE_set_);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
@@ -3350,27 +3350,27 @@ public class pyParser extends Parser {
 		return _localctx;
 	}
 
-	public static class DictContext extends ParserRuleContext {
+	public static class Dict_Context extends ParserRuleContext {
 		public DictlistContext dictlist() {
 			return getRuleContext(DictlistContext.class,0);
 		}
-		public DictContext(ParserRuleContext parent, int invokingState) {
+		public Dict_Context(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_dict; }
+		@Override public int getRuleIndex() { return RULE_dict_; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof pyListener ) ((pyListener)listener).enterDict(this);
+			if ( listener instanceof pyListener ) ((pyListener)listener).enterDict_(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof pyListener ) ((pyListener)listener).exitDict(this);
+			if ( listener instanceof pyListener ) ((pyListener)listener).exitDict_(this);
 		}
 	}
 
-	public final DictContext dict() throws RecognitionException {
-		DictContext _localctx = new DictContext(_ctx, getState());
-		enterRule(_localctx, 94, RULE_dict);
+	public final Dict_Context dict_() throws RecognitionException {
+		Dict_Context _localctx = new Dict_Context(_ctx, getState());
+		enterRule(_localctx, 94, RULE_dict_);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
@@ -4194,11 +4194,11 @@ public class pyParser extends Parser {
 	}
 
 	public static class VarContext extends ParserRuleContext {
+		public Slice_Context slice_() {
+			return getRuleContext(Slice_Context.class,0);
+		}
 		public List<VarContext> var() {
 			return getRuleContexts(VarContext.class);
-		}
-		public SliceContext slice() {
-			return getRuleContext(SliceContext.class,0);
 		}
 		public TerminalNode Var() { return getToken(pyParser.Var, 0); }
 		public VarContext var(int i) {
@@ -4278,7 +4278,7 @@ public class pyParser extends Parser {
 						setState(761);
 						if (!(precpred(_ctx, 1))) throw new FailedPredicateException(this, "precpred(_ctx, 1)");
 						setState(762); match(T__16);
-						setState(763); slice();
+						setState(763); slice_();
 						setState(764); match(T__49);
 						}
 						break;

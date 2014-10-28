@@ -8,6 +8,16 @@ import org.antlr.v4.runtime.tree.ParseTreeListener;
  */
 public interface pyListener extends ParseTreeListener {
 	/**
+	 * Enter a parse tree produced by {@link pyParser#tuple_}.
+	 * @param ctx the parse tree
+	 */
+	void enterTuple_(@NotNull pyParser.Tuple_Context ctx);
+	/**
+	 * Exit a parse tree produced by {@link pyParser#tuple_}.
+	 * @param ctx the parse tree
+	 */
+	void exitTuple_(@NotNull pyParser.Tuple_Context ctx);
+	/**
 	 * Enter a parse tree produced by {@link pyParser#else_}.
 	 * @param ctx the parse tree
 	 */
@@ -27,6 +37,16 @@ public interface pyListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitFor_(@NotNull pyParser.For_Context ctx);
+	/**
+	 * Enter a parse tree produced by {@link pyParser#set_}.
+	 * @param ctx the parse tree
+	 */
+	void enterSet_(@NotNull pyParser.Set_Context ctx);
+	/**
+	 * Exit a parse tree produced by {@link pyParser#set_}.
+	 * @param ctx the parse tree
+	 */
+	void exitSet_(@NotNull pyParser.Set_Context ctx);
 	/**
 	 * Enter a parse tree produced by {@link pyParser#mod_alias}.
 	 * @param ctx the parse tree
@@ -68,16 +88,6 @@ public interface pyListener extends ParseTreeListener {
 	 */
 	void exitNumber(@NotNull pyParser.NumberContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link pyParser#lambda}.
-	 * @param ctx the parse tree
-	 */
-	void enterLambda(@NotNull pyParser.LambdaContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link pyParser#lambda}.
-	 * @param ctx the parse tree
-	 */
-	void exitLambda(@NotNull pyParser.LambdaContext ctx);
-	/**
 	 * Enter a parse tree produced by {@link pyParser#block_stmt}.
 	 * @param ctx the parse tree
 	 */
@@ -97,16 +107,6 @@ public interface pyListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitKparamlist(@NotNull pyParser.KparamlistContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link pyParser#slice}.
-	 * @param ctx the parse tree
-	 */
-	void enterSlice(@NotNull pyParser.SliceContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link pyParser#slice}.
-	 * @param ctx the parse tree
-	 */
-	void exitSlice(@NotNull pyParser.SliceContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link pyParser#loop}.
 	 * @param ctx the parse tree
@@ -148,15 +148,15 @@ public interface pyListener extends ParseTreeListener {
 	 */
 	void exitSingle_stmt(@NotNull pyParser.Single_stmtContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link pyParser#dict}.
+	 * Enter a parse tree produced by {@link pyParser#elif_}.
 	 * @param ctx the parse tree
 	 */
-	void enterDict(@NotNull pyParser.DictContext ctx);
+	void enterElif_(@NotNull pyParser.Elif_Context ctx);
 	/**
-	 * Exit a parse tree produced by {@link pyParser#dict}.
+	 * Exit a parse tree produced by {@link pyParser#elif_}.
 	 * @param ctx the parse tree
 	 */
-	void exitDict(@NotNull pyParser.DictContext ctx);
+	void exitElif_(@NotNull pyParser.Elif_Context ctx);
 	/**
 	 * Enter a parse tree produced by {@link pyParser#block}.
 	 * @param ctx the parse tree
@@ -197,6 +197,16 @@ public interface pyListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitStmts(@NotNull pyParser.StmtsContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link pyParser#list_}.
+	 * @param ctx the parse tree
+	 */
+	void enterList_(@NotNull pyParser.List_Context ctx);
+	/**
+	 * Exit a parse tree produced by {@link pyParser#list_}.
+	 * @param ctx the parse tree
+	 */
+	void exitList_(@NotNull pyParser.List_Context ctx);
 	/**
 	 * Enter a parse tree produced by {@link pyParser#dict_gen}.
 	 * @param ctx the parse tree
@@ -268,25 +278,15 @@ public interface pyListener extends ParseTreeListener {
 	 */
 	void exitSimple_var(@NotNull pyParser.Simple_varContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link pyParser#elif}.
+	 * Enter a parse tree produced by {@link pyParser#lambda_}.
 	 * @param ctx the parse tree
 	 */
-	void enterElif(@NotNull pyParser.ElifContext ctx);
+	void enterLambda_(@NotNull pyParser.Lambda_Context ctx);
 	/**
-	 * Exit a parse tree produced by {@link pyParser#elif}.
+	 * Exit a parse tree produced by {@link pyParser#lambda_}.
 	 * @param ctx the parse tree
 	 */
-	void exitElif(@NotNull pyParser.ElifContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link pyParser#list}.
-	 * @param ctx the parse tree
-	 */
-	void enterList(@NotNull pyParser.ListContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link pyParser#list}.
-	 * @param ctx the parse tree
-	 */
-	void exitList(@NotNull pyParser.ListContext ctx);
+	void exitLambda_(@NotNull pyParser.Lambda_Context ctx);
 	/**
 	 * Enter a parse tree produced by {@link pyParser#dictitem}.
 	 * @param ctx the parse tree
@@ -327,16 +327,6 @@ public interface pyListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitKarg(@NotNull pyParser.KargContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link pyParser#except}.
-	 * @param ctx the parse tree
-	 */
-	void enterExcept(@NotNull pyParser.ExceptContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link pyParser#except}.
-	 * @param ctx the parse tree
-	 */
-	void exitExcept(@NotNull pyParser.ExceptContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link pyParser#rel_module}.
 	 * @param ctx the parse tree
@@ -438,16 +428,6 @@ public interface pyListener extends ParseTreeListener {
 	 */
 	void exitAug_assign(@NotNull pyParser.Aug_assignContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link pyParser#tuple}.
-	 * @param ctx the parse tree
-	 */
-	void enterTuple(@NotNull pyParser.TupleContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link pyParser#tuple}.
-	 * @param ctx the parse tree
-	 */
-	void exitTuple(@NotNull pyParser.TupleContext ctx);
-	/**
 	 * Enter a parse tree produced by {@link pyParser#iter_gen}.
 	 * @param ctx the parse tree
 	 */
@@ -508,6 +488,16 @@ public interface pyListener extends ParseTreeListener {
 	 */
 	void exitExpr(@NotNull pyParser.ExprContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link pyParser#except_}.
+	 * @param ctx the parse tree
+	 */
+	void enterExcept_(@NotNull pyParser.Except_Context ctx);
+	/**
+	 * Exit a parse tree produced by {@link pyParser#except_}.
+	 * @param ctx the parse tree
+	 */
+	void exitExcept_(@NotNull pyParser.Except_Context ctx);
+	/**
 	 * Enter a parse tree produced by {@link pyParser#varlist}.
 	 * @param ctx the parse tree
 	 */
@@ -517,6 +507,16 @@ public interface pyListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitVarlist(@NotNull pyParser.VarlistContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link pyParser#dict_}.
+	 * @param ctx the parse tree
+	 */
+	void enterDict_(@NotNull pyParser.Dict_Context ctx);
+	/**
+	 * Exit a parse tree produced by {@link pyParser#dict_}.
+	 * @param ctx the parse tree
+	 */
+	void exitDict_(@NotNull pyParser.Dict_Context ctx);
 	/**
 	 * Enter a parse tree produced by {@link pyParser#id_alias}.
 	 * @param ctx the parse tree
@@ -548,15 +548,15 @@ public interface pyListener extends ParseTreeListener {
 	 */
 	void exitIf_(@NotNull pyParser.If_Context ctx);
 	/**
-	 * Enter a parse tree produced by {@link pyParser#set}.
+	 * Enter a parse tree produced by {@link pyParser#with_}.
 	 * @param ctx the parse tree
 	 */
-	void enterSet(@NotNull pyParser.SetContext ctx);
+	void enterWith_(@NotNull pyParser.With_Context ctx);
 	/**
-	 * Exit a parse tree produced by {@link pyParser#set}.
+	 * Exit a parse tree produced by {@link pyParser#with_}.
 	 * @param ctx the parse tree
 	 */
-	void exitSet(@NotNull pyParser.SetContext ctx);
+	void exitWith_(@NotNull pyParser.With_Context ctx);
 	/**
 	 * Enter a parse tree produced by {@link pyParser#class_}.
 	 * @param ctx the parse tree
@@ -588,6 +588,16 @@ public interface pyListener extends ParseTreeListener {
 	 */
 	void exitKparam(@NotNull pyParser.KparamContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link pyParser#slice_}.
+	 * @param ctx the parse tree
+	 */
+	void enterSlice_(@NotNull pyParser.Slice_Context ctx);
+	/**
+	 * Exit a parse tree produced by {@link pyParser#slice_}.
+	 * @param ctx the parse tree
+	 */
+	void exitSlice_(@NotNull pyParser.Slice_Context ctx);
+	/**
 	 * Enter a parse tree produced by {@link pyParser#prog}.
 	 * @param ctx the parse tree
 	 */
@@ -597,16 +607,6 @@ public interface pyListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitProg(@NotNull pyParser.ProgContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link pyParser#with}.
-	 * @param ctx the parse tree
-	 */
-	void enterWith(@NotNull pyParser.WithContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link pyParser#with}.
-	 * @param ctx the parse tree
-	 */
-	void exitWith(@NotNull pyParser.WithContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link pyParser#func}.
 	 * @param ctx the parse tree
