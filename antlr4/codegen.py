@@ -8,17 +8,22 @@ CPP= [] #List for the generated C++ Code
 
 class TreeActions(pyListener):
     def exitNumber(self, ctx):
-        CPP.append(ctx.getChild(0));
+        #CPP.append(ctx.getChild(0))
+        pass
 
     def exitFor_(self, ctx):
-        print "for test"
+        #print "for test"
+        pass
 
     def enterString(self, ctx):
-        print "Enter Str"
+        #print "Enter Str"
+        pass
+
     def exitString(self, ctx):
-        print ctx.getChild(0)
+        pass
 
-
+    def enterFunc(self, ctx):
+        print ctx.isinstance()
 
 def main(argv):
     input = FileStream("programm_.py")
