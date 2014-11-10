@@ -113,6 +113,10 @@ class ParserRuleContext(RuleContext):
         node.parentCtx = self
         return node
 
+#new!
+    def getParent(self):
+        return self.parentCtx
+
     def getChild(self, i, type = None):
         if type is None:
             return self.children[i] if len(self.children)>=i else None
