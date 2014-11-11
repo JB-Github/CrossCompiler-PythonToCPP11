@@ -4,8 +4,11 @@ import pdb
 import re
 from copy import deepcopy
 
+##-----------------------------------------------------------
+##Basic Data-Structure
 
 class NamedList(pd.Series):
+    """Ordered Key-Value List"""
     def add(self, k, v, rename=True):
         """appends new entry and numbers duplicate names"""
         nr=''
@@ -43,6 +46,10 @@ class NamedList(pd.Series):
                 head.add(*x)
             self.__init__(head)
 
+
+##-----------------------------------------------------------
+##Tree Classes
+
 class vertex(NamedList):
     def __init__(self, name= None, parent= None,
                  data=None, index=None, dtype= object, #dtype?
@@ -55,7 +62,7 @@ class vertex(NamedList):
         super(vertex, self).__init__(data, index, dtype, Name, copy, fastpath)
 
         self.parent= parent
-        if name and name[-1].isdigit():
+        if name and name[-1].isdigit(): #??
             self.name, self.nr = re.match(r'(.+?)(\d*)$', name).groups()
         else:
             self.name= name
@@ -86,7 +93,6 @@ class vertex(NamedList):
 
 
 
-
 class Tree(object):
     def __init__(self, S=None):
         self.root= vertex('root')
@@ -106,6 +112,10 @@ class Tree(object):
     def text(self):
         """starting at pos, returns a list of the text in the leafs"""
         return pos.text()
+
+    def visit(vtx):
+        for v in vtx:
+            self.visit(v)
 
 
 ##Tests
@@ -129,4 +139,3 @@ T.add('expr')
 T.add('expr')
 
 print T.root.text()
-
