@@ -1,0 +1,515 @@
+1 	Prog 	
+	Stmt 	Stmt 	Stmt 	Stmt
+Stmt Stmt Stmt Stmt
+2 	Stmt 	
+	Block_stmt
+Block_stmt
+3 	Block_stmt 	
+	Block_head 	Block
+Block_head Block
+4 	Block_head 	
+	Func
+Func
+5 	Func 	
+	_def_ 	_f_ 	_(_ 	Paramlist 	_)_
+_def_ _f_ _(_ Paramlist _)_
+6 	Paramlist 	
+	Pos_paramlist
+Pos_paramlist
+7 	Pos_paramlist 	
+	Pos_paramtuple
+Pos_paramtuple
+8 	Pos_paramtuple 	
+	Simple_var
+Simple_var
+9 	Simple_var 	
+	_x_
+_x_
+   BRANCH -5
+4 	Block 	
+	_:$blockbegin_ 	Prog 	_$blockend_
+_:$blockbegin_ Prog _$blockend_
+5 	Prog 	
+	Stmt 	Stmt
+Stmt Stmt
+6 	Stmt 	
+	Single_stmt
+Single_stmt
+7 	Single_stmt 	
+	Exprlist 	_;_
+Exprlist _;_
+8 	Exprlist 	
+	Expr
+Expr
+9 	Expr 	
+	Val
+Val
+10 	Val 	
+	String
+String
+11 	String 	
+	_"""rechnen"""_
+_"""rechnen"""_
+   BRANCH -5
+6 	Stmt 	
+	Single_stmt
+Single_stmt
+7 	Single_stmt 	
+	Stmts 	_;_
+Stmts _;_
+8 	Stmts 	
+	_return_ 	Exprlist
+_return_ Exprlist
+9 	Exprlist 	
+	Expr
+Expr
+10 	Expr 	
+	Expr 	_+_ 	Expr
+Expr _+_ Expr
+11 	Expr 	
+	Expr 	_+_ 	Expr
+Expr _+_ Expr
+12 	Expr 	
+	Expr 	_+_ 	Expr
+Expr _+_ Expr
+13 	Expr 	
+	Expr 	_**_ 	Expr
+Expr _**_ Expr
+14 	Expr 	
+	Val
+Val
+15 	Val 	
+	Var
+Var
+16 	Var 	
+	_x_
+_x_
+   BRANCH -2
+14 	Expr 	
+	Val
+Val
+15 	Val 	
+	Number
+Number
+16 	Number 	
+	_2_
+_2_
+   BRANCH -3
+13 	Expr 	
+	Expr 	_-_ 	Expr
+Expr _-_ Expr
+14 	Expr 	
+	Expr 	_-_ 	Expr
+Expr _-_ Expr
+15 	Expr 	
+	Expr 	_*_ 	Expr
+Expr _*_ Expr
+16 	Expr 	
+	Val
+Val
+17 	Val 	
+	Var
+Var
+18 	Var 	
+	_x_
+_x_
+   BRANCH -2
+16 	Expr 	
+	Val
+Val
+17 	Val 	
+	Number
+Number
+18 	Number 	
+	_4_
+_4_
+   BRANCH -3
+15 	Expr 	
+	Expr 	_/_ 	Expr
+Expr _/_ Expr
+16 	Expr 	
+	_(_ 	Expr 	_)_
+_(_ Expr _)_
+17 	Expr 	
+	Expr 	_-_ 	Expr
+Expr _-_ Expr
+18 	Expr 	
+	Val
+Val
+19 	Val 	
+	Var
+Var
+20 	Var 	
+	_x_
+_x_
+   BRANCH -2
+18 	Expr 	
+	Val
+Val
+19 	Val 	
+	Number
+Number
+20 	Number 	
+	_3_
+_3_
+   BRANCH -4
+16 	Expr 	
+	Val
+Val
+17 	Val 	
+	Var
+Var
+18 	Var 	
+	_x_
+_x_
+   BRANCH -4
+14 	Expr 	
+	Val
+Val
+15 	Val 	
+	Number
+Number
+16 	Number 	
+	_1.3e4_
+_1.3e4_
+   BRANCH -4
+12 	Expr 	
+	Val
+Val
+13 	Val 	
+	Number
+Number
+14 	Number 	
+	_2_
+_2_
+   BRANCH -3
+11 	Expr 	
+	Val
+Val
+12 	Val 	
+	Number
+Number
+13 	Number 	
+	_5_
+_5_
+   BRANCH -11
+2 	Stmt 	
+	Single_stmt
+Single_stmt
+3 	Single_stmt 	
+	Assign_stmt 	_;_
+Assign_stmt _;_
+4 	Assign_stmt 	
+	Assign
+Assign
+5 	Assign 	
+	Varlist 	_=_ 	Exprlist
+Varlist _=_ Exprlist
+6 	Varlist 	
+	Vartuple
+Vartuple
+7 	Vartuple 	
+	Var
+Var
+8 	Var 	
+	_L_
+_L_
+   BRANCH -2
+6 	Exprlist 	
+	Expr
+Expr
+7 	Expr 	
+	Expr 	_*_ 	Expr
+Expr _*_ Expr
+8 	Expr 	
+	Val
+Val
+9 	Val 	
+	List_
+List_
+10 	List_ 	
+	_[_ 	Exprlist 	_]_
+_[_ Exprlist _]_
+11 	Exprlist 	
+	Expr
+Expr
+12 	Expr 	
+	Val
+Val
+13 	Val 	
+	Number
+Number
+14 	Number 	
+	_0_
+_0_
+   BRANCH -6
+8 	Expr 	
+	Val
+Val
+9 	Val 	
+	Number
+Number
+10 	Number 	
+	_10_
+_10_
+   BRANCH -8
+2 	Stmt 	
+	Block_stmt
+Block_stmt
+3 	Block_stmt 	
+	Block_head 	Block
+Block_head Block
+4 	Block_head 	
+	Loop
+Loop
+5 	Loop 	
+	For_
+For_
+6 	For_ 	
+	_for_ 	Varlist 	_in_ 	Exprlist
+_for_ Varlist _in_ Exprlist
+7 	Varlist 	
+	Vartuple
+Vartuple
+8 	Vartuple 	
+	Var
+Var
+9 	Var 	
+	_i_
+_i_
+   BRANCH -2
+7 	Exprlist 	
+	Expr
+Expr
+8 	Expr 	
+	Expr 	_(_ 	Arglist 	_)_
+Expr _(_ Arglist _)_
+9 	Expr 	
+	Val
+Val
+10 	Val 	
+	Var
+Var
+11 	Var 	
+	_range_
+_range_
+   BRANCH -2
+9 	Arglist 	
+	Pos_arglist
+Pos_arglist
+10 	Pos_arglist 	
+	Pos_arg
+Pos_arg
+11 	Pos_arg 	
+	Expr
+Expr
+12 	Expr 	
+	Expr 	_(_ 	Arglist 	_)_
+Expr _(_ Arglist _)_
+13 	Expr 	
+	Val
+Val
+14 	Val 	
+	Var
+Var
+15 	Var 	
+	_len_
+_len_
+   BRANCH -2
+13 	Arglist 	
+	Pos_arglist
+Pos_arglist
+14 	Pos_arglist 	
+	Pos_arg
+Pos_arg
+15 	Pos_arg 	
+	Expr
+Expr
+16 	Expr 	
+	Val
+Val
+17 	Val 	
+	Var
+Var
+18 	Var 	
+	_L_
+_L_
+   BRANCH -14
+4 	Block 	
+	_:$blockbegin_ 	Prog 	_$blockend_
+_:$blockbegin_ Prog _$blockend_
+5 	Prog 	
+	Stmt
+Stmt
+6 	Stmt 	
+	Block_stmt
+Block_stmt
+7 	Block_stmt 	
+	Ifelse
+Ifelse
+8 	Ifelse 	
+	If_ 	Block 	Else_ 	Block
+If_ Block Else_ Block
+9 	If_ 	
+	_if_ 	Expr
+_if_ Expr
+10 	Expr 	
+	Expr 	Op_cmp 	Expr
+Expr Op_cmp Expr
+11 	Expr 	
+	Val
+Val
+12 	Val 	
+	Var
+Var
+13 	Var 	
+	_i_
+_i_
+   BRANCH -2
+11 	Op_cmp 	
+	_>_
+_>_
+   BRANCH 0
+11 	Expr 	
+	Val
+Val
+12 	Val 	
+	Number
+Number
+13 	Number 	
+	_3_
+_3_
+   BRANCH -4
+9 	Block 	
+	_:$blockbegin_ 	Prog 	_$blockend_
+_:$blockbegin_ Prog _$blockend_
+10 	Prog 	
+	Stmt
+Stmt
+11 	Stmt 	
+	Single_stmt
+Single_stmt
+12 	Single_stmt 	
+	Assign_stmt 	_;_
+Assign_stmt _;_
+13 	Assign_stmt 	
+	Assign
+Assign
+14 	Assign 	
+	Varlist 	_=_ 	Exprlist
+Varlist _=_ Exprlist
+15 	Varlist 	
+	Vartuple
+Vartuple
+16 	Vartuple 	
+	Var
+Var
+17 	Var 	
+	Var 	_[_ 	Slice_ 	_]_
+Var _[_ Slice_ _]_
+18 	Var 	
+	_L_
+_L_
+   BRANCH 0
+18 	Slice_ 	
+	Expr
+Expr
+19 	Expr 	
+	Val
+Val
+20 	Val 	
+	Var
+Var
+21 	Var 	
+	_i_
+_i_
+   BRANCH -6
+15 	Exprlist 	
+	Expr
+Expr
+16 	Expr 	
+	Expr 	_(_ 	Arglist 	_)_
+Expr _(_ Arglist _)_
+17 	Expr 	
+	Val
+Val
+18 	Val 	
+	Var
+Var
+19 	Var 	
+	_f_
+_f_
+   BRANCH -2
+17 	Arglist 	
+	Pos_arglist
+Pos_arglist
+18 	Pos_arglist 	
+	Pos_arg
+Pos_arg
+19 	Pos_arg 	
+	Expr
+Expr
+20 	Expr 	
+	Expr 	_+_ 	Expr
+Expr _+_ Expr
+21 	Expr 	
+	Val
+Val
+22 	Val 	
+	Var
+Var
+23 	Var 	
+	_i_
+_i_
+   BRANCH -2
+21 	Expr 	
+	Val
+Val
+22 	Val 	
+	Number
+Number
+23 	Number 	
+	_1_
+_1_
+   BRANCH -14
+9 	Else_ 	
+	_else_
+_else_
+   BRANCH 0
+9 	Block 	
+	_:$blockbegin_ 	Prog 	_$blockend_
+_:$blockbegin_ Prog _$blockend_
+10 	Prog 	
+	Stmt
+Stmt
+11 	Stmt 	
+	Single_stmt
+Single_stmt
+12 	Single_stmt 	
+	Stmts 	_;_
+Stmts _;_
+13 	Stmts 	
+	_pass_
+_pass_
+   BRANCH -11
+2 	Stmt 	
+	Single_stmt
+Single_stmt
+3 	Single_stmt 	
+	Stmts 	_;_
+Stmts _;_
+4 	Stmts 	
+	_print_ 	Exprlist
+_print_ Exprlist
+5 	Exprlist 	
+	Expr
+Expr
+6 	Expr 	
+	Val
+Val
+7 	Val 	
+	Var
+Var
+8 	Var 	
+	_L_
+_L_

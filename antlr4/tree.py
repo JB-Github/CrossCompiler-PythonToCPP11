@@ -3,6 +3,7 @@ import numpy as np
 import pdb
 import re
 from copy import deepcopy
+import cPickle as pickle
 
 ##-----------------------------------------------------------
 ##Basic Data-Structure
@@ -75,6 +76,11 @@ class vertex(NamedList):
         self.__init__(super(vertex, self).rename({old:new}))
         self[new].nr= re.match(r'(.+?)(\d*)$', new).groups()[1]
 
+    def idx(self): # -> nr unnoetig
+        for i,v in enumerate(self.parent):
+            if self is v:
+                return i
+
     def up(self, n=1):
         if n==0:
             return self
@@ -92,20 +98,24 @@ class vertex(NamedList):
         return [v.name for v in self.walk() if v.empty]
 
     def visit(self):
-        
-        if v.name in D:
-            D[v.name](self)
-        
+
+        if self.name in Tree.actions:
+            Tree.actions[v.name](self)
+
         for v in self:
             v.visit()
-            
+
 
 
 
 class Tree(object):
+    actions= {} #??
+
     def __init__(self, S=None):
         self.root= vertex('root')
         self.pos= self.root
+
+        self.patterns= set()
 
     def __iter__(self):
         return self.pos.walk()
@@ -123,10 +133,26 @@ class Tree(object):
         return self.pos.text()
 
     def visit():
-        
+
         self.pos.visit()
 
 
+def tree_action(L):
+    def wrapper(func):
+        M=L #nonlocal
+        if type(M)==str:
+            M= M.split()
+        for x in M:
+            tree_action.dict[x]= func
+    return wrapper
+tree_action.dict= Tree.actions
+
+@tree_action('Number')
+def f(vtx):
+    vtx.text()
+
+
+"""
 ##Tests
 
 N= NamedList( range(3), 'a b c'.split())
@@ -148,3 +174,7 @@ T.add('expr')
 T.add('expr')
 
 print T.root.text()
+"""
+if __name__ == '__main__':
+    T= pickle.load(open('T.dat'))
+

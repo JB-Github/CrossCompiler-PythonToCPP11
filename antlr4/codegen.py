@@ -4,10 +4,9 @@ from pyParser import pyParser
 from pyListener import pyListener
 import sys
 import re
-import pdb
-
+import cPickle as pickle
 from tree import Tree
-
+import pdb
 
 def ctxname(ctx):
     name= str(type(ctx))
@@ -42,6 +41,7 @@ class TreeActions(pyListener):
         
         name= ctxname(ctx)
         print ctx.depth(),'\t', name, '\t'
+        AST.patterns.add(name)
         
         for child in ctx.getChildren():            
             if child.getChildCount()==0: #leaf
@@ -77,15 +77,20 @@ def main(argv):
 
     actions = TreeActions()
     walker = ParseTreeWalker()
-    walker.walk(actions, tree)
 
+    console= sys.stdout; sys.stdout= open('out', 'wb')
+    walker.walk(actions, tree)
+    sys.stdout.close(); sys.stdout= console
+    
     #remove underscores and digits from leafs
     AST.pos= AST.root
     for v in AST:
         if v.empty:
             v.name= re.match(r'(.+?)(\d*)$', v.name).groups()[0]
             v.name= v.name[1:-1] #strip _
-            
 
+    pickle.dump(AST, open('T.dat', 'wb'))
+    
+    
 if __name__ == '__main__':
     main(sys.argv)
