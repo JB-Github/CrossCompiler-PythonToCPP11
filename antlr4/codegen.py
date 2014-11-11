@@ -19,17 +19,17 @@ AST.add('Prog')
 old_depth= 0
 
 class TreeActions(pyListener):
-
+    
     """
     def enterString(self, ctx):
         print "Enter Str"
     def exitString(self, ctx):
         print ctx.getChild(0)
     """
-
+    
     def enterEveryRule(self, ctx):
         global old_depth
-
+       
         d_chg= ctx.depth()-old_depth
         if d_chg<=0:
             print '   BRANCH', d_chg
@@ -39,14 +39,14 @@ class TreeActions(pyListener):
                     AST.pos= v
                     break
         old_depth= ctx.depth()
-
+        
         name= ctxname(ctx)
         print ctx.depth(),'\t', name, '\t'
-
-        for child in ctx.getChildren():
+        
+        for child in ctx.getChildren():            
             if child.getChildCount()==0: #leaf
-                #name= '_' + str(child.getText()) +'_'
-                name= str(child.getText())
+                name= '_' + str(child.getText()) +'_'
+                #name= str(child.getText())
             else:
                 name= ctxname(child)
             AST.add(name)
@@ -59,11 +59,11 @@ class TreeActions(pyListener):
         for v in AST.pos: print v.name,
         print
 
-
+        
         for v in AST.pos:
             if not v.name.startswith('_') and v.empty:
                 AST.pos= v #AST.pos[v.name+v.nr]
-                break
+                break            
         #print AST.pos is v
 
 
@@ -85,7 +85,7 @@ def main(argv):
         if v.empty:
             v.name= re.match(r'(.+?)(\d*)$', v.name).groups()[0]
             v.name= v.name[1:-1] #strip _
-
+            
 
 if __name__ == '__main__':
     main(sys.argv)

@@ -91,6 +91,15 @@ class vertex(NamedList):
         """returns a list of the text in the leafs"""
         return [v.name for v in self.walk() if v.empty]
 
+    def visit(self):
+        
+        if v.name in D:
+            D[v.name](self)
+        
+        for v in self:
+            v.visit()
+            
+
 
 
 class Tree(object):
@@ -111,11 +120,11 @@ class Tree(object):
 
     def text(self):
         """starting at pos, returns a list of the text in the leafs"""
-        return pos.text()
+        return self.pos.text()
 
-    def visit(vtx):
-        for v in vtx:
-            self.visit(v)
+    def visit():
+        
+        self.pos.visit()
 
 
 ##Tests
