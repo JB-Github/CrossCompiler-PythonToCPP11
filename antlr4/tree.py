@@ -4,6 +4,12 @@ import pdb
 import re
 from copy import deepcopy
 import cPickle as pickle
+import collections
+
+from pylex.rx import rx
+rx['other']= '.'
+rx['space']= '\s'
+rx['optvar']= "var '?'?"
 
 ##-----------------------------------------------------------
 ##Basic Data-Structure
@@ -18,8 +24,8 @@ class NamedList(pd.Series):
             S= self.append(pd.Series([v],[k]))
             self.__init__( S )
         else:
-            #if k[-1].isdigit(): #for insert
-             #   k = re.match(r'(.+?)\d*$', k).groups()[0] #strip number
+            if k[-1].isdigit(): #for insert
+                k = re.match(r'(.+?)\d*$', k).groups()[0] #strip number
 
             rep= sum( 1 for x in self.keys() if re.match(re.escape(k)+r'\d*$', x) )
             if rep:
@@ -47,12 +53,17 @@ class NamedList(pd.Series):
                 head.add(*x)
             self.__init__(head)
 
+    def append(self, x, verify_integrity=False):
+        if type(x)==dict:
+            x= pd.Series(x)
+        return super(NamedList, self).append(x, verify_integrity)
+
 
 ##-----------------------------------------------------------
 ##Tree Classes
 
 class vertex(NamedList):
-    def __init__(self, name= None, parent= None,
+    def __init__(self, name= None, parent= None, #name=''?
                  data=None, index=None, dtype= object, #dtype?
                  Name=None, copy=False, fastpath=False):
         #name->Name
@@ -68,6 +79,9 @@ class vertex(NamedList):
         else:
             self.name= name
             self.nr= None
+
+    def __eq__(self, S):
+        return S==self.name
 
     def rename(self, old, new=None, inplace=True):
         """changes (unique) keyname in children of vertex"""
@@ -89,36 +103,134 @@ class vertex(NamedList):
     def walk(self):
         """iterates over all vertices"""
         yield self
+        """
+        brk= yield self
+        if brk:
+            print '   BRK'
+            exc
+        """
         for v in self:
             for w in v.walk():
                 yield w
 
-    def text(self):
-        """returns a list of the text in the leafs"""
+
+    def dfind(self, S):
+        D= collections.defaultdict(str)
+        self._dfind(S, D)
+        return D
+    def _dfind(self, S, D):
+        for v in self:
+            if v==S:
+                D[S+str(len(D)+1)]= v
+            else:
+                v._dfind(S, D)
+
+
+    def find(self, S, nmax=0):
+        L= []
+        self._find(S, L)
+        #L.extend(['']*(nmax-len(L)))
+        L.extend(vertex() for i in range(nmax-len(L)))
+        return L
+    def _find(self, S, L):
+        for v in self:
+            if v==S:
+                L.append(v)
+            else:
+                v._find(S, L)
+
+    def literals(self):
+        """returns a list of the translated text in the leafs"""
         return [v.name for v in self.walk() if v.empty]
+    def words(self): #tauschen!
+        """returns a list of the literal text in the leafs"""
+        L=[]
+        Tree.out= L
+        self.visitchildren()
+        Tree.out= Tree.TL
+        """
+        temp= Tree.write
+        Tree.write= lambda Tree,x: L.append(x)
+        self.visitchildren()
+        Tree.write= temp
+        """
+        return L
+    def text(self):
+        """returns a string of the translated text in the leafs"""
+        return ''.join(self.words())
+
+    def transform(self, S, D=()):
+        TL= rx.lex(S, 'optvar str space other')
+        for t in TL:
+            s= t.str
+            if t=='optvar':
+                #pdb.set_trace()
+                if s in D:
+                    v= D[s]
+                    if type(v)==str and v:
+                        Tree.write(v)
+                        continue
+                else:
+                    v= self.get(s, '')
+                if s.endswith('?') and v=='':
+                    continue
+                if v=='':
+                    raise Exception('\n\tNo rule "%s" in vertex "%s"'%(s,self.name))
+                v.visit()
+            elif t=='str':
+                s= s.strip(s[0])
+                Tree.write(s)
+            elif s=='~':
+                continue
+            else:
+                Tree.write(s)
+
+    def visitchildren(self):
+        for v in self:
+            v.visit()
 
     def visit(self):
 
         if self.name in Tree.actions:
-            Tree.actions[v.name](self)
+            Tree.actions[self.name](self)
+        #Leaf
+        elif self.empty:
+            Tree.write(self.name)
 
-        for v in self:
-            v.visit()
+        else:
+            self.visitchildren()
+
+    def startvisit(self):
+        Tree.TL=[] #Problem mit static/global!
+        Tree.out= Tree.TL
+        self.visit()
 
 
 
 
 class Tree(object):
     actions= {} #??
-
+    TL= [] #List for translated text
+    out= TL
+    file= open('tout.txt','wb')
+    #file= open('tout.txt', 'a+b')
     def __init__(self, S=None):
         self.root= vertex('root')
         self.pos= self.root
 
         self.patterns= set()
+        self.space= ''
 
     def __iter__(self):
         return self.pos.walk()
+
+    @classmethod
+    def write(cls, S):
+        Tree.file.write(S+'\n')
+        cls.out.append(S)
+    @classmethod
+    def writeto(cls, L=None): #besser??
+        cls.out= cls.TL if L is None else L
 
     def add(self, k, rename=True):
         nr= self.pos.add(k, vertex(k, self.pos))
@@ -128,13 +240,20 @@ class Tree(object):
     def up(self, n=1):
         self.pos= self.pos.up(n)
 
-    def text(self):
-        """starting at pos, returns a list of the text in the leafs"""
-        return self.pos.text()
+    def words(self):
+        """starting at pos, returns a list of the translated text in the leafs"""
+        return self.pos.words()
 
-    def visit():
 
+    def visit(self):
+        open('tout.txt', 'wb').close()
+        Tree.file= open('tout.txt', 'a+b')
+        Tree.TL=[]
+        Tree.out= Tree.TL
         self.pos.visit()
+
+
+
 
 
 def tree_action(L):
@@ -149,10 +268,35 @@ tree_action.dict= Tree.actions
 
 @tree_action('Number')
 def f(vtx):
-    vtx.text()
+    #vtx.text()
+    print 'Num'
+    vtx.visitchildren()
+
+@tree_action('For_')
+def f(vtx):
+    print 'For'
+    EL= vtx.Exprlist
+    var= vtx.Varlist.words()
+    assert len(var)==1
+    var= ''.join(var)
+    if EL.literals()[0]!='range':
+        vtx.transform("'for' ('auto' var : Exprlist)", locals())
+
+    else:
+        start,stop,step = [v.text().strip() for v in EL.Expr.find('Expr', 3)]
+        if not stop:
+            start,stop = stop,start
+        start= 'int '+var+'= '+ start or '0'
+
+        comp= '<'
+        if step:
+            if step[0]=='-': comp= '>'
+            step= var+'+='+step
+        stop= var+comp+stop
+
+        vtx.transform("'for' (start?; stop; step?)", locals())
 
 
-"""
 ##Tests
 
 N= NamedList( range(3), 'a b c'.split())
@@ -173,8 +317,28 @@ T.up()
 T.add('expr')
 T.add('expr')
 
+def g(D):
+    for k,v in D.items():
+        print k,v
+def f():
+    a=3
+    b=4
+    def h():
+        c=11
+        g(locals())
+
+def str_maybe(S, default=''):
+    pass
+
+def maybe(C, idx, default=''):
+    try:
+        return D[idx]
+    except KeyError, IndexError:
+        return default
+
+
 print T.root.text()
-"""
+
 if __name__ == '__main__':
     T= pickle.load(open('T.dat'))
 
