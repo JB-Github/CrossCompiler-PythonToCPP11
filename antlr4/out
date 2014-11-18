@@ -11,8 +11,12 @@ Block_head Block
 	Func
 Func
 5 	Func 	
-	_def_ 	_f_ 	_(_ 	Paramlist 	_)_
-_def_ _f_ _(_ Paramlist _)_
+	_def_ 	Id_var 	_(_ 	Paramlist 	_)_
+_def_ Id_var _(_ Paramlist _)_
+6 	Id_var 	
+	_f_
+_f_
+   BRANCH 0
 6 	Paramlist 	
 	Pos_paramlist
 Pos_paramlist
@@ -27,8 +31,12 @@ Simple_var
 _x_
    BRANCH -5
 4 	Block 	
-	_:$blockbegin_ 	Prog 	_$blockend_
-_:$blockbegin_ Prog _$blockend_
+	Blockbegin 	Prog 	Blockend
+Blockbegin Prog Blockend
+5 	Blockbegin 	
+	_:$blockbegin_
+_:$blockbegin_
+   BRANCH 0
 5 	Prog 	
 	Stmt 	Stmt
 Stmt Stmt
@@ -92,9 +100,12 @@ Val
 	Number
 Number
 16 	Number 	
+	Int
+Int
+17 	Int_ 	
 	_2_
 _2_
-   BRANCH -3
+   BRANCH -4
 13 	Expr 	
 	Expr 	_-_ 	Expr
 Expr _-_ Expr
@@ -121,9 +132,12 @@ Val
 	Number
 Number
 18 	Number 	
+	Int
+Int
+19 	Int_ 	
 	_4_
 _4_
-   BRANCH -3
+   BRANCH -4
 15 	Expr 	
 	Expr 	_/_ 	Expr
 Expr _/_ Expr
@@ -150,9 +164,12 @@ Val
 	Number
 Number
 20 	Number 	
+	Int
+Int
+21 	Int_ 	
 	_3_
 _3_
-   BRANCH -4
+   BRANCH -5
 16 	Expr 	
 	Val
 Val
@@ -170,9 +187,12 @@ Val
 	Number
 Number
 16 	Number 	
+	Float
+Float
+17 	Float_ 	
 	_1.3e4_
 _1.3e4_
-   BRANCH -4
+   BRANCH -5
 12 	Expr 	
 	Val
 Val
@@ -180,9 +200,12 @@ Val
 	Number
 Number
 14 	Number 	
+	Int
+Int
+15 	Int_ 	
 	_2_
 _2_
-   BRANCH -3
+   BRANCH -4
 11 	Expr 	
 	Val
 Val
@@ -190,9 +213,16 @@ Val
 	Number
 Number
 13 	Number 	
+	Int
+Int
+14 	Int_ 	
 	_5_
 _5_
-   BRANCH -11
+   BRANCH -9
+5 	Blockend 	
+	_$blockend_
+_$blockend_
+   BRANCH -3
 2 	Stmt 	
 	Single_stmt
 Single_stmt
@@ -240,9 +270,12 @@ Val
 	Number
 Number
 14 	Number 	
+	Int
+Int
+15 	Int_ 	
 	_0_
 _0_
-   BRANCH -6
+   BRANCH -7
 8 	Expr 	
 	Val
 Val
@@ -250,9 +283,12 @@ Val
 	Number
 Number
 10 	Number 	
+	Int
+Int
+11 	Int_ 	
 	_10_
 _10_
-   BRANCH -8
+   BRANCH -9
 2 	Stmt 	
 	Block_stmt
 Block_stmt
@@ -336,8 +372,12 @@ Var
 _L_
    BRANCH -14
 4 	Block 	
-	_:$blockbegin_ 	Prog 	_$blockend_
-_:$blockbegin_ Prog _$blockend_
+	Blockbegin 	Prog 	Blockend
+Blockbegin Prog Blockend
+5 	Blockbegin 	
+	_:$blockbegin_
+_:$blockbegin_
+   BRANCH 0
 5 	Prog 	
 	Stmt
 Stmt
@@ -377,12 +417,19 @@ Val
 	Number
 Number
 13 	Number 	
+	Int
+Int
+14 	Int_ 	
 	_3_
 _3_
-   BRANCH -4
+   BRANCH -5
 9 	Block 	
-	_:$blockbegin_ 	Prog 	_$blockend_
-_:$blockbegin_ Prog _$blockend_
+	Blockbegin 	Prog 	Blockend
+Blockbegin Prog Blockend
+10 	Blockbegin 	
+	_:$blockbegin_
+_:$blockbegin_
+   BRANCH 0
 10 	Prog 	
 	Stmt
 Stmt
@@ -469,16 +516,27 @@ Val
 	Number
 Number
 23 	Number 	
+	Int
+Int
+24 	Int_ 	
 	_1_
 _1_
    BRANCH -14
+10 	Blockend 	
+	_$blockend_
+_$blockend_
+   BRANCH -1
 9 	Else_ 	
 	_else_
 _else_
    BRANCH 0
 9 	Block 	
-	_:$blockbegin_ 	Prog 	_$blockend_
-_:$blockbegin_ Prog _$blockend_
+	Blockbegin 	Prog 	Blockend
+Blockbegin Prog Blockend
+10 	Blockbegin 	
+	_:$blockbegin_
+_:$blockbegin_
+   BRANCH 0
 10 	Prog 	
 	Stmt
 Stmt
@@ -491,7 +549,15 @@ Stmts _;_
 13 	Stmts 	
 	_pass_
 _pass_
-   BRANCH -11
+   BRANCH -3
+10 	Blockend 	
+	_$blockend_
+_$blockend_
+   BRANCH -5
+5 	Blockend 	
+	_$blockend_
+_$blockend_
+   BRANCH -3
 2 	Stmt 	
 	Single_stmt
 Single_stmt

@@ -193,6 +193,15 @@ class pyListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by pyParser#set_gen.
+    def enterSet_gen(self, ctx):
+        pass
+
+    # Exit a parse tree produced by pyParser#set_gen.
+    def exitSet_gen(self, ctx):
+        pass
+
+
     # Enter a parse tree produced by pyParser#var.
     def enterVar(self, ctx):
         pass
@@ -283,6 +292,15 @@ class pyListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by pyParser#float_.
+    def enterFloat_(self, ctx):
+        pass
+
+    # Exit a parse tree produced by pyParser#float_.
+    def exitFloat_(self, ctx):
+        pass
+
+
     # Enter a parse tree produced by pyParser#karg.
     def enterKarg(self, ctx):
         pass
@@ -364,6 +382,15 @@ class pyListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by pyParser#blockend.
+    def enterBlockend(self, ctx):
+        pass
+
+    # Exit a parse tree produced by pyParser#blockend.
+    def exitBlockend(self, ctx):
+        pass
+
+
     # Enter a parse tree produced by pyParser#pos_arg.
     def enterPos_arg(self, ctx):
         pass
@@ -427,6 +454,15 @@ class pyListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by pyParser#id_var.
+    def enterId_var(self, ctx):
+        pass
+
+    # Exit a parse tree produced by pyParser#id_var.
+    def exitId_var(self, ctx):
+        pass
+
+
     # Enter a parse tree produced by pyParser#expr.
     def enterExpr(self, ctx):
         pass
@@ -478,6 +514,15 @@ class pyListener(ParseTreeListener):
 
     # Exit a parse tree produced by pyParser#pos_arglist.
     def exitPos_arglist(self, ctx):
+        pass
+
+
+    # Enter a parse tree produced by pyParser#int_.
+    def enterInt_(self, ctx):
+        pass
+
+    # Exit a parse tree produced by pyParser#int_.
+    def exitInt_(self, ctx):
         pass
 
 
@@ -541,6 +586,15 @@ class pyListener(ParseTreeListener):
 
     # Exit a parse tree produced by pyParser#prog.
     def exitProg(self, ctx):
+        pass
+
+
+    # Enter a parse tree produced by pyParser#blockbegin.
+    def enterBlockbegin(self, ctx):
+        pass
+
+    # Exit a parse tree produced by pyParser#blockbegin.
+    def exitBlockbegin(self, ctx):
         pass
 
 

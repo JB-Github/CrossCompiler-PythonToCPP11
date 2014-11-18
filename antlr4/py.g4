@@ -42,11 +42,11 @@ import_
 ;
 
 id_list : id_alias (',' id_alias)? ;
-id_alias : Var ('as' Var)? ;
+id_alias : id_var ('as' id_var)? ;
 
 mod_list : mod_alias (',' mod_alias)? ;
-mod_alias : module ('as' Var)? ;
-module : Var ('.' Var)* ;
+mod_alias : module ('as' id_var)? ;
+module : id_var ('.' id_var)* ;
 rel_module : '.'* module | '.'+ ;
 
 ////-------------------------------------------------------------
@@ -68,12 +68,12 @@ elif_ : 'elif' expr ;
 else_ : 'else' ;
 
 block
-	: BlockBegin prog BlockEnd
+	: blockbegin prog blockend
 	| ':' single_stmt
 ;
 
 
-class_ : 'class' Var ('(' exprlist? ')')? ;//exprlist??
+class_ : 'class' id_var ('(' exprlist? ')')? ;//exprlist??
 
 trycatch
 	: 'try' block (except_ block)+ (else_ block)? ('finally' block)?
@@ -182,7 +182,7 @@ dictitem : expr ':' expr ;
 ////Function
 
 //Function Defintion
-func : 'def' Var '(' paramlist? ')';
+func : 'def' id_var '(' paramlist? ')';
 paramlist
 	: pos_paramlist (',' kparamlist)?  (',' '*'simple_var)? (',' '**'simple_var)?
 	| kparamlist (',' '*'simple_var)? (',' '**'simple_var)?
@@ -222,11 +222,15 @@ simple_var
 	: Var
 	| '(' simple_var ')'
 ;
+id_var : Var ;
 
-number : Int | Float;
+number : int_ | float_ ;
+int_ : Int ;
+float_ : Float ;
 string : Str;
 
-
+blockbegin : BlockBegin ;
+blockend : BlockEnd ;
 
 ////-------------------------------------------------------------
 ////Lexer////
@@ -250,8 +254,8 @@ Var : Letter_ (Letter_|Digit)*;
 Int : Digit+;
 Float :  Digit+ Exp | Digit+ Decimal Exp? | Decimal Exp?;
 
-Comment : '#' ~[\n]* -> skip;
-Space : ( '\t' | '\n' | '\r' | '\\' | ' ' )+ -> skip;
+Comment : '#' ~[\n]* -> channel(HIDDEN);//skip;
+Space : ( '\t' | '\n' | '\r' | '\\' | ' ' )+ -> channel(HIDDEN);//skip;
 
 Str : Prefix? '\'\'\'' ('\\'.|~[\\])*? '\'\'\''
     | Prefix? '"""' ('\\'.|~[\\])*? '"""'
