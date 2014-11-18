@@ -108,7 +108,7 @@ exprlist : expr (',' expr)* ','? ;
 
 expr
 	//Brackets
-	: expr '(' (arglist? | gen_expr) ')' //#funccall //Semantics!!
+	: expr '(' (arglist | gen_expr)? ')' //#funccall //Semantics!!
 	| expr ('[' slice_ ']')	//#index
 	| '(' expr ')'
 
@@ -126,6 +126,7 @@ expr
 	| expr '+' expr
 
 	//Bits
+	| expr ('<<'|'>>') expr //#shift
 	| expr '&' expr
 	| expr '^' expr
 	| expr '|' expr
@@ -140,7 +141,7 @@ expr
 	| val // zuerst??
 
 
-	| generator
+	//| generator
 	| lambda_
 
 	| <assoc=right> expr if_ else_ expr	//#ternary ////funktioniert nicht in Kombination mit generator!!
@@ -148,15 +149,16 @@ expr
 
 lambda_ : 'lambda' arglist? ':' expr ;
 
-generator: list_gen | dict_gen | iter_gen ;
+generator: list_gen | dict_gen | iter_gen | set_gen ;
 list_gen : '[' gen_expr ']' ;
 iter_gen : '(' gen_expr ')' ;
+set_gen :  '{' gen_expr '}' ;
 dict_gen : '{' expr ':' gen_expr '}' ;
 gen_expr : expr (for_ if_?)+ ;
 
 ////-------------------------------------------------------------
 
-val :  var | number | string | list_ | tuple_ | dict_ | set_  ; //Reihenfolge beachten!!
+val :  var | number | string | generator | list_ | tuple_ | dict_ | set_  ; //Reihenfolge beachten!!
 
 op_cmp : 'in' | 'not' 'in' | 'is' | 'is' 'not' | '<' | '<=' | '>' | '>=' | '<>' | '!=' | '==' ;
 

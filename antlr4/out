@@ -225,8 +225,8 @@ Expr _*_ Expr
 	Val
 Val
 9 	Val 	
-	List_
-List_
+	List
+List
 10 	List_ 	
 	_[_ 	Exprlist 	_]_
 _[_ Exprlist _]_
@@ -263,8 +263,8 @@ Block_head Block
 	Loop
 Loop
 5 	Loop 	
-	For_
-For_
+	For
+For
 6 	For_ 	
 	_for_ 	Varlist 	_in_ 	Exprlist
 _for_ Varlist _in_ Exprlist
@@ -348,8 +348,8 @@ Block_stmt
 	Ifelse
 Ifelse
 8 	Ifelse 	
-	If_ 	Block 	Else_ 	Block
-If_ Block Else_ Block
+	If 	Block 	Else 	Block
+If Block Else Block
 9 	If_ 	
 	_if_ 	Expr
 _if_ Expr
@@ -405,8 +405,8 @@ Vartuple
 	Var
 Var
 17 	Var 	
-	Var 	_[_ 	Slice_ 	_]_
-Var _[_ Slice_ _]_
+	Var 	_[_ 	Slice 	_]_
+Var _[_ Slice _]_
 18 	Var 	
 	_L_
 _L_

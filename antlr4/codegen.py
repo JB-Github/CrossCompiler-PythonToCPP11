@@ -48,7 +48,7 @@ class TreeActions(pyListener):
                 name= '_' + str(child.getText()) +'_'
                 #name= str(child.getText())
             else:
-                name= ctxname(child)
+                name= ctxname(child).rstrip('_')
             AST.add(name)
             AST.up()
 

@@ -4090,7 +4090,7 @@ tRp1179
 tg55
 I00
 (lp1180
-S'List_'
+S'List'
 p1181
 at(Nttba(lp1182
 g51
@@ -4776,7 +4776,7 @@ tRp1370
 tg55
 I00
 (lp1371
-S'For_'
+S'For'
 p1372
 at(Nttba(lp1373
 g51
@@ -6191,11 +6191,11 @@ tRp1768
 tg55
 I00
 (lp1769
-S'If_'
+S'If'
 p1770
 aS'Block1'
 p1771
-aS'Else_'
+aS'Else'
 p1772
 aS'Block2'
 p1773
@@ -7039,7 +7039,7 @@ S'Var'
 p2014
 aS'_[_'
 p2015
-aS'Slice_'
+aS'Slice'
 p2016
 aS'_]_'
 p2017

@@ -63,7 +63,7 @@ class NamedList(pd.Series):
 ##Tree Classes
 
 class vertex(NamedList):
-    def __init__(self, name= None, parent= None, #name=''?
+    def __init__(self, name= None, parent= None, space='', #name=''?
                  data=None, index=None, dtype= object, #dtype?
                  Name=None, copy=False, fastpath=False):
         #name->Name
@@ -79,6 +79,7 @@ class vertex(NamedList):
         else:
             self.name= name
             self.nr= None
+        self.space= space
 
     def __eq__(self, S):
         return S==self.name
@@ -163,8 +164,15 @@ class vertex(NamedList):
         TL= rx.lex(S, 'optvar str space other')
         for t in TL:
             s= t.str
+            
+            #rules
             if t=='optvar':
                 #pdb.set_trace()
+                opt= 0
+                if s.endswith('?'):
+                    opt= 1
+                    s= s[:-1]
+                    
                 if s in D:
                     v= D[s]
                     if type(v)==str and v:
@@ -172,16 +180,20 @@ class vertex(NamedList):
                         continue
                 else:
                     v= self.get(s, '')
-                if s.endswith('?') and v=='':
-                    continue
+                    
                 if v=='':
+                    if opt:
+                        continue
                     raise Exception('\n\tNo rule "%s" in vertex "%s"'%(s,self.name))
                 v.visit()
+            #literals  
             elif t=='str':
                 s= s.strip(s[0])
                 Tree.write(s)
+            #delimiter
             elif s=='~':
                 continue
+            #other
             else:
                 Tree.write(s)
 
@@ -201,6 +213,7 @@ class vertex(NamedList):
             self.visitchildren()
 
     def startvisit(self):
+        pdb.set_trace()
         Tree.TL=[] #Problem mit static/global!
         Tree.out= Tree.TL
         self.visit()
@@ -219,18 +232,19 @@ class Tree(object):
         self.pos= self.root
 
         self.patterns= set()
-        self.space= ''
+
+        Tree.out= Tree.TL
 
     def __iter__(self):
         return self.pos.walk()
 
-    @classmethod
-    def write(cls, S):
+    @staticmethod
+    def write(S):
         Tree.file.write(S+'\n')
-        cls.out.append(S)
-    @classmethod
-    def writeto(cls, L=None): #besser??
-        cls.out= cls.TL if L is None else L
+        Tree.out.append(S)
+    @staticmethod
+    def writeto(L=None): #besser??
+        Tree.out= Tree.TL if L is None else L
 
     def add(self, k, rename=True):
         nr= self.pos.add(k, vertex(k, self.pos))
@@ -248,6 +262,7 @@ class Tree(object):
     def visit(self):
         open('tout.txt', 'wb').close()
         Tree.file= open('tout.txt', 'a+b')
+        pdb.set_trace()
         Tree.TL=[]
         Tree.out= Tree.TL
         self.pos.visit()
@@ -272,31 +287,39 @@ def f(vtx):
     print 'Num'
     vtx.visitchildren()
 
-@tree_action('For_')
+@tree_action('For')
 def f(vtx):
     print 'For'
     EL= vtx.Exprlist
     var= vtx.Varlist.words()
     assert len(var)==1
     var= ''.join(var)
+
+    #for-each
     if EL.literals()[0]!='range':
         vtx.transform("'for' ('auto' var : Exprlist)", locals())
-
+        
+    #for-range
     else:
-        start,stop,step = [v.text().strip() for v in EL.Expr.find('Expr', 3)]
+        #pdb.set_trace()
+        start,stop,step = [v.text().strip()
+                           for v in EL.Expr.Arglist.find('Expr', 3)]
         if not stop:
             start,stop = stop,start
-        start= 'int '+var+'= '+ start or '0'
+        start= 'int '+var+'= '+ (start or '0')
 
         comp= '<'
         if step:
             if step[0]=='-': comp= '>'
             step= var+'+='+step
+        else:
+            step= var+'++'
         stop= var+comp+stop
 
-        vtx.transform("'for' (start?; stop; step?)", locals())
+        vtx.transform("'for' (start; stop; step)", locals())
 
 
+"""
 ##Tests
 
 N= NamedList( range(3), 'a b c'.split())
@@ -338,7 +361,9 @@ def maybe(C, idx, default=''):
 
 
 print T.root.text()
-
+"""
 if __name__ == '__main__':
+    
     T= pickle.load(open('T.dat'))
+    map(id, [Tree.TL, Tree.out, T.TL, T.out])
 
