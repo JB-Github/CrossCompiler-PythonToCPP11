@@ -47,7 +47,8 @@ class TreeActions(pyListener):
         
         for child in ctx.getChildren():            
             if child.getChildCount()==0: #leaf
-                #pdb.set_trace()
+                pdb.set_trace()
+                self.tokens.getHiddenTokensToRight(1,pyLexer.HIDDEN)
                 name= '_' + str(child.getText()) +'_'
                 #name= str(child.getText())
             else:
@@ -71,7 +72,8 @@ class TreeActions(pyListener):
 
 
 
-def main(argv):
+#def main(argv):
+if __name__ == '__main__':
     input = FileStream("programm_.py")
     lexer = pyLexer(input)
     stream = CommonTokenStream(lexer)
@@ -83,9 +85,9 @@ def main(argv):
     walker = ParseTreeWalker()
 
     pdb.set_trace()
-    console= sys.stdout; sys.stdout= open('out', 'wb')
+    #console= sys.stdout; sys.stdout= open('out', 'wb')
     walker.walk(actions, tree)
-    sys.stdout.close(); sys.stdout= console
+    #sys.stdout.close(); sys.stdout= console
     
     #remove underscores and digits from leafs
     AST.pos= AST.root
@@ -97,5 +99,5 @@ def main(argv):
     pickle.dump(AST, open('T.dat', 'wb'))
     
     
-if __name__ == '__main__':
-    main(sys.argv)
+#if __name__ == '__main__':
+ #   main(sys.argv)

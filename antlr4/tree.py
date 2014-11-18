@@ -224,7 +224,7 @@ class vertex(NamedList):
 class Tree(object):
     actions= {} #??
     TL= [] #List for translated text
-    out= TL
+    #out= TL
     file= open('tout.txt','wb')
     #file= open('tout.txt', 'a+b')
     def __init__(self, S=None):
@@ -238,13 +238,13 @@ class Tree(object):
     def __iter__(self):
         return self.pos.walk()
 
-    @staticmethod
-    def write(S):
-        Tree.file.write(S+'\n')
-        Tree.out.append(S)
-    @staticmethod
-    def writeto(L=None): #besser??
-        Tree.out= Tree.TL if L is None else L
+    @classmethod
+    def write(cls, S):
+        cls.file.write(S+'\n')
+        cls.out.append(S)
+    @classmethod
+    def writeto(cls, L=None): #besser??
+        cls.out= cls.TL if L is None else L
 
     def add(self, k, rename=True):
         nr= self.pos.add(k, vertex(k, self.pos))
@@ -365,5 +365,5 @@ print T.root.text()
 if __name__ == '__main__':
     
     T= pickle.load(open('T.dat'))
-    map(id, [Tree.TL, Tree.out, T.TL, T.out])
+    #map(id, [Tree.TL, Tree.out, T.TL, T.out])
 
