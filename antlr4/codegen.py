@@ -25,7 +25,9 @@ class TreeActions(pyListener):
     def exitString(self, ctx):
         print ctx.getChild(0)
     """
-    
+
+    def __init__(self, tokens):
+        self.tokens= tokens
     def enterEveryRule(self, ctx):
         global old_depth
        
@@ -45,6 +47,7 @@ class TreeActions(pyListener):
         
         for child in ctx.getChildren():            
             if child.getChildCount()==0: #leaf
+                #pdb.set_trace()
                 name= '_' + str(child.getText()) +'_'
                 #name= str(child.getText())
             else:
@@ -75,9 +78,11 @@ def main(argv):
     parser = pyParser(stream)
     tree = parser.prog()
 
-    actions = TreeActions()
+    
+    actions = TreeActions(stream)
     walker = ParseTreeWalker()
 
+    pdb.set_trace()
     console= sys.stdout; sys.stdout= open('out', 'wb')
     walker.walk(actions, tree)
     sys.stdout.close(); sys.stdout= console
