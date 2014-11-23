@@ -47,8 +47,8 @@ class TreeActions(pyListener):
         
         for child in ctx.getChildren():            
             if child.getChildCount()==0: #leaf
-                pdb.set_trace()
-                self.tokens.getHiddenTokensToRight(1,pyLexer.HIDDEN)
+                #pdb.set_trace()
+                self.tokens.getHiddenTokensToRight(ctx.start.tokenIndex, pyLexer.HIDDEN)
                 name= '_' + str(child.getText()) +'_'
                 #name= str(child.getText())
             else:
@@ -85,9 +85,9 @@ if __name__ == '__main__':
     walker = ParseTreeWalker()
 
     pdb.set_trace()
-    #console= sys.stdout; sys.stdout= open('out', 'wb')
+    console= sys.stdout; sys.stdout= open('out', 'wb')
     walker.walk(actions, tree)
-    #sys.stdout.close(); sys.stdout= console
+    sys.stdout.close(); sys.stdout= console
     
     #remove underscores and digits from leafs
     AST.pos= AST.root

@@ -274,8 +274,7 @@ fragment Decimal : '.' Digit*;
 fragment Prefix : 'r' | 'u' | 'ur' | 'R' | 'U' | 'UR' | 'Ur' | 'uR' | 'b' | 'B' | 'br' | 'Br' | 'bR' | 'BR';
 
 
-/*
-abc
+/*abc
 	: ('b' {_input.LA(1).equals('c')}? {System.out.println("1111111111111111");}
 	| 'a'|'c')+
 ;
