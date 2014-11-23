@@ -18,7 +18,7 @@ AST.add('Prog')
 old_depth= 0
 
 class TreeActions(pyListener):
-    
+
     """
     def enterString(self, ctx):
         print "Enter Str"
@@ -30,7 +30,7 @@ class TreeActions(pyListener):
         self.tokens= tokens
     def enterEveryRule(self, ctx):
         global old_depth
-       
+
         d_chg= ctx.depth()-old_depth
         if d_chg<=0:
             print '   BRANCH', d_chg
@@ -40,12 +40,12 @@ class TreeActions(pyListener):
                     AST.pos= v
                     break
         old_depth= ctx.depth()
-        
+
         name= ctxname(ctx)
         print ctx.depth(),'\t', name, '\t'
         AST.patterns.add(name)
-        
-        for child in ctx.getChildren():            
+
+        for child in ctx.getChildren():
             if child.getChildCount()==0: #leaf
                 #pdb.set_trace()
                 self.tokens.getHiddenTokensToRight(ctx.start.tokenIndex, pyLexer.HIDDEN)
@@ -63,11 +63,11 @@ class TreeActions(pyListener):
         for v in AST.pos: print v.name,
         print
 
-        
+
         for v in AST.pos:
             if not v.name.startswith('_') and v.empty:
                 AST.pos= v #AST.pos[v.name+v.nr]
-                break            
+                break
         #print AST.pos is v
 
 
@@ -80,24 +80,41 @@ if __name__ == '__main__':
     parser = pyParser(stream)
     tree = parser.prog()
 
-    
+
     actions = TreeActions(stream)
     walker = ParseTreeWalker()
 
     pdb.set_trace()
     console= sys.stdout; sys.stdout= open('out', 'wb')
     walker.walk(actions, tree)
-    sys.stdout.close(); sys.stdout= console
-    
+    #sys.stdout.close(); sys.stdout= console
+
+    WS=[]
+    Help=[]
+    Tk=actions.tokens.tokens
+
+    for t in TK:
+        if t.channel==1:
+            s=str(t.text)
+            Help.append(s if s[0]!='#' else r'\\'+s[1:])
+        if t.channel==0:
+            if H:
+                WS.append(''.join(Help))
+                Help=[]
+            else:
+                WS.append('')
+
+    WS.reverse()
+    #hier einfuegen
+
     #remove underscores and digits from leafs
     AST.pos= AST.root
     for v in AST:
         if v.empty:
             v.name= re.match(r'(.+?)(\d*)$', v.name).groups()[0]
             v.name= v.name[1:-1] #strip _
-
+            v.space= WS.pop()
     pickle.dump(AST, open('T.dat', 'wb'))
-    
-    
+
 #if __name__ == '__main__':
  #   main(sys.argv)
