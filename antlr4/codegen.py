@@ -48,7 +48,7 @@ class TreeActions(pyListener):
         for child in ctx.getChildren():
             if child.getChildCount()==0: #leaf
                 #pdb.set_trace()
-                self.tokens.getHiddenTokensToRight(ctx.start.tokenIndex, pyLexer.HIDDEN)
+                #self.tokens.getHiddenTokensToRight(ctx.start.tokenIndex, pyLexer.HIDDEN)
                 name= '_' + str(child.getText()) +'_'
                 #name= str(child.getText())
             else:
@@ -87,34 +87,41 @@ if __name__ == '__main__':
     pdb.set_trace()
     console= sys.stdout; sys.stdout= open('out', 'wb')
     walker.walk(actions, tree)
-    #sys.stdout.close(); sys.stdout= console
+    sys.stdout.close(); sys.stdout= console
 
-    WS=[]
-    Help=[]
+
+    WS=[] #whitespace
+    H=[] #hidden tokens
     Tk=actions.tokens.tokens
 
-    for t in TK:
+    for t in Tk:
         if t.channel==1:
             s=str(t.text)
-            Help.append(s if s[0]!='#' else r'\\'+s[1:])
+            H.append(r'\\'+s[1:] if s[0]=='#'
+                     else s.replace('\\', '') ) #linebreak
         if t.channel==0:
             if H:
-                WS.append(''.join(Help))
-                Help=[]
+                WS.append(''.join(H))
+                H=[]
             else:
                 WS.append('')
-
+    pdb.set_trace()
     WS.reverse()
-    #hier einfuegen
-
+    WS.pop() # whitespace at program start
+    
+    i=0
     #remove underscores and digits from leafs
     AST.pos= AST.root
     for v in AST:
         if v.empty:
+            i+=1
             v.name= re.match(r'(.+?)(\d*)$', v.name).groups()[0]
             v.name= v.name[1:-1] #strip _
             v.space= WS.pop()
+            sys.stdout.write( v.name+v.space )
     pickle.dump(AST, open('T.dat', 'wb'))
+
+    print i
 
 #if __name__ == '__main__':
  #   main(sys.argv)

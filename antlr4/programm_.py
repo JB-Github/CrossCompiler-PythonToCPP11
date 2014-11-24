@@ -1,4 +1,3 @@
-
 def f(x):$blockbegin
     """rechnen""";
     return x**2 + x*4 - (x-3) /x -1.3e4+2\

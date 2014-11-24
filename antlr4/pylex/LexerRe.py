@@ -14,7 +14,7 @@ from common import *
 
 pyfile= open(r'C:\Users\Felix\Dropbox\FelixJB\Projekt\antlr2\programm.py')
 #pyfile= open('Lexer3.py')
-S= pyfile.read()+'\n'#+'\r' #EOF
+S= pyfile.read().strip()+'\n'#+'\r' #EOF
 
 CompilerError.file= pyfile.name
 CompilerError.phase= 'Lexer'
@@ -29,7 +29,7 @@ TL= regex.lex(open('t.re').read(),
 
 TL= rx.lex(S, pattern= 'str keyword var float int space operator op_unused')
               #ignore= 'comment')
-            
+
 TL= [ t if not t=='operator' else token(t.str,t.str) for t in TL ]
 #display(TL)
 
@@ -47,7 +47,7 @@ def checkpairs(L, pairs):
     for i,x in I:
         if x in pairs:
             checkclose(I, pairs[x], pairs, i)
-    return True 
+    return True
 def checkclose(I, close, pairs, i_open):
     for i,x in I:
         #print x,',', checkpairs.L[i]
@@ -74,10 +74,10 @@ for i,t in enumerate(TL):
     assert nesting>=0
     #print nesting
     #if t.str=='list': pdb.set_trace()
-    
+
     if t.str in bracket_open: nesting+=1
     elif t.str in bracket_close: nesting-=1
-    
+
     elif t=='space':
         if nesting>0 or i==0:
             TL2.append(t)
@@ -105,7 +105,7 @@ for i,t in enumerate(TL):
         else:
             if ind>0:
                 raise CompilerError("Unexpected indentation increase", TL, i)
-            
+
             elif ind<0:
                 TL2.append( token(';',';') )
                 while ind<0:
@@ -113,12 +113,12 @@ for i,t in enumerate(TL):
                     TL2.append( token('blockend', '\n'+sum(Indents)*' '+'$blockend') )
                 if ind>0:
                     raise CompilerError("Dedentation to incorrect level", TL, i)
-                
+
             elif ind==0:
                 TL2.append( token(';',';') ) #Statement end
-                
+
     TL2.append(t)
 
 with open(pyfile.name.replace('.py','_.py'), 'wb') as F: #Ending?
     F.write( ''.join(zip(*TL2)[1]) )
-                
+
