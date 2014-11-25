@@ -8,6 +8,7 @@ import os
 
 from common import *
 
+
 ##regular expressions
 re_pattern= type(re.compile(''))
 
@@ -52,19 +53,44 @@ class ReColl(object):
         for n,s in self.dict.items():
             setattr(self, n, self(s))
 
-    def lex(self, S, pattern=None, ignore=[]):
+    def lex(self, S, pattern=None, ignore=[], Any=False):
         """lexes String with given grammar"""
         Tokens= []
 
+        #updaten!!
+        """
+        else:
+            if type(pattern)==str:
+                PL= pattern.split()
+
+                if PL[-1]=='any':
+                    Any= True
+                    PL.pop()
+
+                for i,p in enumerate(PL):
+                    if p[0]=='!':
+                        np= p[1:]
+                        PL[i]= np
+                        ignore.append(np)
+
+                PL= [(n,self[n]) for n in PL]
+        """
+
+        if pattern.endswith(' any'):
+            Any= True
+            pattern= pattern.rstrip('any').rstrip()
+
         PL= []
-        if pattern==None:
+        if pattern is None:
             PL= list(self)
         for p in pattern, ignore:
-            t= type(p)
-            if t==str:
+            if type(p)==str:
                 PL.extend((n,self[n]) for n in p.split())
-                if p==ignore:
+                if p is ignore:
                     ignore= ignore.split()
+
+        #Any= False
+
         i=0
         while i<len(S):
             #pdb.set_trace()
@@ -80,9 +106,17 @@ class ReColl(object):
                         #print Tokens[-1]
                     break
             if not m:
+                if Any:
+                    AL=[S[i]]
+                    i+=1
+                    while i<len(S) and not any(p.match(S[i:]) for n,p in PL):
+                        AL.append(S[i])
+                        i+=1
+                    Tokens.append( token('any', ''.join(AL)) )
                 #print 'Unknown character "%s"'%S[i]
-                Tokens.append(token('Unknown char', S[i]))
-                i+=1
+                else:
+                    Tokens.append(token('Unknown char', S[i]))
+                    i+=1
 
         return Tokens
 

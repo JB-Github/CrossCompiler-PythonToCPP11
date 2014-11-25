@@ -1,3 +1,5 @@
+#Generator Brackets Varlist Val_label Mod_list Var Lambda_label Val Stmt Block_head Trycatch Gen_expr Aug_assign Id_alias Assign_stmt While Or Op_cmp Exponentiation Pos_arglist Iter_gen Print_stmt Dash_calc Arglist Index For Stmts Except Bit_or Blockbegin Pos_arg Vartuple String Aug_op Dictitem Dictlist Id_list Kparamlist Func Dict_gen Class Pos_paramlist Block_stmt Block Import_stmt Funccall Kparam Loop_stmt Unary Bit_xor Ternary Del_stmt Karglist Ifelse Single_stmt Prog Import Func_stmt Tuple And Loop Blockend Dot_calc Comparison Paramlist Not Global_stmt Assign Lambda Pos_paramtuple Elif Set Int Number Assert_stmt Set_gen Raise_stmt Slice Pass_stmt Id_var Dict Rel_module Bit_and Else With Exprlist Attr Expr List Alias Shift Exec_stmt Simple_var Mod_alias Float Module Karg If Alias_list List_gen
+
 import pandas as pd
 import numpy as np
 import pdb
@@ -63,11 +65,16 @@ class NamedList(pd.Series):
 ##Tree Classes
 
 class vertex(NamedList):
+
+    isa_VL= []
+
     def __init__(self, name= None, parent= None, space='', #name=''?
                  data=None, index=None, dtype= object, #dtype?
                  Name=None, copy=False, fastpath=False):
         #name->Name
+
         if type(name)!=str:
+            #print 'S ',
             super(vertex, self).__init__(name, index, dtype, Name, copy, fastpath)
             return
 
@@ -80,6 +87,8 @@ class vertex(NamedList):
             self.name= name
             self.nr= None
         self.space= space
+
+        self.isa_VL= []
 
     def __eq__(self, S):
         return S==self.name
@@ -140,6 +149,49 @@ class vertex(NamedList):
             else:
                 v._find(S, L)
 
+    def is1(self, S):
+        if self.name==S:
+            return self
+        elif self.empty or len(self)>1:
+            return False
+        else:
+            return self[0].is1(S)
+
+    def isa(self, S):
+        TL= rx.lex(S, 'var space any')
+        TL= [t.str for t in TL if not t=='space']
+
+        if len(TL)==1:
+            vertex.isa_VL= self.is1(TL[0])
+            return vertex.isa_VL
+
+        vertex.isa_VL=[]  #Vertex-List
+        PD= collections.deque(TL)  #Pattern-Deque
+        #pdb.set_trace()
+
+        if not self._isa(PD, vertex.isa_VL) or PD:
+            return []
+
+        #pdb.set_trace()
+        return vertex.isa_VL
+    def _isa(self, PD, VL):
+        if self.name==PD[0]:
+            #pdb.set_trace()
+            PD.popleft()
+            VL.append(self)
+            return True
+
+        elif self.empty:
+            return False
+
+        restlen= len(self)
+        for v in self:
+            if restlen>len(PD) or not v._isa(PD, VL):
+                return False
+            restlen-=1
+
+        return True
+
     def literals(self):
         """returns a list of the translated text in the leafs"""
         return [v.name for v in self.walk() if v.empty]
@@ -164,7 +216,7 @@ class vertex(NamedList):
         TL= rx.lex(S, 'optvar str space other')
         for t in TL:
             s= t.str
-            
+
             #rules
             if t=='optvar':
                 #pdb.set_trace()
@@ -172,7 +224,7 @@ class vertex(NamedList):
                 if s.endswith('?'):
                     opt= 1
                     s= s[:-1]
-                    
+
                 if s in D:
                     v= D[s]
                     if type(v)==str and v:
@@ -180,13 +232,13 @@ class vertex(NamedList):
                         continue
                 else:
                     v= self.get(s, '')
-                    
+
                 if v=='':
                     if opt:
                         continue
                     raise Exception('\n\tNo rule "%s" in vertex "%s"'%(s,self.name))
                 v.visit()
-            #literals  
+            #literals
             elif t=='str':
                 s= s.strip(s[0])
                 Tree.write(s)
@@ -207,13 +259,13 @@ class vertex(NamedList):
             Tree.actions[self.name](self)
         #Leaf
         elif self.empty:
-            Tree.write(self.name)
+            Tree.write(self.name+self.space)
 
         else:
             self.visitchildren()
 
     def startvisit(self):
-        pdb.set_trace()
+        #pdb.set_trace()
         Tree.TL=[] #Problem mit static/global!
         Tree.out= Tree.TL
         self.visit()
@@ -225,8 +277,7 @@ class Tree(object):
     actions= {} #??
     TL= [] #List for translated text
     #out= TL
-    file= open('tout.txt','wb')
-    #file= open('tout.txt', 'a+b')
+
     def __init__(self, S=None):
         self.root= vertex('root')
         self.pos= self.root
@@ -262,7 +313,7 @@ class Tree(object):
     def visit(self):
         open('tout.txt', 'wb').close()
         Tree.file= open('tout.txt', 'a+b')
-        pdb.set_trace()
+        #pdb.set_trace()
         Tree.TL=[]
         Tree.out= Tree.TL
         self.pos.visit()
@@ -270,6 +321,8 @@ class Tree(object):
 
 
 
+##-----------------------------------------------------------
+##Tree/Visitor Actions
 
 def tree_action(L):
     def wrapper(func):
@@ -281,29 +334,43 @@ def tree_action(L):
     return wrapper
 tree_action.dict= Tree.actions
 
+"""
 @tree_action('Number')
 def f(vtx):
     #vtx.text()
     print 'Num'
     vtx.visitchildren()
+"""
+
+@tree_action('If')
+def f(vtx):
+    vtx.transform("'if' (Expr)")
+
+@tree_action('Blockbegin')
+def f(vtx):
+    Tree.write(' {'+vtx[0].space)
+
+@tree_action('Blockend')
+def f(vtx):
+    Tree.write('}'+vtx[0].space)
 
 @tree_action('For')
 def f(vtx):
-    print 'For'
+    #print 'For'
     EL= vtx.Exprlist
     var= vtx.Varlist.words()
     assert len(var)==1
-    var= ''.join(var)
+    var= ''.join(var).strip()
 
     #for-each
     if EL.literals()[0]!='range':
         vtx.transform("'for' ('auto' var : Exprlist)", locals())
-        
+
     #for-range
     else:
         #pdb.set_trace()
         start,stop,step = [v.text().strip()
-                           for v in EL.Expr.Arglist.find('Expr', 3)]
+                           for v in EL.Expr.Funccall.find('Expr', 3)]
         if not stop:
             start,stop = stop,start
         start= 'int '+var+'= '+ (start or '0')
@@ -319,51 +386,41 @@ def f(vtx):
         vtx.transform("'for' (start; stop; step)", locals())
 
 
-"""
-##Tests
 
-N= NamedList( range(3), 'a b c'.split())
-N.add('a', 111)
-
-N.insert(('f', 777), 'b', 1)
-N.insert(('a', 177), 'b', 1)
-
-
-T= Tree()
-for v in 'expr func ert'.split():
-    T.add(v)
-T.up()
-T.add('(')
-T.pos= T.root
-T.add('expr')
-T.up()
-T.add('expr')
-T.add('expr')
-
-def g(D):
-    for k,v in D.items():
-        print k,v
-def f():
-    a=3
-    b=4
-    def h():
-        c=11
-        g(locals())
-
-def str_maybe(S, default=''):
+@tree_action('Pass_stmt')
+def f(vtx):
     pass
 
-def maybe(C, idx, default=''):
-    try:
-        return D[idx]
-    except KeyError, IndexError:
-        return default
+@tree_action('Print_stmt')
+def f(vtx):
+    vtx.transform("'cout'<< Exprlist?")
 
 
-print T.root.text()
+@tree_action('Single_stmt')
+def f(vtx):
+
+    #Multiline-Comment
+    if vtx.isa('String ;'):
+        s,sc = vertex.isa_VL
+        s= s[0].name
+        if s[0].isalpha():
+            raise Exception("Unsupported string prefix in "+s)
+        s= s.strip(s[0])
+        Tree.write(r'\*%s*\%s'%(s, sc.space))
+    else:
+        vtx.visitchildren()
+
 """
+@tree_action('Assign')
+def f(vtx):
+    EL= vtx.Exprlist
+    if EL.isa('[Expr] * Int'):
+        print EL.text()
+    else:
+        vtx.visitchildren()
+"""
+
 if __name__ == '__main__':
-    
+
     T= pickle.load(open('T.dat'))
     #map(id, [Tree.TL, Tree.out, T.TL, T.out])
-

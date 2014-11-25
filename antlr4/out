@@ -50,104 +50,110 @@ Exprlist _;_
 	Expr
 Expr
 9 	Expr 	
+	Val_label
+Val_label
+10 	Val_label 	
 	Val
 Val
-10 	Val 	
+11 	Val 	
 	String
 String
-11 	String 	
+12 	String 	
 	_"""rechnen"""_
 _"""rechnen"""_
-   BRANCH -5
+   BRANCH -6
 6 	Stmt 	
 	Single_stmt
 Single_stmt
 7 	Single_stmt 	
-	Stmts 	_;_
-Stmts _;_
-8 	Stmts 	
+	Func_stmt 	_;_
+Func_stmt _;_
+8 	Func_stmt 	
 	_return_ 	Exprlist
 _return_ Exprlist
 9 	Exprlist 	
 	Expr
 Expr
 10 	Expr 	
-	Expr 	_+_ 	Expr
-Expr _+_ Expr
-11 	Expr 	
-	Expr 	_+_ 	Expr
-Expr _+_ Expr
-12 	Expr 	
-	Expr 	_+_ 	Expr
-Expr _+_ Expr
-13 	Expr 	
-	Expr 	_**_ 	Expr
-Expr _**_ Expr
-14 	Expr 	
+	Dash_calc
+Dash_calc
+11 	Dash_calc 	
+	Dash_calc 	_+_ 	Val_label
+Dash_calc _+_ Val_label
+12 	Dash_calc 	
+	Dash_calc 	_+_ 	Val_label
+Dash_calc _+_ Val_label
+13 	Dash_calc 	
+	Dash_calc 	_-_ 	Val_label
+Dash_calc _-_ Val_label
+14 	Dash_calc 	
+	Dash_calc 	_-_ 	Dot_calc
+Dash_calc _-_ Dot_calc
+15 	Dash_calc 	
+	Exponentiation 	_+_ 	Dot_calc
+Exponentiation _+_ Dot_calc
+16 	Exponentiation 	
+	Val_label 	_**_ 	Val_label
+Val_label _**_ Val_label
+17 	Val_label 	
 	Val
 Val
-15 	Val 	
+18 	Val 	
 	Var
 Var
-16 	Var 	
+19 	Var 	
 	_x_
 _x_
    BRANCH -2
-14 	Expr 	
+17 	Val_label 	
 	Val
 Val
-15 	Val 	
+18 	Val 	
 	Number
 Number
-16 	Number 	
+19 	Number 	
 	Int
 Int
-17 	Int_ 	
+20 	Int_ 	
 	_2_
 _2_
    BRANCH -4
-13 	Expr 	
-	Expr 	_-_ 	Expr
-Expr _-_ Expr
-14 	Expr 	
-	Expr 	_-_ 	Expr
-Expr _-_ Expr
-15 	Expr 	
-	Expr 	_*_ 	Expr
-Expr _*_ Expr
-16 	Expr 	
+16 	Dot_calc 	
+	Val_label 	_*_ 	Val_label
+Val_label _*_ Val_label
+17 	Val_label 	
 	Val
 Val
-17 	Val 	
+18 	Val 	
 	Var
 Var
-18 	Var 	
+19 	Var 	
 	_x_
 _x_
    BRANCH -2
-16 	Expr 	
+17 	Val_label 	
 	Val
 Val
-17 	Val 	
+18 	Val 	
 	Number
 Number
-18 	Number 	
+19 	Number 	
 	Int
 Int
-19 	Int_ 	
+20 	Int_ 	
 	_4_
 _4_
-   BRANCH -4
-15 	Expr 	
-	Expr 	_/_ 	Expr
-Expr _/_ Expr
-16 	Expr 	
-	_(_ 	Expr 	_)_
-_(_ Expr _)_
-17 	Expr 	
-	Expr 	_-_ 	Expr
-Expr _-_ Expr
-18 	Expr 	
+   BRANCH -5
+15 	Dot_calc 	
+	Brackets 	_/_ 	Val_label
+Brackets _/_ Val_label
+16 	Brackets 	
+	_(_ 	Dash_calc 	_)_
+_(_ Dash_calc _)_
+17 	Dash_calc 	
+	Val_label 	_-_ 	Val_label
+Val_label _-_ Val_label
+18 	Val_label 	
 	Val
 Val
 19 	Val 	
@@ -157,7 +163,7 @@ Var
 	_x_
 _x_
    BRANCH -2
-18 	Expr 	
+18 	Val_label 	
 	Val
 Val
 19 	Val 	
@@ -170,7 +176,7 @@ Int
 	_3_
 _3_
    BRANCH -5
-16 	Expr 	
+16 	Val_label 	
 	Val
 Val
 17 	Val 	
@@ -180,7 +186,7 @@ Var
 	_x_
 _x_
    BRANCH -4
-14 	Expr 	
+14 	Val_label 	
 	Val
 Val
 15 	Val 	
@@ -192,8 +198,21 @@ Float
 17 	Float_ 	
 	_1.3e4_
 _1.3e4_
-   BRANCH -5
-12 	Expr 	
+   BRANCH -4
+13 	Val_label 	
+	Val
+Val
+14 	Val 	
+	Number
+Number
+15 	Number 	
+	Int
+Int
+16 	Int_ 	
+	_2_
+_2_
+   BRANCH -4
+12 	Val_label 	
 	Val
 Val
 13 	Val 	
@@ -203,22 +222,9 @@ Number
 	Int
 Int
 15 	Int_ 	
-	_2_
-_2_
-   BRANCH -4
-11 	Expr 	
-	Val
-Val
-12 	Val 	
-	Number
-Number
-13 	Number 	
-	Int
-Int
-14 	Int_ 	
 	_5_
 _5_
-   BRANCH -9
+   BRANCH -10
 5 	Blockend 	
 	_$blockend_
 _$blockend_
@@ -249,46 +255,52 @@ _L_
 	Expr
 Expr
 7 	Expr 	
-	Expr 	_*_ 	Expr
-Expr _*_ Expr
-8 	Expr 	
+	Dot_calc
+Dot_calc
+8 	Dot_calc 	
+	Val_label 	_*_ 	Val_label
+Val_label _*_ Val_label
+9 	Val_label 	
 	Val
 Val
-9 	Val 	
+10 	Val 	
 	List
 List
-10 	List_ 	
+11 	List_ 	
 	_[_ 	Exprlist 	_]_
 _[_ Exprlist _]_
-11 	Exprlist 	
+12 	Exprlist 	
 	Expr
 Expr
-12 	Expr 	
+13 	Expr 	
+	Val_label
+Val_label
+14 	Val_label 	
 	Val
 Val
-13 	Val 	
+15 	Val 	
 	Number
 Number
-14 	Number 	
+16 	Number 	
 	Int
 Int
-15 	Int_ 	
+17 	Int_ 	
 	_0_
 _0_
-   BRANCH -7
-8 	Expr 	
+   BRANCH -8
+9 	Val_label 	
 	Val
 Val
-9 	Val 	
+10 	Val 	
 	Number
 Number
-10 	Number 	
+11 	Number 	
 	Int
 Int
-11 	Int_ 	
+12 	Int_ 	
 	_10_
 _10_
-   BRANCH -9
+   BRANCH -10
 2 	Stmt 	
 	Block_stmt
 Block_stmt
@@ -318,59 +330,68 @@ _i_
 	Expr
 Expr
 8 	Expr 	
-	Expr 	_(_ 	Arglist 	_)_
-Expr _(_ Arglist _)_
-9 	Expr 	
+	Funccall
+Funccall
+9 	Funccall 	
+	Val_label 	_(_ 	Arglist 	_)_
+Val_label _(_ Arglist _)_
+10 	Val_label 	
 	Val
 Val
-10 	Val 	
+11 	Val 	
 	Var
 Var
-11 	Var 	
+12 	Var 	
 	_range_
 _range_
    BRANCH -2
-9 	Arglist 	
+10 	Arglist 	
 	Pos_arglist
 Pos_arglist
-10 	Pos_arglist 	
+11 	Pos_arglist 	
 	Pos_arg
 Pos_arg
-11 	Pos_arg 	
+12 	Pos_arg 	
 	Expr
 Expr
-12 	Expr 	
-	Expr 	_(_ 	Arglist 	_)_
-Expr _(_ Arglist _)_
 13 	Expr 	
+	Funccall
+Funccall
+14 	Funccall 	
+	Val_label 	_(_ 	Arglist 	_)_
+Val_label _(_ Arglist _)_
+15 	Val_label 	
 	Val
 Val
-14 	Val 	
+16 	Val 	
 	Var
 Var
-15 	Var 	
+17 	Var 	
 	_len_
 _len_
    BRANCH -2
-13 	Arglist 	
+15 	Arglist 	
 	Pos_arglist
 Pos_arglist
-14 	Pos_arglist 	
+16 	Pos_arglist 	
 	Pos_arg
 Pos_arg
-15 	Pos_arg 	
+17 	Pos_arg 	
 	Expr
 Expr
-16 	Expr 	
+18 	Expr 	
+	Val_label
+Val_label
+19 	Val_label 	
 	Val
 Val
-17 	Val 	
+20 	Val 	
 	Var
 Var
-18 	Var 	
+21 	Var 	
 	_L_
 _L_
-   BRANCH -14
+   BRANCH -17
 4 	Block 	
 	Blockbegin 	Prog 	Blockend
 Blockbegin Prog Blockend
@@ -394,35 +415,38 @@ If Block Else Block
 	_if_ 	Expr
 _if_ Expr
 10 	Expr 	
-	Expr 	Op_cmp 	Expr
-Expr Op_cmp Expr
-11 	Expr 	
+	Comparison
+Comparison
+11 	Comparison 	
+	Val_label 	Op_cmp 	Val_label
+Val_label Op_cmp Val_label
+12 	Val_label 	
 	Val
 Val
-12 	Val 	
+13 	Val 	
 	Var
 Var
-13 	Var 	
+14 	Var 	
 	_i_
 _i_
    BRANCH -2
-11 	Op_cmp 	
+12 	Op_cmp 	
 	_>_
 _>_
    BRANCH 0
-11 	Expr 	
+12 	Val_label 	
 	Val
 Val
-12 	Val 	
+13 	Val 	
 	Number
 Number
-13 	Number 	
+14 	Number 	
 	Int
 Int
-14 	Int_ 	
+15 	Int_ 	
 	_3_
 _3_
-   BRANCH -5
+   BRANCH -6
 9 	Block 	
 	Blockbegin 	Prog 	Blockend
 Blockbegin Prog Blockend
@@ -462,66 +486,75 @@ _L_
 	Expr
 Expr
 19 	Expr 	
+	Val_label
+Val_label
+20 	Val_label 	
 	Val
 Val
-20 	Val 	
+21 	Val 	
 	Var
 Var
-21 	Var 	
+22 	Var 	
 	_i_
 _i_
-   BRANCH -6
+   BRANCH -7
 15 	Exprlist 	
 	Expr
 Expr
 16 	Expr 	
-	Expr 	_(_ 	Arglist 	_)_
-Expr _(_ Arglist _)_
-17 	Expr 	
+	Funccall
+Funccall
+17 	Funccall 	
+	Val_label 	_(_ 	Arglist 	_)_
+Val_label _(_ Arglist _)_
+18 	Val_label 	
 	Val
 Val
-18 	Val 	
+19 	Val 	
 	Var
 Var
-19 	Var 	
+20 	Var 	
 	_f_
 _f_
    BRANCH -2
-17 	Arglist 	
+18 	Arglist 	
 	Pos_arglist
 Pos_arglist
-18 	Pos_arglist 	
+19 	Pos_arglist 	
 	Pos_arg
 Pos_arg
-19 	Pos_arg 	
+20 	Pos_arg 	
 	Expr
 Expr
-20 	Expr 	
-	Expr 	_+_ 	Expr
-Expr _+_ Expr
 21 	Expr 	
+	Dash_calc
+Dash_calc
+22 	Dash_calc 	
+	Val_label 	_+_ 	Val_label
+Val_label _+_ Val_label
+23 	Val_label 	
 	Val
 Val
-22 	Val 	
+24 	Val 	
 	Var
 Var
-23 	Var 	
+25 	Var 	
 	_i_
 _i_
    BRANCH -2
-21 	Expr 	
+23 	Val_label 	
 	Val
 Val
-22 	Val 	
+24 	Val 	
 	Number
 Number
-23 	Number 	
+25 	Number 	
 	Int
 Int
-24 	Int_ 	
+26 	Int_ 	
 	_1_
 _1_
-   BRANCH -14
+   BRANCH -16
 10 	Blockend 	
 	_$blockend_
 _$blockend_
@@ -544,9 +577,9 @@ Stmt
 	Single_stmt
 Single_stmt
 12 	Single_stmt 	
-	Stmts 	_;_
-Stmts _;_
-13 	Stmts 	
+	Pass_stmt 	_;_
+Pass_stmt _;_
+13 	Pass_stmt 	
 	_pass_
 _pass_
    BRANCH -3
@@ -562,20 +595,23 @@ _$blockend_
 	Single_stmt
 Single_stmt
 3 	Single_stmt 	
-	Stmts 	_;_
-Stmts _;_
-4 	Stmts 	
+	Print_stmt 	_;_
+Print_stmt _;_
+4 	Print_stmt 	
 	_print_ 	Exprlist
 _print_ Exprlist
 5 	Exprlist 	
 	Expr
 Expr
 6 	Expr 	
+	Val_label
+Val_label
+7 	Val_label 	
 	Val
 Val
-7 	Val 	
+8 	Val 	
 	Var
 Var
-8 	Var 	
+9 	Var 	
 	_L_
 _L_

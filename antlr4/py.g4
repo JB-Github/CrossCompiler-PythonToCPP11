@@ -11,28 +11,29 @@ single_stmt
 	: ( assign_stmt | exprlist | stmts) ';' //empty statement
 ;
 stmts
-	: 'pass'
-	| 'del' varlist
-	| 'print' ( exprlist? | '>>'exprlist )
+	: 'pass' 			#pass_stmt
+	| 'del' varlist 	#del_stmt
+	| 'print' ( exprlist? | '>>'exprlist ) #print_stmt
 
 	//errors
-	| 'assert' exprlist
-	| 'raise' (expr (',' expr)? (',' expr)?)?
+	| 'assert' expr (',' expr)?					#assert_stmt
+	| 'raise' (expr (',' expr)? (',' expr)?)? 	#raise_stmt
 
 	//loop
-	| 'break'
-	| 'continue'
+	| 'break' 		#loop_stmt
+	| 'continue'	#loop_stmt
 
 	//function
-	| 'return' exprlist?
-	| 'yield' exprlist?
+	| 'return' exprlist?	#func_stmt
+	| 'yield' exprlist?		#func_stmt
 
 	//declarations
-	| import_
-	| 'global' var (',' var)*
+	| import_ 					#import_stmt
+	| 'global' var (',' var)*	#global_stmt
 
-	| 'exec' expr ('in' expr (',' expr)?)?
+	| 'exec' expr ('in' expr (',' expr)?)? 	#exec_stmt
 ;
+
 
 //import
 import_
@@ -81,8 +82,6 @@ trycatch
 ;
 except_ : 'except' expr (','|'as') var ; //pruefen!!
 
-//func_block : func BlockBegin func_stmt+ BlockEnd ;
-//func_stmt : stmt | 'return' expr ';' ;
 
 
 ////-------------------------------------------------------------
@@ -106,45 +105,42 @@ exprlist : expr (',' expr)* ','? ;
 
 ////-------------------------------------------------------------
 
-expr
+expr : expr_l ;
+expr_l
 	//Brackets
-	: expr '(' (arglist | gen_expr)? ')' //#funccall //Semantics!!
-	| expr ('[' slice_ ']')	//#index
-	| '(' expr ')'
+	: expr_l '(' (arglist | gen_expr)? ')' #funccall //Semantics!!
+	| expr_l ('[' slice_ ']')	#index 				//Reihenfolge!!
+	| '(' expr_l ')' #brackets
 
-	| expr '.' expr 		//#attr
+	| expr_l '.' expr_l 		#attr
 
-	| ('+'|'-'|'~') expr	//#unary
+	| ('+'|'-'|'~') expr_l	#unary
 
 	//Arithmetic
-	| <assoc=right> expr '**' expr
-	| expr '%' expr
-	| expr '//' expr //Reihenfolge?!
-	| expr '/' expr
-	| expr '*' expr
-	| expr '-' expr
-	| expr '+' expr
+	| <assoc=right> expr_l '**' expr_l 	#exponentiation
+	| expr_l ('%'|'//'|'/'|'*') expr_l 	#dot_calc
+	| expr_l ('-'|'+') expr_l 			#dash_calc
 
 	//Bits
-	| expr ('<<'|'>>') expr //#shift
-	| expr '&' expr
-	| expr '^' expr
-	| expr '|' expr
+	| expr_l ('<<'|'>>') expr_l #shift
+	| expr_l '&' expr_l 		#bit_and
+	| expr_l '^' expr_l 		#bit_xor
+	| expr_l '|' expr_l 		#bit_or
 
-	| expr (op_cmp expr)+ 	//#comparison
+	| expr_l (op_cmp expr_l)+ 	#comparison
 
 	//Booleans
-	| 'not' expr
-	| expr 'and' expr
-	| expr 'or' expr
+	| 'not' expr_l 		#not
+	| expr_l 'and' expr_l 	#and
+	| expr_l 'or' expr_l 	#or
 
-	| val // zuerst??
+	| val 	#val_label
 
 
 	//| generator
-	| lambda_
+	| lambda_ 	#lambda_label
 
-	| <assoc=right> expr if_ else_ expr	//#ternary ////funktioniert nicht in Kombination mit generator!!
+	| <assoc=right> expr_l if_ else_ expr_l		#ternary
 ;
 
 lambda_ : 'lambda' arglist? ':' expr ;

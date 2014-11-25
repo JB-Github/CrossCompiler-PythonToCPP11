@@ -5,16 +5,20 @@ from pyListener import pyListener
 import sys
 import re
 import cPickle as pickle
-from tree import Tree
+from tree import Tree, vertex
 import pdb
 
 def ctxname(ctx):
     name= str(type(ctx))
     return name[name.find('.')+1:name.find('Context')]
 
-
+S= open('py.g4').read()
+PL= re.findall(r'\n[ \t]*([a-z]\w*)\s*:', S)
+PL.extend( re.findall(r'\s+#([a-z]\w*)\s+', S) ) #ungenau!!
+Tree.patterns= {s.capitalize().rstrip('_') for s in PL}
 AST= Tree()
 AST.add('Prog')
+
 old_depth= 0
 
 class TreeActions(pyListener):
@@ -43,20 +47,17 @@ class TreeActions(pyListener):
 
         name= ctxname(ctx)
         print ctx.depth(),'\t', name, '\t'
-        AST.patterns.add(name)
+        #AST.patterns.add(name)
 
         for child in ctx.getChildren():
-            if child.getChildCount()==0: #leaf
-                #pdb.set_trace()
-                #self.tokens.getHiddenTokensToRight(ctx.start.tokenIndex, pyLexer.HIDDEN)
+            if child.getChildCount()==0: #leaf            
                 name= '_' + str(child.getText()) +'_'
-                #name= str(child.getText())
             else:
                 name= ctxname(child).rstrip('_')
             AST.add(name)
             AST.up()
 
-            ##Control
+            ##Control-Prints
             print '\t', name,
         print
 
@@ -72,7 +73,6 @@ class TreeActions(pyListener):
 
 
 
-#def main(argv):
 if __name__ == '__main__':
     input = FileStream("programm_.py")
     lexer = pyLexer(input)
@@ -84,44 +84,43 @@ if __name__ == '__main__':
     actions = TreeActions(stream)
     walker = ParseTreeWalker()
 
-    pdb.set_trace()
+    #pdb.set_trace()
     console= sys.stdout; sys.stdout= open('out', 'wb')
     walker.walk(actions, tree)
     sys.stdout.close(); sys.stdout= console
+    
 
-
+    #get whitespace (and comments) to the right of each leaf/token
+    Tk= actions.tokens.tokens
     WS=[] #whitespace
     H=[] #hidden tokens
-    Tk=actions.tokens.tokens
-
     for t in Tk:
         if t.channel==1:
             s=str(t.text)
             H.append(r'\\'+s[1:] if s[0]=='#'
-                     else s.replace('\\', '') ) #linebreak
-        if t.channel==0:
+                     else s.replace('\\', '') ) #remove linebreaks
+        elif t.channel==0:
             if H:
                 WS.append(''.join(H))
                 H=[]
             else:
                 WS.append('')
-    pdb.set_trace()
     WS.reverse()
     WS.pop() # whitespace at program start
+
     
-    i=0
-    #remove underscores and digits from leafs
+    #remove underscores and digits from leafs, safe whitespace
     AST.pos= AST.root
     for v in AST:
         if v.empty:
-            i+=1
             v.name= re.match(r'(.+?)(\d*)$', v.name).groups()[0]
             v.name= v.name[1:-1] #strip _
             v.space= WS.pop()
             sys.stdout.write( v.name+v.space )
     pickle.dump(AST, open('T.dat', 'wb'))
 
-    print i
 
-#if __name__ == '__main__':
- #   main(sys.argv)
+    print '------------------------------------------------------------'
+
+    AST.visit()
+    print ''.join(AST.TL)
