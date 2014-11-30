@@ -88,7 +88,7 @@ class vertex(NamedList):
             self.nr= None
         self.space= space
 
-        self.isa_VL= []
+        #self.isa_VL= []
 
     def __eq__(self, S):
         return S==self.name
@@ -417,15 +417,21 @@ def f(vtx):
     else:
         vtx.visitchildren()
 
-"""
+
 @tree_action('Assign')
 def f(vtx):
+    VL= vtx.Varlist
     EL= vtx.Exprlist
     if EL.isa('[Expr] * Int'):
+        pdb.set_trace()
+        _,Expr,_,_,Int= vtx.isa_VL
+
+        vtx.transform("'array'<'double',Int> VL={}", locals())
+        #IL.add('array')#include <array>')
         print EL.text()
     else:
         vtx.visitchildren()
-"""
+
 
 @tree_action('Aug_assign')
 def f(vtx):

@@ -126,7 +126,7 @@ if __name__ == '__main__':
     for t in Tk:
         if t.channel==1:
             s=str(t.text)
-            H.append(r'\\'+s[1:] if s[0]=='#'
+            H.append('//'+s[1:] if s[0]=='#'
                      else s.replace('\\', '') ) #remove linebreaks
         elif t.channel==0:
             if H:
