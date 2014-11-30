@@ -211,6 +211,9 @@ class vertex(NamedList):
     def text(self):
         """returns a string of the translated text in the leafs"""
         return ''.join(self.words())
+    def ot(self): #for debugging
+        """returns original text in the leafs"""
+        return ''.join(v.name+v.space for v in self.walk() if v.empty)
 
     def transform(self, S, D=()):
         TL= rx.lex(S, 'optvar str space other')
@@ -298,7 +301,7 @@ class Tree(object):
         cls.out= cls.TL if L is None else L
     @staticmethod
     def strip():
-        Tree.TL[-1]= Tree.TL[-1].strip()
+        Tree.out[-1]= Tree.out[-1].strip()
 
     def add(self, k, rename=True):
         nr= self.pos.add(k, vertex(k, self.pos))
@@ -399,9 +402,17 @@ def f(vtx):
 
 @tree_action('Exponentiation')
 def f(vtx):
-    #expr1= vtx[0]
-    #expr2= vtx[2]
     vtx.transform("'pow'(Expr1, Expr2)")
+
+
+@tree_action('Funccall')
+def f(vtx):
+    if vtx.isa('len(Expr)'):
+        expr= vtx.isa_VL[2]
+        vtx.transform("expr.'size'()", locals())
+    else:
+        vtx.visitchildren()
+
 
 @tree_action('Single_stmt')
 def f(vtx):
@@ -413,7 +424,7 @@ def f(vtx):
         if s[0].isalpha():
             raise Exception("Unsupported string prefix in "+s)
         s= s.strip(s[0])
-        Tree.write(r'\*%s*\%s'%(s, sc.space))
+        Tree.write(r'/*%s*/%s'%(s, sc.space))
     else:
         vtx.visitchildren()
 
@@ -421,14 +432,15 @@ def f(vtx):
 @tree_action('Assign')
 def f(vtx):
     VL= vtx.Varlist
+    Id= VL.is1('Id')
     EL= vtx.Exprlist
-    if EL.isa('[Expr] * Int'):
-        pdb.set_trace()
+    if EL.isa('[Expr] * Int') : #check for var decalaration!!
+        #pdb.set_trace()
+        assert not Id==False
         _,Expr,_,_,Int= vtx.isa_VL
 
-        vtx.transform("'array'<'double',Int> VL={}", locals())
+        vtx.transform("'array'<'double',Int> Id={}", locals())
         #IL.add('array')#include <array>')
-        print EL.text()
     else:
         vtx.visitchildren()
 
