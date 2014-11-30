@@ -1,7 +1,10 @@
+"""
+Testprogramm fuer codegen
+""";
 
 def f(x):$blockbegin
     """rechnen""";
-    return x**2 + x*4 - (x-3) /x -1.3e4+2\
+    return x**2 + x*4 - (x-3) /x -1.3e2+2\
            +5; #comment
 $blockend
 
@@ -15,9 +18,11 @@ for i in range(len(L)):$blockbegin
     	L[i]= f(i+1);
     $blockend
     else:$blockbegin
-        pass;
+        L[i]+=1;
     $blockend
 $blockend
 
-print L;
+for x in L:$blockbegin
+    print x;
+$blockend
 

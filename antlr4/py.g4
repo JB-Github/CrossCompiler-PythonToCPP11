@@ -43,11 +43,11 @@ import_
 ;
 
 id_list : id_alias (',' id_alias)? ;
-id_alias : id_var ('as' id_var)? ;
+id_alias : id_ ('as' id_)? ;
 
 mod_list : mod_alias (',' mod_alias)? ;
-mod_alias : module ('as' id_var)? ;
-module : id_var ('.' id_var)* ;
+mod_alias : module ('as' id_)? ;
+module : id_ ('.' id_)* ;
 rel_module : '.'* module | '.'+ ;
 
 ////-------------------------------------------------------------
@@ -74,7 +74,7 @@ block
 ;
 
 
-class_ : 'class' id_var ('(' exprlist? ')')? ;//exprlist??
+class_ : 'class' id_ ('(' exprlist? ')')? ;//exprlist??
 
 trycatch
 	: 'try' block (except_ block)+ (else_ block)? ('finally' block)?
@@ -105,42 +105,41 @@ exprlist : expr (',' expr)* ','? ;
 
 ////-------------------------------------------------------------
 
-expr : expr_l ;
-expr_l
+expr
 	//Brackets
-	: expr_l '(' (arglist | gen_expr)? ')' #funccall //Semantics!!
-	| expr_l ('[' slice_ ']')	#index 				//Reihenfolge!!
-	| '(' expr_l ')' #brackets
+	: expr '(' (arglist | gen_expr)? ')' 	#funccall__is__expr //Semantics!!
+	| expr '[' slice_ ']'					#index__is__expr  	//Reihenfolge!!
+	| '(' expr ')' 							#brackets__is__expr
 
-	| expr_l '.' expr_l 		#attr
+	| expr '.' id_ 	#attr__is__expr
 
-	| ('+'|'-'|'~') expr_l	#unary
+	| ('+'|'-'|'~') expr	#unary__is__expr
 
 	//Arithmetic
-	| <assoc=right> expr_l '**' expr_l 	#exponentiation
-	| expr_l ('%'|'//'|'/'|'*') expr_l 	#dot_calc
-	| expr_l ('-'|'+') expr_l 			#dash_calc
+	| <assoc=right> expr '**' expr 	#exponentiation__is__expr
+	| expr ('%'|'//'|'/'|'*') expr 	#dot_calc__is__expr
+	| expr ('-'|'+') expr 			#dash_calc__is__expr
 
 	//Bits
-	| expr_l ('<<'|'>>') expr_l #shift
-	| expr_l '&' expr_l 		#bit_and
-	| expr_l '^' expr_l 		#bit_xor
-	| expr_l '|' expr_l 		#bit_or
+	| expr ('<<'|'>>') expr #shift__is__expr
+	| expr '&' expr 		#bit_and__is__expr
+	| expr '^' expr 		#bit_xor__is__expr
+	| expr '|' expr 		#bit_or__is__expr
 
-	| expr_l (op_cmp expr_l)+ 	#comparison
+	| expr (op_cmp expr)+ 	#comparison__is__expr
 
 	//Booleans
-	| 'not' expr_l 		#not
-	| expr_l 'and' expr_l 	#and
-	| expr_l 'or' expr_l 	#or
+	| 'not' expr 		#not__is__expr
+	| expr 'and' expr 	#and__is__expr
+	| expr 'or' expr 	#or__is__expr
 
-	| val 	#val_label
+	| val 	#val_label__is__expr
 
 
 	//| generator
-	| lambda_ 	#lambda_label
+	| lambda_ 	#lambda_label__is__expr
 
-	| <assoc=right> expr_l if_ else_ expr_l		#ternary
+	| <assoc=right> expr if_ else_ expr		#ternary__is__expr
 ;
 
 lambda_ : 'lambda' arglist? ':' expr ;
@@ -178,7 +177,7 @@ dictitem : expr ':' expr ;
 ////Function
 
 //Function Defintion
-func : 'def' id_var '(' paramlist? ')';
+func : 'def' id_ '(' paramlist? ')';
 paramlist
 	: pos_paramlist (',' kparamlist)?  (',' '*'simple_var)? (',' '**'simple_var)?
 	| kparamlist (',' '*'simple_var)? (',' '**'simple_var)?
@@ -209,16 +208,16 @@ karg : simple_var '=' expr;
 ////-------------------------------------------------------------
 
 var
-	: Var
+	: id_
 	| '(' var ')' //immer???
-	| var '.' var
+	| var '.' id_
 	| var '[' slice_ ']'
 ;
 simple_var
-	: Var
+	: id_
 	| '(' simple_var ')'
 ;
-id_var : Var ;
+id_ : Var ;
 
 number : int_ | float_ ;
 int_ : Int ;

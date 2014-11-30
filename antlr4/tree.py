@@ -158,7 +158,7 @@ class vertex(NamedList):
             return self[0].is1(S)
 
     def isa(self, S):
-        TL= rx.lex(S, 'var space any')
+        TL= rx.lex(S, 'var space int any')
         TL= [t.str for t in TL if not t=='space']
 
         if len(TL)==1:
@@ -238,6 +238,7 @@ class vertex(NamedList):
                         continue
                     raise Exception('\n\tNo rule "%s" in vertex "%s"'%(s,self.name))
                 v.visit()
+                Tree.strip()
             #literals
             elif t=='str':
                 s= s.strip(s[0])
@@ -291,11 +292,13 @@ class Tree(object):
 
     @classmethod
     def write(cls, S):
-        cls.file.write(S+'\n')
         cls.out.append(S)
     @classmethod
     def writeto(cls, L=None): #besser??
         cls.out= cls.TL if L is None else L
+    @staticmethod
+    def strip():
+        Tree.TL[-1]= Tree.TL[-1].strip()
 
     def add(self, k, rename=True):
         nr= self.pos.add(k, vertex(k, self.pos))
@@ -311,8 +314,6 @@ class Tree(object):
 
 
     def visit(self):
-        open('tout.txt', 'wb').close()
-        Tree.file= open('tout.txt', 'a+b')
         #pdb.set_trace()
         Tree.TL=[]
         Tree.out= Tree.TL
@@ -370,7 +371,7 @@ def f(vtx):
     else:
         #pdb.set_trace()
         start,stop,step = [v.text().strip()
-                           for v in EL.Expr.Funccall.find('Expr', 3)]
+                           for v in EL.Expr.Funccall.Arglist.find('Expr', 3)]
         if not stop:
             start,stop = stop,start
         start= 'int '+var+'= '+ (start or '0')
@@ -393,8 +394,14 @@ def f(vtx):
 
 @tree_action('Print_stmt')
 def f(vtx):
-    vtx.transform("'cout'<< Exprlist?")
+    vtx.transform("'cout'<< Exprlist? << 'endl'")
 
+
+@tree_action('Exponentiation')
+def f(vtx):
+    #expr1= vtx[0]
+    #expr2= vtx[2]
+    vtx.transform("'pow'(Expr1, Expr2)")
 
 @tree_action('Single_stmt')
 def f(vtx):
@@ -419,6 +426,16 @@ def f(vtx):
     else:
         vtx.visitchildren()
 """
+
+@tree_action('Aug_assign')
+def f(vtx):
+    #op= vtx.Aug_op[0].name
+    #if op=='+=':
+    if vtx.isa('Var+=1'):
+        vtx.transform('Var++') #immer??
+    else:
+        vtx.visitchildren()
+
 
 if __name__ == '__main__':
 

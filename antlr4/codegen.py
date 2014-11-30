@@ -8,14 +8,18 @@ import cPickle as pickle
 from tree import Tree, vertex
 import pdb
 
+
 def ctxname(ctx):
     name= str(type(ctx))
     return name[name.find('.')+1:name.find('Context')]
 
+def pyname(S):
+    return S.capitalize().rstrip('_')
+
 S= open('py.g4').read()
 PL= re.findall(r'\n[ \t]*([a-z]\w*)\s*:', S)
 PL.extend( re.findall(r'\s+#([a-z]\w*)\s+', S) ) #ungenau!!
-Tree.patterns= {s.capitalize().rstrip('_') for s in PL}
+Tree.patterns= {pyname(S) for s in PL}
 AST= Tree()
 AST.add('Prog')
 
@@ -48,14 +52,39 @@ class TreeActions(pyListener):
         name= ctxname(ctx)
         print ctx.depth(),'\t', name, '\t'
         #AST.patterns.add(name)
+        """
+        m= re.match('(.*)__is__(.*)$', AST.pos.name)
+        if m:
+            pdb.set_trace()
+            subpat, pat= m.groups()
+            
+            if not subpat.endswith('_label'):
+                AST.pos.name= pyname(pat)
+                AST.add(subpat)
+        """
 
         for child in ctx.getChildren():
             if child.getChildCount()==0: #leaf            
                 name= '_' + str(child.getText()) +'_'
             else:
                 name= ctxname(child).rstrip('_')
-            AST.add(name)
+
+            #AST.add(name)
+            #AST.up()
+
+            
+            m= re.match('(.*)__is__(.*)$', name)
+            if not m:
+                AST.add(name)
+            else:
+                subpat, pat= m.groups()
+                AST.add(pyname(pat))
+                AST.pos.name= name
             AST.up()
+            
+            
+            #pdb.set_trace()
+            
 
             ##Control-Prints
             print '\t', name,
@@ -106,14 +135,35 @@ if __name__ == '__main__':
             else:
                 WS.append('')
     WS.reverse()
-    WS.pop() # whitespace at program start
+    AST.root.space= WS.pop() # whitespace/comments at program start
 
     
-    #remove underscores and digits from leafs, safe whitespace
     AST.pos= AST.root
+    #add additional vertices for patterns with labels
+    for v in AST:
+        m= re.match('([^_].*)__is__(.*)$', v.name)
+        if m:
+            subpat, pat= m.groups()
+            
+            v.name= subpat
+            v0= vertex(pyname(pat), v.parent)
+            v0.nr= v.nr
+            v0[subpat]= v
+            
+            v.parent[v.idx()]= v0
+            v.parent= v0
+            v.nr= None
+    #remove vertices of redundant labels    
+    for v in AST:
+        if v.name.endswith('_label'):
+            v2= v[0]
+            v2.parent= v.parent
+            v.parent[v.idx()]= v2
+   
+    #remove underscores and digits from leafs, safe whitespace
     for v in AST:
         if v.empty:
-            v.name= re.match(r'(.+?)(\d*)$', v.name).groups()[0]
+            v.name= re.match(r'(?s)(.+?)(\d*)$', v.name).groups()[0]
             v.name= v.name[1:-1] #strip _
             v.space= WS.pop()
             sys.stdout.write( v.name+v.space )

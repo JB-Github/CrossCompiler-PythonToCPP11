@@ -10,7 +10,7 @@ var= letter_ (letter_|digit)*
 int= digit+
 exp= [eE][+-]? int
 decimal= '.' digit*
-float=  int exp | int decimal exp? | decimal exp?
+float=  int exp | int? decimal exp? # vollstaendig?? | decimal exp?
 
 comment= '#' [^\n]*
 space= (\t | \n | \\ | ' ' | comment)+

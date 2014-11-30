@@ -22,30 +22,21 @@ class pyListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by pyParser#lambda_label.
-    def enterLambda_label(self, ctx):
-        pass
-
-    # Exit a parse tree produced by pyParser#lambda_label.
-    def exitLambda_label(self, ctx):
-        pass
-
-
-    # Enter a parse tree produced by pyParser#shift.
-    def enterShift(self, ctx):
-        pass
-
-    # Exit a parse tree produced by pyParser#shift.
-    def exitShift(self, ctx):
-        pass
-
-
     # Enter a parse tree produced by pyParser#set_.
     def enterSet_(self, ctx):
         pass
 
     # Exit a parse tree produced by pyParser#set_.
     def exitSet_(self, ctx):
+        pass
+
+
+    # Enter a parse tree produced by pyParser#index__is__expr.
+    def enterIndex__is__expr(self, ctx):
+        pass
+
+    # Exit a parse tree produced by pyParser#index__is__expr.
+    def exitIndex__is__expr(self, ctx):
         pass
 
 
@@ -85,6 +76,15 @@ class pyListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by pyParser#funccall__is__expr.
+    def enterFunccall__is__expr(self, ctx):
+        pass
+
+    # Exit a parse tree produced by pyParser#funccall__is__expr.
+    def exitFunccall__is__expr(self, ctx):
+        pass
+
+
     # Enter a parse tree produced by pyParser#func_stmt.
     def enterFunc_stmt(self, ctx):
         pass
@@ -109,6 +109,15 @@ class pyListener(ParseTreeListener):
 
     # Exit a parse tree produced by pyParser#block.
     def exitBlock(self, ctx):
+        pass
+
+
+    # Enter a parse tree produced by pyParser#bit_and__is__expr.
+    def enterBit_and__is__expr(self, ctx):
+        pass
+
+    # Exit a parse tree produced by pyParser#bit_and__is__expr.
+    def exitBit_and__is__expr(self, ctx):
         pass
 
 
@@ -157,15 +166,6 @@ class pyListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by pyParser#index.
-    def enterIndex(self, ctx):
-        pass
-
-    # Exit a parse tree produced by pyParser#index.
-    def exitIndex(self, ctx):
-        pass
-
-
     # Enter a parse tree produced by pyParser#paramlist.
     def enterParamlist(self, ctx):
         pass
@@ -193,12 +193,12 @@ class pyListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by pyParser#brackets.
-    def enterBrackets(self, ctx):
+    # Enter a parse tree produced by pyParser#ternary__is__expr.
+    def enterTernary__is__expr(self, ctx):
         pass
 
-    # Exit a parse tree produced by pyParser#brackets.
-    def exitBrackets(self, ctx):
+    # Exit a parse tree produced by pyParser#ternary__is__expr.
+    def exitTernary__is__expr(self, ctx):
         pass
 
 
@@ -208,6 +208,15 @@ class pyListener(ParseTreeListener):
 
     # Exit a parse tree produced by pyParser#global_stmt.
     def exitGlobal_stmt(self, ctx):
+        pass
+
+
+    # Enter a parse tree produced by pyParser#and__is__expr.
+    def enterAnd__is__expr(self, ctx):
+        pass
+
+    # Exit a parse tree produced by pyParser#and__is__expr.
+    def exitAnd__is__expr(self, ctx):
         pass
 
 
@@ -256,6 +265,24 @@ class pyListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by pyParser#or__is__expr.
+    def enterOr__is__expr(self, ctx):
+        pass
+
+    # Exit a parse tree produced by pyParser#or__is__expr.
+    def exitOr__is__expr(self, ctx):
+        pass
+
+
+    # Enter a parse tree produced by pyParser#dash_calc__is__expr.
+    def enterDash_calc__is__expr(self, ctx):
+        pass
+
+    # Exit a parse tree produced by pyParser#dash_calc__is__expr.
+    def exitDash_calc__is__expr(self, ctx):
+        pass
+
+
     # Enter a parse tree produced by pyParser#arglist.
     def enterArglist(self, ctx):
         pass
@@ -292,6 +319,15 @@ class pyListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by pyParser#brackets__is__expr.
+    def enterBrackets__is__expr(self, ctx):
+        pass
+
+    # Exit a parse tree produced by pyParser#brackets__is__expr.
+    def exitBrackets__is__expr(self, ctx):
+        pass
+
+
     # Enter a parse tree produced by pyParser#print_stmt.
     def enterPrint_stmt(self, ctx):
         pass
@@ -310,15 +346,6 @@ class pyListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by pyParser#funccall.
-    def enterFunccall(self, ctx):
-        pass
-
-    # Exit a parse tree produced by pyParser#funccall.
-    def exitFunccall(self, ctx):
-        pass
-
-
     # Enter a parse tree produced by pyParser#loop_stmt.
     def enterLoop_stmt(self, ctx):
         pass
@@ -334,24 +361,6 @@ class pyListener(ParseTreeListener):
 
     # Exit a parse tree produced by pyParser#pass_stmt.
     def exitPass_stmt(self, ctx):
-        pass
-
-
-    # Enter a parse tree produced by pyParser#val_label.
-    def enterVal_label(self, ctx):
-        pass
-
-    # Exit a parse tree produced by pyParser#val_label.
-    def exitVal_label(self, ctx):
-        pass
-
-
-    # Enter a parse tree produced by pyParser#bit_or.
-    def enterBit_or(self, ctx):
-        pass
-
-    # Exit a parse tree produced by pyParser#bit_or.
-    def exitBit_or(self, ctx):
         pass
 
 
@@ -379,15 +388,6 @@ class pyListener(ParseTreeListener):
 
     # Exit a parse tree produced by pyParser#exec_stmt.
     def exitExec_stmt(self, ctx):
-        pass
-
-
-    # Enter a parse tree produced by pyParser#bit_and.
-    def enterBit_and(self, ctx):
-        pass
-
-    # Exit a parse tree produced by pyParser#bit_and.
-    def exitBit_and(self, ctx):
         pass
 
 
@@ -436,15 +436,6 @@ class pyListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by pyParser#unary.
-    def enterUnary(self, ctx):
-        pass
-
-    # Exit a parse tree produced by pyParser#unary.
-    def exitUnary(self, ctx):
-        pass
-
-
     # Enter a parse tree produced by pyParser#block_stmt.
     def enterBlock_stmt(self, ctx):
         pass
@@ -490,12 +481,39 @@ class pyListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by pyParser#not__is__expr.
+    def enterNot__is__expr(self, ctx):
+        pass
+
+    # Exit a parse tree produced by pyParser#not__is__expr.
+    def exitNot__is__expr(self, ctx):
+        pass
+
+
+    # Enter a parse tree produced by pyParser#bit_xor__is__expr.
+    def enterBit_xor__is__expr(self, ctx):
+        pass
+
+    # Exit a parse tree produced by pyParser#bit_xor__is__expr.
+    def exitBit_xor__is__expr(self, ctx):
+        pass
+
+
     # Enter a parse tree produced by pyParser#assign_stmt.
     def enterAssign_stmt(self, ctx):
         pass
 
     # Exit a parse tree produced by pyParser#assign_stmt.
     def exitAssign_stmt(self, ctx):
+        pass
+
+
+    # Enter a parse tree produced by pyParser#lambda_label__is__expr.
+    def enterLambda_label__is__expr(self, ctx):
+        pass
+
+    # Exit a parse tree produced by pyParser#lambda_label__is__expr.
+    def exitLambda_label__is__expr(self, ctx):
         pass
 
 
@@ -508,12 +526,12 @@ class pyListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by pyParser#comparison.
-    def enterComparison(self, ctx):
+    # Enter a parse tree produced by pyParser#attr__is__expr.
+    def enterAttr__is__expr(self, ctx):
         pass
 
-    # Exit a parse tree produced by pyParser#comparison.
-    def exitComparison(self, ctx):
+    # Exit a parse tree produced by pyParser#attr__is__expr.
+    def exitAttr__is__expr(self, ctx):
         pass
 
 
@@ -526,12 +544,39 @@ class pyListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by pyParser#id_.
+    def enterId_(self, ctx):
+        pass
+
+    # Exit a parse tree produced by pyParser#id_.
+    def exitId_(self, ctx):
+        pass
+
+
     # Enter a parse tree produced by pyParser#set_gen.
     def enterSet_gen(self, ctx):
         pass
 
     # Exit a parse tree produced by pyParser#set_gen.
     def exitSet_gen(self, ctx):
+        pass
+
+
+    # Enter a parse tree produced by pyParser#shift__is__expr.
+    def enterShift__is__expr(self, ctx):
+        pass
+
+    # Exit a parse tree produced by pyParser#shift__is__expr.
+    def exitShift__is__expr(self, ctx):
+        pass
+
+
+    # Enter a parse tree produced by pyParser#exponentiation__is__expr.
+    def enterExponentiation__is__expr(self, ctx):
+        pass
+
+    # Exit a parse tree produced by pyParser#exponentiation__is__expr.
+    def exitExponentiation__is__expr(self, ctx):
         pass
 
 
@@ -553,6 +598,15 @@ class pyListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by pyParser#unary__is__expr.
+    def enterUnary__is__expr(self, ctx):
+        pass
+
+    # Exit a parse tree produced by pyParser#unary__is__expr.
+    def exitUnary__is__expr(self, ctx):
+        pass
+
+
     # Enter a parse tree produced by pyParser#lambda_.
     def enterLambda_(self, ctx):
         pass
@@ -562,21 +616,12 @@ class pyListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by pyParser#dot_calc.
-    def enterDot_calc(self, ctx):
+    # Enter a parse tree produced by pyParser#bit_or__is__expr.
+    def enterBit_or__is__expr(self, ctx):
         pass
 
-    # Exit a parse tree produced by pyParser#dot_calc.
-    def exitDot_calc(self, ctx):
-        pass
-
-
-    # Enter a parse tree produced by pyParser#exponentiation.
-    def enterExponentiation(self, ctx):
-        pass
-
-    # Exit a parse tree produced by pyParser#exponentiation.
-    def exitExponentiation(self, ctx):
+    # Exit a parse tree produced by pyParser#bit_or__is__expr.
+    def exitBit_or__is__expr(self, ctx):
         pass
 
 
@@ -598,15 +643,6 @@ class pyListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by pyParser#dash_calc.
-    def enterDash_calc(self, ctx):
-        pass
-
-    # Exit a parse tree produced by pyParser#dash_calc.
-    def exitDash_calc(self, ctx):
-        pass
-
-
     # Enter a parse tree produced by pyParser#rel_module.
     def enterRel_module(self, ctx):
         pass
@@ -622,6 +658,15 @@ class pyListener(ParseTreeListener):
 
     # Exit a parse tree produced by pyParser#dictlist.
     def exitDictlist(self, ctx):
+        pass
+
+
+    # Enter a parse tree produced by pyParser#dot_calc__is__expr.
+    def enterDot_calc__is__expr(self, ctx):
+        pass
+
+    # Exit a parse tree produced by pyParser#dot_calc__is__expr.
+    def exitDot_calc__is__expr(self, ctx):
         pass
 
 
@@ -670,12 +715,12 @@ class pyListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by pyParser#not.
-    def enterNot(self, ctx):
+    # Enter a parse tree produced by pyParser#val_label__is__expr.
+    def enterVal_label__is__expr(self, ctx):
         pass
 
-    # Exit a parse tree produced by pyParser#not.
-    def exitNot(self, ctx):
+    # Exit a parse tree produced by pyParser#val_label__is__expr.
+    def exitVal_label__is__expr(self, ctx):
         pass
 
 
@@ -685,15 +730,6 @@ class pyListener(ParseTreeListener):
 
     # Exit a parse tree produced by pyParser#iter_gen.
     def exitIter_gen(self, ctx):
-        pass
-
-
-    # Enter a parse tree produced by pyParser#and.
-    def enterAnd(self, ctx):
-        pass
-
-    # Exit a parse tree produced by pyParser#and.
-    def exitAnd(self, ctx):
         pass
 
 
@@ -715,21 +751,12 @@ class pyListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by pyParser#id_var.
-    def enterId_var(self, ctx):
+    # Enter a parse tree produced by pyParser#comparison__is__expr.
+    def enterComparison__is__expr(self, ctx):
         pass
 
-    # Exit a parse tree produced by pyParser#id_var.
-    def exitId_var(self, ctx):
-        pass
-
-
-    # Enter a parse tree produced by pyParser#expr.
-    def enterExpr(self, ctx):
-        pass
-
-    # Exit a parse tree produced by pyParser#expr.
-    def exitExpr(self, ctx):
+    # Exit a parse tree produced by pyParser#comparison__is__expr.
+    def exitComparison__is__expr(self, ctx):
         pass
 
 
@@ -751,15 +778,6 @@ class pyListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by pyParser#attr.
-    def enterAttr(self, ctx):
-        pass
-
-    # Exit a parse tree produced by pyParser#attr.
-    def exitAttr(self, ctx):
-        pass
-
-
     # Enter a parse tree produced by pyParser#pos_arglist.
     def enterPos_arglist(self, ctx):
         pass
@@ -775,15 +793,6 @@ class pyListener(ParseTreeListener):
 
     # Exit a parse tree produced by pyParser#if_.
     def exitIf_(self, ctx):
-        pass
-
-
-    # Enter a parse tree produced by pyParser#or.
-    def enterOr(self, ctx):
-        pass
-
-    # Exit a parse tree produced by pyParser#or.
-    def exitOr(self, ctx):
         pass
 
 
@@ -841,15 +850,6 @@ class pyListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by pyParser#bit_xor.
-    def enterBit_xor(self, ctx):
-        pass
-
-    # Exit a parse tree produced by pyParser#bit_xor.
-    def exitBit_xor(self, ctx):
-        pass
-
-
     # Enter a parse tree produced by pyParser#del_stmt.
     def enterDel_stmt(self, ctx):
         pass
@@ -865,15 +865,6 @@ class pyListener(ParseTreeListener):
 
     # Exit a parse tree produced by pyParser#block_head.
     def exitBlock_head(self, ctx):
-        pass
-
-
-    # Enter a parse tree produced by pyParser#ternary.
-    def enterTernary(self, ctx):
-        pass
-
-    # Exit a parse tree produced by pyParser#ternary.
-    def exitTernary(self, ctx):
         pass
 
 
