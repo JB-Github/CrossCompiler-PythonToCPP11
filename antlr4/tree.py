@@ -333,18 +333,12 @@ def tree_action(L):
         M=L #nonlocal
         if type(M)==str:
             M= M.split()
+
         for x in M:
             tree_action.dict[x]= func
     return wrapper
 tree_action.dict= Tree.actions
 
-"""
-@tree_action('Number')
-def f(vtx):
-    #vtx.text()
-    print 'Num'
-    vtx.visitchildren()
-"""
 
 @tree_action('If')
 def f(vtx):

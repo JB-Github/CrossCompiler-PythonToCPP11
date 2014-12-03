@@ -52,16 +52,6 @@ class TreeActions(pyListener):
         name= ctxname(ctx)
         print ctx.depth(),'\t', name, '\t'
         #AST.patterns.add(name)
-        """
-        m= re.match('(.*)__is__(.*)$', AST.pos.name)
-        if m:
-            pdb.set_trace()
-            subpat, pat= m.groups()
-            
-            if not subpat.endswith('_label'):
-                AST.pos.name= pyname(pat)
-                AST.add(subpat)
-        """
 
         for child in ctx.getChildren():
             if child.getChildCount()==0: #leaf            
@@ -69,21 +59,15 @@ class TreeActions(pyListener):
             else:
                 name= ctxname(child).rstrip('_')
 
-            #AST.add(name)
-            #AST.up()
-
             
-            m= re.match('(.*)__is__(.*)$', name)
+            m= re.match('([^_].*)__is__(.*)$', name)
             if not m:
                 AST.add(name)
             else:
                 subpat, pat= m.groups()
-                AST.add(pyname(pat))
-                AST.pos.name= name
+                AST.add(pyname(pat)) #add labeled pattern as parentpattern
+                AST.pos.name= name   #save label in vertex name
             AST.up()
-            
-            
-            #pdb.set_trace()
             
 
             ##Control-Prints
@@ -158,7 +142,10 @@ if __name__ == '__main__':
         if v.name.endswith('_label'):
             v2= v[0]
             v2.parent= v.parent
-            v.parent[v.idx()]= v2
+            
+            k= v.parent.keys()[v.idx()]
+            v.parent.rename({k:v2.name}, inplace=True)
+            v.parent[v2.name]= v2
    
     #remove underscores and digits from leafs, safe whitespace
     for v in AST:
