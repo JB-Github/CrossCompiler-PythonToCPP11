@@ -5,6 +5,38 @@ Stmt Stmt Stmt Stmt
 	Single_stmt
 Single_stmt
 3 	Single_stmt 	
+	Import_stmt 	_;_
+Import_stmt _;_
+4 	Import_stmt 	
+	Import
+Import
+5 	Import_ 	
+	_from_ 	Rel_module 	_import_ 	Id_list
+_from_ Rel_module _import_ Id_list
+6 	Rel_module 	
+	Module
+Module
+7 	Module 	
+	Id
+Id
+8 	Id_ 	
+	___future___
+___future___
+   BRANCH -2
+6 	Id_list 	
+	Id_alias
+Id_alias
+7 	Id_alias 	
+	Id
+Id
+8 	Id_ 	
+	_division_
+_division_
+   BRANCH -6
+2 	Stmt 	
+	Single_stmt
+Single_stmt
+3 	Single_stmt 	
 	Exprlist 	_;_
 Exprlist _;_
 4 	Exprlist 	
@@ -268,47 +300,6 @@ _5_
 _$blockend_
    BRANCH -3
 2 	Stmt 	
-	Single_stmt
-Single_stmt
-3 	Single_stmt 	
-	Assign_stmt 	_;_
-Assign_stmt _;_
-4 	Assign_stmt 	
-	Assign
-Assign
-5 	Assign 	
-	Varlist 	_=_ 	Exprlist
-Varlist _=_ Exprlist
-6 	Varlist 	
-	Vartuple
-Vartuple
-7 	Vartuple 	
-	Var
-Var
-8 	Var 	
-	Id
-Id
-9 	Id_ 	
-	_S_
-_S_
-   BRANCH -3
-6 	Exprlist 	
-	Val_label__is__expr
-Val_label__is__expr
-7 	Val_label__is__expr 	
-	Val
-Val
-8 	Val 	
-	String
-String
-9 	String 	
-	Str_val
-Str_val
-10 	Str_val 	
-	_'abc\n'_
-_'abc\n'_
-   BRANCH -8
-2 	Stmt 	
 	Block_stmt
 Block_stmt
 3 	Block_stmt 	
@@ -404,37 +395,21 @@ List
 	_[_ 	Exprlist 	_]_
 _[_ Exprlist _]_
 16 	Exprlist 	
-	Dash_calc__is__expr
-Dash_calc__is__expr
-17 	Dash_calc__is__expr 	
-	Val_label__is__expr 	_+_ 	Val_label__is__expr
-Val_label__is__expr _+_ Val_label__is__expr
-18 	Val_label__is__expr 	
+	Val_label__is__expr
+Val_label__is__expr
+17 	Val_label__is__expr 	
 	Val
 Val
-19 	Val 	
+18 	Val 	
 	Number
 Number
-20 	Number 	
+19 	Number 	
 	Int
 Int
-21 	Int_ 	
-	_1_
-_1_
-   BRANCH -3
-18 	Val_label__is__expr 	
-	Val
-Val
-19 	Val 	
-	Number
-Number
-20 	Number 	
-	Int
-Int
-21 	Int_ 	
-	_1_
-_1_
-   BRANCH -8
+20 	Int_ 	
+	_0_
+_0_
+   BRANCH -7
 13 	Val_label__is__expr 	
 	Val
 Val

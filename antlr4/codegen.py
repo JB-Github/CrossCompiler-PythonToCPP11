@@ -174,3 +174,5 @@ if __name__ == '__main__':
 
     AST.visit()
     print ''.join(AST.TL)
+
+    AST.tofile('program.cpp')

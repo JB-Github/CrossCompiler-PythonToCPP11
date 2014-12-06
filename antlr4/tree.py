@@ -291,7 +291,8 @@ class vertex(NamedList):
 
 
 class Tree(object):
-    actions= {} #??
+    actions= {}
+    includes= {'iostream'} #vorgeben??
     TL= [] #List for translated text
     #out= TL
 
@@ -316,6 +317,7 @@ class Tree(object):
     def rstrip():
         Tree.out[-1]= Tree.out[-1].strip()
 
+
     def add(self, k, rename=True):
         nr= self.pos.add(k, vertex(k, self.pos))
         self.pos= self.pos[k+nr]
@@ -334,6 +336,15 @@ class Tree(object):
         Tree.TL=[]
         Tree.out= Tree.TL
         self.pos.visit()
+
+    def tofile(self, File):
+        setup= """\nusing namespace std;\n\n"""
+
+        with open(File, 'wb') as F:
+            F.write(''.join( '#include <%s>\n'%i for i in sorted(Tree.includes) ))
+            F.write(setup)
+            self.visit()
+            F.write(''.join(Tree.TL))
 
 
 
@@ -410,6 +421,7 @@ def f(vtx):
 @tree_action('Exponentiation')
 def f(vtx):
     vtx.transform("'pow'(Expr1, Expr2)")
+    Tree.includes.add('cmath')
 
 @tree_action('Dot_calc')
 def f(vtx):
@@ -440,6 +452,9 @@ def f(vtx):
         s= s.Str_val[0].name
         s= s.strip(s[0])
         Tree.write(r'/*%s*/%s'%(s, sc.space))
+    #Imports
+    elif vtx.isa('Import_stmt ;'):
+        pass
     else:
         vtx.visitchildren()
 
@@ -459,7 +474,8 @@ def f(vtx):
         else:
             #pdb.set_trace()
             vtx.transform("'array'<'double',Int> Id; Id.'fill'(Expr)", locals())
-        #IL.add('array')#include <array>')
+
+        Tree.includes.add('array')
     else:
         vtx.visitchildren()
 

@@ -1,3 +1,6 @@
+from __future__ import division;
+
+
 """
 Testprogramm fuer codegen
 """;
@@ -8,11 +11,11 @@ def f(x):$blockbegin
            +5; #comment
 $blockend
 
-S= 'abc\n';
+
 
 if __name__=='__main__':$blockbegin
 
-    L= [1+1]*10;
+    L= [0]*10;
 
     for i in range(len(L)):$blockbegin
         if i>3:$blockbegin
