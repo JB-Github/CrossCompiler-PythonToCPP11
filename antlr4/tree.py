@@ -103,7 +103,7 @@ class vertex(NamedList):
     def __eq__(self, S):
         return S==self.name
     def __nonzero__(self):
-        return True
+        return bool(self.name)
 
     def rename(self, old, new=None, inplace=True):
         """changes (unique) keyname in children of vertex"""
@@ -367,6 +367,9 @@ tree_action.dict= Tree.actions
 @tree_action('If')
 def f(vtx):
     vtx.transform("'if' (Expr)")
+@tree_action('Elif')
+def f(vtx):
+    vtx.transform("'else if' (Expr)")
 
 @tree_action('Blockbegin')
 def f(vtx):
@@ -391,16 +394,26 @@ def f(vtx):
     #for-range
     else:
         #pdb.set_trace()
-        start,stop,step = [v.text().strip()
-                           for v in EL.Expr.Funccall.Arglist.find('Expr', 3)]
+        start,stop,step = EL.Expr.Funccall.Arglist.find('Expr', 3)#[v.text().strip()
+                           #for v in EL.Expr.Funccall.Arglist.find('Expr', 3)]
         if not stop:
             start,stop = stop,start
+        stop= stop.text()
+        start= start.text()
         start= 'int '+var+'= '+ (start or '0')
 
         comp= '<'
         if step:
-            if step[0]=='-': comp= '>'
-            step= var+'+='+step
+
+            if step.isa('-Int'):
+                comp= '>'
+            elif step.is1('Int'):
+                comp= '<'
+            else:
+                sign= 'copysign(1.,%s)'%step.text()
+                comp= ' *{0}<{0}* '.format(sign)
+
+            step= var+'+='+step.text()
         else:
             step= var+'++'
         stop= var+comp+stop
@@ -415,7 +428,12 @@ def f(vtx):
 
 @tree_action('Print_stmt')
 def f(vtx):
-    vtx.transform("'cout'<< Exprlist? << 'endl'")
+    if 'Exprlist' in vtx:
+        EL= vtx.Exprlist.find('Expr')
+        exprlist= '<< '+ " <<' '<< ".join(e.text() for e in EL)
+        Tree.write('cout%s << endl'%exprlist)
+    else:
+        Tree.write('cout<< endl')
 
 
 @tree_action('Exponentiation')

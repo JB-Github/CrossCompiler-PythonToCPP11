@@ -53,10 +53,10 @@ String
 Str_val
 8 	Str_val 	
 	_"""
-Testprogramm fuer codegen
+Test program for codegeneration
 """_
 _"""
-Testprogramm fuer codegen
+Test program for codegeneration
 """_
    BRANCH -6
 2 	Stmt 	
@@ -120,8 +120,8 @@ String
 	Str_val
 Str_val
 12 	Str_val 	
-	_"""rechnen"""_
-_"""rechnen"""_
+	_"""calculate"""_
+_"""calculate"""_
    BRANCH -6
 6 	Stmt 	
 	Single_stmt
@@ -352,8 +352,8 @@ Blockbegin Prog Blockend
 _:$blockbegin_
    BRANCH 0
 6 	Prog 	
-	Stmt 	Stmt 	Stmt
-Stmt Stmt Stmt
+	Stmt 	Stmt 	Stmt 	Stmt
+Stmt Stmt Stmt Stmt
 7 	Stmt 	
 	Single_stmt
 Single_stmt
@@ -849,7 +849,45 @@ _x_
 10 	Blockend 	
 	_$blockend_
 _$blockend_
-   BRANCH -4
+   BRANCH -3
+7 	Stmt 	
+	Single_stmt
+Single_stmt
+8 	Single_stmt 	
+	Print_stmt 	_;_
+Print_stmt _;_
+9 	Print_stmt 	
+	_print_ 	Exprlist
+_print_ Exprlist
+10 	Exprlist 	
+	Val_label__is__expr 	_,_ 	Val_label__is__expr
+Val_label__is__expr _,_ Val_label__is__expr
+11 	Val_label__is__expr 	
+	Val
+Val
+12 	Val 	
+	String
+String
+13 	String 	
+	Str_val
+Str_val
+14 	Str_val 	
+	_"program"_
+_"program"_
+   BRANCH -3
+11 	Val_label__is__expr 	
+	Val
+Val
+12 	Val 	
+	String
+String
+13 	String 	
+	Str_val
+Str_val
+14 	Str_val 	
+	_"end"_
+_"end"_
+   BRANCH -8
 6 	Blockend 	
 	_$blockend_
 _$blockend_

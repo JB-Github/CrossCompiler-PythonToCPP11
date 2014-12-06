@@ -5,11 +5,11 @@
 using namespace std;
 
 /*
-Testprogramm fuer codegen
+Test program for codegeneration
 */
 
 double f(double x) {
-    /*rechnen*/
+    /*calculate*/
     return pow(x, 2)+ x*4 - (x-3) /(double) x-1.3e2+2
            +5; //comment
 }
@@ -32,6 +32,8 @@ int main() {
     for (auto x : L) {
         cout<< x << endl;
     }
+
+    cout<< "program" <<' '<< "end" << endl;
 
     return 0;
 

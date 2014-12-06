@@ -2,11 +2,11 @@ from __future__ import division;
 
 
 """
-Testprogramm fuer codegen
+Test program for codegeneration
 """;
 
 def f(x):$blockbegin
-    """rechnen""";
+    """calculate""";
     return x**2 + x*4 - (x-3) /x -1.3e2+2\
            +5; #comment
 $blockend
@@ -29,4 +29,6 @@ if __name__=='__main__':$blockbegin
     for x in L:$blockbegin
         print x;
     $blockend
+
+    print "program", "end";
 $blockend
