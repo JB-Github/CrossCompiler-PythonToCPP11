@@ -1,5 +1,4 @@
-#Generator Brackets Varlist Val_label Mod_list Var Lambda_label Val Stmt Block_head Trycatch Gen_expr Aug_assign Id_alias Assign_stmt While Or Op_cmp Exponentiation Pos_arglist Iter_gen Print_stmt Dash_calc Arglist Index For Stmts Except Bit_or Blockbegin Pos_arg Vartuple String Aug_op Dictitem Dictlist Id_list Kparamlist Func Dict_gen Class Pos_paramlist Block_stmt Block Import_stmt Funccall Kparam Loop_stmt Unary Bit_xor Ternary Del_stmt Karglist Ifelse Single_stmt Prog Import Func_stmt Tuple And Loop Blockend Dot_calc Comparison Paramlist Not Global_stmt Assign Lambda Pos_paramtuple Elif Set Int Number Assert_stmt Set_gen Raise_stmt Slice Pass_stmt Id_var Dict Rel_module Bit_and Else With Exprlist Attr Expr List Alias Shift Exec_stmt Simple_var Mod_alias Float Module Karg If Alias_list List_gen
-
+#Generator Varlist Mod_list Var Val_label__is__expr Val Stmt Ternary__is__expr Block_head Trycatch Gen_expr Aug_assign Id_alias Assign_stmt While Op_cmp Pos_arglist Exprlist Int Arglist Funccall__is__expr Comparison__is__expr For Stmts Except Blockbegin Bit_xor__is__expr Pos_arg Vartuple String Aug_op Dictitem Dictlist Id_list Kparamlist Func Dict_gen Class Unary__is__expr Pos_paramlist Block_stmt Block Import_stmt Exponentiation__is__expr Kparam Loop_stmt Dash_calc__is__expr Str_val Del_stmt Karglist Ifelse Single_stmt Prog Import Lambda_label__is__expr Func_stmt Tuple Bit_and__is__expr Loop Blockend Paramlist Global_stmt Assign Or__is__expr Lambda Pos_paramtuple Elif Set Print_stmt Number Assert_stmt Mod_alias Raise_stmt Str_prefix Slice Pass_stmt Brackets__is__expr Dict Shift__is__expr Rel_module Bit_or__is__expr Else Dot_calc__is__expr With Iter_gen And__is__expr Not__is__expr List Alias Exec_stmt Simple_var Attr__is__expr Index__is__expr Set_gen Float Module Id Karg If Alias_list List_gen
 import pandas as pd
 import numpy as np
 import pdb
@@ -12,6 +11,17 @@ from pylex.rx import rx
 rx['other']= '.'
 rx['space']= '\s'
 rx['optvar']= "var '?'?"
+##-----------------------------------------------------------
+##Helper Functions
+def stripquotes(S):
+    """strips quotes and prefix"""
+    q= S[-1]
+    return S[S.find(q):].strip(q)
+def strcmp(S1, S2):
+    """compares strings of strings"""
+    if not isinstance(S1, basestring) or not isinstance(S2, basestring):
+        return False
+    return stripquotes(S1)==stripquotes(S2)
 
 ##-----------------------------------------------------------
 ##Basic Data-Structure
@@ -92,6 +102,8 @@ class vertex(NamedList):
 
     def __eq__(self, S):
         return S==self.name
+    def __nonzero__(self):
+        return True
 
     def rename(self, old, new=None, inplace=True):
         """changes (unique) keyname in children of vertex"""
@@ -158,7 +170,7 @@ class vertex(NamedList):
             return self[0].is1(S)
 
     def isa(self, S):
-        TL= rx.lex(S, 'var space int any')
+        TL= rx.lex(S, 'var space int str any')
         TL= [t.str for t in TL if not t=='space']
 
         if len(TL)==1:
@@ -198,9 +210,10 @@ class vertex(NamedList):
     def words(self): #tauschen!
         """returns a list of the literal text in the leafs"""
         L=[]
+        temp= Tree.out
         Tree.out= L
         self.visitchildren()
-        Tree.out= Tree.TL
+        Tree.out= temp
         """
         temp= Tree.write
         Tree.write= lambda Tree,x: L.append(x)
@@ -210,7 +223,7 @@ class vertex(NamedList):
         return L
     def text(self):
         """returns a string of the translated text in the leafs"""
-        return ''.join(self.words())
+        return ''.join(self.words()).rstrip()
     def ot(self): #for debugging
         """returns original text in the leafs"""
         return ''.join(v.name+v.space for v in self.walk() if v.empty)
@@ -241,7 +254,7 @@ class vertex(NamedList):
                         continue
                     raise Exception('\n\tNo rule "%s" in vertex "%s"'%(s,self.name))
                 v.visit()
-                Tree.strip()
+                Tree.rstrip()
             #literals
             elif t=='str':
                 s= s.strip(s[0])
@@ -300,7 +313,7 @@ class Tree(object):
     def writeto(cls, L=None): #besser??
         cls.out= cls.TL if L is None else L
     @staticmethod
-    def strip():
+    def rstrip():
         Tree.out[-1]= Tree.out[-1].strip()
 
     def add(self, k, rename=True):
@@ -398,6 +411,13 @@ def f(vtx):
 def f(vtx):
     vtx.transform("'pow'(Expr1, Expr2)")
 
+@tree_action('Dot_calc')
+def f(vtx):
+    op= vtx[1].name
+    if op=='/':
+        vtx.transform("Expr1 /('double') Expr2") #pruefen ob int!!
+    else:
+        vtx.visitchildren()
 
 @tree_action('Funccall')
 def f(vtx):
@@ -413,10 +433,11 @@ def f(vtx):
 
     #Multiline-Comment
     if vtx.isa('String ;'):
-        s,sc = vertex.isa_VL
-        s= s[0].name
-        if s[0].isalpha():
-            raise Exception("Unsupported string prefix in "+s)
+        #pdb.set_trace()
+        s,sc = vtx.isa_VL
+        #if s[0]=='Str_prefix':
+         #   raise Exception("Unsupported string prefix in "+s.text())
+        s= s.Str_val[0].name
         s= s.strip(s[0])
         Tree.write(r'/*%s*/%s'%(s, sc.space))
     else:
@@ -433,7 +454,11 @@ def f(vtx):
         assert not Id==False
         _,Expr,_,_,Int= vtx.isa_VL
 
-        vtx.transform("'array'<'double',Int> Id={}", locals())
+        if Expr.isa('0'):
+            vtx.transform("'array'<'double',Int> Id={}", locals())
+        else:
+            #pdb.set_trace()
+            vtx.transform("'array'<'double',Int> Id; Id.'fill'(Expr)", locals())
         #IL.add('array')#include <array>')
     else:
         vtx.visitchildren()
@@ -445,6 +470,44 @@ def f(vtx):
     #if op=='+=':
     if vtx.isa('Var+=1'):
         vtx.transform('Var++') #immer??
+    else:
+        vtx.visitchildren()
+
+
+@tree_action('Func')
+def f(vtx):
+    PPL= vtx.find('Pos_paramtuple') #Positional Parameter List
+    KPL= vtx.find('Kparam')         #Keyword Parameter List
+
+    paramlist= []
+
+    for p in PPL:
+        paramlist.append('double '+p.text())
+    for p in KPL:
+        paramlist.append('double '+p.text())
+
+    paramlist= ', '.join(paramlist)
+
+    vtx.transform("'double' Id(paramlist)", locals())
+
+
+@tree_action('Ifelse')
+def f(vtx):
+
+    #main function
+    if vtx.If.isa('if __name__ == "__main__"'):
+        Tree.write(
+"""\
+int main() {
+
+    %s
+
+    return 0;
+
+}
+"""%vtx.Block.Prog.text()
+)
+
     else:
         vtx.visitchildren()
 

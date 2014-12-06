@@ -1,28 +1,25 @@
+from __future__ import division
+
+"""
+Testprogramm fuer codegen
+"""
 
 def f(x):
     """rechnen"""
-    return x**2 + x*4 - (x-3) /x -1.3e4+2\
-           +5
-S= 'gd\'gf'#
-T= "'g$d\'gf'\n"
-U= "'gd\'gf"#
+    return x**2 + x*4 - (x-3) /x -1.3e2+2\
+           +5 #comment
 
 
-x+= 3
-#x=-3
-"""
-abc
-def
-"""
-L= [0]*10
 
-for i in range(len(L)):
-	if i>3:
-    	L[i]= f(i+1)
-    else:
-    	pa.a
+if __name__=='__main__':
 
-print L
+    L= [0]*10
 
-2>=1 >3<4
-{'a':1,r"""b""":2}
+    for i in range(len(L)):
+        if i>3:
+            L[i]= f(i+1) 
+        else:
+            L[i]+=1
+   
+    for x in L:
+        print x

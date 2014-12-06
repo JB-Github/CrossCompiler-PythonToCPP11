@@ -1,5 +1,11 @@
 
 
+r'abc';
+u"""
+asdad
+
+""";
+
 x if x else y;
 [x for x in range(11) if x%2];
 #2+4*3;

@@ -8,21 +8,22 @@ def f(x):$blockbegin
            +5; #comment
 $blockend
 
-#S= 'gd\'gf';#
+S= 'abc\n';
 
+if __name__=='__main__':$blockbegin
 
-L= [0]*10;
+    L= [1+1]*10;
 
-for i in range(len(L)):$blockbegin
-    if i>3:$blockbegin
-    	L[i]= f(i+1);
+    for i in range(len(L)):$blockbegin
+        if i>3:$blockbegin
+        	L[i]= f(i+1);
+        $blockend
+        else:$blockbegin
+            L[i]+=1;
+        $blockend
     $blockend
-    else:$blockbegin
-        L[i]+=1;
+
+    for x in L:$blockbegin
+        print x;
     $blockend
 $blockend
-
-for x in L:$blockbegin
-    print x;
-$blockend
-

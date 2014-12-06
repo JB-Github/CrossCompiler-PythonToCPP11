@@ -222,7 +222,10 @@ id_ : Var ;
 number : int_ | float_ ;
 int_ : Int ;
 float_ : Float ;
-string : Str;
+
+string : str_prefix? str_val;
+str_prefix : 'r' | 'u' | 'ur' | 'R' | 'U' | 'UR' | 'Ur' | 'uR' | 'b' | 'B' | 'br' | 'Br' | 'bR' | 'BR' ;
+str_val : Str ;
 
 blockbegin : BlockBegin ;
 blockend : BlockEnd ;
@@ -252,11 +255,12 @@ Float :  Digit+ Exp | Digit+ Decimal Exp? | Decimal Exp?;
 Comment : '#' ~[\n]* -> channel(HIDDEN);//skip;
 Space : ( '\t' | '\n' | '\r' | '\\' | ' ' )+ -> channel(HIDDEN);//skip;
 
-Str : Prefix? '\'\'\'' ('\\'.|~[\\])*? '\'\'\''
-    | Prefix? '"""' ('\\'.|~[\\])*? '"""'
-    | Prefix? '\'' ('\\'.|~[\\\n])*? '\''
-    | Prefix? '"' ('\\'.|~[\\\n])*? '"'
+Str : '\'\'\'' ('\\'.|~[\\])*? '\'\'\''
+    | '"""' ('\\'.|~[\\])*? '"""'
+    | '\'' ('\\'.|~[\\\n])*? '\''
+    | '"' ('\\'.|~[\\\n])*? '"'
 ;
+//Prefix : 'r' | 'u' | 'ur' | 'R' | 'U' | 'UR' | 'Ur' | 'uR' | 'b' | 'B' | 'br' | 'Br' | 'bR' | 'BR';
 
 
 fragment Letter : [a-zA-Z];
@@ -266,7 +270,7 @@ fragment Digit : [0-9];
 fragment Exp : [eE][+-]? Int;
 fragment Decimal : '.' Digit*;
 
-fragment Prefix : 'r' | 'u' | 'ur' | 'R' | 'U' | 'UR' | 'Ur' | 'uR' | 'b' | 'B' | 'br' | 'Br' | 'bR' | 'BR';
+
 
 
 /*abc

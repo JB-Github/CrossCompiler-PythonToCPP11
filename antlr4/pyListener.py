@@ -175,6 +175,15 @@ class pyListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by pyParser#str_prefix.
+    def enterStr_prefix(self, ctx):
+        pass
+
+    # Exit a parse tree produced by pyParser#str_prefix.
+    def exitStr_prefix(self, ctx):
+        pass
+
+
     # Enter a parse tree produced by pyParser#dictitem.
     def enterDictitem(self, ctx):
         pass
@@ -667,6 +676,15 @@ class pyListener(ParseTreeListener):
 
     # Exit a parse tree produced by pyParser#dot_calc__is__expr.
     def exitDot_calc__is__expr(self, ctx):
+        pass
+
+
+    # Enter a parse tree produced by pyParser#str_val.
+    def enterStr_val(self, ctx):
+        pass
+
+    # Exit a parse tree produced by pyParser#str_val.
+    def exitStr_val(self, ctx):
         pass
 
 

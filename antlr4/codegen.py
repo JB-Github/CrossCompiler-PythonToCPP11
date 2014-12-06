@@ -19,7 +19,7 @@ def pyname(S):
 S= open('py.g4').read()
 PL= re.findall(r'\n[ \t]*([a-z]\w*)\s*:', S)
 PL.extend( re.findall(r'\s+#([a-z]\w*)\s+', S) ) #ungenau!!
-Tree.patterns= {pyname(S) for s in PL}
+Tree.patterns= {pyname(s) for s in PL}
 AST= Tree()
 AST.add('Prog')
 
@@ -49,13 +49,17 @@ class TreeActions(pyListener):
                     break
         old_depth= ctx.depth()
 
-        name= ctxname(ctx)
-        print ctx.depth(),'\t', name, '\t'
+        parent_name= ctxname(ctx)
+        print ctx.depth(),'\t', parent_name, '\t'
         #AST.patterns.add(name)
 
         for child in ctx.getChildren():
-            if child.getChildCount()==0: #leaf            
-                name= '_' + str(child.getText()) +'_'
+            
+            if child.getChildCount()==0: #leaf
+                name= str(child.getText())               
+                #if parent_name=='Str_val': #double quote all strings #Fallunterscheidung!!
+                 #   name= '"' + name.strip(name[0]) + '"'  
+                name= '_'+ name +'_'
             else:
                 name= ctxname(child).rstrip('_')
 
@@ -110,8 +114,10 @@ if __name__ == '__main__':
     for t in Tk:
         if t.channel==1:
             s=str(t.text)
+            #replace comment sign; remove linebreaks, carriage returns
             H.append('//'+s[1:] if s[0]=='#'
-                     else s.replace('\\', '') ) #remove linebreaks
+                     else s.replace('\\', '').replace('\r\n','\n') )
+            
         elif t.channel==0:
             if H:
                 WS.append(''.join(H))
@@ -154,6 +160,13 @@ if __name__ == '__main__':
             v.name= v.name[1:-1] #strip _
             v.space= WS.pop()
             sys.stdout.write( v.name+v.space )
+            #format strings
+            if v.parent.name=='Str_val':
+                #pdb.set_trace()
+                n= v.name
+                n= '"' + n.strip(n[0]) + '"'
+                v.name= n.replace('\r\n', '\n')
+                
     pickle.dump(AST, open('T.dat', 'wb'))
 
 
