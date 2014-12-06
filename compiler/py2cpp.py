@@ -1,5 +1,6 @@
 from pylex.space2braces import space2braces
 from antlr2py import pytree
+import os
 
 def compile_grammar():
     t_antlr= os.path.getmtime('py.g4')
@@ -10,6 +11,7 @@ def compile_grammar():
 def py2cpp(prog):
     prog= 'program.py'
     prog_= space2braces(prog)
+    compile_grammar()
     AST= pytree(prog_)
     AST.tofile(prog.replace('.py', '.cpp'))
 
