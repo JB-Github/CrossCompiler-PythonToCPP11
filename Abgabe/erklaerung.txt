@@ -1,0 +1,57 @@
+
+Hallo Herr Arndt,
+
+es hat noch etwas gedauert, aber im Anhang ist jetzt unser erster Compiler. Unser Testprogramm wird auch richtig übersetzt und funktioniert und liefert dasselbe Ergebnis. Dafür haben wir natürlich wie gesagt zur Vereinfachung einige Annahmen getroffen, insbesondere haben wir für den Datentyp im Prinzip immer double genommen.
+An Stellen die noch nicht final sind, also die z.B. im Moment funktionieren aber für den allgemeinen Fall noch angepasst werden müssten, enthält der Code teilweise noch Kommentare.
+Außerdem wollten wir nochmal bestätigen, dass uns der Termin am Dienstag passt, also dass wir dann um 10 Uhr zu ihnen kommen. Die mail ist etwas länglich geworden, sie wollten ja gerne noch eine Erklärung haben. 
+
+viele Grüße
+Felix Helsch
+
+Ausführung
+----------
+Wir haben noch einen Wrapper geschrieben, dass heißt zum Aufruf muss man jetzt nur die Datei "py2cpp.py" ausführen. Das Testprogramm "program.py" ist noch vorgegeben. Dafür wird im Prinzip auch nur Python (Version 2.7) benötigt, da die Antlr Grammatik im Moment schon vorkompilliert ist, sodass man Antlr nicht installiert haben muss. Man benötigt die Python runtime für Antlr, welche aber in dem Archiv dabei ist und sich im Ordner "antlr4" befindet. 
+Allerdings verwenden wir im Moment als Basisdatenstruktur für die Knoten des Parsetrees eine Datenstruktur aus numpy, genauer gesagt aus pandas. Das heißt pandas und die packages von denen es abhängt (numpy, python-dateutil, pytz) müssen installiert sein damit man den Compiler ausführen kann.
+
+Falls man die Grammatik neukompillieren möchte, muss man Antlr in Version 4.4 (oder neuer) installieren. Dann
+kann man die Grammatik z.B. auch mit Java als Zielsprache kompillieren und grafische Ansichten von dem Parsetree erzeugen, was ganz nützlich ist, wenn man sehen möchte wie der Baum aufgebaut ist. Als Beispiel dafür haben wir in das Archiv ein Parsetreebild von einem Teil des Beispielprogramms getan ("program_if_parse_tree.png").
+
+Abhängigkeiten
+--------------
+Die Abhängigkeiten nochmal zusammengefasst:
+-Python 2.7
+  +mit pandas: http://pandas.pydata.org/pandas-docs/stable/install.html
+-C++11 (oder neuer)
+
+Optional:
+-Antlr 4.4 (oder neuer)
+ https://theantlrguy.atlassian.net/wiki/display/ANTLR4/Getting+Started+with+ANTLR+v4
+ (auf der Installationsseite wird noch Version 4.2 beschrieben, auf Grund des Bugs bei Comprehensions in  Kombination mit dem ternären Operator funktioniert unsere Grammatik aber nur ab Version 4.4)
+-Java 1.6 (oder neuer)
+ von Antlr benötigt
+
+
+Quellcodestruktur
+------------------
+In der Wrapper Datei "py2cpp.py" finden die Aufrufe der Verschiedenen Bestandteile des Compilers statt:
+
+space2braces('program.py')
+-lext das Programm mit regulären Audrücken und findet aus der Einrückung Blockanfang und -ende herraus und fügt entsprechende Tokens ein (ebenso für Statement Ende).
+
+compile_grammar()
+-damit kann die Antlr Grammatik "py.g4" auch diekt aus dem Wrapper neukompilliert werden, der Aufruf ist aber im Moment auskommentiert. Beim kompillieren zu Python erzeugt Antlr die Dateien: 'pyLexer.py', 'pyListener.py', 'pyParser.py', 'py.tokens', 'pyLexer.tokens'
+
+pytree('program_.py')
+-parst das umgewandelte Programm mit dem aus der Antlr Grammatik generierten Parser. Anschließend wird der Parsetree mit dem Listener von Antlr durchlaufen und in unserem eigenen Parsetree gespeichert.
+
+AST.tofile('program.cpp')
+-durchlüft den Parsetree, wandelt die Python Syntax in C++ Synatx um und speichert das Ergebnis in 'program.cpp'
+
+
+Zugehörige Dateien:
+
+space2braces
+-definiert in "space2braces.py" befindet sich im Ordner "pylex" zusammen mit den restlichen Dateien, welche für den Lexer benötigt werden
+
+pytree
+-definiert in "antlr2py", ruft "parsetree.py" auf wo die Datenstruktur für den Parsetree definiert ist, welche die Methode "tofile" besitzt. In "parsetree.py" befinden sich im Moment außerdem auch die Visitor Methoden für den Parsetree
