@@ -8,14 +8,16 @@ def compile_grammar():
     if t_antlr>t_py:
         os.system('java org.antlr.v4.Tool -Dlanguage=Python2 py.g4')
 
+
 def py2cpp(prog):
-    prog= 'program.py'
+    
     prog_= space2braces(prog)
     compile_grammar()
     AST= pytree(prog_)
     AST.tofile(prog.replace('.py', '.cpp'))
 
     return AST #zur Kontrolle
+
 
 if __name__=='__main__':
 
