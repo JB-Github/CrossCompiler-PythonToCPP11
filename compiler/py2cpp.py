@@ -21,7 +21,7 @@ def py2cpp(prog):
 
 if __name__=='__main__':
 
-    prog= 'program.py'
+    prog= 'parsetree.py'
     AST= py2cpp(prog)
 
     #Kontrollausgaben
