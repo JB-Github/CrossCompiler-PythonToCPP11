@@ -1,0 +1,10164 @@
+1 	Prog 	
+	Stmt 	Stmt 	Stmt 	Stmt 	Stmt 	Stmt 	Stmt 	Stmt 	Stmt 	Stmt 	Stmt 	Stmt 	Stmt 	Stmt 	Stmt 	Stmt 	_$blockend_ 	Stmt 	Stmt 	Stmt 	_@_ 	Stmt 	Stmt 	_@_ 	Stmt 	Stmt 	_@_ 	Stmt 	Stmt 	_@_ 	Stmt 	Stmt 	_@_ 	Stmt 	Stmt 	_@_ 	Stmt 	Stmt 	_@_ 	Stmt 	Stmt 	_@_ 	Stmt 	Stmt 	_@_ 	Stmt 	Stmt 	_@_ 	Stmt 	Stmt 	_@_ 	Stmt 	Stmt 	_@_ 	Stmt 	Stmt 	_@_ 	Stmt 	Stmt 	_@_ 	Stmt 	Stmt 	_@_ 	Stmt 	Stmt
+Stmt Stmt Stmt Stmt Stmt Stmt Stmt Stmt Stmt Stmt Stmt Stmt Stmt Stmt Stmt Stmt _$blockend_ Stmt Stmt Stmt _@_ Stmt Stmt _@_ Stmt Stmt _@_ Stmt Stmt _@_ Stmt Stmt _@_ Stmt Stmt _@_ Stmt Stmt _@_ Stmt Stmt _@_ Stmt Stmt _@_ Stmt Stmt _@_ Stmt Stmt _@_ Stmt Stmt _@_ Stmt Stmt _@_ Stmt Stmt _@_ Stmt Stmt _@_ Stmt Stmt
+2 	Stmt 	
+	Single_stmt
+Single_stmt
+3 	Single_stmt 	
+	Import_stmt 	_;_
+Import_stmt _;_
+4 	Import_stmt 	
+	Import
+Import
+5 	Import_ 	
+	_import_ 	Mod_list
+_import_ Mod_list
+6 	Mod_list 	
+	Mod_alias
+Mod_alias
+7 	Mod_alias 	
+	Module 	_as_ 	Id
+Module _as_ Id
+8 	Module 	
+	Id
+Id
+9 	Id_ 	
+	_pandas_
+_pandas_
+   BRANCH -1
+8 	Id_ 	
+	_pd_
+_pd_
+   BRANCH -6
+2 	Stmt 	
+	Single_stmt
+Single_stmt
+3 	Single_stmt 	
+	Import_stmt 	_;_
+Import_stmt _;_
+4 	Import_stmt 	
+	Import
+Import
+5 	Import_ 	
+	_import_ 	Mod_list
+_import_ Mod_list
+6 	Mod_list 	
+	Mod_alias
+Mod_alias
+7 	Mod_alias 	
+	Module 	_as_ 	Id
+Module _as_ Id
+8 	Module 	
+	Id
+Id
+9 	Id_ 	
+	_numpy_
+_numpy_
+   BRANCH -1
+8 	Id_ 	
+	_np_
+_np_
+   BRANCH -6
+2 	Stmt 	
+	Single_stmt
+Single_stmt
+3 	Single_stmt 	
+	Import_stmt 	_;_
+Import_stmt _;_
+4 	Import_stmt 	
+	Import
+Import
+5 	Import_ 	
+	_import_ 	Mod_list
+_import_ Mod_list
+6 	Mod_list 	
+	Mod_alias
+Mod_alias
+7 	Mod_alias 	
+	Module
+Module
+8 	Module 	
+	Id
+Id
+9 	Id_ 	
+	_pdb_
+_pdb_
+   BRANCH -7
+2 	Stmt 	
+	Single_stmt
+Single_stmt
+3 	Single_stmt 	
+	Import_stmt 	_;_
+Import_stmt _;_
+4 	Import_stmt 	
+	Import
+Import
+5 	Import_ 	
+	_import_ 	Mod_list
+_import_ Mod_list
+6 	Mod_list 	
+	Mod_alias
+Mod_alias
+7 	Mod_alias 	
+	Module
+Module
+8 	Module 	
+	Id
+Id
+9 	Id_ 	
+	_re_
+_re_
+   BRANCH -7
+2 	Stmt 	
+	Single_stmt
+Single_stmt
+3 	Single_stmt 	
+	Import_stmt 	_;_
+Import_stmt _;_
+4 	Import_stmt 	
+	Import
+Import
+5 	Import_ 	
+	_from_ 	Rel_module 	_import_ 	Id_list
+_from_ Rel_module _import_ Id_list
+6 	Rel_module 	
+	Module
+Module
+7 	Module 	
+	Id
+Id
+8 	Id_ 	
+	_copy_
+_copy_
+   BRANCH -2
+6 	Id_list 	
+	Id_alias
+Id_alias
+7 	Id_alias 	
+	Id
+Id
+8 	Id_ 	
+	_deepcopy_
+_deepcopy_
+   BRANCH -6
+2 	Stmt 	
+	Single_stmt
+Single_stmt
+3 	Single_stmt 	
+	Import_stmt 	_;_
+Import_stmt _;_
+4 	Import_stmt 	
+	Import
+Import
+5 	Import_ 	
+	_import_ 	Mod_list
+_import_ Mod_list
+6 	Mod_list 	
+	Mod_alias
+Mod_alias
+7 	Mod_alias 	
+	Module 	_as_ 	Id
+Module _as_ Id
+8 	Module 	
+	Id
+Id
+9 	Id_ 	
+	_cPickle_
+_cPickle_
+   BRANCH -1
+8 	Id_ 	
+	_pickle_
+_pickle_
+   BRANCH -6
+2 	Stmt 	
+	Single_stmt
+Single_stmt
+3 	Single_stmt 	
+	Import_stmt 	_;_
+Import_stmt _;_
+4 	Import_stmt 	
+	Import
+Import
+5 	Import_ 	
+	_import_ 	Mod_list
+_import_ Mod_list
+6 	Mod_list 	
+	Mod_alias
+Mod_alias
+7 	Mod_alias 	
+	Module
+Module
+8 	Module 	
+	Id
+Id
+9 	Id_ 	
+	_collections_
+_collections_
+   BRANCH -7
+2 	Stmt 	
+	Single_stmt
+Single_stmt
+3 	Single_stmt 	
+	Import_stmt 	_;_
+Import_stmt _;_
+4 	Import_stmt 	
+	Import
+Import
+5 	Import_ 	
+	_from_ 	Rel_module 	_import_ 	Id_list
+_from_ Rel_module _import_ Id_list
+6 	Rel_module 	
+	Module
+Module
+7 	Module 	
+	Id 	_._ 	Id
+Id _._ Id
+8 	Id_ 	
+	_pylex_
+_pylex_
+   BRANCH 0
+8 	Id_ 	
+	_rx_
+_rx_
+   BRANCH -2
+6 	Id_list 	
+	Id_alias 	_,_ 	Id_alias
+Id_alias _,_ Id_alias
+7 	Id_alias 	
+	Id
+Id
+8 	Id_ 	
+	_rx_
+_rx_
+   BRANCH -1
+7 	Id_alias 	
+	Id
+Id
+8 	Id_ 	
+	_RxColl_
+_RxColl_
+   BRANCH -6
+2 	Stmt 	
+	Single_stmt
+Single_stmt
+3 	Single_stmt 	
+	Assign_stmt 	_;_
+Assign_stmt _;_
+4 	Assign_stmt 	
+	Assign
+Assign
+5 	Assign 	
+	Varlist 	_=_ 	Exprlist
+Varlist _=_ Exprlist
+6 	Varlist 	
+	Vartuple
+Vartuple
+7 	Vartuple 	
+	Var
+Var
+8 	Var 	
+	Var 	_[_ 	Slice 	_]_
+Var _[_ Slice _]_
+9 	Var 	
+	Id
+Id
+10 	Id_ 	
+	_rx_
+_rx_
+   BRANCH -1
+9 	Slice_ 	
+	Val_label__is__expr
+Val_label__is__expr
+10 	Val_label__is__expr 	
+	Val
+Val
+11 	Val 	
+	String
+String
+12 	String 	
+	Str_val
+Str_val
+13 	Str_val 	
+	_'other'_
+_'other'_
+   BRANCH -7
+6 	Exprlist 	
+	Val_label__is__expr
+Val_label__is__expr
+7 	Val_label__is__expr 	
+	Val
+Val
+8 	Val 	
+	String
+String
+9 	String 	
+	Str_val
+Str_val
+10 	Str_val 	
+	_'.'_
+_'.'_
+   BRANCH -8
+2 	Stmt 	
+	Single_stmt
+Single_stmt
+3 	Single_stmt 	
+	Assign_stmt 	_;_
+Assign_stmt _;_
+4 	Assign_stmt 	
+	Assign
+Assign
+5 	Assign 	
+	Varlist 	_=_ 	Exprlist
+Varlist _=_ Exprlist
+6 	Varlist 	
+	Vartuple
+Vartuple
+7 	Vartuple 	
+	Var
+Var
+8 	Var 	
+	Var 	_[_ 	Slice 	_]_
+Var _[_ Slice _]_
+9 	Var 	
+	Id
+Id
+10 	Id_ 	
+	_rx_
+_rx_
+   BRANCH -1
+9 	Slice_ 	
+	Val_label__is__expr
+Val_label__is__expr
+10 	Val_label__is__expr 	
+	Val
+Val
+11 	Val 	
+	String
+String
+12 	String 	
+	Str_val
+Str_val
+13 	Str_val 	
+	_'simple_space'_
+_'simple_space'_
+   BRANCH -7
+6 	Exprlist 	
+	Val_label__is__expr
+Val_label__is__expr
+7 	Val_label__is__expr 	
+	Val
+Val
+8 	Val 	
+	String
+String
+9 	String 	
+	Str_val
+Str_val
+10 	Str_val 	
+	_'\s+'_
+_'\s+'_
+   BRANCH -8
+2 	Stmt 	
+	Single_stmt
+Single_stmt
+3 	Single_stmt 	
+	Assign_stmt 	_;_
+Assign_stmt _;_
+4 	Assign_stmt 	
+	Assign
+Assign
+5 	Assign 	
+	Varlist 	_=_ 	Exprlist
+Varlist _=_ Exprlist
+6 	Varlist 	
+	Vartuple
+Vartuple
+7 	Vartuple 	
+	Var
+Var
+8 	Var 	
+	Var 	_[_ 	Slice 	_]_
+Var _[_ Slice _]_
+9 	Var 	
+	Id
+Id
+10 	Id_ 	
+	_rx_
+_rx_
+   BRANCH -1
+9 	Slice_ 	
+	Val_label__is__expr
+Val_label__is__expr
+10 	Val_label__is__expr 	
+	Val
+Val
+11 	Val 	
+	String
+String
+12 	String 	
+	Str_val
+Str_val
+13 	Str_val 	
+	_'optvar'_
+_'optvar'_
+   BRANCH -7
+6 	Exprlist 	
+	Val_label__is__expr
+Val_label__is__expr
+7 	Val_label__is__expr 	
+	Val
+Val
+8 	Val 	
+	String
+String
+9 	String 	
+	Str_val
+Str_val
+10 	Str_val 	
+	_"var '?'?"_
+_"var '?'?"_
+   BRANCH -8
+2 	Stmt 	
+	Block_stmt
+Block_stmt
+3 	Block_stmt 	
+	Block_head 	Block
+Block_head Block
+4 	Block_head 	
+	Class
+Class
+5 	Class_ 	
+	_class_ 	Id 	_(_ 	Exprlist 	_)_
+_class_ Id _(_ Exprlist _)_
+6 	Id_ 	
+	_NamedList_
+_NamedList_
+   BRANCH 0
+6 	Exprlist 	
+	Val_label__is__expr
+Val_label__is__expr
+7 	Val_label__is__expr 	
+	Val
+Val
+8 	Val 	
+	Var
+Var
+9 	Var 	
+	Var 	_._ 	Id
+Var _._ Id
+10 	Var 	
+	Id
+Id
+11 	Id_ 	
+	_pd_
+_pd_
+   BRANCH -1
+10 	Id_ 	
+	_Series_
+_Series_
+   BRANCH -6
+4 	Block 	
+	Blockbegin 	Prog 	Blockend
+Blockbegin Prog Blockend
+5 	Blockbegin 	
+	_:$blockbegin_
+_:$blockbegin_
+   BRANCH 0
+5 	Prog 	
+	Stmt 	Stmt 	Stmt 	Stmt
+Stmt Stmt Stmt Stmt
+6 	Stmt 	
+	Single_stmt
+Single_stmt
+7 	Single_stmt 	
+	Exprlist 	_;_
+Exprlist _;_
+8 	Exprlist 	
+	Val_label__is__expr
+Val_label__is__expr
+9 	Val_label__is__expr 	
+	Val
+Val
+10 	Val 	
+	String
+String
+11 	String 	
+	Str_val
+Str_val
+12 	Str_val 	
+	_"""Ordered Key-Value List"""_
+_"""Ordered Key-Value List"""_
+   BRANCH -6
+6 	Stmt 	
+	Block_stmt
+Block_stmt
+7 	Block_stmt 	
+	Block_head 	Block
+Block_head Block
+8 	Block_head 	
+	Func
+Func
+9 	Func 	
+	_def_ 	Id 	_(_ 	Paramlist 	_)_
+_def_ Id _(_ Paramlist _)_
+10 	Id_ 	
+	_add_
+_add_
+   BRANCH 0
+10 	Paramlist 	
+	Pos_paramlist 	_,_ 	Kparamlist
+Pos_paramlist _,_ Kparamlist
+11 	Pos_paramlist 	
+	Pos_paramtuple 	_,_ 	Pos_paramtuple 	_,_ 	Pos_paramtuple
+Pos_paramtuple _,_ Pos_paramtuple _,_ Pos_paramtuple
+12 	Pos_paramtuple 	
+	Simple_var
+Simple_var
+13 	Simple_var 	
+	Id
+Id
+14 	Id_ 	
+	_self_
+_self_
+   BRANCH -2
+12 	Pos_paramtuple 	
+	Simple_var
+Simple_var
+13 	Simple_var 	
+	Id
+Id
+14 	Id_ 	
+	_k_
+_k_
+   BRANCH -2
+12 	Pos_paramtuple 	
+	Simple_var
+Simple_var
+13 	Simple_var 	
+	Id
+Id
+14 	Id_ 	
+	_v_
+_v_
+   BRANCH -3
+11 	Kparamlist 	
+	Kparam
+Kparam
+12 	Kparam 	
+	Pos_paramtuple 	_=_ 	Val_label__is__expr
+Pos_paramtuple _=_ Val_label__is__expr
+13 	Pos_paramtuple 	
+	Simple_var
+Simple_var
+14 	Simple_var 	
+	Id
+Id
+15 	Id_ 	
+	_rename_
+_rename_
+   BRANCH -2
+13 	Val_label__is__expr 	
+	Val
+Val
+14 	Val 	
+	Var
+Var
+15 	Var 	
+	Id
+Id
+16 	Id_ 	
+	_True_
+_True_
+   BRANCH -8
+8 	Block 	
+	Blockbegin 	Prog 	Blockend
+Blockbegin Prog Blockend
+9 	Blockbegin 	
+	_:$blockbegin_
+_:$blockbegin_
+   BRANCH 0
+9 	Prog 	
+	Stmt 	Stmt 	Stmt 	Stmt
+Stmt Stmt Stmt Stmt
+10 	Stmt 	
+	Single_stmt
+Single_stmt
+11 	Single_stmt 	
+	Exprlist 	_;_
+Exprlist _;_
+12 	Exprlist 	
+	Val_label__is__expr
+Val_label__is__expr
+13 	Val_label__is__expr 	
+	Val
+Val
+14 	Val 	
+	String
+String
+15 	String 	
+	Str_val
+Str_val
+16 	Str_val 	
+	_"""appends new entry and numbers duplicate names"""_
+_"""appends new entry and numbers duplicate names"""_
+   BRANCH -6
+10 	Stmt 	
+	Single_stmt
+Single_stmt
+11 	Single_stmt 	
+	Assign_stmt 	_;_
+Assign_stmt _;_
+12 	Assign_stmt 	
+	Assign
+Assign
+13 	Assign 	
+	Varlist 	_=_ 	Exprlist
+Varlist _=_ Exprlist
+14 	Varlist 	
+	Vartuple
+Vartuple
+15 	Vartuple 	
+	Var
+Var
+16 	Var 	
+	Id
+Id
+17 	Id_ 	
+	_nr_
+_nr_
+   BRANCH -3
+14 	Exprlist 	
+	Val_label__is__expr
+Val_label__is__expr
+15 	Val_label__is__expr 	
+	Val
+Val
+16 	Val 	
+	String
+String
+17 	String 	
+	Str_val
+Str_val
+18 	Str_val 	
+	_''_
+_''_
+   BRANCH -8
+10 	Stmt 	
+	Block_stmt
+Block_stmt
+11 	Block_stmt 	
+	Ifelse
+Ifelse
+12 	Ifelse 	
+	If 	Block 	Else 	Block
+If Block Else Block
+13 	If_ 	
+	_if_ 	Not__is__expr
+_if_ Not__is__expr
+14 	Not__is__expr 	
+	_not_ 	Val_label__is__expr
+_not_ Val_label__is__expr
+15 	Val_label__is__expr 	
+	Val
+Val
+16 	Val 	
+	Var
+Var
+17 	Var 	
+	Id
+Id
+18 	Id_ 	
+	_rename_
+_rename_
+   BRANCH -5
+13 	Block 	
+	Blockbegin 	Prog 	Blockend
+Blockbegin Prog Blockend
+14 	Blockbegin 	
+	_:$blockbegin_
+_:$blockbegin_
+   BRANCH 0
+14 	Prog 	
+	Stmt 	Stmt
+Stmt Stmt
+15 	Stmt 	
+	Single_stmt
+Single_stmt
+16 	Single_stmt 	
+	Assign_stmt 	_;_
+Assign_stmt _;_
+17 	Assign_stmt 	
+	Assign
+Assign
+18 	Assign 	
+	Varlist 	_=_ 	Exprlist
+Varlist _=_ Exprlist
+19 	Varlist 	
+	Vartuple
+Vartuple
+20 	Vartuple 	
+	Var
+Var
+21 	Var 	
+	Id
+Id
+22 	Id_ 	
+	_S_
+_S_
+   BRANCH -3
+19 	Exprlist 	
+	Funccall__is__expr
+Funccall__is__expr
+20 	Funccall__is__expr 	
+	Val_label__is__expr 	_(_ 	Arglist 	_)_
+Val_label__is__expr _(_ Arglist _)_
+21 	Val_label__is__expr 	
+	Val
+Val
+22 	Val 	
+	Var
+Var
+23 	Var 	
+	Var 	_._ 	Id
+Var _._ Id
+24 	Var 	
+	Id
+Id
+25 	Id_ 	
+	_self_
+_self_
+   BRANCH -1
+24 	Id_ 	
+	_append_
+_append_
+   BRANCH -3
+21 	Arglist 	
+	Pos_arglist
+Pos_arglist
+22 	Pos_arglist 	
+	Pos_arg
+Pos_arg
+23 	Pos_arg 	
+	Funccall__is__expr
+Funccall__is__expr
+24 	Funccall__is__expr 	
+	Val_label__is__expr 	_(_ 	Arglist 	_)_
+Val_label__is__expr _(_ Arglist _)_
+25 	Val_label__is__expr 	
+	Val
+Val
+26 	Val 	
+	Var
+Var
+27 	Var 	
+	Var 	_._ 	Id
+Var _._ Id
+28 	Var 	
+	Id
+Id
+29 	Id_ 	
+	_pd_
+_pd_
+   BRANCH -1
+28 	Id_ 	
+	_Series_
+_Series_
+   BRANCH -3
+25 	Arglist 	
+	Pos_arglist
+Pos_arglist
+26 	Pos_arglist 	
+	Pos_arg 	_,_ 	Pos_arg
+Pos_arg _,_ Pos_arg
+27 	Pos_arg 	
+	Val_label__is__expr
+Val_label__is__expr
+28 	Val_label__is__expr 	
+	Val
+Val
+29 	Val 	
+	List
+List
+30 	List_ 	
+	_[_ 	Exprlist 	_]_
+_[_ Exprlist _]_
+31 	Exprlist 	
+	Val_label__is__expr
+Val_label__is__expr
+32 	Val_label__is__expr 	
+	Val
+Val
+33 	Val 	
+	Var
+Var
+34 	Var 	
+	Id
+Id
+35 	Id_ 	
+	_v_
+_v_
+   BRANCH -8
+27 	Pos_arg 	
+	Val_label__is__expr
+Val_label__is__expr
+28 	Val_label__is__expr 	
+	Val
+Val
+29 	Val 	
+	List
+List
+30 	List_ 	
+	_[_ 	Exprlist 	_]_
+_[_ Exprlist _]_
+31 	Exprlist 	
+	Val_label__is__expr
+Val_label__is__expr
+32 	Val_label__is__expr 	
+	Val
+Val
+33 	Val 	
+	Var
+Var
+34 	Var 	
+	Id
+Id
+35 	Id_ 	
+	_k_
+_k_
+   BRANCH -20
+15 	Stmt 	
+	Single_stmt
+Single_stmt
+16 	Single_stmt 	
+	Exprlist 	_;_
+Exprlist _;_
+17 	Exprlist 	
+	Funccall__is__expr
+Funccall__is__expr
+18 	Funccall__is__expr 	
+	Val_label__is__expr 	_(_ 	Arglist 	_)_
+Val_label__is__expr _(_ Arglist _)_
+19 	Val_label__is__expr 	
+	Val
+Val
+20 	Val 	
+	Var
+Var
+21 	Var 	
+	Var 	_._ 	Id
+Var _._ Id
+22 	Var 	
+	Id
+Id
+23 	Id_ 	
+	_self_
+_self_
+   BRANCH -1
+22 	Id_ 	
+	___init___
+___init___
+   BRANCH -3
+19 	Arglist 	
+	Pos_arglist
+Pos_arglist
+20 	Pos_arglist 	
+	Pos_arg
+Pos_arg
+21 	Pos_arg 	
+	Val_label__is__expr
+Val_label__is__expr
+22 	Val_label__is__expr 	
+	Val
+Val
+23 	Val 	
+	Var
+Var
+24 	Var 	
+	Id
+Id
+25 	Id_ 	
+	_S_
+_S_
+   BRANCH -11
+14 	Blockend 	
+	_$blockend_
+_$blockend_
+   BRANCH -1
+13 	Else_ 	
+	_else_
+_else_
+   BRANCH 0
+13 	Block 	
+	Blockbegin 	Prog 	Blockend
+Blockbegin Prog Blockend
+14 	Blockbegin 	
+	_:$blockbegin_
+_:$blockbegin_
+   BRANCH 0
+14 	Prog 	
+	Stmt 	Stmt 	Stmt 	Stmt
+Stmt Stmt Stmt Stmt
+15 	Stmt 	
+	Block_stmt
+Block_stmt
+16 	Block_stmt 	
+	Ifelse
+Ifelse
+17 	Ifelse 	
+	If 	Block
+If Block
+18 	If_ 	
+	_if_ 	Funccall__is__expr
+_if_ Funccall__is__expr
+19 	Funccall__is__expr 	
+	Val_label__is__expr 	_(_ 	_)_
+Val_label__is__expr _(_ _)_
+20 	Val_label__is__expr 	
+	Val
+Val
+21 	Val 	
+	Var
+Var
+22 	Var 	
+	Var 	_._ 	Id
+Var _._ Id
+23 	Var 	
+	Var 	_[_ 	Slice 	_]_
+Var _[_ Slice _]_
+24 	Var 	
+	Id
+Id
+25 	Id_ 	
+	_k_
+_k_
+   BRANCH -1
+24 	Slice_ 	
+	Unary__is__expr
+Unary__is__expr
+25 	Unary__is__expr 	
+	_-_ 	Val_label__is__expr
+_-_ Val_label__is__expr
+26 	Val_label__is__expr 	
+	Val
+Val
+27 	Val 	
+	Number
+Number
+28 	Number 	
+	Int
+Int
+29 	Int_ 	
+	_1_
+_1_
+   BRANCH -6
+23 	Id_ 	
+	_isdigit_
+_isdigit_
+   BRANCH -5
+18 	Block 	
+	Blockbegin 	Prog 	Blockend
+Blockbegin Prog Blockend
+19 	Blockbegin 	
+	_:$blockbegin_
+_:$blockbegin_
+   BRANCH 0
+19 	Prog 	
+	Stmt
+Stmt
+20 	Stmt 	
+	Single_stmt
+Single_stmt
+21 	Single_stmt 	
+	Assign_stmt 	_;_
+Assign_stmt _;_
+22 	Assign_stmt 	
+	Assign
+Assign
+23 	Assign 	
+	Varlist 	_=_ 	Exprlist
+Varlist _=_ Exprlist
+24 	Varlist 	
+	Vartuple
+Vartuple
+25 	Vartuple 	
+	Var
+Var
+26 	Var 	
+	Id
+Id
+27 	Id_ 	
+	_k_
+_k_
+   BRANCH -3
+24 	Exprlist 	
+	Index__is__expr
+Index__is__expr
+25 	Index__is__expr 	
+	Funccall__is__expr 	_[_ 	Slice 	_]_
+Funccall__is__expr _[_ Slice _]_
+26 	Funccall__is__expr 	
+	Attr__is__expr 	_(_ 	_)_
+Attr__is__expr _(_ _)_
+27 	Attr__is__expr 	
+	Funccall__is__expr 	_._ 	Id
+Funccall__is__expr _._ Id
+28 	Funccall__is__expr 	
+	Val_label__is__expr 	_(_ 	Arglist 	_)_
+Val_label__is__expr _(_ Arglist _)_
+29 	Val_label__is__expr 	
+	Val
+Val
+30 	Val 	
+	Var
+Var
+31 	Var 	
+	Var 	_._ 	Id
+Var _._ Id
+32 	Var 	
+	Id
+Id
+33 	Id_ 	
+	_re_
+_re_
+   BRANCH -1
+32 	Id_ 	
+	_match_
+_match_
+   BRANCH -3
+29 	Arglist 	
+	Pos_arglist
+Pos_arglist
+30 	Pos_arglist 	
+	Pos_arg 	_,_ 	Pos_arg
+Pos_arg _,_ Pos_arg
+31 	Pos_arg 	
+	Val_label__is__expr
+Val_label__is__expr
+32 	Val_label__is__expr 	
+	Val
+Val
+33 	Val 	
+	String
+String
+34 	String 	
+	Str_prefix 	Str_val
+Str_prefix Str_val
+35 	Str_prefix 	
+	_r_
+_r_
+   BRANCH 0
+35 	Str_val 	
+	_'(.+?)\d*$'_
+_'(.+?)\d*$'_
+   BRANCH -4
+31 	Pos_arg 	
+	Val_label__is__expr
+Val_label__is__expr
+32 	Val_label__is__expr 	
+	Val
+Val
+33 	Val 	
+	Var
+Var
+34 	Var 	
+	Id
+Id
+35 	Id_ 	
+	_k_
+_k_
+   BRANCH -7
+28 	Id_ 	
+	_groups_
+_groups_
+   BRANCH -2
+26 	Slice_ 	
+	Val_label__is__expr
+Val_label__is__expr
+27 	Val_label__is__expr 	
+	Val
+Val
+28 	Val 	
+	Number
+Number
+29 	Number 	
+	Int
+Int
+30 	Int_ 	
+	_0_
+_0_
+   BRANCH -11
+19 	Blockend 	
+	_$blockend_
+_$blockend_
+   BRANCH -4
+15 	Stmt 	
+	Single_stmt
+Single_stmt
+16 	Single_stmt 	
+	Assign_stmt 	_;_
+Assign_stmt _;_
+17 	Assign_stmt 	
+	Assign
+Assign
+18 	Assign 	
+	Varlist 	_=_ 	Exprlist
+Varlist _=_ Exprlist
+19 	Varlist 	
+	Vartuple
+Vartuple
+20 	Vartuple 	
+	Var
+Var
+21 	Var 	
+	Id
+Id
+22 	Id_ 	
+	_rep_
+_rep_
+   BRANCH -3
+19 	Exprlist 	
+	Funccall__is__expr
+Funccall__is__expr
+20 	Funccall__is__expr 	
+	Val_label__is__expr 	_(_ 	Gen_expr 	_)_
+Val_label__is__expr _(_ Gen_expr _)_
+21 	Val_label__is__expr 	
+	Val
+Val
+22 	Val 	
+	Var
+Var
+23 	Var 	
+	Id
+Id
+24 	Id_ 	
+	_sum_
+_sum_
+   BRANCH -3
+21 	Gen_expr 	
+	Val_label__is__expr 	For 	If
+Val_label__is__expr For If
+22 	Val_label__is__expr 	
+	Val
+Val
+23 	Val 	
+	Number
+Number
+24 	Number 	
+	Int
+Int
+25 	Int_ 	
+	_1_
+_1_
+   BRANCH -3
+22 	For_ 	
+	_for_ 	Varlist 	_in_ 	Exprlist
+_for_ Varlist _in_ Exprlist
+23 	Varlist 	
+	Vartuple
+Vartuple
+24 	Vartuple 	
+	Var
+Var
+25 	Var 	
+	Id
+Id
+26 	Id_ 	
+	_x_
+_x_
+   BRANCH -3
+23 	Exprlist 	
+	Funccall__is__expr
+Funccall__is__expr
+24 	Funccall__is__expr 	
+	Val_label__is__expr 	_(_ 	_)_
+Val_label__is__expr _(_ _)_
+25 	Val_label__is__expr 	
+	Val
+Val
+26 	Val 	
+	Var
+Var
+27 	Var 	
+	Var 	_._ 	Id
+Var _._ Id
+28 	Var 	
+	Id
+Id
+29 	Id_ 	
+	_self_
+_self_
+   BRANCH -1
+28 	Id_ 	
+	_keys_
+_keys_
+   BRANCH -6
+22 	If_ 	
+	_if_ 	Funccall__is__expr
+_if_ Funccall__is__expr
+23 	Funccall__is__expr 	
+	Val_label__is__expr 	_(_ 	Arglist 	_)_
+Val_label__is__expr _(_ Arglist _)_
+24 	Val_label__is__expr 	
+	Val
+Val
+25 	Val 	
+	Var
+Var
+26 	Var 	
+	Var 	_._ 	Id
+Var _._ Id
+27 	Var 	
+	Id
+Id
+28 	Id_ 	
+	_re_
+_re_
+   BRANCH -1
+27 	Id_ 	
+	_match_
+_match_
+   BRANCH -3
+24 	Arglist 	
+	Pos_arglist
+Pos_arglist
+25 	Pos_arglist 	
+	Pos_arg 	_,_ 	Pos_arg
+Pos_arg _,_ Pos_arg
+26 	Pos_arg 	
+	Dash_calc__is__expr
+Dash_calc__is__expr
+27 	Dash_calc__is__expr 	
+	Funccall__is__expr 	_+_ 	Val_label__is__expr
+Funccall__is__expr _+_ Val_label__is__expr
+28 	Funccall__is__expr 	
+	Val_label__is__expr 	_(_ 	Arglist 	_)_
+Val_label__is__expr _(_ Arglist _)_
+29 	Val_label__is__expr 	
+	Val
+Val
+30 	Val 	
+	Var
+Var
+31 	Var 	
+	Var 	_._ 	Id
+Var _._ Id
+32 	Var 	
+	Id
+Id
+33 	Id_ 	
+	_re_
+_re_
+   BRANCH -1
+32 	Id_ 	
+	_escape_
+_escape_
+   BRANCH -3
+29 	Arglist 	
+	Pos_arglist
+Pos_arglist
+30 	Pos_arglist 	
+	Pos_arg
+Pos_arg
+31 	Pos_arg 	
+	Val_label__is__expr
+Val_label__is__expr
+32 	Val_label__is__expr 	
+	Val
+Val
+33 	Val 	
+	Var
+Var
+34 	Var 	
+	Id
+Id
+35 	Id_ 	
+	_k_
+_k_
+   BRANCH -7
+28 	Val_label__is__expr 	
+	Val
+Val
+29 	Val 	
+	String
+String
+30 	String 	
+	Str_prefix 	Str_val
+Str_prefix Str_val
+31 	Str_prefix 	
+	_r_
+_r_
+   BRANCH 0
+31 	Str_val 	
+	_'\d*$'_
+_'\d*$'_
+   BRANCH -5
+26 	Pos_arg 	
+	Val_label__is__expr
+Val_label__is__expr
+27 	Val_label__is__expr 	
+	Val
+Val
+28 	Val 	
+	Var
+Var
+29 	Var 	
+	Id
+Id
+30 	Id_ 	
+	_x_
+_x_
+   BRANCH -15
+15 	Stmt 	
+	Block_stmt
+Block_stmt
+16 	Block_stmt 	
+	Ifelse
+Ifelse
+17 	Ifelse 	
+	If 	Block
+If Block
+18 	If_ 	
+	_if_ 	Val_label__is__expr
+_if_ Val_label__is__expr
+19 	Val_label__is__expr 	
+	Val
+Val
+20 	Val 	
+	Var
+Var
+21 	Var 	
+	Id
+Id
+22 	Id_ 	
+	_rep_
+_rep_
+   BRANCH -4
+18 	Block 	
+	Blockbegin 	Prog 	Blockend
+Blockbegin Prog Blockend
+19 	Blockbegin 	
+	_:$blockbegin_
+_:$blockbegin_
+   BRANCH 0
+19 	Prog 	
+	Stmt 	Stmt
+Stmt Stmt
+20 	Stmt 	
+	Block_stmt
+Block_stmt
+21 	Block_stmt 	
+	Ifelse
+Ifelse
+22 	Ifelse 	
+	If 	Block
+If Block
+23 	If_ 	
+	_if_ 	Comparison__is__expr
+_if_ Comparison__is__expr
+24 	Comparison__is__expr 	
+	Val_label__is__expr 	Op_cmp 	Val_label__is__expr
+Val_label__is__expr Op_cmp Val_label__is__expr
+25 	Val_label__is__expr 	
+	Val
+Val
+26 	Val 	
+	Var
+Var
+27 	Var 	
+	Id
+Id
+28 	Id_ 	
+	_rep_
+_rep_
+   BRANCH -3
+25 	Op_cmp 	
+	_==_
+_==_
+   BRANCH 0
+25 	Val_label__is__expr 	
+	Val
+Val
+26 	Val 	
+	Number
+Number
+27 	Number 	
+	Int
+Int
+28 	Int_ 	
+	_1_
+_1_
+   BRANCH -5
+23 	Block 	
+	Blockbegin 	Prog 	Blockend
+Blockbegin Prog Blockend
+24 	Blockbegin 	
+	_:$blockbegin_
+_:$blockbegin_
+   BRANCH 0
+24 	Prog 	
+	Stmt
+Stmt
+25 	Stmt 	
+	Single_stmt
+Single_stmt
+26 	Single_stmt 	
+	Exprlist 	_;_
+Exprlist _;_
+27 	Exprlist 	
+	Funccall__is__expr
+Funccall__is__expr
+28 	Funccall__is__expr 	
+	Val_label__is__expr 	_(_ 	Arglist 	_)_
+Val_label__is__expr _(_ Arglist _)_
+29 	Val_label__is__expr 	
+	Val
+Val
+30 	Val 	
+	Var
+Var
+31 	Var 	
+	Var 	_._ 	Id
+Var _._ Id
+32 	Var 	
+	Id
+Id
+33 	Id_ 	
+	_self_
+_self_
+   BRANCH -1
+32 	Id_ 	
+	_rename_
+_rename_
+   BRANCH -3
+29 	Arglist 	
+	Pos_arglist 	_,_ 	Karglist
+Pos_arglist _,_ Karglist
+30 	Pos_arglist 	
+	Pos_arg
+Pos_arg
+31 	Pos_arg 	
+	Val_label__is__expr
+Val_label__is__expr
+32 	Val_label__is__expr 	
+	Val
+Val
+33 	Val 	
+	Dict
+Dict
+34 	Dict_ 	
+	_{_ 	Dictlist 	_}_
+_{_ Dictlist _}_
+35 	Dictlist 	
+	Dictitem
+Dictitem
+36 	Dictitem 	
+	Val_label__is__expr 	_:_ 	Dash_calc__is__expr
+Val_label__is__expr _:_ Dash_calc__is__expr
+37 	Val_label__is__expr 	
+	Val
+Val
+38 	Val 	
+	Var
+Var
+39 	Var 	
+	Id
+Id
+40 	Id_ 	
+	_k_
+_k_
+   BRANCH -3
+37 	Dash_calc__is__expr 	
+	Val_label__is__expr 	_+_ 	Val_label__is__expr
+Val_label__is__expr _+_ Val_label__is__expr
+38 	Val_label__is__expr 	
+	Val
+Val
+39 	Val 	
+	Var
+Var
+40 	Var 	
+	Id
+Id
+41 	Id_ 	
+	_k_
+_k_
+   BRANCH -3
+38 	Val_label__is__expr 	
+	Val
+Val
+39 	Val 	
+	String
+String
+40 	String 	
+	Str_val
+Str_val
+41 	Str_val 	
+	_'1'_
+_'1'_
+   BRANCH -11
+30 	Karglist 	
+	Karg
+Karg
+31 	Karg 	
+	Simple_var 	_=_ 	Val_label__is__expr
+Simple_var _=_ Val_label__is__expr
+32 	Simple_var 	
+	Id
+Id
+33 	Id_ 	
+	_inplace_
+_inplace_
+   BRANCH -1
+32 	Val_label__is__expr 	
+	Val
+Val
+33 	Val 	
+	Var
+Var
+34 	Var 	
+	Id
+Id
+35 	Id_ 	
+	_True_
+_True_
+   BRANCH -11
+24 	Blockend 	
+	_$blockend_
+_$blockend_
+   BRANCH -4
+20 	Stmt 	
+	Single_stmt
+Single_stmt
+21 	Single_stmt 	
+	Assign_stmt 	_;_
+Assign_stmt _;_
+22 	Assign_stmt 	
+	Assign
+Assign
+23 	Assign 	
+	Varlist 	_=_ 	Exprlist
+Varlist _=_ Exprlist
+24 	Varlist 	
+	Vartuple
+Vartuple
+25 	Vartuple 	
+	Var
+Var
+26 	Var 	
+	Id
+Id
+27 	Id_ 	
+	_nr_
+_nr_
+   BRANCH -3
+24 	Exprlist 	
+	Funccall__is__expr
+Funccall__is__expr
+25 	Funccall__is__expr 	
+	Val_label__is__expr 	_(_ 	Arglist 	_)_
+Val_label__is__expr _(_ Arglist _)_
+26 	Val_label__is__expr 	
+	Val
+Val
+27 	Val 	
+	Var
+Var
+28 	Var 	
+	Id
+Id
+29 	Id_ 	
+	_str_
+_str_
+   BRANCH -3
+26 	Arglist 	
+	Pos_arglist
+Pos_arglist
+27 	Pos_arglist 	
+	Pos_arg
+Pos_arg
+28 	Pos_arg 	
+	Dash_calc__is__expr
+Dash_calc__is__expr
+29 	Dash_calc__is__expr 	
+	Val_label__is__expr 	_+_ 	Val_label__is__expr
+Val_label__is__expr _+_ Val_label__is__expr
+30 	Val_label__is__expr 	
+	Val
+Val
+31 	Val 	
+	Var
+Var
+32 	Var 	
+	Id
+Id
+33 	Id_ 	
+	_rep_
+_rep_
+   BRANCH -3
+30 	Val_label__is__expr 	
+	Val
+Val
+31 	Val 	
+	Number
+Number
+32 	Number 	
+	Int
+Int
+33 	Int_ 	
+	_1_
+_1_
+   BRANCH -14
+19 	Blockend 	
+	_$blockend_
+_$blockend_
+   BRANCH -4
+15 	Stmt 	
+	Single_stmt
+Single_stmt
+16 	Single_stmt 	
+	Assign_stmt 	_;_
+Assign_stmt _;_
+17 	Assign_stmt 	
+	Assign
+Assign
+18 	Assign 	
+	Varlist 	_=_ 	Exprlist
+Varlist _=_ Exprlist
+19 	Varlist 	
+	Vartuple
+Vartuple
+20 	Vartuple 	
+	Var
+Var
+21 	Var 	
+	Var 	_[_ 	Slice 	_]_
+Var _[_ Slice _]_
+22 	Var 	
+	Id
+Id
+23 	Id_ 	
+	_self_
+_self_
+   BRANCH -1
+22 	Slice_ 	
+	Dash_calc__is__expr
+Dash_calc__is__expr
+23 	Dash_calc__is__expr 	
+	Val_label__is__expr 	_+_ 	Val_label__is__expr
+Val_label__is__expr _+_ Val_label__is__expr
+24 	Val_label__is__expr 	
+	Val
+Val
+25 	Val 	
+	Var
+Var
+26 	Var 	
+	Id
+Id
+27 	Id_ 	
+	_k_
+_k_
+   BRANCH -3
+24 	Val_label__is__expr 	
+	Val
+Val
+25 	Val 	
+	Var
+Var
+26 	Var 	
+	Id
+Id
+27 	Id_ 	
+	_nr_
+_nr_
+   BRANCH -8
+19 	Exprlist 	
+	Val_label__is__expr
+Val_label__is__expr
+20 	Val_label__is__expr 	
+	Val
+Val
+21 	Val 	
+	Var
+Var
+22 	Var 	
+	Id
+Id
+23 	Id_ 	
+	_v_
+_v_
+   BRANCH -9
+14 	Blockend 	
+	_$blockend_
+_$blockend_
+   BRANCH -4
+10 	Stmt 	
+	Single_stmt
+Single_stmt
+11 	Single_stmt 	
+	Func_stmt 	_;_
+Func_stmt _;_
+12 	Func_stmt 	
+	_return_ 	Exprlist
+_return_ Exprlist
+13 	Exprlist 	
+	Val_label__is__expr
+Val_label__is__expr
+14 	Val_label__is__expr 	
+	Val
+Val
+15 	Val 	
+	Var
+Var
+16 	Var 	
+	Id
+Id
+17 	Id_ 	
+	_nr_
+_nr_
+   BRANCH -8
+9 	Blockend 	
+	_$blockend_
+_$blockend_
+   BRANCH -3
+6 	Stmt 	
+	Block_stmt
+Block_stmt
+7 	Block_stmt 	
+	Block_head 	Block
+Block_head Block
+8 	Block_head 	
+	Func
+Func
+9 	Func 	
+	_def_ 	Id 	_(_ 	Paramlist 	_)_
+_def_ Id _(_ Paramlist _)_
+10 	Id_ 	
+	_insert_
+_insert_
+   BRANCH 0
+10 	Paramlist 	
+	Pos_paramlist 	_,_ 	Kparamlist
+Pos_paramlist _,_ Kparamlist
+11 	Pos_paramlist 	
+	Pos_paramtuple 	_,_ 	Pos_paramtuple 	_,_ 	Pos_paramtuple
+Pos_paramtuple _,_ Pos_paramtuple _,_ Pos_paramtuple
+12 	Pos_paramtuple 	
+	Simple_var
+Simple_var
+13 	Simple_var 	
+	Id
+Id
+14 	Id_ 	
+	_self_
+_self_
+   BRANCH -2
+12 	Pos_paramtuple 	
+	Simple_var
+Simple_var
+13 	Simple_var 	
+	Id
+Id
+14 	Id_ 	
+	_S_
+_S_
+   BRANCH -2
+12 	Pos_paramtuple 	
+	Simple_var
+Simple_var
+13 	Simple_var 	
+	Id
+Id
+14 	Id_ 	
+	_i_
+_i_
+   BRANCH -3
+11 	Kparamlist 	
+	Kparam
+Kparam
+12 	Kparam 	
+	Pos_paramtuple 	_=_ 	Val_label__is__expr
+Pos_paramtuple _=_ Val_label__is__expr
+13 	Pos_paramtuple 	
+	Simple_var
+Simple_var
+14 	Simple_var 	
+	Id
+Id
+15 	Id_ 	
+	_rename_
+_rename_
+   BRANCH -2
+13 	Val_label__is__expr 	
+	Val
+Val
+14 	Val 	
+	Var
+Var
+15 	Var 	
+	Id
+Id
+16 	Id_ 	
+	_False_
+_False_
+   BRANCH -8
+8 	Block 	
+	Blockbegin 	Prog 	Blockend
+Blockbegin Prog Blockend
+9 	Blockbegin 	
+	_:$blockbegin_
+_:$blockbegin_
+   BRANCH 0
+9 	Prog 	
+	Stmt 	Stmt 	Stmt 	Stmt
+Stmt Stmt Stmt Stmt
+10 	Stmt 	
+	Single_stmt
+Single_stmt
+11 	Single_stmt 	
+	Exprlist 	_;_
+Exprlist _;_
+12 	Exprlist 	
+	Val_label__is__expr
+Val_label__is__expr
+13 	Val_label__is__expr 	
+	Val
+Val
+14 	Val 	
+	String
+String
+15 	String 	
+	Str_val
+Str_val
+16 	Str_val 	
+	_"""inserts new entry(s) before index/name i"""_
+_"""inserts new entry(s) before index/name i"""_
+   BRANCH -6
+10 	Stmt 	
+	Block_stmt
+Block_stmt
+11 	Block_stmt 	
+	Ifelse
+Ifelse
+12 	Ifelse 	
+	If 	Block
+If Block
+13 	If_ 	
+	_if_ 	Comparison__is__expr
+_if_ Comparison__is__expr
+14 	Comparison__is__expr 	
+	Funccall__is__expr 	Op_cmp 	Val_label__is__expr
+Funccall__is__expr Op_cmp Val_label__is__expr
+15 	Funccall__is__expr 	
+	Val_label__is__expr 	_(_ 	Arglist 	_)_
+Val_label__is__expr _(_ Arglist _)_
+16 	Val_label__is__expr 	
+	Val
+Val
+17 	Val 	
+	Var
+Var
+18 	Var 	
+	Id
+Id
+19 	Id_ 	
+	_type_
+_type_
+   BRANCH -3
+16 	Arglist 	
+	Pos_arglist
+Pos_arglist
+17 	Pos_arglist 	
+	Pos_arg
+Pos_arg
+18 	Pos_arg 	
+	Val_label__is__expr
+Val_label__is__expr
+19 	Val_label__is__expr 	
+	Val
+Val
+20 	Val 	
+	Var
+Var
+21 	Var 	
+	Id
+Id
+22 	Id_ 	
+	_S_
+_S_
+   BRANCH -7
+15 	Op_cmp 	
+	_!=_
+_!=_
+   BRANCH 0
+15 	Val_label__is__expr 	
+	Val
+Val
+16 	Val 	
+	Var
+Var
+17 	Var 	
+	Var 	_._ 	Id
+Var _._ Id
+18 	Var 	
+	Id
+Id
+19 	Id_ 	
+	_pd_
+_pd_
+   BRANCH -1
+18 	Id_ 	
+	_Series_
+_Series_
+   BRANCH -5
+13 	Block 	
+	Blockbegin 	Prog 	Blockend
+Blockbegin Prog Blockend
+14 	Blockbegin 	
+	_:$blockbegin_
+_:$blockbegin_
+   BRANCH 0
+14 	Prog 	
+	Stmt
+Stmt
+15 	Stmt 	
+	Single_stmt
+Single_stmt
+16 	Single_stmt 	
+	Assign_stmt 	_;_
+Assign_stmt _;_
+17 	Assign_stmt 	
+	Assign
+Assign
+18 	Assign 	
+	Varlist 	_=_ 	Exprlist
+Varlist _=_ Exprlist
+19 	Varlist 	
+	Vartuple
+Vartuple
+20 	Vartuple 	
+	Var
+Var
+21 	Var 	
+	Id
+Id
+22 	Id_ 	
+	_S_
+_S_
+   BRANCH -3
+19 	Exprlist 	
+	Funccall__is__expr
+Funccall__is__expr
+20 	Funccall__is__expr 	
+	Val_label__is__expr 	_(_ 	Arglist 	_)_
+Val_label__is__expr _(_ Arglist _)_
+21 	Val_label__is__expr 	
+	Val
+Val
+22 	Val 	
+	Var
+Var
+23 	Var 	
+	Var 	_._ 	Id
+Var _._ Id
+24 	Var 	
+	Id
+Id
+25 	Id_ 	
+	_pd_
+_pd_
+   BRANCH -1
+24 	Id_ 	
+	_Series_
+_Series_
+   BRANCH -3
+21 	Arglist 	
+	Pos_arglist
+Pos_arglist
+22 	Pos_arglist 	
+	Pos_arg 	_,_ 	Pos_arg
+Pos_arg _,_ Pos_arg
+23 	Pos_arg 	
+	Val_label__is__expr
+Val_label__is__expr
+24 	Val_label__is__expr 	
+	Val
+Val
+25 	Val 	
+	List
+List
+26 	List_ 	
+	_[_ 	Exprlist 	_]_
+_[_ Exprlist _]_
+27 	Exprlist 	
+	Val_label__is__expr
+Val_label__is__expr
+28 	Val_label__is__expr 	
+	Val
+Val
+29 	Val 	
+	Var
+Var
+30 	Var 	
+	Var 	_[_ 	Slice 	_]_
+Var _[_ Slice _]_
+31 	Var 	
+	Id
+Id
+32 	Id_ 	
+	_S_
+_S_
+   BRANCH -1
+31 	Slice_ 	
+	Val_label__is__expr
+Val_label__is__expr
+32 	Val_label__is__expr 	
+	Val
+Val
+33 	Val 	
+	Number
+Number
+34 	Number 	
+	Int
+Int
+35 	Int_ 	
+	_1_
+_1_
+   BRANCH -12
+23 	Pos_arg 	
+	Val_label__is__expr
+Val_label__is__expr
+24 	Val_label__is__expr 	
+	Val
+Val
+25 	Val 	
+	List
+List
+26 	List_ 	
+	_[_ 	Exprlist 	_]_
+_[_ Exprlist _]_
+27 	Exprlist 	
+	Val_label__is__expr
+Val_label__is__expr
+28 	Val_label__is__expr 	
+	Val
+Val
+29 	Val 	
+	Var
+Var
+30 	Var 	
+	Var 	_[_ 	Slice 	_]_
+Var _[_ Slice _]_
+31 	Var 	
+	Id
+Id
+32 	Id_ 	
+	_S_
+_S_
+   BRANCH -1
+31 	Slice_ 	
+	Val_label__is__expr
+Val_label__is__expr
+32 	Val_label__is__expr 	
+	Val
+Val
+33 	Val 	
+	Number
+Number
+34 	Number 	
+	Int
+Int
+35 	Int_ 	
+	_0_
+_0_
+   BRANCH -21
+14 	Blockend 	
+	_$blockend_
+_$blockend_
+   BRANCH -4
+10 	Stmt 	
+	Block_stmt
+Block_stmt
+11 	Block_stmt 	
+	Ifelse
+Ifelse
+12 	Ifelse 	
+	If 	Block
+If Block
+13 	If_ 	
+	_if_ 	Comparison__is__expr
+_if_ Comparison__is__expr
+14 	Comparison__is__expr 	
+	Funccall__is__expr 	Op_cmp 	Val_label__is__expr
+Funccall__is__expr Op_cmp Val_label__is__expr
+15 	Funccall__is__expr 	
+	Val_label__is__expr 	_(_ 	Arglist 	_)_
+Val_label__is__expr _(_ Arglist _)_
+16 	Val_label__is__expr 	
+	Val
+Val
+17 	Val 	
+	Var
+Var
+18 	Var 	
+	Id
+Id
+19 	Id_ 	
+	_type_
+_type_
+   BRANCH -3
+16 	Arglist 	
+	Pos_arglist
+Pos_arglist
+17 	Pos_arglist 	
+	Pos_arg
+Pos_arg
+18 	Pos_arg 	
+	Val_label__is__expr
+Val_label__is__expr
+19 	Val_label__is__expr 	
+	Val
+Val
+20 	Val 	
+	Var
+Var
+21 	Var 	
+	Id
+Id
+22 	Id_ 	
+	_i_
+_i_
+   BRANCH -7
+15 	Op_cmp 	
+	_==_
+_==_
+   BRANCH 0
+15 	Val_label__is__expr 	
+	Val
+Val
+16 	Val 	
+	Var
+Var
+17 	Var 	
+	Id
+Id
+18 	Id_ 	
+	_str_
+_str_
+   BRANCH -5
+13 	Block 	
+	Blockbegin 	Prog 	Blockend
+Blockbegin Prog Blockend
+14 	Blockbegin 	
+	_:$blockbegin_
+_:$blockbegin_
+   BRANCH 0
+14 	Prog 	
+	Stmt
+Stmt
+15 	Stmt 	
+	Single_stmt
+Single_stmt
+16 	Single_stmt 	
+	Assign_stmt 	_;_
+Assign_stmt _;_
+17 	Assign_stmt 	
+	Assign
+Assign
+18 	Assign 	
+	Varlist 	_=_ 	Exprlist
+Varlist _=_ Exprlist
+19 	Varlist 	
+	Vartuple
+Vartuple
+20 	Vartuple 	
+	Var
+Var
+21 	Var 	
+	Id
+Id
+22 	Id_ 	
+	_i_
+_i_
+   BRANCH -3
+19 	Exprlist 	
+	Index__is__expr
+Index__is__expr
+20 	Index__is__expr 	
+	Index__is__expr 	_[_ 	Slice 	_]_
+Index__is__expr _[_ Slice _]_
+21 	Index__is__expr 	
+	Funccall__is__expr 	_[_ 	Slice 	_]_
+Funccall__is__expr _[_ Slice _]_
+22 	Funccall__is__expr 	
+	Val_label__is__expr 	_(_ 	Arglist 	_)_
+Val_label__is__expr _(_ Arglist _)_
+23 	Val_label__is__expr 	
+	Val
+Val
+24 	Val 	
+	Var
+Var
+25 	Var 	
+	Var 	_._ 	Id
+Var _._ Id
+26 	Var 	
+	Id
+Id
+27 	Id_ 	
+	_np_
+_np_
+   BRANCH -1
+26 	Id_ 	
+	_where_
+_where_
+   BRANCH -3
+23 	Arglist 	
+	Pos_arglist
+Pos_arglist
+24 	Pos_arglist 	
+	Pos_arg
+Pos_arg
+25 	Pos_arg 	
+	Comparison__is__expr
+Comparison__is__expr
+26 	Comparison__is__expr 	
+	Funccall__is__expr 	Op_cmp 	Val_label__is__expr
+Funccall__is__expr Op_cmp Val_label__is__expr
+27 	Funccall__is__expr 	
+	Val_label__is__expr 	_(_ 	_)_
+Val_label__is__expr _(_ _)_
+28 	Val_label__is__expr 	
+	Val
+Val
+29 	Val 	
+	Var
+Var
+30 	Var 	
+	Var 	_._ 	Id
+Var _._ Id
+31 	Var 	
+	Id
+Id
+32 	Id_ 	
+	_self_
+_self_
+   BRANCH -1
+31 	Id_ 	
+	_keys_
+_keys_
+   BRANCH -4
+27 	Op_cmp 	
+	_==_
+_==_
+   BRANCH 0
+27 	Val_label__is__expr 	
+	Val
+Val
+28 	Val 	
+	Var
+Var
+29 	Var 	
+	Id
+Id
+30 	Id_ 	
+	_i_
+_i_
+   BRANCH -8
+22 	Slice_ 	
+	Val_label__is__expr
+Val_label__is__expr
+23 	Val_label__is__expr 	
+	Val
+Val
+24 	Val 	
+	Number
+Number
+25 	Number 	
+	Int
+Int
+26 	Int_ 	
+	_0_
+_0_
+   BRANCH -5
+21 	Slice_ 	
+	Val_label__is__expr
+Val_label__is__expr
+22 	Val_label__is__expr 	
+	Val
+Val
+23 	Val 	
+	Number
+Number
+24 	Number 	
+	Int
+Int
+25 	Int_ 	
+	_0_
+_0_
+   BRANCH -11
+14 	Blockend 	
+	_$blockend_
+_$blockend_
+   BRANCH -4
+10 	Stmt 	
+	Block_stmt
+Block_stmt
+11 	Block_stmt 	
+	Ifelse
+Ifelse
+12 	Ifelse 	
+	If 	Block 	Else 	Block
+If Block Else Block
+13 	If_ 	
+	_if_ 	Not__is__expr
+_if_ Not__is__expr
+14 	Not__is__expr 	
+	_not_ 	Val_label__is__expr
+_not_ Val_label__is__expr
+15 	Val_label__is__expr 	
+	Val
+Val
+16 	Val 	
+	Var
+Var
+17 	Var 	
+	Id
+Id
+18 	Id_ 	
+	_rename_
+_rename_
+   BRANCH -5
+13 	Block 	
+	Blockbegin 	Prog 	Blockend
+Blockbegin Prog Blockend
+14 	Blockbegin 	
+	_:$blockbegin_
+_:$blockbegin_
+   BRANCH 0
+14 	Prog 	
+	Stmt
+Stmt
+15 	Stmt 	
+	Single_stmt
+Single_stmt
+16 	Single_stmt 	
+	Exprlist 	_;_
+Exprlist _;_
+17 	Exprlist 	
+	Funccall__is__expr
+Funccall__is__expr
+18 	Funccall__is__expr 	
+	Val_label__is__expr 	_(_ 	Arglist 	_)_
+Val_label__is__expr _(_ Arglist _)_
+19 	Val_label__is__expr 	
+	Val
+Val
+20 	Val 	
+	Var
+Var
+21 	Var 	
+	Var 	_._ 	Id
+Var _._ Id
+22 	Var 	
+	Id
+Id
+23 	Id_ 	
+	_self_
+_self_
+   BRANCH -1
+22 	Id_ 	
+	___init___
+___init___
+   BRANCH -3
+19 	Arglist 	
+	Pos_arglist
+Pos_arglist
+20 	Pos_arglist 	
+	Pos_arg
+Pos_arg
+21 	Pos_arg 	
+	Funccall__is__expr
+Funccall__is__expr
+22 	Funccall__is__expr 	
+	Attr__is__expr 	_(_ 	Arglist 	_)_
+Attr__is__expr _(_ Arglist _)_
+23 	Attr__is__expr 	
+	Funccall__is__expr 	_._ 	Id
+Funccall__is__expr _._ Id
+24 	Funccall__is__expr 	
+	Val_label__is__expr 	_(_ 	Arglist 	_)_
+Val_label__is__expr _(_ Arglist _)_
+25 	Val_label__is__expr 	
+	Val
+Val
+26 	Val 	
+	Var
+Var
+27 	Var 	
+	Var 	_._ 	Id
+Var _._ Id
+28 	Var 	
+	Var 	_[_ 	Slice 	_]_
+Var _[_ Slice _]_
+29 	Var 	
+	Id
+Id
+30 	Id_ 	
+	_self_
+_self_
+   BRANCH -1
+29 	Slice_ 	
+	_:_ 	Val_label__is__expr
+_:_ Val_label__is__expr
+30 	Val_label__is__expr 	
+	Val
+Val
+31 	Val 	
+	Var
+Var
+32 	Var 	
+	Id
+Id
+33 	Id_ 	
+	_i_
+_i_
+   BRANCH -5
+28 	Id_ 	
+	_append_
+_append_
+   BRANCH -3
+25 	Arglist 	
+	Pos_arglist
+Pos_arglist
+26 	Pos_arglist 	
+	Pos_arg
+Pos_arg
+27 	Pos_arg 	
+	Val_label__is__expr
+Val_label__is__expr
+28 	Val_label__is__expr 	
+	Val
+Val
+29 	Val 	
+	Var
+Var
+30 	Var 	
+	Id
+Id
+31 	Id_ 	
+	_S_
+_S_
+   BRANCH -7
+24 	Id_ 	
+	_append_
+_append_
+   BRANCH -1
+23 	Arglist 	
+	Pos_arglist
+Pos_arglist
+24 	Pos_arglist 	
+	Pos_arg
+Pos_arg
+25 	Pos_arg 	
+	Val_label__is__expr
+Val_label__is__expr
+26 	Val_label__is__expr 	
+	Val
+Val
+27 	Val 	
+	Var
+Var
+28 	Var 	
+	Var 	_[_ 	Slice 	_]_
+Var _[_ Slice _]_
+29 	Var 	
+	Id
+Id
+30 	Id_ 	
+	_self_
+_self_
+   BRANCH -1
+29 	Slice_ 	
+	Val_label__is__expr 	_:_
+Val_label__is__expr _:_
+30 	Val_label__is__expr 	
+	Val
+Val
+31 	Val 	
+	Var
+Var
+32 	Var 	
+	Id
+Id
+33 	Id_ 	
+	_i_
+_i_
+   BRANCH -19
+14 	Blockend 	
+	_$blockend_
+_$blockend_
+   BRANCH -1
+13 	Else_ 	
+	_else_
+_else_
+   BRANCH 0
+13 	Block 	
+	Blockbegin 	Prog 	Blockend
+Blockbegin Prog Blockend
+14 	Blockbegin 	
+	_:$blockbegin_
+_:$blockbegin_
+   BRANCH 0
+14 	Prog 	
+	Stmt 	Stmt 	Stmt 	Stmt
+Stmt Stmt Stmt Stmt
+15 	Stmt 	
+	Single_stmt
+Single_stmt
+16 	Single_stmt 	
+	Assign_stmt 	_;_
+Assign_stmt _;_
+17 	Assign_stmt 	
+	Assign
+Assign
+18 	Assign 	
+	Varlist 	_=_ 	Exprlist
+Varlist _=_ Exprlist
+19 	Varlist 	
+	Vartuple
+Vartuple
+20 	Vartuple 	
+	Var
+Var
+21 	Var 	
+	Id
+Id
+22 	Id_ 	
+	_head_
+_head_
+   BRANCH -3
+19 	Exprlist 	
+	Funccall__is__expr
+Funccall__is__expr
+20 	Funccall__is__expr 	
+	Val_label__is__expr 	_(_ 	Arglist 	_)_
+Val_label__is__expr _(_ Arglist _)_
+21 	Val_label__is__expr 	
+	Val
+Val
+22 	Val 	
+	Var
+Var
+23 	Var 	
+	Id
+Id
+24 	Id_ 	
+	_NamedList_
+_NamedList_
+   BRANCH -3
+21 	Arglist 	
+	Pos_arglist
+Pos_arglist
+22 	Pos_arglist 	
+	Pos_arg
+Pos_arg
+23 	Pos_arg 	
+	Funccall__is__expr
+Funccall__is__expr
+24 	Funccall__is__expr 	
+	Val_label__is__expr 	_(_ 	_)_
+Val_label__is__expr _(_ _)_
+25 	Val_label__is__expr 	
+	Val
+Val
+26 	Val 	
+	Var
+Var
+27 	Var 	
+	Var 	_._ 	Id
+Var _._ Id
+28 	Var 	
+	Var 	_[_ 	Slice 	_]_
+Var _[_ Slice _]_
+29 	Var 	
+	Id
+Id
+30 	Id_ 	
+	_self_
+_self_
+   BRANCH -1
+29 	Slice_ 	
+	_:_ 	Val_label__is__expr
+_:_ Val_label__is__expr
+30 	Val_label__is__expr 	
+	Val
+Val
+31 	Val 	
+	Var
+Var
+32 	Var 	
+	Id
+Id
+33 	Id_ 	
+	_i_
+_i_
+   BRANCH -5
+28 	Id_ 	
+	_copy_
+_copy_
+   BRANCH -13
+15 	Stmt 	
+	Single_stmt
+Single_stmt
+16 	Single_stmt 	
+	Assign_stmt 	_;_
+Assign_stmt _;_
+17 	Assign_stmt 	
+	Assign
+Assign
+18 	Assign 	
+	Varlist 	_=_ 	Exprlist
+Varlist _=_ Exprlist
+19 	Varlist 	
+	Vartuple
+Vartuple
+20 	Vartuple 	
+	Var
+Var
+21 	Var 	
+	Id
+Id
+22 	Id_ 	
+	_tail_
+_tail_
+   BRANCH -3
+19 	Exprlist 	
+	Funccall__is__expr
+Funccall__is__expr
+20 	Funccall__is__expr 	
+	Val_label__is__expr 	_(_ 	Arglist 	_)_
+Val_label__is__expr _(_ Arglist _)_
+21 	Val_label__is__expr 	
+	Val
+Val
+22 	Val 	
+	Var
+Var
+23 	Var 	
+	Var 	_._ 	Id
+Var _._ Id
+24 	Var 	
+	Id
+Id
+25 	Id_ 	
+	_S_
+_S_
+   BRANCH -1
+24 	Id_ 	
+	_append_
+_append_
+   BRANCH -3
+21 	Arglist 	
+	Pos_arglist
+Pos_arglist
+22 	Pos_arglist 	
+	Pos_arg
+Pos_arg
+23 	Pos_arg 	
+	Val_label__is__expr
+Val_label__is__expr
+24 	Val_label__is__expr 	
+	Val
+Val
+25 	Val 	
+	Var
+Var
+26 	Var 	
+	Var 	_[_ 	Slice 	_]_
+Var _[_ Slice _]_
+27 	Var 	
+	Id
+Id
+28 	Id_ 	
+	_self_
+_self_
+   BRANCH -1
+27 	Slice_ 	
+	Val_label__is__expr 	_:_
+Val_label__is__expr _:_
+28 	Val_label__is__expr 	
+	Val
+Val
+29 	Val 	
+	Var
+Var
+30 	Var 	
+	Id
+Id
+31 	Id_ 	
+	_i_
+_i_
+   BRANCH -16
+15 	Stmt 	
+	Block_stmt
+Block_stmt
+16 	Block_stmt 	
+	Block_head 	Block
+Block_head Block
+17 	Block_head 	
+	Loop
+Loop
+18 	Loop 	
+	For
+For
+19 	For_ 	
+	_for_ 	Varlist 	_in_ 	Exprlist
+_for_ Varlist _in_ Exprlist
+20 	Varlist 	
+	Vartuple
+Vartuple
+21 	Vartuple 	
+	Var
+Var
+22 	Var 	
+	Id
+Id
+23 	Id_ 	
+	_x_
+_x_
+   BRANCH -3
+20 	Exprlist 	
+	Funccall__is__expr
+Funccall__is__expr
+21 	Funccall__is__expr 	
+	Val_label__is__expr 	_(_ 	_)_
+Val_label__is__expr _(_ _)_
+22 	Val_label__is__expr 	
+	Val
+Val
+23 	Val 	
+	Var
+Var
+24 	Var 	
+	Var 	_._ 	Id
+Var _._ Id
+25 	Var 	
+	Id
+Id
+26 	Id_ 	
+	_tail_
+_tail_
+   BRANCH -1
+25 	Id_ 	
+	_iteritems_
+_iteritems_
+   BRANCH -8
+17 	Block 	
+	Blockbegin 	Prog 	Blockend
+Blockbegin Prog Blockend
+18 	Blockbegin 	
+	_:$blockbegin_
+_:$blockbegin_
+   BRANCH 0
+18 	Prog 	
+	Stmt
+Stmt
+19 	Stmt 	
+	Single_stmt
+Single_stmt
+20 	Single_stmt 	
+	Exprlist 	_;_
+Exprlist _;_
+21 	Exprlist 	
+	Funccall__is__expr
+Funccall__is__expr
+22 	Funccall__is__expr 	
+	Val_label__is__expr 	_(_ 	Arglist 	_)_
+Val_label__is__expr _(_ Arglist _)_
+23 	Val_label__is__expr 	
+	Val
+Val
+24 	Val 	
+	Var
+Var
+25 	Var 	
+	Var 	_._ 	Id
+Var _._ Id
+26 	Var 	
+	Id
+Id
+27 	Id_ 	
+	_head_
+_head_
+   BRANCH -1
+26 	Id_ 	
+	_add_
+_add_
+   BRANCH -3
+23 	Arglist 	
+	Pos_arglist
+Pos_arglist
+24 	Pos_arglist 	
+	Pos_arg
+Pos_arg
+25 	Pos_arg 	
+	_*_ 	Val_label__is__expr
+_*_ Val_label__is__expr
+26 	Val_label__is__expr 	
+	Val
+Val
+27 	Val 	
+	Var
+Var
+28 	Var 	
+	Id
+Id
+29 	Id_ 	
+	_x_
+_x_
+   BRANCH -11
+18 	Blockend 	
+	_$blockend_
+_$blockend_
+   BRANCH -3
+15 	Stmt 	
+	Single_stmt
+Single_stmt
+16 	Single_stmt 	
+	Exprlist 	_;_
+Exprlist _;_
+17 	Exprlist 	
+	Funccall__is__expr
+Funccall__is__expr
+18 	Funccall__is__expr 	
+	Val_label__is__expr 	_(_ 	Arglist 	_)_
+Val_label__is__expr _(_ Arglist _)_
+19 	Val_label__is__expr 	
+	Val
+Val
+20 	Val 	
+	Var
+Var
+21 	Var 	
+	Var 	_._ 	Id
+Var _._ Id
+22 	Var 	
+	Id
+Id
+23 	Id_ 	
+	_self_
+_self_
+   BRANCH -1
+22 	Id_ 	
+	___init___
+___init___
+   BRANCH -3
+19 	Arglist 	
+	Pos_arglist
+Pos_arglist
+20 	Pos_arglist 	
+	Pos_arg
+Pos_arg
+21 	Pos_arg 	
+	Val_label__is__expr
+Val_label__is__expr
+22 	Val_label__is__expr 	
+	Val
+Val
+23 	Val 	
+	Var
+Var
+24 	Var 	
+	Id
+Id
+25 	Id_ 	
+	_head_
+_head_
+   BRANCH -11
+14 	Blockend 	
+	_$blockend_
+_$blockend_
+   BRANCH -5
+9 	Blockend 	
+	_$blockend_
+_$blockend_
+   BRANCH -3
+6 	Stmt 	
+	Block_stmt
+Block_stmt
+7 	Block_stmt 	
+	Block_head 	Block
+Block_head Block
+8 	Block_head 	
+	Func
+Func
+9 	Func 	
+	_def_ 	Id 	_(_ 	Paramlist 	_)_
+_def_ Id _(_ Paramlist _)_
+10 	Id_ 	
+	_append_
+_append_
+   BRANCH 0
+10 	Paramlist 	
+	Pos_paramlist 	_,_ 	Kparamlist
+Pos_paramlist _,_ Kparamlist
+11 	Pos_paramlist 	
+	Pos_paramtuple 	_,_ 	Pos_paramtuple
+Pos_paramtuple _,_ Pos_paramtuple
+12 	Pos_paramtuple 	
+	Simple_var
+Simple_var
+13 	Simple_var 	
+	Id
+Id
+14 	Id_ 	
+	_self_
+_self_
+   BRANCH -2
+12 	Pos_paramtuple 	
+	Simple_var
+Simple_var
+13 	Simple_var 	
+	Id
+Id
+14 	Id_ 	
+	_x_
+_x_
+   BRANCH -3
+11 	Kparamlist 	
+	Kparam
+Kparam
+12 	Kparam 	
+	Pos_paramtuple 	_=_ 	Val_label__is__expr
+Pos_paramtuple _=_ Val_label__is__expr
+13 	Pos_paramtuple 	
+	Simple_var
+Simple_var
+14 	Simple_var 	
+	Id
+Id
+15 	Id_ 	
+	_verify_integrity_
+_verify_integrity_
+   BRANCH -2
+13 	Val_label__is__expr 	
+	Val
+Val
+14 	Val 	
+	Var
+Var
+15 	Var 	
+	Id
+Id
+16 	Id_ 	
+	_False_
+_False_
+   BRANCH -8
+8 	Block 	
+	Blockbegin 	Prog 	Blockend
+Blockbegin Prog Blockend
+9 	Blockbegin 	
+	_:$blockbegin_
+_:$blockbegin_
+   BRANCH 0
+9 	Prog 	
+	Stmt 	Stmt
+Stmt Stmt
+10 	Stmt 	
+	Block_stmt
+Block_stmt
+11 	Block_stmt 	
+	Ifelse
+Ifelse
+12 	Ifelse 	
+	If 	Block
+If Block
+13 	If_ 	
+	_if_ 	Comparison__is__expr
+_if_ Comparison__is__expr
+14 	Comparison__is__expr 	
+	Funccall__is__expr 	Op_cmp 	Val_label__is__expr
+Funccall__is__expr Op_cmp Val_label__is__expr
+15 	Funccall__is__expr 	
+	Val_label__is__expr 	_(_ 	Arglist 	_)_
+Val_label__is__expr _(_ Arglist _)_
+16 	Val_label__is__expr 	
+	Val
+Val
+17 	Val 	
+	Var
+Var
+18 	Var 	
+	Id
+Id
+19 	Id_ 	
+	_type_
+_type_
+   BRANCH -3
+16 	Arglist 	
+	Pos_arglist
+Pos_arglist
+17 	Pos_arglist 	
+	Pos_arg
+Pos_arg
+18 	Pos_arg 	
+	Val_label__is__expr
+Val_label__is__expr
+19 	Val_label__is__expr 	
+	Val
+Val
+20 	Val 	
+	Var
+Var
+21 	Var 	
+	Id
+Id
+22 	Id_ 	
+	_x_
+_x_
+   BRANCH -7
+15 	Op_cmp 	
+	_==_
+_==_
+   BRANCH 0
+15 	Val_label__is__expr 	
+	Val
+Val
+16 	Val 	
+	Var
+Var
+17 	Var 	
+	Id
+Id
+18 	Id_ 	
+	_dict_
+_dict_
+   BRANCH -5
+13 	Block 	
+	Blockbegin 	Prog 	Blockend
+Blockbegin Prog Blockend
+14 	Blockbegin 	
+	_:$blockbegin_
+_:$blockbegin_
+   BRANCH 0
+14 	Prog 	
+	Stmt
+Stmt
+15 	Stmt 	
+	Single_stmt
+Single_stmt
+16 	Single_stmt 	
+	Assign_stmt 	_;_
+Assign_stmt _;_
+17 	Assign_stmt 	
+	Assign
+Assign
+18 	Assign 	
+	Varlist 	_=_ 	Exprlist
+Varlist _=_ Exprlist
+19 	Varlist 	
+	Vartuple
+Vartuple
+20 	Vartuple 	
+	Var
+Var
+21 	Var 	
+	Id
+Id
+22 	Id_ 	
+	_x_
+_x_
+   BRANCH -3
+19 	Exprlist 	
+	Funccall__is__expr
+Funccall__is__expr
+20 	Funccall__is__expr 	
+	Val_label__is__expr 	_(_ 	Arglist 	_)_
+Val_label__is__expr _(_ Arglist _)_
+21 	Val_label__is__expr 	
+	Val
+Val
+22 	Val 	
+	Var
+Var
+23 	Var 	
+	Var 	_._ 	Id
+Var _._ Id
+24 	Var 	
+	Id
+Id
+25 	Id_ 	
+	_pd_
+_pd_
+   BRANCH -1
+24 	Id_ 	
+	_Series_
+_Series_
+   BRANCH -3
+21 	Arglist 	
+	Pos_arglist
+Pos_arglist
+22 	Pos_arglist 	
+	Pos_arg
+Pos_arg
+23 	Pos_arg 	
+	Val_label__is__expr
+Val_label__is__expr
+24 	Val_label__is__expr 	
+	Val
+Val
+25 	Val 	
+	Var
+Var
+26 	Var 	
+	Id
+Id
+27 	Id_ 	
+	_x_
+_x_
+   BRANCH -13
+14 	Blockend 	
+	_$blockend_
+_$blockend_
+   BRANCH -4
+10 	Stmt 	
+	Single_stmt
+Single_stmt
+11 	Single_stmt 	
+	Func_stmt 	_;_
+Func_stmt _;_
+12 	Func_stmt 	
+	_return_ 	Exprlist
+_return_ Exprlist
+13 	Exprlist 	
+	Funccall__is__expr
+Funccall__is__expr
+14 	Funccall__is__expr 	
+	Attr__is__expr 	_(_ 	Arglist 	_)_
+Attr__is__expr _(_ Arglist _)_
+15 	Attr__is__expr 	
+	Funccall__is__expr 	_._ 	Id
+Funccall__is__expr _._ Id
+16 	Funccall__is__expr 	
+	Val_label__is__expr 	_(_ 	Arglist 	_)_
+Val_label__is__expr _(_ Arglist _)_
+17 	Val_label__is__expr 	
+	Val
+Val
+18 	Val 	
+	Var
+Var
+19 	Var 	
+	Id
+Id
+20 	Id_ 	
+	_super_
+_super_
+   BRANCH -3
+17 	Arglist 	
+	Pos_arglist
+Pos_arglist
+18 	Pos_arglist 	
+	Pos_arg 	_,_ 	Pos_arg
+Pos_arg _,_ Pos_arg
+19 	Pos_arg 	
+	Val_label__is__expr
+Val_label__is__expr
+20 	Val_label__is__expr 	
+	Val
+Val
+21 	Val 	
+	Var
+Var
+22 	Var 	
+	Id
+Id
+23 	Id_ 	
+	_NamedList_
+_NamedList_
+   BRANCH -4
+19 	Pos_arg 	
+	Val_label__is__expr
+Val_label__is__expr
+20 	Val_label__is__expr 	
+	Val
+Val
+21 	Val 	
+	Var
+Var
+22 	Var 	
+	Id
+Id
+23 	Id_ 	
+	_self_
+_self_
+   BRANCH -7
+16 	Id_ 	
+	_append_
+_append_
+   BRANCH -1
+15 	Arglist 	
+	Pos_arglist
+Pos_arglist
+16 	Pos_arglist 	
+	Pos_arg 	_,_ 	Pos_arg
+Pos_arg _,_ Pos_arg
+17 	Pos_arg 	
+	Val_label__is__expr
+Val_label__is__expr
+18 	Val_label__is__expr 	
+	Val
+Val
+19 	Val 	
+	Var
+Var
+20 	Var 	
+	Id
+Id
+21 	Id_ 	
+	_x_
+_x_
+   BRANCH -4
+17 	Pos_arg 	
+	Val_label__is__expr
+Val_label__is__expr
+18 	Val_label__is__expr 	
+	Val
+Val
+19 	Val 	
+	Var
+Var
+20 	Var 	
+	Id
+Id
+21 	Id_ 	
+	_verify_integrity_
+_verify_integrity_
+   BRANCH -12
+9 	Blockend 	
+	_$blockend_
+_$blockend_
+   BRANCH -4
+5 	Blockend 	
+	_$blockend_
+_$blockend_
+   BRANCH -3
+2 	Stmt 	
+	Block_stmt
+Block_stmt
+3 	Block_stmt 	
+	Block_head 	Block
+Block_head Block
+4 	Block_head 	
+	Class
+Class
+5 	Class_ 	
+	_class_ 	Id 	_(_ 	Exprlist 	_)_
+_class_ Id _(_ Exprlist _)_
+6 	Id_ 	
+	_vertex_
+_vertex_
+   BRANCH 0
+6 	Exprlist 	
+	Val_label__is__expr
+Val_label__is__expr
+7 	Val_label__is__expr 	
+	Val
+Val
+8 	Val 	
+	Var
+Var
+9 	Var 	
+	Id
+Id
+10 	Id_ 	
+	_NamedList_
+_NamedList_
+   BRANCH -6
+4 	Block 	
+	Blockbegin 	Prog 	Blockend
+Blockbegin Prog Blockend
+5 	Blockbegin 	
+	_:$blockbegin_
+_:$blockbegin_
+   BRANCH 0
+5 	Prog 	
+	Stmt 	Stmt 	Stmt 	Stmt 	Stmt 	Stmt 	Stmt 	Stmt 	Stmt 	Stmt 	Stmt 	Stmt 	Stmt 	Stmt 	Stmt 	Stmt 	Stmt 	Stmt 	Stmt 	Stmt 	Stmt 	Stmt 	Stmt
+Stmt Stmt Stmt Stmt Stmt Stmt Stmt Stmt Stmt Stmt Stmt Stmt Stmt Stmt Stmt Stmt Stmt Stmt Stmt Stmt Stmt Stmt Stmt
+6 	Stmt 	
+	Single_stmt
+Single_stmt
+7 	Single_stmt 	
+	Assign_stmt 	_;_
+Assign_stmt _;_
+8 	Assign_stmt 	
+	Assign
+Assign
+9 	Assign 	
+	Varlist 	_=_ 	Exprlist
+Varlist _=_ Exprlist
+10 	Varlist 	
+	Vartuple
+Vartuple
+11 	Vartuple 	
+	Var
+Var
+12 	Var 	
+	Id
+Id
+13 	Id_ 	
+	_isa_VL_
+_isa_VL_
+   BRANCH -3
+10 	Exprlist 	
+	Val_label__is__expr
+Val_label__is__expr
+11 	Val_label__is__expr 	
+	Val
+Val
+12 	Val 	
+	List
+List
+13 	List_ 	
+	_[_ 	_]_
+_[_ _]_
+   BRANCH -7
+6 	Stmt 	
+	Block_stmt
+Block_stmt
+7 	Block_stmt 	
+	Block_head 	Block
+Block_head Block
+8 	Block_head 	
+	Func
+Func
+9 	Func 	
+	_def_ 	Id 	_(_ 	Paramlist 	_)_
+_def_ Id _(_ Paramlist _)_
+10 	Id_ 	
+	___init___
+___init___
+   BRANCH 0
+10 	Paramlist 	
+	Pos_paramlist 	_,_ 	Kparamlist
+Pos_paramlist _,_ Kparamlist
+11 	Pos_paramlist 	
+	Pos_paramtuple
+Pos_paramtuple
+12 	Pos_paramtuple 	
+	Simple_var
+Simple_var
+13 	Simple_var 	
+	Id
+Id
+14 	Id_ 	
+	_self_
+_self_
+   BRANCH -3
+11 	Kparamlist 	
+	Kparam 	_,_ 	Kparam 	_,_ 	Kparam 	_,_ 	Kparam 	_,_ 	Kparam 	_,_ 	Kparam 	_,_ 	Kparam 	_,_ 	Kparam 	_,_ 	Kparam
+Kparam _,_ Kparam _,_ Kparam _,_ Kparam _,_ Kparam _,_ Kparam _,_ Kparam _,_ Kparam _,_ Kparam
+12 	Kparam 	
+	Pos_paramtuple 	_=_ 	Val_label__is__expr
+Pos_paramtuple _=_ Val_label__is__expr
+13 	Pos_paramtuple 	
+	Simple_var
+Simple_var
+14 	Simple_var 	
+	Id
+Id
+15 	Id_ 	
+	_name_
+_name_
+   BRANCH -2
+13 	Val_label__is__expr 	
+	Val
+Val
+14 	Val 	
+	Var
+Var
+15 	Var 	
+	Id
+Id
+16 	Id_ 	
+	_None_
+_None_
+   BRANCH -4
+12 	Kparam 	
+	Pos_paramtuple 	_=_ 	Val_label__is__expr
+Pos_paramtuple _=_ Val_label__is__expr
+13 	Pos_paramtuple 	
+	Simple_var
+Simple_var
+14 	Simple_var 	
+	Id
+Id
+15 	Id_ 	
+	_parent_
+_parent_
+   BRANCH -2
+13 	Val_label__is__expr 	
+	Val
+Val
+14 	Val 	
+	Var
+Var
+15 	Var 	
+	Id
+Id
+16 	Id_ 	
+	_None_
+_None_
+   BRANCH -4
+12 	Kparam 	
+	Pos_paramtuple 	_=_ 	Val_label__is__expr
+Pos_paramtuple _=_ Val_label__is__expr
+13 	Pos_paramtuple 	
+	Simple_var
+Simple_var
+14 	Simple_var 	
+	Id
+Id
+15 	Id_ 	
+	_space_
+_space_
+   BRANCH -2
+13 	Val_label__is__expr 	
+	Val
+Val
+14 	Val 	
+	String
+String
+15 	String 	
+	Str_val
+Str_val
+16 	Str_val 	
+	_''_
+_''_
+   BRANCH -4
+12 	Kparam 	
+	Pos_paramtuple 	_=_ 	Val_label__is__expr
+Pos_paramtuple _=_ Val_label__is__expr
+13 	Pos_paramtuple 	
+	Simple_var
+Simple_var
+14 	Simple_var 	
+	Id
+Id
+15 	Id_ 	
+	_data_
+_data_
+   BRANCH -2
+13 	Val_label__is__expr 	
+	Val
+Val
+14 	Val 	
+	Var
+Var
+15 	Var 	
+	Id
+Id
+16 	Id_ 	
+	_None_
+_None_
+   BRANCH -4
+12 	Kparam 	
+	Pos_paramtuple 	_=_ 	Val_label__is__expr
+Pos_paramtuple _=_ Val_label__is__expr
+13 	Pos_paramtuple 	
+	Simple_var
+Simple_var
+14 	Simple_var 	
+	Id
+Id
+15 	Id_ 	
+	_index_
+_index_
+   BRANCH -2
+13 	Val_label__is__expr 	
+	Val
+Val
+14 	Val 	
+	Var
+Var
+15 	Var 	
+	Id
+Id
+16 	Id_ 	
+	_None_
+_None_
+   BRANCH -4
+12 	Kparam 	
+	Pos_paramtuple 	_=_ 	Val_label__is__expr
+Pos_paramtuple _=_ Val_label__is__expr
+13 	Pos_paramtuple 	
+	Simple_var
+Simple_var
+14 	Simple_var 	
+	Id
+Id
+15 	Id_ 	
+	_dtype_
+_dtype_
+   BRANCH -2
+13 	Val_label__is__expr 	
+	Val
+Val
+14 	Val 	
+	Var
+Var
+15 	Var 	
+	Id
+Id
+16 	Id_ 	
+	_object_
+_object_
+   BRANCH -4
+12 	Kparam 	
+	Pos_paramtuple 	_=_ 	Val_label__is__expr
+Pos_paramtuple _=_ Val_label__is__expr
+13 	Pos_paramtuple 	
+	Simple_var
+Simple_var
+14 	Simple_var 	
+	Id
+Id
+15 	Id_ 	
+	_Name_
+_Name_
+   BRANCH -2
+13 	Val_label__is__expr 	
+	Val
+Val
+14 	Val 	
+	Var
+Var
+15 	Var 	
+	Id
+Id
+16 	Id_ 	
+	_None_
+_None_
+   BRANCH -4
+12 	Kparam 	
+	Pos_paramtuple 	_=_ 	Val_label__is__expr
+Pos_paramtuple _=_ Val_label__is__expr
+13 	Pos_paramtuple 	
+	Simple_var
+Simple_var
+14 	Simple_var 	
+	Id
+Id
+15 	Id_ 	
+	_copy_
+_copy_
+   BRANCH -2
+13 	Val_label__is__expr 	
+	Val
+Val
+14 	Val 	
+	Var
+Var
+15 	Var 	
+	Id
+Id
+16 	Id_ 	
+	_False_
+_False_
+   BRANCH -4
+12 	Kparam 	
+	Pos_paramtuple 	_=_ 	Val_label__is__expr
+Pos_paramtuple _=_ Val_label__is__expr
+13 	Pos_paramtuple 	
+	Simple_var
+Simple_var
+14 	Simple_var 	
+	Id
+Id
+15 	Id_ 	
+	_fastpath_
+_fastpath_
+   BRANCH -2
+13 	Val_label__is__expr 	
+	Val
+Val
+14 	Val 	
+	Var
+Var
+15 	Var 	
+	Id
+Id
+16 	Id_ 	
+	_False_
+_False_
+   BRANCH -8
+8 	Block 	
+	Blockbegin 	Prog 	Blockend
+Blockbegin Prog Blockend
+9 	Blockbegin 	
+	_:$blockbegin_
+_:$blockbegin_
+   BRANCH 0
+9 	Prog 	
+	Stmt 	Stmt 	Stmt 	Stmt 	Stmt
+Stmt Stmt Stmt Stmt Stmt
+10 	Stmt 	
+	Block_stmt
+Block_stmt
+11 	Block_stmt 	
+	Ifelse
+Ifelse
+12 	Ifelse 	
+	If 	Block
+If Block
+13 	If_ 	
+	_if_ 	Comparison__is__expr
+_if_ Comparison__is__expr
+14 	Comparison__is__expr 	
+	Funccall__is__expr 	Op_cmp 	Val_label__is__expr
+Funccall__is__expr Op_cmp Val_label__is__expr
+15 	Funccall__is__expr 	
+	Val_label__is__expr 	_(_ 	Arglist 	_)_
+Val_label__is__expr _(_ Arglist _)_
+16 	Val_label__is__expr 	
+	Val
+Val
+17 	Val 	
+	Var
+Var
+18 	Var 	
+	Id
+Id
+19 	Id_ 	
+	_type_
+_type_
+   BRANCH -3
+16 	Arglist 	
+	Pos_arglist
+Pos_arglist
+17 	Pos_arglist 	
+	Pos_arg
+Pos_arg
+18 	Pos_arg 	
+	Val_label__is__expr
+Val_label__is__expr
+19 	Val_label__is__expr 	
+	Val
+Val
+20 	Val 	
+	Var
+Var
+21 	Var 	
+	Id
+Id
+22 	Id_ 	
+	_name_
+_name_
+   BRANCH -7
+15 	Op_cmp 	
+	_!=_
+_!=_
+   BRANCH 0
+15 	Val_label__is__expr 	
+	Val
+Val
+16 	Val 	
+	Var
+Var
+17 	Var 	
+	Id
+Id
+18 	Id_ 	
+	_str_
+_str_
+   BRANCH -5
+13 	Block 	
+	Blockbegin 	Prog 	Blockend
+Blockbegin Prog Blockend
+14 	Blockbegin 	
+	_:$blockbegin_
+_:$blockbegin_
+   BRANCH 0
+14 	Prog 	
+	Stmt 	Stmt
+Stmt Stmt
+15 	Stmt 	
+	Single_stmt
+Single_stmt
+16 	Single_stmt 	
+	Exprlist 	_;_
+Exprlist _;_
+17 	Exprlist 	
+	Funccall__is__expr
+Funccall__is__expr
+18 	Funccall__is__expr 	
+	Attr__is__expr 	_(_ 	Arglist 	_)_
+Attr__is__expr _(_ Arglist _)_
+19 	Attr__is__expr 	
+	Funccall__is__expr 	_._ 	Id
+Funccall__is__expr _._ Id
+20 	Funccall__is__expr 	
+	Val_label__is__expr 	_(_ 	Arglist 	_)_
+Val_label__is__expr _(_ Arglist _)_
+21 	Val_label__is__expr 	
+	Val
+Val
+22 	Val 	
+	Var
+Var
+23 	Var 	
+	Id
+Id
+24 	Id_ 	
+	_super_
+_super_
+   BRANCH -3
+21 	Arglist 	
+	Pos_arglist
+Pos_arglist
+22 	Pos_arglist 	
+	Pos_arg 	_,_ 	Pos_arg
+Pos_arg _,_ Pos_arg
+23 	Pos_arg 	
+	Val_label__is__expr
+Val_label__is__expr
+24 	Val_label__is__expr 	
+	Val
+Val
+25 	Val 	
+	Var
+Var
+26 	Var 	
+	Id
+Id
+27 	Id_ 	
+	_vertex_
+_vertex_
+   BRANCH -4
+23 	Pos_arg 	
+	Val_label__is__expr
+Val_label__is__expr
+24 	Val_label__is__expr 	
+	Val
+Val
+25 	Val 	
+	Var
+Var
+26 	Var 	
+	Id
+Id
+27 	Id_ 	
+	_self_
+_self_
+   BRANCH -7
+20 	Id_ 	
+	___init___
+___init___
+   BRANCH -1
+19 	Arglist 	
+	Pos_arglist
+Pos_arglist
+20 	Pos_arglist 	
+	Pos_arg 	_,_ 	Pos_arg 	_,_ 	Pos_arg 	_,_ 	Pos_arg 	_,_ 	Pos_arg 	_,_ 	Pos_arg
+Pos_arg _,_ Pos_arg _,_ Pos_arg _,_ Pos_arg _,_ Pos_arg _,_ Pos_arg
+21 	Pos_arg 	
+	Val_label__is__expr
+Val_label__is__expr
+22 	Val_label__is__expr 	
+	Val
+Val
+23 	Val 	
+	Var
+Var
+24 	Var 	
+	Id
+Id
+25 	Id_ 	
+	_name_
+_name_
+   BRANCH -4
+21 	Pos_arg 	
+	Val_label__is__expr
+Val_label__is__expr
+22 	Val_label__is__expr 	
+	Val
+Val
+23 	Val 	
+	Var
+Var
+24 	Var 	
+	Id
+Id
+25 	Id_ 	
+	_index_
+_index_
+   BRANCH -4
+21 	Pos_arg 	
+	Val_label__is__expr
+Val_label__is__expr
+22 	Val_label__is__expr 	
+	Val
+Val
+23 	Val 	
+	Var
+Var
+24 	Var 	
+	Id
+Id
+25 	Id_ 	
+	_dtype_
+_dtype_
+   BRANCH -4
+21 	Pos_arg 	
+	Val_label__is__expr
+Val_label__is__expr
+22 	Val_label__is__expr 	
+	Val
+Val
+23 	Val 	
+	Var
+Var
+24 	Var 	
+	Id
+Id
+25 	Id_ 	
+	_Name_
+_Name_
+   BRANCH -4
+21 	Pos_arg 	
+	Val_label__is__expr
+Val_label__is__expr
+22 	Val_label__is__expr 	
+	Val
+Val
+23 	Val 	
+	Var
+Var
+24 	Var 	
+	Id
+Id
+25 	Id_ 	
+	_copy_
+_copy_
+   BRANCH -4
+21 	Pos_arg 	
+	Val_label__is__expr
+Val_label__is__expr
+22 	Val_label__is__expr 	
+	Val
+Val
+23 	Val 	
+	Var
+Var
+24 	Var 	
+	Id
+Id
+25 	Id_ 	
+	_fastpath_
+_fastpath_
+   BRANCH -10
+15 	Stmt 	
+	Single_stmt
+Single_stmt
+16 	Single_stmt 	
+	Func_stmt 	_;_
+Func_stmt _;_
+17 	Func_stmt 	
+	_return_
+_return_
+   BRANCH -3
+14 	Blockend 	
+	_$blockend_
+_$blockend_
+   BRANCH -4
+10 	Stmt 	
+	Single_stmt
+Single_stmt
+11 	Single_stmt 	
+	Exprlist 	_;_
+Exprlist _;_
+12 	Exprlist 	
+	Funccall__is__expr
+Funccall__is__expr
+13 	Funccall__is__expr 	
+	Attr__is__expr 	_(_ 	Arglist 	_)_
+Attr__is__expr _(_ Arglist _)_
+14 	Attr__is__expr 	
+	Funccall__is__expr 	_._ 	Id
+Funccall__is__expr _._ Id
+15 	Funccall__is__expr 	
+	Val_label__is__expr 	_(_ 	Arglist 	_)_
+Val_label__is__expr _(_ Arglist _)_
+16 	Val_label__is__expr 	
+	Val
+Val
+17 	Val 	
+	Var
+Var
+18 	Var 	
+	Id
+Id
+19 	Id_ 	
+	_super_
+_super_
+   BRANCH -3
+16 	Arglist 	
+	Pos_arglist
+Pos_arglist
+17 	Pos_arglist 	
+	Pos_arg 	_,_ 	Pos_arg
+Pos_arg _,_ Pos_arg
+18 	Pos_arg 	
+	Val_label__is__expr
+Val_label__is__expr
+19 	Val_label__is__expr 	
+	Val
+Val
+20 	Val 	
+	Var
+Var
+21 	Var 	
+	Id
+Id
+22 	Id_ 	
+	_vertex_
+_vertex_
+   BRANCH -4
+18 	Pos_arg 	
+	Val_label__is__expr
+Val_label__is__expr
+19 	Val_label__is__expr 	
+	Val
+Val
+20 	Val 	
+	Var
+Var
+21 	Var 	
+	Id
+Id
+22 	Id_ 	
+	_self_
+_self_
+   BRANCH -7
+15 	Id_ 	
+	___init___
+___init___
+   BRANCH -1
+14 	Arglist 	
+	Pos_arglist
+Pos_arglist
+15 	Pos_arglist 	
+	Pos_arg 	_,_ 	Pos_arg 	_,_ 	Pos_arg 	_,_ 	Pos_arg 	_,_ 	Pos_arg 	_,_ 	Pos_arg
+Pos_arg _,_ Pos_arg _,_ Pos_arg _,_ Pos_arg _,_ Pos_arg _,_ Pos_arg
+16 	Pos_arg 	
+	Val_label__is__expr
+Val_label__is__expr
+17 	Val_label__is__expr 	
+	Val
+Val
+18 	Val 	
+	Var
+Var
+19 	Var 	
+	Id
+Id
+20 	Id_ 	
+	_data_
+_data_
+   BRANCH -4
+16 	Pos_arg 	
+	Val_label__is__expr
+Val_label__is__expr
+17 	Val_label__is__expr 	
+	Val
+Val
+18 	Val 	
+	Var
+Var
+19 	Var 	
+	Id
+Id
+20 	Id_ 	
+	_index_
+_index_
+   BRANCH -4
+16 	Pos_arg 	
+	Val_label__is__expr
+Val_label__is__expr
+17 	Val_label__is__expr 	
+	Val
+Val
+18 	Val 	
+	Var
+Var
+19 	Var 	
+	Id
+Id
+20 	Id_ 	
+	_dtype_
+_dtype_
+   BRANCH -4
+16 	Pos_arg 	
+	Val_label__is__expr
+Val_label__is__expr
+17 	Val_label__is__expr 	
+	Val
+Val
+18 	Val 	
+	Var
+Var
+19 	Var 	
+	Id
+Id
+20 	Id_ 	
+	_Name_
+_Name_
+   BRANCH -4
+16 	Pos_arg 	
+	Val_label__is__expr
+Val_label__is__expr
+17 	Val_label__is__expr 	
+	Val
+Val
+18 	Val 	
+	Var
+Var
+19 	Var 	
+	Id
+Id
+20 	Id_ 	
+	_copy_
+_copy_
+   BRANCH -4
+16 	Pos_arg 	
+	Val_label__is__expr
+Val_label__is__expr
+17 	Val_label__is__expr 	
+	Val
+Val
+18 	Val 	
+	Var
+Var
+19 	Var 	
+	Id
+Id
+20 	Id_ 	
+	_fastpath_
+_fastpath_
+   BRANCH -10
+10 	Stmt 	
+	Single_stmt
+Single_stmt
+11 	Single_stmt 	
+	Assign_stmt 	_;_
+Assign_stmt _;_
+12 	Assign_stmt 	
+	Assign
+Assign
+13 	Assign 	
+	Varlist 	_=_ 	Exprlist
+Varlist _=_ Exprlist
+14 	Varlist 	
+	Vartuple
+Vartuple
+15 	Vartuple 	
+	Var
+Var
+16 	Var 	
+	Var 	_._ 	Id
+Var _._ Id
+17 	Var 	
+	Id
+Id
+18 	Id_ 	
+	_self_
+_self_
+   BRANCH -1
+17 	Id_ 	
+	_parent_
+_parent_
+   BRANCH -3
+14 	Exprlist 	
+	Val_label__is__expr
+Val_label__is__expr
+15 	Val_label__is__expr 	
+	Val
+Val
+16 	Val 	
+	Var
+Var
+17 	Var 	
+	Id
+Id
+18 	Id_ 	
+	_parent_
+_parent_
+   BRANCH -8
+10 	Stmt 	
+	Block_stmt
+Block_stmt
+11 	Block_stmt 	
+	Ifelse
+Ifelse
+12 	Ifelse 	
+	If 	Block 	Else 	Block
+If Block Else Block
+13 	If_ 	
+	_if_ 	And__is__expr
+_if_ And__is__expr
+14 	And__is__expr 	
+	Val_label__is__expr 	_and_ 	Funccall__is__expr
+Val_label__is__expr _and_ Funccall__is__expr
+15 	Val_label__is__expr 	
+	Val
+Val
+16 	Val 	
+	Var
+Var
+17 	Var 	
+	Id
+Id
+18 	Id_ 	
+	_name_
+_name_
+   BRANCH -3
+15 	Funccall__is__expr 	
+	Val_label__is__expr 	_(_ 	_)_
+Val_label__is__expr _(_ _)_
+16 	Val_label__is__expr 	
+	Val
+Val
+17 	Val 	
+	Var
+Var
+18 	Var 	
+	Var 	_._ 	Id
+Var _._ Id
+19 	Var 	
+	Var 	_[_ 	Slice 	_]_
+Var _[_ Slice _]_
+20 	Var 	
+	Id
+Id
+21 	Id_ 	
+	_name_
+_name_
+   BRANCH -1
+20 	Slice_ 	
+	Unary__is__expr
+Unary__is__expr
+21 	Unary__is__expr 	
+	_-_ 	Val_label__is__expr
+_-_ Val_label__is__expr
+22 	Val_label__is__expr 	
+	Val
+Val
+23 	Val 	
+	Number
+Number
+24 	Number 	
+	Int
+Int
+25 	Int_ 	
+	_1_
+_1_
+   BRANCH -6
+19 	Id_ 	
+	_isdigit_
+_isdigit_
+   BRANCH -6
+13 	Block 	
+	Blockbegin 	Prog 	Blockend
+Blockbegin Prog Blockend
+14 	Blockbegin 	
+	_:$blockbegin_
+_:$blockbegin_
+   BRANCH 0
+14 	Prog 	
+	Stmt
+Stmt
+15 	Stmt 	
+	Single_stmt
+Single_stmt
+16 	Single_stmt 	
+	Assign_stmt 	_;_
+Assign_stmt _;_
+17 	Assign_stmt 	
+	Assign
+Assign
+18 	Assign 	
+	Varlist 	_=_ 	Exprlist
+Varlist _=_ Exprlist
+19 	Varlist 	
+	Vartuple 	_,_ 	Vartuple
+Vartuple _,_ Vartuple
+20 	Vartuple 	
+	Var
+Var
+21 	Var 	
+	Var 	_._ 	Id
+Var _._ Id
+22 	Var 	
+	Id
+Id
+23 	Id_ 	
+	_self_
+_self_
+   BRANCH -1
+22 	Id_ 	
+	_name_
+_name_
+   BRANCH -2
+20 	Vartuple 	
+	Var
+Var
+21 	Var 	
+	Var 	_._ 	Id
+Var _._ Id
+22 	Var 	
+	Id
+Id
+23 	Id_ 	
+	_self_
+_self_
+   BRANCH -1
+22 	Id_ 	
+	_nr_
+_nr_
+   BRANCH -3
+19 	Exprlist 	
+	Funccall__is__expr
+Funccall__is__expr
+20 	Funccall__is__expr 	
+	Attr__is__expr 	_(_ 	_)_
+Attr__is__expr _(_ _)_
+21 	Attr__is__expr 	
+	Funccall__is__expr 	_._ 	Id
+Funccall__is__expr _._ Id
+22 	Funccall__is__expr 	
+	Val_label__is__expr 	_(_ 	Arglist 	_)_
+Val_label__is__expr _(_ Arglist _)_
+23 	Val_label__is__expr 	
+	Val
+Val
+24 	Val 	
+	Var
+Var
+25 	Var 	
+	Var 	_._ 	Id
+Var _._ Id
+26 	Var 	
+	Id
+Id
+27 	Id_ 	
+	_re_
+_re_
+   BRANCH -1
+26 	Id_ 	
+	_match_
+_match_
+   BRANCH -3
+23 	Arglist 	
+	Pos_arglist
+Pos_arglist
+24 	Pos_arglist 	
+	Pos_arg 	_,_ 	Pos_arg
+Pos_arg _,_ Pos_arg
+25 	Pos_arg 	
+	Val_label__is__expr
+Val_label__is__expr
+26 	Val_label__is__expr 	
+	Val
+Val
+27 	Val 	
+	String
+String
+28 	String 	
+	Str_prefix 	Str_val
+Str_prefix Str_val
+29 	Str_prefix 	
+	_r_
+_r_
+   BRANCH 0
+29 	Str_val 	
+	_'(.+?)(\d*)$'_
+_'(.+?)(\d*)$'_
+   BRANCH -4
+25 	Pos_arg 	
+	Val_label__is__expr
+Val_label__is__expr
+26 	Val_label__is__expr 	
+	Val
+Val
+27 	Val 	
+	Var
+Var
+28 	Var 	
+	Id
+Id
+29 	Id_ 	
+	_name_
+_name_
+   BRANCH -7
+22 	Id_ 	
+	_groups_
+_groups_
+   BRANCH -8
+14 	Blockend 	
+	_$blockend_
+_$blockend_
+   BRANCH -1
+13 	Else_ 	
+	_else_
+_else_
+   BRANCH 0
+13 	Block 	
+	Blockbegin 	Prog 	Blockend
+Blockbegin Prog Blockend
+14 	Blockbegin 	
+	_:$blockbegin_
+_:$blockbegin_
+   BRANCH 0
+14 	Prog 	
+	Stmt 	Stmt
+Stmt Stmt
+15 	Stmt 	
+	Single_stmt
+Single_stmt
+16 	Single_stmt 	
+	Assign_stmt 	_;_
+Assign_stmt _;_
+17 	Assign_stmt 	
+	Assign
+Assign
+18 	Assign 	
+	Varlist 	_=_ 	Exprlist
+Varlist _=_ Exprlist
+19 	Varlist 	
+	Vartuple
+Vartuple
+20 	Vartuple 	
+	Var
+Var
+21 	Var 	
+	Var 	_._ 	Id
+Var _._ Id
+22 	Var 	
+	Id
+Id
+23 	Id_ 	
+	_self_
+_self_
+   BRANCH -1
+22 	Id_ 	
+	_name_
+_name_
+   BRANCH -3
+19 	Exprlist 	
+	Val_label__is__expr
+Val_label__is__expr
+20 	Val_label__is__expr 	
+	Val
+Val
+21 	Val 	
+	Var
+Var
+22 	Var 	
+	Id
+Id
+23 	Id_ 	
+	_name_
+_name_
+   BRANCH -8
+15 	Stmt 	
+	Single_stmt
+Single_stmt
+16 	Single_stmt 	
+	Assign_stmt 	_;_
+Assign_stmt _;_
+17 	Assign_stmt 	
+	Assign
+Assign
+18 	Assign 	
+	Varlist 	_=_ 	Exprlist
+Varlist _=_ Exprlist
+19 	Varlist 	
+	Vartuple
+Vartuple
+20 	Vartuple 	
+	Var
+Var
+21 	Var 	
+	Var 	_._ 	Id
+Var _._ Id
+22 	Var 	
+	Id
+Id
+23 	Id_ 	
+	_self_
+_self_
+   BRANCH -1
+22 	Id_ 	
+	_nr_
+_nr_
+   BRANCH -3
+19 	Exprlist 	
+	Val_label__is__expr
+Val_label__is__expr
+20 	Val_label__is__expr 	
+	Val
+Val
+21 	Val 	
+	Var
+Var
+22 	Var 	
+	Id
+Id
+23 	Id_ 	
+	_None_
+_None_
+   BRANCH -9
+14 	Blockend 	
+	_$blockend_
+_$blockend_
+   BRANCH -4
+10 	Stmt 	
+	Single_stmt
+Single_stmt
+11 	Single_stmt 	
+	Assign_stmt 	_;_
+Assign_stmt _;_
+12 	Assign_stmt 	
+	Assign
+Assign
+13 	Assign 	
+	Varlist 	_=_ 	Exprlist
+Varlist _=_ Exprlist
+14 	Varlist 	
+	Vartuple
+Vartuple
+15 	Vartuple 	
+	Var
+Var
+16 	Var 	
+	Var 	_._ 	Id
+Var _._ Id
+17 	Var 	
+	Id
+Id
+18 	Id_ 	
+	_self_
+_self_
+   BRANCH -1
+17 	Id_ 	
+	_space_
+_space_
+   BRANCH -3
+14 	Exprlist 	
+	Val_label__is__expr
+Val_label__is__expr
+15 	Val_label__is__expr 	
+	Val
+Val
+16 	Val 	
+	Var
+Var
+17 	Var 	
+	Id
+Id
+18 	Id_ 	
+	_space_
+_space_
+   BRANCH -9
+9 	Blockend 	
+	_$blockend_
+_$blockend_
+   BRANCH -3
+6 	Stmt 	
+	Block_stmt
+Block_stmt
+7 	Block_stmt 	
+	Block_head 	Block
+Block_head Block
+8 	Block_head 	
+	Func
+Func
+9 	Func 	
+	_def_ 	Id 	_(_ 	Paramlist 	_)_
+_def_ Id _(_ Paramlist _)_
+10 	Id_ 	
+	___eq___
+___eq___
+   BRANCH 0
+10 	Paramlist 	
+	Pos_paramlist
+Pos_paramlist
+11 	Pos_paramlist 	
+	Pos_paramtuple 	_,_ 	Pos_paramtuple
+Pos_paramtuple _,_ Pos_paramtuple
+12 	Pos_paramtuple 	
+	Simple_var
+Simple_var
+13 	Simple_var 	
+	Id
+Id
+14 	Id_ 	
+	_self_
+_self_
+   BRANCH -2
+12 	Pos_paramtuple 	
+	Simple_var
+Simple_var
+13 	Simple_var 	
+	Id
+Id
+14 	Id_ 	
+	_S_
+_S_
+   BRANCH -6
+8 	Block 	
+	Blockbegin 	Prog 	Blockend
+Blockbegin Prog Blockend
+9 	Blockbegin 	
+	_:$blockbegin_
+_:$blockbegin_
+   BRANCH 0
+9 	Prog 	
+	Stmt
+Stmt
+10 	Stmt 	
+	Single_stmt
+Single_stmt
+11 	Single_stmt 	
+	Func_stmt 	_;_
+Func_stmt _;_
+12 	Func_stmt 	
+	_return_ 	Exprlist
+_return_ Exprlist
+13 	Exprlist 	
+	Comparison__is__expr
+Comparison__is__expr
+14 	Comparison__is__expr 	
+	Val_label__is__expr 	Op_cmp 	Val_label__is__expr
+Val_label__is__expr Op_cmp Val_label__is__expr
+15 	Val_label__is__expr 	
+	Val
+Val
+16 	Val 	
+	Var
+Var
+17 	Var 	
+	Id
+Id
+18 	Id_ 	
+	_S_
+_S_
+   BRANCH -3
+15 	Op_cmp 	
+	_==_
+_==_
+   BRANCH 0
+15 	Val_label__is__expr 	
+	Val
+Val
+16 	Val 	
+	Var
+Var
+17 	Var 	
+	Var 	_._ 	Id
+Var _._ Id
+18 	Var 	
+	Id
+Id
+19 	Id_ 	
+	_self_
+_self_
+   BRANCH -1
+18 	Id_ 	
+	_name_
+_name_
+   BRANCH -9
+9 	Blockend 	
+	_$blockend_
+_$blockend_
+   BRANCH -3
+6 	Stmt 	
+	Block_stmt
+Block_stmt
+7 	Block_stmt 	
+	Block_head 	Block
+Block_head Block
+8 	Block_head 	
+	Func
+Func
+9 	Func 	
+	_def_ 	Id 	_(_ 	Paramlist 	_)_
+_def_ Id _(_ Paramlist _)_
+10 	Id_ 	
+	___nonzero___
+___nonzero___
+   BRANCH 0
+10 	Paramlist 	
+	Pos_paramlist
+Pos_paramlist
+11 	Pos_paramlist 	
+	Pos_paramtuple
+Pos_paramtuple
+12 	Pos_paramtuple 	
+	Simple_var
+Simple_var
+13 	Simple_var 	
+	Id
+Id
+14 	Id_ 	
+	_self_
+_self_
+   BRANCH -6
+8 	Block 	
+	Blockbegin 	Prog 	Blockend
+Blockbegin Prog Blockend
+9 	Blockbegin 	
+	_:$blockbegin_
+_:$blockbegin_
+   BRANCH 0
+9 	Prog 	
+	Stmt
+Stmt
+10 	Stmt 	
+	Single_stmt
+Single_stmt
+11 	Single_stmt 	
+	Func_stmt 	_;_
+Func_stmt _;_
+12 	Func_stmt 	
+	_return_ 	Exprlist
+_return_ Exprlist
+13 	Exprlist 	
+	Funccall__is__expr
+Funccall__is__expr
+14 	Funccall__is__expr 	
+	Val_label__is__expr 	_(_ 	Arglist 	_)_
+Val_label__is__expr _(_ Arglist _)_
+15 	Val_label__is__expr 	
+	Val
+Val
+16 	Val 	
+	Var
+Var
+17 	Var 	
+	Id
+Id
+18 	Id_ 	
+	_bool_
+_bool_
+   BRANCH -3
+15 	Arglist 	
+	Pos_arglist
+Pos_arglist
+16 	Pos_arglist 	
+	Pos_arg
+Pos_arg
+17 	Pos_arg 	
+	Val_label__is__expr
+Val_label__is__expr
+18 	Val_label__is__expr 	
+	Val
+Val
+19 	Val 	
+	Var
+Var
+20 	Var 	
+	Var 	_._ 	Id
+Var _._ Id
+21 	Var 	
+	Id
+Id
+22 	Id_ 	
+	_self_
+_self_
+   BRANCH -1
+21 	Id_ 	
+	_name_
+_name_
+   BRANCH -12
+9 	Blockend 	
+	_$blockend_
+_$blockend_
+   BRANCH -3
+6 	Stmt 	
+	Block_stmt
+Block_stmt
+7 	Block_stmt 	
+	Block_head 	Block
+Block_head Block
+8 	Block_head 	
+	Func
+Func
+9 	Func 	
+	_def_ 	Id 	_(_ 	Paramlist 	_)_
+_def_ Id _(_ Paramlist _)_
+10 	Id_ 	
+	_rename_
+_rename_
+   BRANCH 0
+10 	Paramlist 	
+	Pos_paramlist 	_,_ 	Kparamlist
+Pos_paramlist _,_ Kparamlist
+11 	Pos_paramlist 	
+	Pos_paramtuple 	_,_ 	Pos_paramtuple
+Pos_paramtuple _,_ Pos_paramtuple
+12 	Pos_paramtuple 	
+	Simple_var
+Simple_var
+13 	Simple_var 	
+	Id
+Id
+14 	Id_ 	
+	_self_
+_self_
+   BRANCH -2
+12 	Pos_paramtuple 	
+	Simple_var
+Simple_var
+13 	Simple_var 	
+	Id
+Id
+14 	Id_ 	
+	_old_
+_old_
+   BRANCH -3
+11 	Kparamlist 	
+	Kparam 	_,_ 	Kparam
+Kparam _,_ Kparam
+12 	Kparam 	
+	Pos_paramtuple 	_=_ 	Val_label__is__expr
+Pos_paramtuple _=_ Val_label__is__expr
+13 	Pos_paramtuple 	
+	Simple_var
+Simple_var
+14 	Simple_var 	
+	Id
+Id
+15 	Id_ 	
+	_new_
+_new_
+   BRANCH -2
+13 	Val_label__is__expr 	
+	Val
+Val
+14 	Val 	
+	Var
+Var
+15 	Var 	
+	Id
+Id
+16 	Id_ 	
+	_None_
+_None_
+   BRANCH -4
+12 	Kparam 	
+	Pos_paramtuple 	_=_ 	Val_label__is__expr
+Pos_paramtuple _=_ Val_label__is__expr
+13 	Pos_paramtuple 	
+	Simple_var
+Simple_var
+14 	Simple_var 	
+	Id
+Id
+15 	Id_ 	
+	_inplace_
+_inplace_
+   BRANCH -2
+13 	Val_label__is__expr 	
+	Val
+Val
+14 	Val 	
+	Var
+Var
+15 	Var 	
+	Id
+Id
+16 	Id_ 	
+	_True_
+_True_
+   BRANCH -8
+8 	Block 	
+	Blockbegin 	Prog 	Blockend
+Blockbegin Prog Blockend
+9 	Blockbegin 	
+	_:$blockbegin_
+_:$blockbegin_
+   BRANCH 0
+9 	Prog 	
+	Stmt 	Stmt 	Stmt 	Stmt
+Stmt Stmt Stmt Stmt
+10 	Stmt 	
+	Single_stmt
+Single_stmt
+11 	Single_stmt 	
+	Exprlist 	_;_
+Exprlist _;_
+12 	Exprlist 	
+	Val_label__is__expr
+Val_label__is__expr
+13 	Val_label__is__expr 	
+	Val
+Val
+14 	Val 	
+	String
+String
+15 	String 	
+	Str_val
+Str_val
+16 	Str_val 	
+	_"""changes (unique) keyname in children of vertex"""_
+_"""changes (unique) keyname in children of vertex"""_
+   BRANCH -6
+10 	Stmt 	
+	Block_stmt
+Block_stmt
+11 	Block_stmt 	
+	Ifelse
+Ifelse
+12 	Ifelse 	
+	If 	Block
+If Block
+13 	If_ 	
+	_if_ 	Comparison__is__expr
+_if_ Comparison__is__expr
+14 	Comparison__is__expr 	
+	Val_label__is__expr 	Op_cmp 	Val_label__is__expr
+Val_label__is__expr Op_cmp Val_label__is__expr
+15 	Val_label__is__expr 	
+	Val
+Val
+16 	Val 	
+	Var
+Var
+17 	Var 	
+	Id
+Id
+18 	Id_ 	
+	_new_
+_new_
+   BRANCH -3
+15 	Op_cmp 	
+	_is_
+_is_
+   BRANCH 0
+15 	Val_label__is__expr 	
+	Val
+Val
+16 	Val 	
+	Var
+Var
+17 	Var 	
+	Id
+Id
+18 	Id_ 	
+	_None_
+_None_
+   BRANCH -5
+13 	Block 	
+	Blockbegin 	Prog 	Blockend
+Blockbegin Prog Blockend
+14 	Blockbegin 	
+	_:$blockbegin_
+_:$blockbegin_
+   BRANCH 0
+14 	Prog 	
+	Stmt
+Stmt
+15 	Stmt 	
+	Single_stmt
+Single_stmt
+16 	Single_stmt 	
+	Assign_stmt 	_;_
+Assign_stmt _;_
+17 	Assign_stmt 	
+	Assign
+Assign
+18 	Assign 	
+	Varlist 	_=_ 	Exprlist
+Varlist _=_ Exprlist
+19 	Varlist 	
+	Vartuple 	_,_ 	Vartuple
+Vartuple _,_ Vartuple
+20 	Vartuple 	
+	Var
+Var
+21 	Var 	
+	Id
+Id
+22 	Id_ 	
+	_old_
+_old_
+   BRANCH -2
+20 	Vartuple 	
+	Var
+Var
+21 	Var 	
+	Id
+Id
+22 	Id_ 	
+	_new_
+_new_
+   BRANCH -3
+19 	Exprlist 	
+	Index__is__expr
+Index__is__expr
+20 	Index__is__expr 	
+	Funccall__is__expr 	_[_ 	Slice 	_]_
+Funccall__is__expr _[_ Slice _]_
+21 	Funccall__is__expr 	
+	Val_label__is__expr 	_(_ 	_)_
+Val_label__is__expr _(_ _)_
+22 	Val_label__is__expr 	
+	Val
+Val
+23 	Val 	
+	Var
+Var
+24 	Var 	
+	Var 	_._ 	Id
+Var _._ Id
+25 	Var 	
+	Id
+Id
+26 	Id_ 	
+	_old_
+_old_
+   BRANCH -1
+25 	Id_ 	
+	_items_
+_items_
+   BRANCH -4
+21 	Slice_ 	
+	Val_label__is__expr
+Val_label__is__expr
+22 	Val_label__is__expr 	
+	Val
+Val
+23 	Val 	
+	Number
+Number
+24 	Number 	
+	Int
+Int
+25 	Int_ 	
+	_0_
+_0_
+   BRANCH -11
+14 	Blockend 	
+	_$blockend_
+_$blockend_
+   BRANCH -4
+10 	Stmt 	
+	Single_stmt
+Single_stmt
+11 	Single_stmt 	
+	Exprlist 	_;_
+Exprlist _;_
+12 	Exprlist 	
+	Funccall__is__expr
+Funccall__is__expr
+13 	Funccall__is__expr 	
+	Val_label__is__expr 	_(_ 	Arglist 	_)_
+Val_label__is__expr _(_ Arglist _)_
+14 	Val_label__is__expr 	
+	Val
+Val
+15 	Val 	
+	Var
+Var
+16 	Var 	
+	Var 	_._ 	Id
+Var _._ Id
+17 	Var 	
+	Id
+Id
+18 	Id_ 	
+	_self_
+_self_
+   BRANCH -1
+17 	Id_ 	
+	___init___
+___init___
+   BRANCH -3
+14 	Arglist 	
+	Pos_arglist
+Pos_arglist
+15 	Pos_arglist 	
+	Pos_arg
+Pos_arg
+16 	Pos_arg 	
+	Funccall__is__expr
+Funccall__is__expr
+17 	Funccall__is__expr 	
+	Attr__is__expr 	_(_ 	Arglist 	_)_
+Attr__is__expr _(_ Arglist _)_
+18 	Attr__is__expr 	
+	Funccall__is__expr 	_._ 	Id
+Funccall__is__expr _._ Id
+19 	Funccall__is__expr 	
+	Val_label__is__expr 	_(_ 	Arglist 	_)_
+Val_label__is__expr _(_ Arglist _)_
+20 	Val_label__is__expr 	
+	Val
+Val
+21 	Val 	
+	Var
+Var
+22 	Var 	
+	Id
+Id
+23 	Id_ 	
+	_super_
+_super_
+   BRANCH -3
+20 	Arglist 	
+	Pos_arglist
+Pos_arglist
+21 	Pos_arglist 	
+	Pos_arg 	_,_ 	Pos_arg
+Pos_arg _,_ Pos_arg
+22 	Pos_arg 	
+	Val_label__is__expr
+Val_label__is__expr
+23 	Val_label__is__expr 	
+	Val
+Val
+24 	Val 	
+	Var
+Var
+25 	Var 	
+	Id
+Id
+26 	Id_ 	
+	_vertex_
+_vertex_
+   BRANCH -4
+22 	Pos_arg 	
+	Val_label__is__expr
+Val_label__is__expr
+23 	Val_label__is__expr 	
+	Val
+Val
+24 	Val 	
+	Var
+Var
+25 	Var 	
+	Id
+Id
+26 	Id_ 	
+	_self_
+_self_
+   BRANCH -7
+19 	Id_ 	
+	_rename_
+_rename_
+   BRANCH -1
+18 	Arglist 	
+	Pos_arglist
+Pos_arglist
+19 	Pos_arglist 	
+	Pos_arg
+Pos_arg
+20 	Pos_arg 	
+	Val_label__is__expr
+Val_label__is__expr
+21 	Val_label__is__expr 	
+	Val
+Val
+22 	Val 	
+	Dict
+Dict
+23 	Dict_ 	
+	_{_ 	Dictlist 	_}_
+_{_ Dictlist _}_
+24 	Dictlist 	
+	Dictitem
+Dictitem
+25 	Dictitem 	
+	Val_label__is__expr 	_:_ 	Val_label__is__expr
+Val_label__is__expr _:_ Val_label__is__expr
+26 	Val_label__is__expr 	
+	Val
+Val
+27 	Val 	
+	Var
+Var
+28 	Var 	
+	Id
+Id
+29 	Id_ 	
+	_old_
+_old_
+   BRANCH -3
+26 	Val_label__is__expr 	
+	Val
+Val
+27 	Val 	
+	Var
+Var
+28 	Var 	
+	Id
+Id
+29 	Id_ 	
+	_new_
+_new_
+   BRANCH -19
+10 	Stmt 	
+	Single_stmt
+Single_stmt
+11 	Single_stmt 	
+	Assign_stmt 	_;_
+Assign_stmt _;_
+12 	Assign_stmt 	
+	Assign
+Assign
+13 	Assign 	
+	Varlist 	_=_ 	Exprlist
+Varlist _=_ Exprlist
+14 	Varlist 	
+	Vartuple
+Vartuple
+15 	Vartuple 	
+	Var
+Var
+16 	Var 	
+	Var 	_._ 	Id
+Var _._ Id
+17 	Var 	
+	Var 	_[_ 	Slice 	_]_
+Var _[_ Slice _]_
+18 	Var 	
+	Id
+Id
+19 	Id_ 	
+	_self_
+_self_
+   BRANCH -1
+18 	Slice_ 	
+	Val_label__is__expr
+Val_label__is__expr
+19 	Val_label__is__expr 	
+	Val
+Val
+20 	Val 	
+	Var
+Var
+21 	Var 	
+	Id
+Id
+22 	Id_ 	
+	_new_
+_new_
+   BRANCH -5
+17 	Id_ 	
+	_nr_
+_nr_
+   BRANCH -3
+14 	Exprlist 	
+	Index__is__expr
+Index__is__expr
+15 	Index__is__expr 	
+	Funccall__is__expr 	_[_ 	Slice 	_]_
+Funccall__is__expr _[_ Slice _]_
+16 	Funccall__is__expr 	
+	Attr__is__expr 	_(_ 	_)_
+Attr__is__expr _(_ _)_
+17 	Attr__is__expr 	
+	Funccall__is__expr 	_._ 	Id
+Funccall__is__expr _._ Id
+18 	Funccall__is__expr 	
+	Val_label__is__expr 	_(_ 	Arglist 	_)_
+Val_label__is__expr _(_ Arglist _)_
+19 	Val_label__is__expr 	
+	Val
+Val
+20 	Val 	
+	Var
+Var
+21 	Var 	
+	Var 	_._ 	Id
+Var _._ Id
+22 	Var 	
+	Id
+Id
+23 	Id_ 	
+	_re_
+_re_
+   BRANCH -1
+22 	Id_ 	
+	_match_
+_match_
+   BRANCH -3
+19 	Arglist 	
+	Pos_arglist
+Pos_arglist
+20 	Pos_arglist 	
+	Pos_arg 	_,_ 	Pos_arg
+Pos_arg _,_ Pos_arg
+21 	Pos_arg 	
+	Val_label__is__expr
+Val_label__is__expr
+22 	Val_label__is__expr 	
+	Val
+Val
+23 	Val 	
+	String
+String
+24 	String 	
+	Str_prefix 	Str_val
+Str_prefix Str_val
+25 	Str_prefix 	
+	_r_
+_r_
+   BRANCH 0
+25 	Str_val 	
+	_'(.+?)(\d*)$'_
+_'(.+?)(\d*)$'_
+   BRANCH -4
+21 	Pos_arg 	
+	Val_label__is__expr
+Val_label__is__expr
+22 	Val_label__is__expr 	
+	Val
+Val
+23 	Val 	
+	Var
+Var
+24 	Var 	
+	Id
+Id
+25 	Id_ 	
+	_new_
+_new_
+   BRANCH -7
+18 	Id_ 	
+	_groups_
+_groups_
+   BRANCH -2
+16 	Slice_ 	
+	Val_label__is__expr
+Val_label__is__expr
+17 	Val_label__is__expr 	
+	Val
+Val
+18 	Val 	
+	Number
+Number
+19 	Number 	
+	Int
+Int
+20 	Int_ 	
+	_1_
+_1_
+   BRANCH -11
+9 	Blockend 	
+	_$blockend_
+_$blockend_
+   BRANCH -3
+6 	Stmt 	
+	Block_stmt
+Block_stmt
+7 	Block_stmt 	
+	Block_head 	Block
+Block_head Block
+8 	Block_head 	
+	Func
+Func
+9 	Func 	
+	_def_ 	Id 	_(_ 	Paramlist 	_)_
+_def_ Id _(_ Paramlist _)_
+10 	Id_ 	
+	_idx_
+_idx_
+   BRANCH 0
+10 	Paramlist 	
+	Pos_paramlist
+Pos_paramlist
+11 	Pos_paramlist 	
+	Pos_paramtuple
+Pos_paramtuple
+12 	Pos_paramtuple 	
+	Simple_var
+Simple_var
+13 	Simple_var 	
+	Id
+Id
+14 	Id_ 	
+	_self_
+_self_
+   BRANCH -6
+8 	Block 	
+	Blockbegin 	Prog 	Blockend
+Blockbegin Prog Blockend
+9 	Blockbegin 	
+	_:$blockbegin_
+_:$blockbegin_
+   BRANCH 0
+9 	Prog 	
+	Stmt
+Stmt
+10 	Stmt 	
+	Block_stmt
+Block_stmt
+11 	Block_stmt 	
+	Block_head 	Block
+Block_head Block
+12 	Block_head 	
+	Loop
+Loop
+13 	Loop 	
+	For
+For
+14 	For_ 	
+	_for_ 	Varlist 	_in_ 	Exprlist
+_for_ Varlist _in_ Exprlist
+15 	Varlist 	
+	Vartuple 	_,_ 	Vartuple
+Vartuple _,_ Vartuple
+16 	Vartuple 	
+	Var
+Var
+17 	Var 	
+	Id
+Id
+18 	Id_ 	
+	_i_
+_i_
+   BRANCH -2
+16 	Vartuple 	
+	Var
+Var
+17 	Var 	
+	Id
+Id
+18 	Id_ 	
+	_v_
+_v_
+   BRANCH -3
+15 	Exprlist 	
+	Funccall__is__expr
+Funccall__is__expr
+16 	Funccall__is__expr 	
+	Val_label__is__expr 	_(_ 	Arglist 	_)_
+Val_label__is__expr _(_ Arglist _)_
+17 	Val_label__is__expr 	
+	Val
+Val
+18 	Val 	
+	Var
+Var
+19 	Var 	
+	Id
+Id
+20 	Id_ 	
+	_enumerate_
+_enumerate_
+   BRANCH -3
+17 	Arglist 	
+	Pos_arglist
+Pos_arglist
+18 	Pos_arglist 	
+	Pos_arg
+Pos_arg
+19 	Pos_arg 	
+	Val_label__is__expr
+Val_label__is__expr
+20 	Val_label__is__expr 	
+	Val
+Val
+21 	Val 	
+	Var
+Var
+22 	Var 	
+	Var 	_._ 	Id
+Var _._ Id
+23 	Var 	
+	Id
+Id
+24 	Id_ 	
+	_self_
+_self_
+   BRANCH -1
+23 	Id_ 	
+	_parent_
+_parent_
+   BRANCH -11
+12 	Block 	
+	Blockbegin 	Prog 	Blockend
+Blockbegin Prog Blockend
+13 	Blockbegin 	
+	_:$blockbegin_
+_:$blockbegin_
+   BRANCH 0
+13 	Prog 	
+	Stmt
+Stmt
+14 	Stmt 	
+	Block_stmt
+Block_stmt
+15 	Block_stmt 	
+	Ifelse
+Ifelse
+16 	Ifelse 	
+	If 	Block
+If Block
+17 	If_ 	
+	_if_ 	Comparison__is__expr
+_if_ Comparison__is__expr
+18 	Comparison__is__expr 	
+	Val_label__is__expr 	Op_cmp 	Val_label__is__expr
+Val_label__is__expr Op_cmp Val_label__is__expr
+19 	Val_label__is__expr 	
+	Val
+Val
+20 	Val 	
+	Var
+Var
+21 	Var 	
+	Id
+Id
+22 	Id_ 	
+	_self_
+_self_
+   BRANCH -3
+19 	Op_cmp 	
+	_is_
+_is_
+   BRANCH 0
+19 	Val_label__is__expr 	
+	Val
+Val
+20 	Val 	
+	Var
+Var
+21 	Var 	
+	Id
+Id
+22 	Id_ 	
+	_v_
+_v_
+   BRANCH -5
+17 	Block 	
+	Blockbegin 	Prog 	Blockend
+Blockbegin Prog Blockend
+18 	Blockbegin 	
+	_:$blockbegin_
+_:$blockbegin_
+   BRANCH 0
+18 	Prog 	
+	Stmt
+Stmt
+19 	Stmt 	
+	Single_stmt
+Single_stmt
+20 	Single_stmt 	
+	Func_stmt 	_;_
+Func_stmt _;_
+21 	Func_stmt 	
+	_return_ 	Exprlist
+_return_ Exprlist
+22 	Exprlist 	
+	Val_label__is__expr
+Val_label__is__expr
+23 	Val_label__is__expr 	
+	Val
+Val
+24 	Val 	
+	Var
+Var
+25 	Var 	
+	Id
+Id
+26 	Id_ 	
+	_i_
+_i_
+   BRANCH -8
+18 	Blockend 	
+	_$blockend_
+_$blockend_
+   BRANCH -5
+13 	Blockend 	
+	_$blockend_
+_$blockend_
+   BRANCH -4
+9 	Blockend 	
+	_$blockend_
+_$blockend_
+   BRANCH -3
+6 	Stmt 	
+	Block_stmt
+Block_stmt
+7 	Block_stmt 	
+	Block_head 	Block
+Block_head Block
+8 	Block_head 	
+	Func
+Func
+9 	Func 	
+	_def_ 	Id 	_(_ 	Paramlist 	_)_
+_def_ Id _(_ Paramlist _)_
+10 	Id_ 	
+	_up_
+_up_
+   BRANCH 0
+10 	Paramlist 	
+	Pos_paramlist 	_,_ 	Kparamlist
+Pos_paramlist _,_ Kparamlist
+11 	Pos_paramlist 	
+	Pos_paramtuple
+Pos_paramtuple
+12 	Pos_paramtuple 	
+	Simple_var
+Simple_var
+13 	Simple_var 	
+	Id
+Id
+14 	Id_ 	
+	_self_
+_self_
+   BRANCH -3
+11 	Kparamlist 	
+	Kparam
+Kparam
+12 	Kparam 	
+	Pos_paramtuple 	_=_ 	Val_label__is__expr
+Pos_paramtuple _=_ Val_label__is__expr
+13 	Pos_paramtuple 	
+	Simple_var
+Simple_var
+14 	Simple_var 	
+	Id
+Id
+15 	Id_ 	
+	_n_
+_n_
+   BRANCH -2
+13 	Val_label__is__expr 	
+	Val
+Val
+14 	Val 	
+	Number
+Number
+15 	Number 	
+	Int
+Int
+16 	Int_ 	
+	_1_
+_1_
+   BRANCH -8
+8 	Block 	
+	Blockbegin 	Prog 	Blockend
+Blockbegin Prog Blockend
+9 	Blockbegin 	
+	_:$blockbegin_
+_:$blockbegin_
+   BRANCH 0
+9 	Prog 	
+	Stmt 	Stmt
+Stmt Stmt
+10 	Stmt 	
+	Block_stmt
+Block_stmt
+11 	Block_stmt 	
+	Ifelse
+Ifelse
+12 	Ifelse 	
+	If 	Block
+If Block
+13 	If_ 	
+	_if_ 	Comparison__is__expr
+_if_ Comparison__is__expr
+14 	Comparison__is__expr 	
+	Val_label__is__expr 	Op_cmp 	Val_label__is__expr
+Val_label__is__expr Op_cmp Val_label__is__expr
+15 	Val_label__is__expr 	
+	Val
+Val
+16 	Val 	
+	Var
+Var
+17 	Var 	
+	Id
+Id
+18 	Id_ 	
+	_n_
+_n_
+   BRANCH -3
+15 	Op_cmp 	
+	_==_
+_==_
+   BRANCH 0
+15 	Val_label__is__expr 	
+	Val
+Val
+16 	Val 	
+	Number
+Number
+17 	Number 	
+	Int
+Int
+18 	Int_ 	
+	_0_
+_0_
+   BRANCH -5
+13 	Block 	
+	Blockbegin 	Prog 	Blockend
+Blockbegin Prog Blockend
+14 	Blockbegin 	
+	_:$blockbegin_
+_:$blockbegin_
+   BRANCH 0
+14 	Prog 	
+	Stmt
+Stmt
+15 	Stmt 	
+	Single_stmt
+Single_stmt
+16 	Single_stmt 	
+	Func_stmt 	_;_
+Func_stmt _;_
+17 	Func_stmt 	
+	_return_ 	Exprlist
+_return_ Exprlist
+18 	Exprlist 	
+	Val_label__is__expr
+Val_label__is__expr
+19 	Val_label__is__expr 	
+	Val
+Val
+20 	Val 	
+	Var
+Var
+21 	Var 	
+	Id
+Id
+22 	Id_ 	
+	_self_
+_self_
+   BRANCH -8
+14 	Blockend 	
+	_$blockend_
+_$blockend_
+   BRANCH -4
+10 	Stmt 	
+	Single_stmt
+Single_stmt
+11 	Single_stmt 	
+	Func_stmt 	_;_
+Func_stmt _;_
+12 	Func_stmt 	
+	_return_ 	Exprlist
+_return_ Exprlist
+13 	Exprlist 	
+	Funccall__is__expr
+Funccall__is__expr
+14 	Funccall__is__expr 	
+	Val_label__is__expr 	_(_ 	Arglist 	_)_
+Val_label__is__expr _(_ Arglist _)_
+15 	Val_label__is__expr 	
+	Val
+Val
+16 	Val 	
+	Var
+Var
+17 	Var 	
+	Var 	_._ 	Id
+Var _._ Id
+18 	Var 	
+	Var 	_._ 	Id
+Var _._ Id
+19 	Var 	
+	Id
+Id
+20 	Id_ 	
+	_self_
+_self_
+   BRANCH -1
+19 	Id_ 	
+	_parent_
+_parent_
+   BRANCH -1
+18 	Id_ 	
+	_up_
+_up_
+   BRANCH -3
+15 	Arglist 	
+	Pos_arglist
+Pos_arglist
+16 	Pos_arglist 	
+	Pos_arg
+Pos_arg
+17 	Pos_arg 	
+	Dash_calc__is__expr
+Dash_calc__is__expr
+18 	Dash_calc__is__expr 	
+	Val_label__is__expr 	_-_ 	Val_label__is__expr
+Val_label__is__expr _-_ Val_label__is__expr
+19 	Val_label__is__expr 	
+	Val
+Val
+20 	Val 	
+	Var
+Var
+21 	Var 	
+	Id
+Id
+22 	Id_ 	
+	_n_
+_n_
+   BRANCH -3
+19 	Val_label__is__expr 	
+	Val
+Val
+20 	Val 	
+	Number
+Number
+21 	Number 	
+	Int
+Int
+22 	Int_ 	
+	_1_
+_1_
+   BRANCH -13
+9 	Blockend 	
+	_$blockend_
+_$blockend_
+   BRANCH -3
+6 	Stmt 	
+	Block_stmt
+Block_stmt
+7 	Block_stmt 	
+	Block_head 	Block
+Block_head Block
+8 	Block_head 	
+	Func
+Func
+9 	Func 	
+	_def_ 	Id 	_(_ 	Paramlist 	_)_
+_def_ Id _(_ Paramlist _)_
+10 	Id_ 	
+	_walk_
+_walk_
+   BRANCH 0
+10 	Paramlist 	
+	Pos_paramlist
+Pos_paramlist
+11 	Pos_paramlist 	
+	Pos_paramtuple
+Pos_paramtuple
+12 	Pos_paramtuple 	
+	Simple_var
+Simple_var
+13 	Simple_var 	
+	Id
+Id
+14 	Id_ 	
+	_self_
+_self_
+   BRANCH -6
+8 	Block 	
+	Blockbegin 	Prog 	Blockend
+Blockbegin Prog Blockend
+9 	Blockbegin 	
+	_:$blockbegin_
+_:$blockbegin_
+   BRANCH 0
+9 	Prog 	
+	Stmt 	Stmt 	Stmt 	Stmt
+Stmt Stmt Stmt Stmt
+10 	Stmt 	
+	Single_stmt
+Single_stmt
+11 	Single_stmt 	
+	Exprlist 	_;_
+Exprlist _;_
+12 	Exprlist 	
+	Val_label__is__expr
+Val_label__is__expr
+13 	Val_label__is__expr 	
+	Val
+Val
+14 	Val 	
+	String
+String
+15 	String 	
+	Str_val
+Str_val
+16 	Str_val 	
+	_"""iterates over all vertices"""_
+_"""iterates over all vertices"""_
+   BRANCH -6
+10 	Stmt 	
+	Single_stmt
+Single_stmt
+11 	Single_stmt 	
+	Func_stmt 	_;_
+Func_stmt _;_
+12 	Func_stmt 	
+	_yield_ 	Exprlist
+_yield_ Exprlist
+13 	Exprlist 	
+	Val_label__is__expr
+Val_label__is__expr
+14 	Val_label__is__expr 	
+	Val
+Val
+15 	Val 	
+	Var
+Var
+16 	Var 	
+	Id
+Id
+17 	Id_ 	
+	_self_
+_self_
+   BRANCH -7
+10 	Stmt 	
+	Single_stmt
+Single_stmt
+11 	Single_stmt 	
+	Exprlist 	_;_
+Exprlist _;_
+12 	Exprlist 	
+	Val_label__is__expr
+Val_label__is__expr
+13 	Val_label__is__expr 	
+	Val
+Val
+14 	Val 	
+	String
+String
+15 	String 	
+	Str_val
+Str_val
+16 	Str_val 	
+	_"""
+        brk= yield self
+        if brk:
+            print '   BRK'
+            exc
+        """_
+_"""
+        brk= yield self
+        if brk:
+            print '   BRK'
+            exc
+        """_
+   BRANCH -6
+10 	Stmt 	
+	Block_stmt
+Block_stmt
+11 	Block_stmt 	
+	Block_head 	Block
+Block_head Block
+12 	Block_head 	
+	Loop
+Loop
+13 	Loop 	
+	For
+For
+14 	For_ 	
+	_for_ 	Varlist 	_in_ 	Exprlist
+_for_ Varlist _in_ Exprlist
+15 	Varlist 	
+	Vartuple
+Vartuple
+16 	Vartuple 	
+	Var
+Var
+17 	Var 	
+	Id
+Id
+18 	Id_ 	
+	_v_
+_v_
+   BRANCH -3
+15 	Exprlist 	
+	Val_label__is__expr
+Val_label__is__expr
+16 	Val_label__is__expr 	
+	Val
+Val
+17 	Val 	
+	Var
+Var
+18 	Var 	
+	Id
+Id
+19 	Id_ 	
+	_self_
+_self_
+   BRANCH -7
+12 	Block 	
+	Blockbegin 	Prog 	Blockend
+Blockbegin Prog Blockend
+13 	Blockbegin 	
+	_:$blockbegin_
+_:$blockbegin_
+   BRANCH 0
+13 	Prog 	
+	Stmt
+Stmt
+14 	Stmt 	
+	Block_stmt
+Block_stmt
+15 	Block_stmt 	
+	Block_head 	Block
+Block_head Block
+16 	Block_head 	
+	Loop
+Loop
+17 	Loop 	
+	For
+For
+18 	For_ 	
+	_for_ 	Varlist 	_in_ 	Exprlist
+_for_ Varlist _in_ Exprlist
+19 	Varlist 	
+	Vartuple
+Vartuple
+20 	Vartuple 	
+	Var
+Var
+21 	Var 	
+	Id
+Id
+22 	Id_ 	
+	_w_
+_w_
+   BRANCH -3
+19 	Exprlist 	
+	Funccall__is__expr
+Funccall__is__expr
+20 	Funccall__is__expr 	
+	Val_label__is__expr 	_(_ 	_)_
+Val_label__is__expr _(_ _)_
+21 	Val_label__is__expr 	
+	Val
+Val
+22 	Val 	
+	Var
+Var
+23 	Var 	
+	Var 	_._ 	Id
+Var _._ Id
+24 	Var 	
+	Id
+Id
+25 	Id_ 	
+	_v_
+_v_
+   BRANCH -1
+24 	Id_ 	
+	_walk_
+_walk_
+   BRANCH -8
+16 	Block 	
+	Blockbegin 	Prog 	Blockend
+Blockbegin Prog Blockend
+17 	Blockbegin 	
+	_:$blockbegin_
+_:$blockbegin_
+   BRANCH 0
+17 	Prog 	
+	Stmt
+Stmt
+18 	Stmt 	
+	Single_stmt
+Single_stmt
+19 	Single_stmt 	
+	Func_stmt 	_;_
+Func_stmt _;_
+20 	Func_stmt 	
+	_yield_ 	Exprlist
+_yield_ Exprlist
+21 	Exprlist 	
+	Val_label__is__expr
+Val_label__is__expr
+22 	Val_label__is__expr 	
+	Val
+Val
+23 	Val 	
+	Var
+Var
+24 	Var 	
+	Id
+Id
+25 	Id_ 	
+	_w_
+_w_
+   BRANCH -8
+17 	Blockend 	
+	_$blockend_
+_$blockend_
+   BRANCH -4
+13 	Blockend 	
+	_$blockend_
+_$blockend_
+   BRANCH -4
+9 	Blockend 	
+	_$blockend_
+_$blockend_
+   BRANCH -3
+6 	Stmt 	
+	Block_stmt
+Block_stmt
+7 	Block_stmt 	
+	Block_head 	Block
+Block_head Block
+8 	Block_head 	
+	Func
+Func
+9 	Func 	
+	_def_ 	Id 	_(_ 	Paramlist 	_)_
+_def_ Id _(_ Paramlist _)_
+10 	Id_ 	
+	_dfind_
+_dfind_
+   BRANCH 0
+10 	Paramlist 	
+	Pos_paramlist
+Pos_paramlist
+11 	Pos_paramlist 	
+	Pos_paramtuple 	_,_ 	Pos_paramtuple
+Pos_paramtuple _,_ Pos_paramtuple
+12 	Pos_paramtuple 	
+	Simple_var
+Simple_var
+13 	Simple_var 	
+	Id
+Id
+14 	Id_ 	
+	_self_
+_self_
+   BRANCH -2
+12 	Pos_paramtuple 	
+	Simple_var
+Simple_var
+13 	Simple_var 	
+	Id
+Id
+14 	Id_ 	
+	_S_
+_S_
+   BRANCH -6
+8 	Block 	
+	Blockbegin 	Prog 	Blockend
+Blockbegin Prog Blockend
+9 	Blockbegin 	
+	_:$blockbegin_
+_:$blockbegin_
+   BRANCH 0
+9 	Prog 	
+	Stmt 	Stmt 	Stmt
+Stmt Stmt Stmt
+10 	Stmt 	
+	Single_stmt
+Single_stmt
+11 	Single_stmt 	
+	Assign_stmt 	_;_
+Assign_stmt _;_
+12 	Assign_stmt 	
+	Assign
+Assign
+13 	Assign 	
+	Varlist 	_=_ 	Exprlist
+Varlist _=_ Exprlist
+14 	Varlist 	
+	Vartuple
+Vartuple
+15 	Vartuple 	
+	Var
+Var
+16 	Var 	
+	Id
+Id
+17 	Id_ 	
+	_D_
+_D_
+   BRANCH -3
+14 	Exprlist 	
+	Funccall__is__expr
+Funccall__is__expr
+15 	Funccall__is__expr 	
+	Val_label__is__expr 	_(_ 	Arglist 	_)_
+Val_label__is__expr _(_ Arglist _)_
+16 	Val_label__is__expr 	
+	Val
+Val
+17 	Val 	
+	Var
+Var
+18 	Var 	
+	Var 	_._ 	Id
+Var _._ Id
+19 	Var 	
+	Id
+Id
+20 	Id_ 	
+	_collections_
+_collections_
+   BRANCH -1
+19 	Id_ 	
+	_defaultdict_
+_defaultdict_
+   BRANCH -3
+16 	Arglist 	
+	Pos_arglist
+Pos_arglist
+17 	Pos_arglist 	
+	Pos_arg
+Pos_arg
+18 	Pos_arg 	
+	Val_label__is__expr
+Val_label__is__expr
+19 	Val_label__is__expr 	
+	Val
+Val
+20 	Val 	
+	Var
+Var
+21 	Var 	
+	Id
+Id
+22 	Id_ 	
+	_str_
+_str_
+   BRANCH -12
+10 	Stmt 	
+	Single_stmt
+Single_stmt
+11 	Single_stmt 	
+	Exprlist 	_;_
+Exprlist _;_
+12 	Exprlist 	
+	Funccall__is__expr
+Funccall__is__expr
+13 	Funccall__is__expr 	
+	Val_label__is__expr 	_(_ 	Arglist 	_)_
+Val_label__is__expr _(_ Arglist _)_
+14 	Val_label__is__expr 	
+	Val
+Val
+15 	Val 	
+	Var
+Var
+16 	Var 	
+	Var 	_._ 	Id
+Var _._ Id
+17 	Var 	
+	Id
+Id
+18 	Id_ 	
+	_self_
+_self_
+   BRANCH -1
+17 	Id_ 	
+	__dfind_
+__dfind_
+   BRANCH -3
+14 	Arglist 	
+	Pos_arglist
+Pos_arglist
+15 	Pos_arglist 	
+	Pos_arg 	_,_ 	Pos_arg
+Pos_arg _,_ Pos_arg
+16 	Pos_arg 	
+	Val_label__is__expr
+Val_label__is__expr
+17 	Val_label__is__expr 	
+	Val
+Val
+18 	Val 	
+	Var
+Var
+19 	Var 	
+	Id
+Id
+20 	Id_ 	
+	_S_
+_S_
+   BRANCH -4
+16 	Pos_arg 	
+	Val_label__is__expr
+Val_label__is__expr
+17 	Val_label__is__expr 	
+	Val
+Val
+18 	Val 	
+	Var
+Var
+19 	Var 	
+	Id
+Id
+20 	Id_ 	
+	_D_
+_D_
+   BRANCH -10
+10 	Stmt 	
+	Single_stmt
+Single_stmt
+11 	Single_stmt 	
+	Func_stmt 	_;_
+Func_stmt _;_
+12 	Func_stmt 	
+	_return_ 	Exprlist
+_return_ Exprlist
+13 	Exprlist 	
+	Val_label__is__expr
+Val_label__is__expr
+14 	Val_label__is__expr 	
+	Val
+Val
+15 	Val 	
+	Var
+Var
+16 	Var 	
+	Id
+Id
+17 	Id_ 	
+	_D_
+_D_
+   BRANCH -8
+9 	Blockend 	
+	_$blockend_
+_$blockend_
+   BRANCH -3
+6 	Stmt 	
+	Block_stmt
+Block_stmt
+7 	Block_stmt 	
+	Block_head 	Block
+Block_head Block
+8 	Block_head 	
+	Func
+Func
+9 	Func 	
+	_def_ 	Id 	_(_ 	Paramlist 	_)_
+_def_ Id _(_ Paramlist _)_
+10 	Id_ 	
+	__dfind_
+__dfind_
+   BRANCH 0
+10 	Paramlist 	
+	Pos_paramlist
+Pos_paramlist
+11 	Pos_paramlist 	
+	Pos_paramtuple 	_,_ 	Pos_paramtuple 	_,_ 	Pos_paramtuple
+Pos_paramtuple _,_ Pos_paramtuple _,_ Pos_paramtuple
+12 	Pos_paramtuple 	
+	Simple_var
+Simple_var
+13 	Simple_var 	
+	Id
+Id
+14 	Id_ 	
+	_self_
+_self_
+   BRANCH -2
+12 	Pos_paramtuple 	
+	Simple_var
+Simple_var
+13 	Simple_var 	
+	Id
+Id
+14 	Id_ 	
+	_S_
+_S_
+   BRANCH -2
+12 	Pos_paramtuple 	
+	Simple_var
+Simple_var
+13 	Simple_var 	
+	Id
+Id
+14 	Id_ 	
+	_D_
+_D_
+   BRANCH -6
+8 	Block 	
+	Blockbegin 	Prog 	Blockend
+Blockbegin Prog Blockend
+9 	Blockbegin 	
+	_:$blockbegin_
+_:$blockbegin_
+   BRANCH 0
+9 	Prog 	
+	Stmt
+Stmt
+10 	Stmt 	
+	Block_stmt
+Block_stmt
+11 	Block_stmt 	
+	Block_head 	Block
+Block_head Block
+12 	Block_head 	
+	Loop
+Loop
+13 	Loop 	
+	For
+For
+14 	For_ 	
+	_for_ 	Varlist 	_in_ 	Exprlist
+_for_ Varlist _in_ Exprlist
+15 	Varlist 	
+	Vartuple
+Vartuple
+16 	Vartuple 	
+	Var
+Var
+17 	Var 	
+	Id
+Id
+18 	Id_ 	
+	_v_
+_v_
+   BRANCH -3
+15 	Exprlist 	
+	Val_label__is__expr
+Val_label__is__expr
+16 	Val_label__is__expr 	
+	Val
+Val
+17 	Val 	
+	Var
+Var
+18 	Var 	
+	Id
+Id
+19 	Id_ 	
+	_self_
+_self_
+   BRANCH -7
+12 	Block 	
+	Blockbegin 	Prog 	Blockend
+Blockbegin Prog Blockend
+13 	Blockbegin 	
+	_:$blockbegin_
+_:$blockbegin_
+   BRANCH 0
+13 	Prog 	
+	Stmt
+Stmt
+14 	Stmt 	
+	Block_stmt
+Block_stmt
+15 	Block_stmt 	
+	Ifelse
+Ifelse
+16 	Ifelse 	
+	If 	Block 	Else 	Block
+If Block Else Block
+17 	If_ 	
+	_if_ 	Comparison__is__expr
+_if_ Comparison__is__expr
+18 	Comparison__is__expr 	
+	Val_label__is__expr 	Op_cmp 	Val_label__is__expr
+Val_label__is__expr Op_cmp Val_label__is__expr
+19 	Val_label__is__expr 	
+	Val
+Val
+20 	Val 	
+	Var
+Var
+21 	Var 	
+	Id
+Id
+22 	Id_ 	
+	_v_
+_v_
+   BRANCH -3
+19 	Op_cmp 	
+	_==_
+_==_
+   BRANCH 0
+19 	Val_label__is__expr 	
+	Val
+Val
+20 	Val 	
+	Var
+Var
+21 	Var 	
+	Id
+Id
+22 	Id_ 	
+	_S_
+_S_
+   BRANCH -5
+17 	Block 	
+	Blockbegin 	Prog 	Blockend
+Blockbegin Prog Blockend
+18 	Blockbegin 	
+	_:$blockbegin_
+_:$blockbegin_
+   BRANCH 0
+18 	Prog 	
+	Stmt
+Stmt
+19 	Stmt 	
+	Single_stmt
+Single_stmt
+20 	Single_stmt 	
+	Assign_stmt 	_;_
+Assign_stmt _;_
+21 	Assign_stmt 	
+	Assign
+Assign
+22 	Assign 	
+	Varlist 	_=_ 	Exprlist
+Varlist _=_ Exprlist
+23 	Varlist 	
+	Vartuple
+Vartuple
+24 	Vartuple 	
+	Var
+Var
+25 	Var 	
+	Var 	_[_ 	Slice 	_]_
+Var _[_ Slice _]_
+26 	Var 	
+	Id
+Id
+27 	Id_ 	
+	_D_
+_D_
+   BRANCH -1
+26 	Slice_ 	
+	Dash_calc__is__expr
+Dash_calc__is__expr
+27 	Dash_calc__is__expr 	
+	Val_label__is__expr 	_+_ 	Funccall__is__expr
+Val_label__is__expr _+_ Funccall__is__expr
+28 	Val_label__is__expr 	
+	Val
+Val
+29 	Val 	
+	Var
+Var
+30 	Var 	
+	Id
+Id
+31 	Id_ 	
+	_S_
+_S_
+   BRANCH -3
+28 	Funccall__is__expr 	
+	Val_label__is__expr 	_(_ 	Arglist 	_)_
+Val_label__is__expr _(_ Arglist _)_
+29 	Val_label__is__expr 	
+	Val
+Val
+30 	Val 	
+	Var
+Var
+31 	Var 	
+	Id
+Id
+32 	Id_ 	
+	_str_
+_str_
+   BRANCH -3
+29 	Arglist 	
+	Pos_arglist
+Pos_arglist
+30 	Pos_arglist 	
+	Pos_arg
+Pos_arg
+31 	Pos_arg 	
+	Dash_calc__is__expr
+Dash_calc__is__expr
+32 	Dash_calc__is__expr 	
+	Funccall__is__expr 	_+_ 	Val_label__is__expr
+Funccall__is__expr _+_ Val_label__is__expr
+33 	Funccall__is__expr 	
+	Val_label__is__expr 	_(_ 	Arglist 	_)_
+Val_label__is__expr _(_ Arglist _)_
+34 	Val_label__is__expr 	
+	Val
+Val
+35 	Val 	
+	Var
+Var
+36 	Var 	
+	Id
+Id
+37 	Id_ 	
+	_len_
+_len_
+   BRANCH -3
+34 	Arglist 	
+	Pos_arglist
+Pos_arglist
+35 	Pos_arglist 	
+	Pos_arg
+Pos_arg
+36 	Pos_arg 	
+	Val_label__is__expr
+Val_label__is__expr
+37 	Val_label__is__expr 	
+	Val
+Val
+38 	Val 	
+	Var
+Var
+39 	Var 	
+	Id
+Id
+40 	Id_ 	
+	_D_
+_D_
+   BRANCH -7
+33 	Val_label__is__expr 	
+	Val
+Val
+34 	Val 	
+	Number
+Number
+35 	Number 	
+	Int
+Int
+36 	Int_ 	
+	_1_
+_1_
+   BRANCH -13
+23 	Exprlist 	
+	Val_label__is__expr
+Val_label__is__expr
+24 	Val_label__is__expr 	
+	Val
+Val
+25 	Val 	
+	Var
+Var
+26 	Var 	
+	Id
+Id
+27 	Id_ 	
+	_v_
+_v_
+   BRANCH -9
+18 	Blockend 	
+	_$blockend_
+_$blockend_
+   BRANCH -1
+17 	Else_ 	
+	_else_
+_else_
+   BRANCH 0
+17 	Block 	
+	Blockbegin 	Prog 	Blockend
+Blockbegin Prog Blockend
+18 	Blockbegin 	
+	_:$blockbegin_
+_:$blockbegin_
+   BRANCH 0
+18 	Prog 	
+	Stmt
+Stmt
+19 	Stmt 	
+	Single_stmt
+Single_stmt
+20 	Single_stmt 	
+	Exprlist 	_;_
+Exprlist _;_
+21 	Exprlist 	
+	Funccall__is__expr
+Funccall__is__expr
+22 	Funccall__is__expr 	
+	Val_label__is__expr 	_(_ 	Arglist 	_)_
+Val_label__is__expr _(_ Arglist _)_
+23 	Val_label__is__expr 	
+	Val
+Val
+24 	Val 	
+	Var
+Var
+25 	Var 	
+	Var 	_._ 	Id
+Var _._ Id
+26 	Var 	
+	Id
+Id
+27 	Id_ 	
+	_v_
+_v_
+   BRANCH -1
+26 	Id_ 	
+	__dfind_
+__dfind_
+   BRANCH -3
+23 	Arglist 	
+	Pos_arglist
+Pos_arglist
+24 	Pos_arglist 	
+	Pos_arg 	_,_ 	Pos_arg
+Pos_arg _,_ Pos_arg
+25 	Pos_arg 	
+	Val_label__is__expr
+Val_label__is__expr
+26 	Val_label__is__expr 	
+	Val
+Val
+27 	Val 	
+	Var
+Var
+28 	Var 	
+	Id
+Id
+29 	Id_ 	
+	_S_
+_S_
+   BRANCH -4
+25 	Pos_arg 	
+	Val_label__is__expr
+Val_label__is__expr
+26 	Val_label__is__expr 	
+	Val
+Val
+27 	Val 	
+	Var
+Var
+28 	Var 	
+	Id
+Id
+29 	Id_ 	
+	_D_
+_D_
+   BRANCH -11
+18 	Blockend 	
+	_$blockend_
+_$blockend_
+   BRANCH -5
+13 	Blockend 	
+	_$blockend_
+_$blockend_
+   BRANCH -4
+9 	Blockend 	
+	_$blockend_
+_$blockend_
+   BRANCH -3
+6 	Stmt 	
+	Block_stmt
+Block_stmt
+7 	Block_stmt 	
+	Block_head 	Block
+Block_head Block
+8 	Block_head 	
+	Func
+Func
+9 	Func 	
+	_def_ 	Id 	_(_ 	Paramlist 	_)_
+_def_ Id _(_ Paramlist _)_
+10 	Id_ 	
+	_find_
+_find_
+   BRANCH 0
+10 	Paramlist 	
+	Pos_paramlist 	_,_ 	Kparamlist
+Pos_paramlist _,_ Kparamlist
+11 	Pos_paramlist 	
+	Pos_paramtuple 	_,_ 	Pos_paramtuple
+Pos_paramtuple _,_ Pos_paramtuple
+12 	Pos_paramtuple 	
+	Simple_var
+Simple_var
+13 	Simple_var 	
+	Id
+Id
+14 	Id_ 	
+	_self_
+_self_
+   BRANCH -2
+12 	Pos_paramtuple 	
+	Simple_var
+Simple_var
+13 	Simple_var 	
+	Id
+Id
+14 	Id_ 	
+	_S_
+_S_
+   BRANCH -3
+11 	Kparamlist 	
+	Kparam
+Kparam
+12 	Kparam 	
+	Pos_paramtuple 	_=_ 	Val_label__is__expr
+Pos_paramtuple _=_ Val_label__is__expr
+13 	Pos_paramtuple 	
+	Simple_var
+Simple_var
+14 	Simple_var 	
+	Id
+Id
+15 	Id_ 	
+	_nmax_
+_nmax_
+   BRANCH -2
+13 	Val_label__is__expr 	
+	Val
+Val
+14 	Val 	
+	Number
+Number
+15 	Number 	
+	Int
+Int
+16 	Int_ 	
+	_0_
+_0_
+   BRANCH -8
+8 	Block 	
+	Blockbegin 	Prog 	Blockend
+Blockbegin Prog Blockend
+9 	Blockbegin 	
+	_:$blockbegin_
+_:$blockbegin_
+   BRANCH 0
+9 	Prog 	
+	Stmt 	Stmt 	Stmt 	Stmt
+Stmt Stmt Stmt Stmt
+10 	Stmt 	
+	Single_stmt
+Single_stmt
+11 	Single_stmt 	
+	Assign_stmt 	_;_
+Assign_stmt _;_
+12 	Assign_stmt 	
+	Assign
+Assign
+13 	Assign 	
+	Varlist 	_=_ 	Exprlist
+Varlist _=_ Exprlist
+14 	Varlist 	
+	Vartuple
+Vartuple
+15 	Vartuple 	
+	Var
+Var
+16 	Var 	
+	Id
+Id
+17 	Id_ 	
+	_L_
+_L_
+   BRANCH -3
+14 	Exprlist 	
+	Val_label__is__expr
+Val_label__is__expr
+15 	Val_label__is__expr 	
+	Val
+Val
+16 	Val 	
+	List
+List
+17 	List_ 	
+	_[_ 	_]_
+_[_ _]_
+   BRANCH -7
+10 	Stmt 	
+	Single_stmt
+Single_stmt
+11 	Single_stmt 	
+	Exprlist 	_;_
+Exprlist _;_
+12 	Exprlist 	
+	Funccall__is__expr
+Funccall__is__expr
+13 	Funccall__is__expr 	
+	Val_label__is__expr 	_(_ 	Arglist 	_)_
+Val_label__is__expr _(_ Arglist _)_
+14 	Val_label__is__expr 	
+	Val
+Val
+15 	Val 	
+	Var
+Var
+16 	Var 	
+	Var 	_._ 	Id
+Var _._ Id
+17 	Var 	
+	Id
+Id
+18 	Id_ 	
+	_self_
+_self_
+   BRANCH -1
+17 	Id_ 	
+	__find_
+__find_
+   BRANCH -3
+14 	Arglist 	
+	Pos_arglist
+Pos_arglist
+15 	Pos_arglist 	
+	Pos_arg 	_,_ 	Pos_arg
+Pos_arg _,_ Pos_arg
+16 	Pos_arg 	
+	Val_label__is__expr
+Val_label__is__expr
+17 	Val_label__is__expr 	
+	Val
+Val
+18 	Val 	
+	Var
+Var
+19 	Var 	
+	Id
+Id
+20 	Id_ 	
+	_S_
+_S_
+   BRANCH -4
+16 	Pos_arg 	
+	Val_label__is__expr
+Val_label__is__expr
+17 	Val_label__is__expr 	
+	Val
+Val
+18 	Val 	
+	Var
+Var
+19 	Var 	
+	Id
+Id
+20 	Id_ 	
+	_L_
+_L_
+   BRANCH -10
+10 	Stmt 	
+	Single_stmt
+Single_stmt
+11 	Single_stmt 	
+	Exprlist 	_;_
+Exprlist _;_
+12 	Exprlist 	
+	Funccall__is__expr
+Funccall__is__expr
+13 	Funccall__is__expr 	
+	Val_label__is__expr 	_(_ 	Gen_expr 	_)_
+Val_label__is__expr _(_ Gen_expr _)_
+14 	Val_label__is__expr 	
+	Val
+Val
+15 	Val 	
+	Var
+Var
+16 	Var 	
+	Var 	_._ 	Id
+Var _._ Id
+17 	Var 	
+	Id
+Id
+18 	Id_ 	
+	_L_
+_L_
+   BRANCH -1
+17 	Id_ 	
+	_extend_
+_extend_
+   BRANCH -3
+14 	Gen_expr 	
+	Funccall__is__expr 	For
+Funccall__is__expr For
+15 	Funccall__is__expr 	
+	Val_label__is__expr 	_(_ 	_)_
+Val_label__is__expr _(_ _)_
+16 	Val_label__is__expr 	
+	Val
+Val
+17 	Val 	
+	Var
+Var
+18 	Var 	
+	Id
+Id
+19 	Id_ 	
+	_vertex_
+_vertex_
+   BRANCH -4
+15 	For_ 	
+	_for_ 	Varlist 	_in_ 	Exprlist
+_for_ Varlist _in_ Exprlist
+16 	Varlist 	
+	Vartuple
+Vartuple
+17 	Vartuple 	
+	Var
+Var
+18 	Var 	
+	Id
+Id
+19 	Id_ 	
+	_i_
+_i_
+   BRANCH -3
+16 	Exprlist 	
+	Funccall__is__expr
+Funccall__is__expr
+17 	Funccall__is__expr 	
+	Val_label__is__expr 	_(_ 	Arglist 	_)_
+Val_label__is__expr _(_ Arglist _)_
+18 	Val_label__is__expr 	
+	Val
+Val
+19 	Val 	
+	Var
+Var
+20 	Var 	
+	Id
+Id
+21 	Id_ 	
+	_range_
+_range_
+   BRANCH -3
+18 	Arglist 	
+	Pos_arglist
+Pos_arglist
+19 	Pos_arglist 	
+	Pos_arg
+Pos_arg
+20 	Pos_arg 	
+	Dash_calc__is__expr
+Dash_calc__is__expr
+21 	Dash_calc__is__expr 	
+	Val_label__is__expr 	_-_ 	Funccall__is__expr
+Val_label__is__expr _-_ Funccall__is__expr
+22 	Val_label__is__expr 	
+	Val
+Val
+23 	Val 	
+	Var
+Var
+24 	Var 	
+	Id
+Id
+25 	Id_ 	
+	_nmax_
+_nmax_
+   BRANCH -3
+22 	Funccall__is__expr 	
+	Val_label__is__expr 	_(_ 	Arglist 	_)_
+Val_label__is__expr _(_ Arglist _)_
+23 	Val_label__is__expr 	
+	Val
+Val
+24 	Val 	
+	Var
+Var
+25 	Var 	
+	Id
+Id
+26 	Id_ 	
+	_len_
+_len_
+   BRANCH -3
+23 	Arglist 	
+	Pos_arglist
+Pos_arglist
+24 	Pos_arglist 	
+	Pos_arg
+Pos_arg
+25 	Pos_arg 	
+	Val_label__is__expr
+Val_label__is__expr
+26 	Val_label__is__expr 	
+	Val
+Val
+27 	Val 	
+	Var
+Var
+28 	Var 	
+	Id
+Id
+29 	Id_ 	
+	_L_
+_L_
+   BRANCH -19
+10 	Stmt 	
+	Single_stmt
+Single_stmt
+11 	Single_stmt 	
+	Func_stmt 	_;_
+Func_stmt _;_
+12 	Func_stmt 	
+	_return_ 	Exprlist
+_return_ Exprlist
+13 	Exprlist 	
+	Val_label__is__expr
+Val_label__is__expr
+14 	Val_label__is__expr 	
+	Val
+Val
+15 	Val 	
+	Var
+Var
+16 	Var 	
+	Id
+Id
+17 	Id_ 	
+	_L_
+_L_
+   BRANCH -8
+9 	Blockend 	
+	_$blockend_
+_$blockend_
+   BRANCH -3
+6 	Stmt 	
+	Block_stmt
+Block_stmt
+7 	Block_stmt 	
+	Block_head 	Block
+Block_head Block
+8 	Block_head 	
+	Func
+Func
+9 	Func 	
+	_def_ 	Id 	_(_ 	Paramlist 	_)_
+_def_ Id _(_ Paramlist _)_
+10 	Id_ 	
+	__find_
+__find_
+   BRANCH 0
+10 	Paramlist 	
+	Pos_paramlist
+Pos_paramlist
+11 	Pos_paramlist 	
+	Pos_paramtuple 	_,_ 	Pos_paramtuple 	_,_ 	Pos_paramtuple
+Pos_paramtuple _,_ Pos_paramtuple _,_ Pos_paramtuple
+12 	Pos_paramtuple 	
+	Simple_var
+Simple_var
+13 	Simple_var 	
+	Id
+Id
+14 	Id_ 	
+	_self_
+_self_
+   BRANCH -2
+12 	Pos_paramtuple 	
+	Simple_var
+Simple_var
+13 	Simple_var 	
+	Id
+Id
+14 	Id_ 	
+	_S_
+_S_
+   BRANCH -2
+12 	Pos_paramtuple 	
+	Simple_var
+Simple_var
+13 	Simple_var 	
+	Id
+Id
+14 	Id_ 	
+	_L_
+_L_
+   BRANCH -6
+8 	Block 	
+	Blockbegin 	Prog 	Blockend
+Blockbegin Prog Blockend
+9 	Blockbegin 	
+	_:$blockbegin_
+_:$blockbegin_
+   BRANCH 0
+9 	Prog 	
+	Stmt
+Stmt
+10 	Stmt 	
+	Block_stmt
+Block_stmt
+11 	Block_stmt 	
+	Block_head 	Block
+Block_head Block
+12 	Block_head 	
+	Loop
+Loop
+13 	Loop 	
+	For
+For
+14 	For_ 	
+	_for_ 	Varlist 	_in_ 	Exprlist
+_for_ Varlist _in_ Exprlist
+15 	Varlist 	
+	Vartuple
+Vartuple
+16 	Vartuple 	
+	Var
+Var
+17 	Var 	
+	Id
+Id
+18 	Id_ 	
+	_v_
+_v_
+   BRANCH -3
+15 	Exprlist 	
+	Val_label__is__expr
+Val_label__is__expr
+16 	Val_label__is__expr 	
+	Val
+Val
+17 	Val 	
+	Var
+Var
+18 	Var 	
+	Id
+Id
+19 	Id_ 	
+	_self_
+_self_
+   BRANCH -7
+12 	Block 	
+	Blockbegin 	Prog 	Blockend
+Blockbegin Prog Blockend
+13 	Blockbegin 	
+	_:$blockbegin_
+_:$blockbegin_
+   BRANCH 0
+13 	Prog 	
+	Stmt
+Stmt
+14 	Stmt 	
+	Block_stmt
+Block_stmt
+15 	Block_stmt 	
+	Ifelse
+Ifelse
+16 	Ifelse 	
+	If 	Block 	Else 	Block
+If Block Else Block
+17 	If_ 	
+	_if_ 	Comparison__is__expr
+_if_ Comparison__is__expr
+18 	Comparison__is__expr 	
+	Val_label__is__expr 	Op_cmp 	Val_label__is__expr
+Val_label__is__expr Op_cmp Val_label__is__expr
+19 	Val_label__is__expr 	
+	Val
+Val
+20 	Val 	
+	Var
+Var
+21 	Var 	
+	Id
+Id
+22 	Id_ 	
+	_v_
+_v_
+   BRANCH -3
+19 	Op_cmp 	
+	_==_
+_==_
+   BRANCH 0
+19 	Val_label__is__expr 	
+	Val
+Val
+20 	Val 	
+	Var
+Var
+21 	Var 	
+	Id
+Id
+22 	Id_ 	
+	_S_
+_S_
+   BRANCH -5
+17 	Block 	
+	Blockbegin 	Prog 	Blockend
+Blockbegin Prog Blockend
+18 	Blockbegin 	
+	_:$blockbegin_
+_:$blockbegin_
+   BRANCH 0
+18 	Prog 	
+	Stmt
+Stmt
+19 	Stmt 	
+	Single_stmt
+Single_stmt
+20 	Single_stmt 	
+	Exprlist 	_;_
+Exprlist _;_
+21 	Exprlist 	
+	Funccall__is__expr
+Funccall__is__expr
+22 	Funccall__is__expr 	
+	Val_label__is__expr 	_(_ 	Arglist 	_)_
+Val_label__is__expr _(_ Arglist _)_
+23 	Val_label__is__expr 	
+	Val
+Val
+24 	Val 	
+	Var
+Var
+25 	Var 	
+	Var 	_._ 	Id
+Var _._ Id
+26 	Var 	
+	Id
+Id
+27 	Id_ 	
+	_L_
+_L_
+   BRANCH -1
+26 	Id_ 	
+	_append_
+_append_
+   BRANCH -3
+23 	Arglist 	
+	Pos_arglist
+Pos_arglist
+24 	Pos_arglist 	
+	Pos_arg
+Pos_arg
+25 	Pos_arg 	
+	Val_label__is__expr
+Val_label__is__expr
+26 	Val_label__is__expr 	
+	Val
+Val
+27 	Val 	
+	Var
+Var
+28 	Var 	
+	Id
+Id
+29 	Id_ 	
+	_v_
+_v_
+   BRANCH -11
+18 	Blockend 	
+	_$blockend_
+_$blockend_
+   BRANCH -1
+17 	Else_ 	
+	_else_
+_else_
+   BRANCH 0
+17 	Block 	
+	Blockbegin 	Prog 	Blockend
+Blockbegin Prog Blockend
+18 	Blockbegin 	
+	_:$blockbegin_
+_:$blockbegin_
+   BRANCH 0
+18 	Prog 	
+	Stmt
+Stmt
+19 	Stmt 	
+	Single_stmt
+Single_stmt
+20 	Single_stmt 	
+	Exprlist 	_;_
+Exprlist _;_
+21 	Exprlist 	
+	Funccall__is__expr
+Funccall__is__expr
+22 	Funccall__is__expr 	
+	Val_label__is__expr 	_(_ 	Arglist 	_)_
+Val_label__is__expr _(_ Arglist _)_
+23 	Val_label__is__expr 	
+	Val
+Val
+24 	Val 	
+	Var
+Var
+25 	Var 	
+	Var 	_._ 	Id
+Var _._ Id
+26 	Var 	
+	Id
+Id
+27 	Id_ 	
+	_v_
+_v_
+   BRANCH -1
+26 	Id_ 	
+	__find_
+__find_
+   BRANCH -3
+23 	Arglist 	
+	Pos_arglist
+Pos_arglist
+24 	Pos_arglist 	
+	Pos_arg 	_,_ 	Pos_arg
+Pos_arg _,_ Pos_arg
+25 	Pos_arg 	
+	Val_label__is__expr
+Val_label__is__expr
+26 	Val_label__is__expr 	
+	Val
+Val
+27 	Val 	
+	Var
+Var
+28 	Var 	
+	Id
+Id
+29 	Id_ 	
+	_S_
+_S_
+   BRANCH -4
+25 	Pos_arg 	
+	Val_label__is__expr
+Val_label__is__expr
+26 	Val_label__is__expr 	
+	Val
+Val
+27 	Val 	
+	Var
+Var
+28 	Var 	
+	Id
+Id
+29 	Id_ 	
+	_L_
+_L_
+   BRANCH -11
+18 	Blockend 	
+	_$blockend_
+_$blockend_
+   BRANCH -5
+13 	Blockend 	
+	_$blockend_
+_$blockend_
+   BRANCH -4
+9 	Blockend 	
+	_$blockend_
+_$blockend_
+   BRANCH -3
+6 	Stmt 	
+	Block_stmt
+Block_stmt
+7 	Block_stmt 	
+	Block_head 	Block
+Block_head Block
+8 	Block_head 	
+	Func
+Func
+9 	Func 	
+	_def_ 	Id 	_(_ 	Paramlist 	_)_
+_def_ Id _(_ Paramlist _)_
+10 	Id_ 	
+	_is1_
+_is1_
+   BRANCH 0
+10 	Paramlist 	
+	Pos_paramlist
+Pos_paramlist
+11 	Pos_paramlist 	
+	Pos_paramtuple 	_,_ 	Pos_paramtuple
+Pos_paramtuple _,_ Pos_paramtuple
+12 	Pos_paramtuple 	
+	Simple_var
+Simple_var
+13 	Simple_var 	
+	Id
+Id
+14 	Id_ 	
+	_self_
+_self_
+   BRANCH -2
+12 	Pos_paramtuple 	
+	Simple_var
+Simple_var
+13 	Simple_var 	
+	Id
+Id
+14 	Id_ 	
+	_S_
+_S_
+   BRANCH -6
+8 	Block 	
+	Blockbegin 	Prog 	Blockend
+Blockbegin Prog Blockend
+9 	Blockbegin 	
+	_:$blockbegin_
+_:$blockbegin_
+   BRANCH 0
+9 	Prog 	
+	Stmt
+Stmt
+10 	Stmt 	
+	Block_stmt
+Block_stmt
+11 	Block_stmt 	
+	Ifelse
+Ifelse
+12 	Ifelse 	
+	If 	Block 	Elif 	Block 	Else 	Block
+If Block Elif Block Else Block
+13 	If_ 	
+	_if_ 	Comparison__is__expr
+_if_ Comparison__is__expr
+14 	Comparison__is__expr 	
+	Val_label__is__expr 	Op_cmp 	Val_label__is__expr
+Val_label__is__expr Op_cmp Val_label__is__expr
+15 	Val_label__is__expr 	
+	Val
+Val
+16 	Val 	
+	Var
+Var
+17 	Var 	
+	Var 	_._ 	Id
+Var _._ Id
+18 	Var 	
+	Id
+Id
+19 	Id_ 	
+	_self_
+_self_
+   BRANCH -1
+18 	Id_ 	
+	_name_
+_name_
+   BRANCH -3
+15 	Op_cmp 	
+	_==_
+_==_
+   BRANCH 0
+15 	Val_label__is__expr 	
+	Val
+Val
+16 	Val 	
+	Var
+Var
+17 	Var 	
+	Id
+Id
+18 	Id_ 	
+	_S_
+_S_
+   BRANCH -5
+13 	Block 	
+	Blockbegin 	Prog 	Blockend
+Blockbegin Prog Blockend
+14 	Blockbegin 	
+	_:$blockbegin_
+_:$blockbegin_
+   BRANCH 0
+14 	Prog 	
+	Stmt
+Stmt
+15 	Stmt 	
+	Single_stmt
+Single_stmt
+16 	Single_stmt 	
+	Func_stmt 	_;_
+Func_stmt _;_
+17 	Func_stmt 	
+	_return_ 	Exprlist
+_return_ Exprlist
+18 	Exprlist 	
+	Val_label__is__expr
+Val_label__is__expr
+19 	Val_label__is__expr 	
+	Val
+Val
+20 	Val 	
+	Var
+Var
+21 	Var 	
+	Id
+Id
+22 	Id_ 	
+	_self_
+_self_
+   BRANCH -8
+14 	Blockend 	
+	_$blockend_
+_$blockend_
+   BRANCH -1
+13 	Elif_ 	
+	_elif_ 	Or__is__expr
+_elif_ Or__is__expr
+14 	Or__is__expr 	
+	Val_label__is__expr 	_or_ 	Comparison__is__expr
+Val_label__is__expr _or_ Comparison__is__expr
+15 	Val_label__is__expr 	
+	Val
+Val
+16 	Val 	
+	Var
+Var
+17 	Var 	
+	Var 	_._ 	Id
+Var _._ Id
+18 	Var 	
+	Id
+Id
+19 	Id_ 	
+	_self_
+_self_
+   BRANCH -1
+18 	Id_ 	
+	_empty_
+_empty_
+   BRANCH -3
+15 	Comparison__is__expr 	
+	Funccall__is__expr 	Op_cmp 	Val_label__is__expr
+Funccall__is__expr Op_cmp Val_label__is__expr
+16 	Funccall__is__expr 	
+	Val_label__is__expr 	_(_ 	Arglist 	_)_
+Val_label__is__expr _(_ Arglist _)_
+17 	Val_label__is__expr 	
+	Val
+Val
+18 	Val 	
+	Var
+Var
+19 	Var 	
+	Id
+Id
+20 	Id_ 	
+	_len_
+_len_
+   BRANCH -3
+17 	Arglist 	
+	Pos_arglist
+Pos_arglist
+18 	Pos_arglist 	
+	Pos_arg
+Pos_arg
+19 	Pos_arg 	
+	Val_label__is__expr
+Val_label__is__expr
+20 	Val_label__is__expr 	
+	Val
+Val
+21 	Val 	
+	Var
+Var
+22 	Var 	
+	Id
+Id
+23 	Id_ 	
+	_self_
+_self_
+   BRANCH -7
+16 	Op_cmp 	
+	_>_
+_>_
+   BRANCH 0
+16 	Val_label__is__expr 	
+	Val
+Val
+17 	Val 	
+	Number
+Number
+18 	Number 	
+	Int
+Int
+19 	Int_ 	
+	_1_
+_1_
+   BRANCH -6
+13 	Block 	
+	Blockbegin 	Prog 	Blockend
+Blockbegin Prog Blockend
+14 	Blockbegin 	
+	_:$blockbegin_
+_:$blockbegin_
+   BRANCH 0
+14 	Prog 	
+	Stmt
+Stmt
+15 	Stmt 	
+	Single_stmt
+Single_stmt
+16 	Single_stmt 	
+	Func_stmt 	_;_
+Func_stmt _;_
+17 	Func_stmt 	
+	_return_ 	Exprlist
+_return_ Exprlist
+18 	Exprlist 	
+	Val_label__is__expr
+Val_label__is__expr
+19 	Val_label__is__expr 	
+	Val
+Val
+20 	Val 	
+	Var
+Var
+21 	Var 	
+	Id
+Id
+22 	Id_ 	
+	_False_
+_False_
+   BRANCH -8
+14 	Blockend 	
+	_$blockend_
+_$blockend_
+   BRANCH -1
+13 	Else_ 	
+	_else_
+_else_
+   BRANCH 0
+13 	Block 	
+	Blockbegin 	Prog 	Blockend
+Blockbegin Prog Blockend
+14 	Blockbegin 	
+	_:$blockbegin_
+_:$blockbegin_
+   BRANCH 0
+14 	Prog 	
+	Stmt
+Stmt
+15 	Stmt 	
+	Single_stmt
+Single_stmt
+16 	Single_stmt 	
+	Func_stmt 	_;_
+Func_stmt _;_
+17 	Func_stmt 	
+	_return_ 	Exprlist
+_return_ Exprlist
+18 	Exprlist 	
+	Funccall__is__expr
+Funccall__is__expr
+19 	Funccall__is__expr 	
+	Val_label__is__expr 	_(_ 	Arglist 	_)_
+Val_label__is__expr _(_ Arglist _)_
+20 	Val_label__is__expr 	
+	Val
+Val
+21 	Val 	
+	Var
+Var
+22 	Var 	
+	Var 	_._ 	Id
+Var _._ Id
+23 	Var 	
+	Var 	_[_ 	Slice 	_]_
+Var _[_ Slice _]_
+24 	Var 	
+	Id
+Id
+25 	Id_ 	
+	_self_
+_self_
+   BRANCH -1
+24 	Slice_ 	
+	Val_label__is__expr
+Val_label__is__expr
+25 	Val_label__is__expr 	
+	Val
+Val
+26 	Val 	
+	Number
+Number
+27 	Number 	
+	Int
+Int
+28 	Int_ 	
+	_0_
+_0_
+   BRANCH -5
+23 	Id_ 	
+	_is1_
+_is1_
+   BRANCH -3
+20 	Arglist 	
+	Pos_arglist
+Pos_arglist
+21 	Pos_arglist 	
+	Pos_arg
+Pos_arg
+22 	Pos_arg 	
+	Val_label__is__expr
+Val_label__is__expr
+23 	Val_label__is__expr 	
+	Val
+Val
+24 	Val 	
+	Var
+Var
+25 	Var 	
+	Id
+Id
+26 	Id_ 	
+	_S_
+_S_
+   BRANCH -12
+14 	Blockend 	
+	_$blockend_
+_$blockend_
+   BRANCH -5
+9 	Blockend 	
+	_$blockend_
+_$blockend_
+   BRANCH -3
+6 	Stmt 	
+	Block_stmt
+Block_stmt
+7 	Block_stmt 	
+	Block_head 	Block
+Block_head Block
+8 	Block_head 	
+	Func
+Func
+9 	Func 	
+	_def_ 	Id 	_(_ 	Paramlist 	_)_
+_def_ Id _(_ Paramlist _)_
+10 	Id_ 	
+	_isa_
+_isa_
+   BRANCH 0
+10 	Paramlist 	
+	Pos_paramlist
+Pos_paramlist
+11 	Pos_paramlist 	
+	Pos_paramtuple 	_,_ 	Pos_paramtuple
+Pos_paramtuple _,_ Pos_paramtuple
+12 	Pos_paramtuple 	
+	Simple_var
+Simple_var
+13 	Simple_var 	
+	Id
+Id
+14 	Id_ 	
+	_self_
+_self_
+   BRANCH -2
+12 	Pos_paramtuple 	
+	Simple_var
+Simple_var
+13 	Simple_var 	
+	Id
+Id
+14 	Id_ 	
+	_S_
+_S_
+   BRANCH -6
+8 	Block 	
+	Blockbegin 	Prog 	Blockend
+Blockbegin Prog Blockend
+9 	Blockbegin 	
+	_:$blockbegin_
+_:$blockbegin_
+   BRANCH 0
+9 	Prog 	
+	Stmt 	Stmt 	Stmt 	Stmt 	Stmt 	Stmt 	Stmt 	Stmt
+Stmt Stmt Stmt Stmt Stmt Stmt Stmt Stmt
+10 	Stmt 	
+	Single_stmt
+Single_stmt
+11 	Single_stmt 	
+	Exprlist 	_;_
+Exprlist _;_
+12 	Exprlist 	
+	Val_label__is__expr
+Val_label__is__expr
+13 	Val_label__is__expr 	
+	Val
+Val
+14 	Val 	
+	String
+String
+15 	String 	
+	Str_val
+Str_val
+16 	Str_val 	
+	_"""
+        Tests if vertex consists of the vertices specified in the string pattern "S".
+        If this is the case the vertices are returned, otherwise False
+
+        Consists means here, that the vertices are reached at some point if you go
+        down from the starting vertex and that they all together share the same leafes
+        as the starting vertex.
+
+        Rules for string pattern:
+        -Variables, Integers and Strings are interpreted as vertex names
+        -For Strings double quotes (like in C++) have to be used
+        -Whitespace can be used as seperator
+        -All unknown characters between known tokens are also interpreted
+         as vertex names
+
+        For example:
+        "Id(Expr+Int)"
+        is seperated in the 6 tokens
+        'Id', '(', 'Expr', '+', 'Int' ')'
+
+        "x+=-7(a b)"
+        is seperated in the 7 tokens
+        'x', '+=-', '7', '(', 'a', 'b', ')'
+
+        """_
+_"""
+        Tests if vertex consists of the vertices specified in the string pattern "S".
+        If this is the case the vertices are returned, otherwise False
+
+        Consists means here, that the vertices are reached at some point if you go
+        down from the starting vertex and that they all together share the same leafes
+        as the starting vertex.
+
+        Rules for string pattern:
+        -Variables, Integers and Strings are interpreted as vertex names
+        -For Strings double quotes (like in C++) have to be used
+        -Whitespace can be used as seperator
+        -All unknown characters between known tokens are also interpreted
+         as vertex names
+
+        For example:
+        "Id(Expr+Int)"
+        is seperated in the 6 tokens
+        'Id', '(', 'Expr', '+', 'Int' ')'
+
+        "x+=-7(a b)"
+        is seperated in the 7 tokens
+        'x', '+=-', '7', '(', 'a', 'b', ')'
+
+        """_
+   BRANCH -6
+10 	Stmt 	
+	Single_stmt
+Single_stmt
+11 	Single_stmt 	
+	Assign_stmt 	_;_
+Assign_stmt _;_
+12 	Assign_stmt 	
+	Assign
+Assign
+13 	Assign 	
+	Varlist 	_=_ 	Exprlist
+Varlist _=_ Exprlist
+14 	Varlist 	
+	Vartuple
+Vartuple
+15 	Vartuple 	
+	Var
+Var
+16 	Var 	
+	Id
+Id
+17 	Id_ 	
+	_TL_
+_TL_
+   BRANCH -3
+14 	Exprlist 	
+	Funccall__is__expr
+Funccall__is__expr
+15 	Funccall__is__expr 	
+	Val_label__is__expr 	_(_ 	Arglist 	_)_
+Val_label__is__expr _(_ Arglist _)_
+16 	Val_label__is__expr 	
+	Val
+Val
+17 	Val 	
+	Var
+Var
+18 	Var 	
+	Var 	_._ 	Id
+Var _._ Id
+19 	Var 	
+	Id
+Id
+20 	Id_ 	
+	_rx_
+_rx_
+   BRANCH -1
+19 	Id_ 	
+	_lex_
+_lex_
+   BRANCH -3
+16 	Arglist 	
+	Pos_arglist
+Pos_arglist
+17 	Pos_arglist 	
+	Pos_arg 	_,_ 	Pos_arg
+Pos_arg _,_ Pos_arg
+18 	Pos_arg 	
+	Val_label__is__expr
+Val_label__is__expr
+19 	Val_label__is__expr 	
+	Val
+Val
+20 	Val 	
+	Var
+Var
+21 	Var 	
+	Id
+Id
+22 	Id_ 	
+	_S_
+_S_
+   BRANCH -4
+18 	Pos_arg 	
+	Val_label__is__expr
+Val_label__is__expr
+19 	Val_label__is__expr 	
+	Val
+Val
+20 	Val 	
+	String
+String
+21 	String 	
+	Str_val
+Str_val
+22 	Str_val 	
+	_'var simple_space int str any'_
+_'var simple_space int str any'_
+   BRANCH -12
+10 	Stmt 	
+	Single_stmt
+Single_stmt
+11 	Single_stmt 	
+	Assign_stmt 	_;_
+Assign_stmt _;_
+12 	Assign_stmt 	
+	Assign
+Assign
+13 	Assign 	
+	Varlist 	_=_ 	Exprlist
+Varlist _=_ Exprlist
+14 	Varlist 	
+	Vartuple
+Vartuple
+15 	Vartuple 	
+	Var
+Var
+16 	Var 	
+	Id
+Id
+17 	Id_ 	
+	_TL_
+_TL_
+   BRANCH -3
+14 	Exprlist 	
+	Val_label__is__expr
+Val_label__is__expr
+15 	Val_label__is__expr 	
+	Val
+Val
+16 	Val 	
+	Generator
+Generator
+17 	Generator 	
+	List_gen
+List_gen
+18 	List_gen 	
+	_[_ 	Gen_expr 	_]_
+_[_ Gen_expr _]_
+19 	Gen_expr 	
+	Val_label__is__expr 	For 	If
+Val_label__is__expr For If
+20 	Val_label__is__expr 	
+	Val
+Val
+21 	Val 	
+	Var
+Var
+22 	Var 	
+	Var 	_._ 	Id
+Var _._ Id
+23 	Var 	
+	Id
+Id
+24 	Id_ 	
+	_t_
+_t_
+   BRANCH -1
+23 	Id_ 	
+	_str_
+_str_
+   BRANCH -3
+20 	For_ 	
+	_for_ 	Varlist 	_in_ 	Exprlist
+_for_ Varlist _in_ Exprlist
+21 	Varlist 	
+	Vartuple
+Vartuple
+22 	Vartuple 	
+	Var
+Var
+23 	Var 	
+	Id
+Id
+24 	Id_ 	
+	_t_
+_t_
+   BRANCH -3
+21 	Exprlist 	
+	Val_label__is__expr
+Val_label__is__expr
+22 	Val_label__is__expr 	
+	Val
+Val
+23 	Val 	
+	Var
+Var
+24 	Var 	
+	Id
+Id
+25 	Id_ 	
+	_TL_
+_TL_
+   BRANCH -5
+20 	If_ 	
+	_if_ 	Not__is__expr
+_if_ Not__is__expr
+21 	Not__is__expr 	
+	_not_ 	Comparison__is__expr
+_not_ Comparison__is__expr
+22 	Comparison__is__expr 	
+	Val_label__is__expr 	Op_cmp 	Val_label__is__expr
+Val_label__is__expr Op_cmp Val_label__is__expr
+23 	Val_label__is__expr 	
+	Val
+Val
+24 	Val 	
+	Var
+Var
+25 	Var 	
+	Id
+Id
+26 	Id_ 	
+	_t_
+_t_
+   BRANCH -3
+23 	Op_cmp 	
+	_==_
+_==_
+   BRANCH 0
+23 	Val_label__is__expr 	
+	Val
+Val
+24 	Val 	
+	String
+String
+25 	String 	
+	Str_val
+Str_val
+26 	Str_val 	
+	_'simple_space'_
+_'simple_space'_
+   BRANCH -16
+10 	Stmt 	
+	Block_stmt
+Block_stmt
+11 	Block_stmt 	
+	Ifelse
+Ifelse
+12 	Ifelse 	
+	If 	Block
+If Block
+13 	If_ 	
+	_if_ 	Comparison__is__expr
+_if_ Comparison__is__expr
+14 	Comparison__is__expr 	
+	Funccall__is__expr 	Op_cmp 	Val_label__is__expr
+Funccall__is__expr Op_cmp Val_label__is__expr
+15 	Funccall__is__expr 	
+	Val_label__is__expr 	_(_ 	Arglist 	_)_
+Val_label__is__expr _(_ Arglist _)_
+16 	Val_label__is__expr 	
+	Val
+Val
+17 	Val 	
+	Var
+Var
+18 	Var 	
+	Id
+Id
+19 	Id_ 	
+	_len_
+_len_
+   BRANCH -3
+16 	Arglist 	
+	Pos_arglist
+Pos_arglist
+17 	Pos_arglist 	
+	Pos_arg
+Pos_arg
+18 	Pos_arg 	
+	Val_label__is__expr
+Val_label__is__expr
+19 	Val_label__is__expr 	
+	Val
+Val
+20 	Val 	
+	Var
+Var
+21 	Var 	
+	Id
+Id
+22 	Id_ 	
+	_TL_
+_TL_
+   BRANCH -7
+15 	Op_cmp 	
+	_==_
+_==_
+   BRANCH 0
+15 	Val_label__is__expr 	
+	Val
+Val
+16 	Val 	
+	Number
+Number
+17 	Number 	
+	Int
+Int
+18 	Int_ 	
+	_1_
+_1_
+   BRANCH -5
+13 	Block 	
+	Blockbegin 	Prog 	Blockend
+Blockbegin Prog Blockend
+14 	Blockbegin 	
+	_:$blockbegin_
+_:$blockbegin_
+   BRANCH 0
+14 	Prog 	
+	Stmt 	Stmt
+Stmt Stmt
+15 	Stmt 	
+	Single_stmt
+Single_stmt
+16 	Single_stmt 	
+	Assign_stmt 	_;_
+Assign_stmt _;_
+17 	Assign_stmt 	
+	Assign
+Assign
+18 	Assign 	
+	Varlist 	_=_ 	Exprlist
+Varlist _=_ Exprlist
+19 	Varlist 	
+	Vartuple
+Vartuple
+20 	Vartuple 	
+	Var
+Var
+21 	Var 	
+	Var 	_._ 	Id
+Var _._ Id
+22 	Var 	
+	Id
+Id
+23 	Id_ 	
+	_vertex_
+_vertex_
+   BRANCH -1
+22 	Id_ 	
+	_isa_VL_
+_isa_VL_
+   BRANCH -3
+19 	Exprlist 	
+	Funccall__is__expr
+Funccall__is__expr
+20 	Funccall__is__expr 	
+	Val_label__is__expr 	_(_ 	Arglist 	_)_
+Val_label__is__expr _(_ Arglist _)_
+21 	Val_label__is__expr 	
+	Val
+Val
+22 	Val 	
+	Var
+Var
+23 	Var 	
+	Var 	_._ 	Id
+Var _._ Id
+24 	Var 	
+	Id
+Id
+25 	Id_ 	
+	_self_
+_self_
+   BRANCH -1
+24 	Id_ 	
+	_is1_
+_is1_
+   BRANCH -3
+21 	Arglist 	
+	Pos_arglist
+Pos_arglist
+22 	Pos_arglist 	
+	Pos_arg
+Pos_arg
+23 	Pos_arg 	
+	Val_label__is__expr
+Val_label__is__expr
+24 	Val_label__is__expr 	
+	Val
+Val
+25 	Val 	
+	Var
+Var
+26 	Var 	
+	Var 	_[_ 	Slice 	_]_
+Var _[_ Slice _]_
+27 	Var 	
+	Id
+Id
+28 	Id_ 	
+	_TL_
+_TL_
+   BRANCH -1
+27 	Slice_ 	
+	Val_label__is__expr
+Val_label__is__expr
+28 	Val_label__is__expr 	
+	Val
+Val
+29 	Val 	
+	Number
+Number
+30 	Number 	
+	Int
+Int
+31 	Int_ 	
+	_0_
+_0_
+   BRANCH -16
+15 	Stmt 	
+	Single_stmt
+Single_stmt
+16 	Single_stmt 	
+	Func_stmt 	_;_
+Func_stmt _;_
+17 	Func_stmt 	
+	_return_ 	Exprlist
+_return_ Exprlist
+18 	Exprlist 	
+	Val_label__is__expr
+Val_label__is__expr
+19 	Val_label__is__expr 	
+	Val
+Val
+20 	Val 	
+	Var
+Var
+21 	Var 	
+	Var 	_._ 	Id
+Var _._ Id
+22 	Var 	
+	Id
+Id
+23 	Id_ 	
+	_vertex_
+_vertex_
+   BRANCH -1
+22 	Id_ 	
+	_isa_VL_
+_isa_VL_
+   BRANCH -8
+14 	Blockend 	
+	_$blockend_
+_$blockend_
+   BRANCH -4
+10 	Stmt 	
+	Single_stmt
+Single_stmt
+11 	Single_stmt 	
+	Assign_stmt 	_;_
+Assign_stmt _;_
+12 	Assign_stmt 	
+	Assign
+Assign
+13 	Assign 	
+	Varlist 	_=_ 	Exprlist
+Varlist _=_ Exprlist
+14 	Varlist 	
+	Vartuple
+Vartuple
+15 	Vartuple 	
+	Var
+Var
+16 	Var 	
+	Var 	_._ 	Id
+Var _._ Id
+17 	Var 	
+	Id
+Id
+18 	Id_ 	
+	_vertex_
+_vertex_
+   BRANCH -1
+17 	Id_ 	
+	_isa_VL_
+_isa_VL_
+   BRANCH -3
+14 	Exprlist 	
+	Val_label__is__expr
+Val_label__is__expr
+15 	Val_label__is__expr 	
+	Val
+Val
+16 	Val 	
+	List
+List
+17 	List_ 	
+	_[_ 	_]_
+_[_ _]_
+   BRANCH -7
+10 	Stmt 	
+	Single_stmt
+Single_stmt
+11 	Single_stmt 	
+	Assign_stmt 	_;_
+Assign_stmt _;_
+12 	Assign_stmt 	
+	Assign
+Assign
+13 	Assign 	
+	Varlist 	_=_ 	Exprlist
+Varlist _=_ Exprlist
+14 	Varlist 	
+	Vartuple
+Vartuple
+15 	Vartuple 	
+	Var
+Var
+16 	Var 	
+	Id
+Id
+17 	Id_ 	
+	_PD_
+_PD_
+   BRANCH -3
+14 	Exprlist 	
+	Funccall__is__expr
+Funccall__is__expr
+15 	Funccall__is__expr 	
+	Val_label__is__expr 	_(_ 	Arglist 	_)_
+Val_label__is__expr _(_ Arglist _)_
+16 	Val_label__is__expr 	
+	Val
+Val
+17 	Val 	
+	Var
+Var
+18 	Var 	
+	Var 	_._ 	Id
+Var _._ Id
+19 	Var 	
+	Id
+Id
+20 	Id_ 	
+	_collections_
+_collections_
+   BRANCH -1
+19 	Id_ 	
+	_deque_
+_deque_
+   BRANCH -3
+16 	Arglist 	
+	Pos_arglist
+Pos_arglist
+17 	Pos_arglist 	
+	Pos_arg
+Pos_arg
+18 	Pos_arg 	
+	Val_label__is__expr
+Val_label__is__expr
+19 	Val_label__is__expr 	
+	Val
+Val
+20 	Val 	
+	Var
+Var
+21 	Var 	
+	Id
+Id
+22 	Id_ 	
+	_TL_
+_TL_
+   BRANCH -12
+10 	Stmt 	
+	Block_stmt
+Block_stmt
+11 	Block_stmt 	
+	Ifelse
+Ifelse
+12 	Ifelse 	
+	If 	Block
+If Block
+13 	If_ 	
+	_if_ 	Or__is__expr
+_if_ Or__is__expr
+14 	Or__is__expr 	
+	Not__is__expr 	_or_ 	Val_label__is__expr
+Not__is__expr _or_ Val_label__is__expr
+15 	Not__is__expr 	
+	_not_ 	Funccall__is__expr
+_not_ Funccall__is__expr
+16 	Funccall__is__expr 	
+	Val_label__is__expr 	_(_ 	Arglist 	_)_
+Val_label__is__expr _(_ Arglist _)_
+17 	Val_label__is__expr 	
+	Val
+Val
+18 	Val 	
+	Var
+Var
+19 	Var 	
+	Var 	_._ 	Id
+Var _._ Id
+20 	Var 	
+	Id
+Id
+21 	Id_ 	
+	_self_
+_self_
+   BRANCH -1
+20 	Id_ 	
+	__isa_
+__isa_
+   BRANCH -3
+17 	Arglist 	
+	Pos_arglist
+Pos_arglist
+18 	Pos_arglist 	
+	Pos_arg 	_,_ 	Pos_arg
+Pos_arg _,_ Pos_arg
+19 	Pos_arg 	
+	Val_label__is__expr
+Val_label__is__expr
+20 	Val_label__is__expr 	
+	Val
+Val
+21 	Val 	
+	Var
+Var
+22 	Var 	
+	Id
+Id
+23 	Id_ 	
+	_PD_
+_PD_
+   BRANCH -4
+19 	Pos_arg 	
+	Val_label__is__expr
+Val_label__is__expr
+20 	Val_label__is__expr 	
+	Val
+Val
+21 	Val 	
+	Var
+Var
+22 	Var 	
+	Var 	_._ 	Id
+Var _._ Id
+23 	Var 	
+	Id
+Id
+24 	Id_ 	
+	_vertex_
+_vertex_
+   BRANCH -1
+23 	Id_ 	
+	_isa_VL_
+_isa_VL_
+   BRANCH -8
+15 	Val_label__is__expr 	
+	Val
+Val
+16 	Val 	
+	Var
+Var
+17 	Var 	
+	Id
+Id
+18 	Id_ 	
+	_PD_
+_PD_
+   BRANCH -5
+13 	Block 	
+	Blockbegin 	Prog 	Blockend
+Blockbegin Prog Blockend
+14 	Blockbegin 	
+	_:$blockbegin_
+_:$blockbegin_
+   BRANCH 0
+14 	Prog 	
+	Stmt
+Stmt
+15 	Stmt 	
+	Single_stmt
+Single_stmt
+16 	Single_stmt 	
+	Func_stmt 	_;_
+Func_stmt _;_
+17 	Func_stmt 	
+	_return_ 	Exprlist
+_return_ Exprlist
+18 	Exprlist 	
+	Val_label__is__expr
+Val_label__is__expr
+19 	Val_label__is__expr 	
+	Val
+Val
+20 	Val 	
+	List
+List
+21 	List_ 	
+	_[_ 	_]_
+_[_ _]_
+   BRANCH -7
+14 	Blockend 	
+	_$blockend_
+_$blockend_
+   BRANCH -4
+10 	Stmt 	
+	Single_stmt
+Single_stmt
+11 	Single_stmt 	
+	Func_stmt 	_;_
+Func_stmt _;_
+12 	Func_stmt 	
+	_return_ 	Exprlist
+_return_ Exprlist
+13 	Exprlist 	
+	Val_label__is__expr
+Val_label__is__expr
+14 	Val_label__is__expr 	
+	Val
+Val
+15 	Val 	
+	Var
+Var
+16 	Var 	
+	Var 	_._ 	Id
+Var _._ Id
+17 	Var 	
+	Id
+Id
+18 	Id_ 	
+	_vertex_
+_vertex_
+   BRANCH -1
+17 	Id_ 	
+	_isa_VL_
+_isa_VL_
+   BRANCH -8
+9 	Blockend 	
+	_$blockend_
+_$blockend_
+   BRANCH -3
+6 	Stmt 	
+	Block_stmt
+Block_stmt
+7 	Block_stmt 	
+	Block_head 	Block
+Block_head Block
+8 	Block_head 	
+	Func
+Func
+9 	Func 	
+	_def_ 	Id 	_(_ 	Paramlist 	_)_
+_def_ Id _(_ Paramlist _)_
+10 	Id_ 	
+	__isa_
+__isa_
+   BRANCH 0
+10 	Paramlist 	
+	Pos_paramlist
+Pos_paramlist
+11 	Pos_paramlist 	
+	Pos_paramtuple 	_,_ 	Pos_paramtuple 	_,_ 	Pos_paramtuple
+Pos_paramtuple _,_ Pos_paramtuple _,_ Pos_paramtuple
+12 	Pos_paramtuple 	
+	Simple_var
+Simple_var
+13 	Simple_var 	
+	Id
+Id
+14 	Id_ 	
+	_self_
+_self_
+   BRANCH -2
+12 	Pos_paramtuple 	
+	Simple_var
+Simple_var
+13 	Simple_var 	
+	Id
+Id
+14 	Id_ 	
+	_PD_
+_PD_
+   BRANCH -2
+12 	Pos_paramtuple 	
+	Simple_var
+Simple_var
+13 	Simple_var 	
+	Id
+Id
+14 	Id_ 	
+	_VL_
+_VL_
+   BRANCH -6
+8 	Block 	
+	Blockbegin 	Prog 	Blockend
+Blockbegin Prog Blockend
+9 	Blockbegin 	
+	_:$blockbegin_
+_:$blockbegin_
+   BRANCH 0
+9 	Prog 	
+	Stmt 	Stmt 	Stmt 	Stmt
+Stmt Stmt Stmt Stmt
+10 	Stmt 	
+	Block_stmt
+Block_stmt
+11 	Block_stmt 	
+	Ifelse
+Ifelse
+12 	Ifelse 	
+	If 	Block 	Elif 	Block
+If Block Elif Block
+13 	If_ 	
+	_if_ 	Comparison__is__expr
+_if_ Comparison__is__expr
+14 	Comparison__is__expr 	
+	Val_label__is__expr 	Op_cmp 	Val_label__is__expr
+Val_label__is__expr Op_cmp Val_label__is__expr
+15 	Val_label__is__expr 	
+	Val
+Val
+16 	Val 	
+	Var
+Var
+17 	Var 	
+	Var 	_._ 	Id
+Var _._ Id
+18 	Var 	
+	Id
+Id
+19 	Id_ 	
+	_self_
+_self_
+   BRANCH -1
+18 	Id_ 	
+	_name_
+_name_
+   BRANCH -3
+15 	Op_cmp 	
+	_==_
+_==_
+   BRANCH 0
+15 	Val_label__is__expr 	
+	Val
+Val
+16 	Val 	
+	Var
+Var
+17 	Var 	
+	Var 	_[_ 	Slice 	_]_
+Var _[_ Slice _]_
+18 	Var 	
+	Id
+Id
+19 	Id_ 	
+	_PD_
+_PD_
+   BRANCH -1
+18 	Slice_ 	
+	Val_label__is__expr
+Val_label__is__expr
+19 	Val_label__is__expr 	
+	Val
+Val
+20 	Val 	
+	Number
+Number
+21 	Number 	
+	Int
+Int
+22 	Int_ 	
+	_0_
+_0_
+   BRANCH -9
+13 	Block 	
+	Blockbegin 	Prog 	Blockend
+Blockbegin Prog Blockend
+14 	Blockbegin 	
+	_:$blockbegin_
+_:$blockbegin_
+   BRANCH 0
+14 	Prog 	
+	Stmt 	Stmt 	Stmt
+Stmt Stmt Stmt
+15 	Stmt 	
+	Single_stmt
+Single_stmt
+16 	Single_stmt 	
+	Exprlist 	_;_
+Exprlist _;_
+17 	Exprlist 	
+	Funccall__is__expr
+Funccall__is__expr
+18 	Funccall__is__expr 	
+	Val_label__is__expr 	_(_ 	_)_
+Val_label__is__expr _(_ _)_
+19 	Val_label__is__expr 	
+	Val
+Val
+20 	Val 	
+	Var
+Var
+21 	Var 	
+	Var 	_._ 	Id
+Var _._ Id
+22 	Var 	
+	Id
+Id
+23 	Id_ 	
+	_PD_
+_PD_
+   BRANCH -1
+22 	Id_ 	
+	_popleft_
+_popleft_
+   BRANCH -7
+15 	Stmt 	
+	Single_stmt
+Single_stmt
+16 	Single_stmt 	
+	Exprlist 	_;_
+Exprlist _;_
+17 	Exprlist 	
+	Funccall__is__expr
+Funccall__is__expr
+18 	Funccall__is__expr 	
+	Val_label__is__expr 	_(_ 	Arglist 	_)_
+Val_label__is__expr _(_ Arglist _)_
+19 	Val_label__is__expr 	
+	Val
+Val
+20 	Val 	
+	Var
+Var
+21 	Var 	
+	Var 	_._ 	Id
+Var _._ Id
+22 	Var 	
+	Id
+Id
+23 	Id_ 	
+	_VL_
+_VL_
+   BRANCH -1
+22 	Id_ 	
+	_append_
+_append_
+   BRANCH -3
+19 	Arglist 	
+	Pos_arglist
+Pos_arglist
+20 	Pos_arglist 	
+	Pos_arg
+Pos_arg
+21 	Pos_arg 	
+	Val_label__is__expr
+Val_label__is__expr
+22 	Val_label__is__expr 	
+	Val
+Val
+23 	Val 	
+	Var
+Var
+24 	Var 	
+	Id
+Id
+25 	Id_ 	
+	_self_
+_self_
+   BRANCH -10
+15 	Stmt 	
+	Single_stmt
+Single_stmt
+16 	Single_stmt 	
+	Func_stmt 	_;_
+Func_stmt _;_
+17 	Func_stmt 	
+	_return_ 	Exprlist
+_return_ Exprlist
+18 	Exprlist 	
+	Val_label__is__expr
+Val_label__is__expr
+19 	Val_label__is__expr 	
+	Val
+Val
+20 	Val 	
+	Var
+Var
+21 	Var 	
+	Id
+Id
+22 	Id_ 	
+	_True_
+_True_
+   BRANCH -8
+14 	Blockend 	
+	_$blockend_
+_$blockend_
+   BRANCH -1
+13 	Elif_ 	
+	_elif_ 	Val_label__is__expr
+_elif_ Val_label__is__expr
+14 	Val_label__is__expr 	
+	Val
+Val
+15 	Val 	
+	Var
+Var
+16 	Var 	
+	Var 	_._ 	Id
+Var _._ Id
+17 	Var 	
+	Id
+Id
+18 	Id_ 	
+	_self_
+_self_
+   BRANCH -1
+17 	Id_ 	
+	_empty_
+_empty_
+   BRANCH -4
+13 	Block 	
+	Blockbegin 	Prog 	Blockend
+Blockbegin Prog Blockend
+14 	Blockbegin 	
+	_:$blockbegin_
+_:$blockbegin_
+   BRANCH 0
+14 	Prog 	
+	Stmt
+Stmt
+15 	Stmt 	
+	Single_stmt
+Single_stmt
+16 	Single_stmt 	
+	Func_stmt 	_;_
+Func_stmt _;_
+17 	Func_stmt 	
+	_return_ 	Exprlist
+_return_ Exprlist
+18 	Exprlist 	
+	Val_label__is__expr
+Val_label__is__expr
+19 	Val_label__is__expr 	
+	Val
+Val
+20 	Val 	
+	Var
+Var
+21 	Var 	
+	Id
+Id
+22 	Id_ 	
+	_False_
+_False_
+   BRANCH -8
+14 	Blockend 	
+	_$blockend_
+_$blockend_
+   BRANCH -4
+10 	Stmt 	
+	Single_stmt
+Single_stmt
+11 	Single_stmt 	
+	Assign_stmt 	_;_
+Assign_stmt _;_
+12 	Assign_stmt 	
+	Assign
+Assign
+13 	Assign 	
+	Varlist 	_=_ 	Exprlist
+Varlist _=_ Exprlist
+14 	Varlist 	
+	Vartuple
+Vartuple
+15 	Vartuple 	
+	Var
+Var
+16 	Var 	
+	Id
+Id
+17 	Id_ 	
+	_restlen_
+_restlen_
+   BRANCH -3
+14 	Exprlist 	
+	Funccall__is__expr
+Funccall__is__expr
+15 	Funccall__is__expr 	
+	Val_label__is__expr 	_(_ 	Arglist 	_)_
+Val_label__is__expr _(_ Arglist _)_
+16 	Val_label__is__expr 	
+	Val
+Val
+17 	Val 	
+	Var
+Var
+18 	Var 	
+	Id
+Id
+19 	Id_ 	
+	_len_
+_len_
+   BRANCH -3
+16 	Arglist 	
+	Pos_arglist
+Pos_arglist
+17 	Pos_arglist 	
+	Pos_arg
+Pos_arg
+18 	Pos_arg 	
+	Val_label__is__expr
+Val_label__is__expr
+19 	Val_label__is__expr 	
+	Val
+Val
+20 	Val 	
+	Var
+Var
+21 	Var 	
+	Id
+Id
+22 	Id_ 	
+	_self_
+_self_
+   BRANCH -12
+10 	Stmt 	
+	Block_stmt
+Block_stmt
+11 	Block_stmt 	
+	Block_head 	Block
+Block_head Block
+12 	Block_head 	
+	Loop
+Loop
+13 	Loop 	
+	For
+For
+14 	For_ 	
+	_for_ 	Varlist 	_in_ 	Exprlist
+_for_ Varlist _in_ Exprlist
+15 	Varlist 	
+	Vartuple
+Vartuple
+16 	Vartuple 	
+	Var
+Var
+17 	Var 	
+	Id
+Id
+18 	Id_ 	
+	_v_
+_v_
+   BRANCH -3
+15 	Exprlist 	
+	Val_label__is__expr
+Val_label__is__expr
+16 	Val_label__is__expr 	
+	Val
+Val
+17 	Val 	
+	Var
+Var
+18 	Var 	
+	Id
+Id
+19 	Id_ 	
+	_self_
+_self_
+   BRANCH -7
+12 	Block 	
+	Blockbegin 	Prog 	Blockend
+Blockbegin Prog Blockend
+13 	Blockbegin 	
+	_:$blockbegin_
+_:$blockbegin_
+   BRANCH 0
+13 	Prog 	
+	Stmt 	Stmt
+Stmt Stmt
+14 	Stmt 	
+	Block_stmt
+Block_stmt
+15 	Block_stmt 	
+	Ifelse
+Ifelse
+16 	Ifelse 	
+	If 	Block
+If Block
+17 	If_ 	
+	_if_ 	Comparison__is__expr
+_if_ Comparison__is__expr
+18 	Comparison__is__expr 	
+	Val_label__is__expr 	Op_cmp 	Or__is__expr
+Val_label__is__expr Op_cmp Or__is__expr
+19 	Val_label__is__expr 	
+	Val
+Val
+20 	Val 	
+	Var
+Var
+21 	Var 	
+	Id
+Id
+22 	Id_ 	
+	_restlen_
+_restlen_
+   BRANCH -3
+19 	Op_cmp 	
+	_>_
+_>_
+   BRANCH 0
+19 	Or__is__expr 	
+	Funccall__is__expr 	_or_ 	Not__is__expr
+Funccall__is__expr _or_ Not__is__expr
+20 	Funccall__is__expr 	
+	Val_label__is__expr 	_(_ 	Arglist 	_)_
+Val_label__is__expr _(_ Arglist _)_
+21 	Val_label__is__expr 	
+	Val
+Val
+22 	Val 	
+	Var
+Var
+23 	Var 	
+	Id
+Id
+24 	Id_ 	
+	_len_
+_len_
+   BRANCH -3
+21 	Arglist 	
+	Pos_arglist
+Pos_arglist
+22 	Pos_arglist 	
+	Pos_arg
+Pos_arg
+23 	Pos_arg 	
+	Val_label__is__expr
+Val_label__is__expr
+24 	Val_label__is__expr 	
+	Val
+Val
+25 	Val 	
+	Var
+Var
+26 	Var 	
+	Id
+Id
+27 	Id_ 	
+	_PD_
+_PD_
+   BRANCH -7
+20 	Not__is__expr 	
+	_not_ 	Funccall__is__expr
+_not_ Funccall__is__expr
+21 	Funccall__is__expr 	
+	Val_label__is__expr 	_(_ 	Arglist 	_)_
+Val_label__is__expr _(_ Arglist _)_
+22 	Val_label__is__expr 	
+	Val
+Val
+23 	Val 	
+	Var
+Var
+24 	Var 	
+	Var 	_._ 	Id
+Var _._ Id
+25 	Var 	
+	Id
+Id
+26 	Id_ 	
+	_v_
+_v_
+   BRANCH -1
+25 	Id_ 	
+	__isa_
+__isa_
+   BRANCH -3
+22 	Arglist 	
+	Pos_arglist
+Pos_arglist
+23 	Pos_arglist 	
+	Pos_arg 	_,_ 	Pos_arg
+Pos_arg _,_ Pos_arg
+24 	Pos_arg 	
+	Val_label__is__expr
+Val_label__is__expr
+25 	Val_label__is__expr 	
+	Val
+Val
+26 	Val 	
+	Var
+Var
+27 	Var 	
+	Id
+Id
+28 	Id_ 	
+	_PD_
+_PD_
+   BRANCH -4
+24 	Pos_arg 	
+	Val_label__is__expr
+Val_label__is__expr
+25 	Val_label__is__expr 	
+	Val
+Val
+26 	Val 	
+	Var
+Var
+27 	Var 	
+	Id
+Id
+28 	Id_ 	
+	_VL_
+_VL_
+   BRANCH -11
+17 	Block 	
+	Blockbegin 	Prog 	Blockend
+Blockbegin Prog Blockend
+18 	Blockbegin 	
+	_:$blockbegin_
+_:$blockbegin_
+   BRANCH 0
+18 	Prog 	
+	Stmt
+Stmt
+19 	Stmt 	
+	Single_stmt
+Single_stmt
+20 	Single_stmt 	
+	Func_stmt 	_;_
+Func_stmt _;_
+21 	Func_stmt 	
+	_return_ 	Exprlist
+_return_ Exprlist
+22 	Exprlist 	
+	Val_label__is__expr
+Val_label__is__expr
+23 	Val_label__is__expr 	
+	Val
+Val
+24 	Val 	
+	Var
+Var
+25 	Var 	
+	Id
+Id
+26 	Id_ 	
+	_False_
+_False_
+   BRANCH -8
+18 	Blockend 	
+	_$blockend_
+_$blockend_
+   BRANCH -4
+14 	Stmt 	
+	Single_stmt
+Single_stmt
+15 	Single_stmt 	
+	Assign_stmt 	_;_
+Assign_stmt _;_
+16 	Assign_stmt 	
+	Aug_assign
+Aug_assign
+17 	Aug_assign 	
+	Var 	Aug_op 	Exprlist
+Var Aug_op Exprlist
+18 	Var 	
+	Id
+Id
+19 	Id_ 	
+	_restlen_
+_restlen_
+   BRANCH -1
+18 	Aug_op 	
+	_-=_
+_-=_
+   BRANCH 0
+18 	Exprlist 	
+	Val_label__is__expr
+Val_label__is__expr
+19 	Val_label__is__expr 	
+	Val
+Val
+20 	Val 	
+	Number
+Number
+21 	Number 	
+	Int
+Int
+22 	Int_ 	
+	_1_
+_1_
+   BRANCH -9
+13 	Blockend 	
+	_$blockend_
+_$blockend_
+   BRANCH -3
+10 	Stmt 	
+	Single_stmt
+Single_stmt
+11 	Single_stmt 	
+	Func_stmt 	_;_
+Func_stmt _;_
+12 	Func_stmt 	
+	_return_ 	Exprlist
+_return_ Exprlist
+13 	Exprlist 	
+	Val_label__is__expr
+Val_label__is__expr
+14 	Val_label__is__expr 	
+	Val
+Val
+15 	Val 	
+	Var
+Var
+16 	Var 	
+	Id
+Id
+17 	Id_ 	
+	_True_
+_True_
+   BRANCH -8
+9 	Blockend 	
+	_$blockend_
+_$blockend_
+   BRANCH -3
+6 	Stmt 	
+	Block_stmt
+Block_stmt
+7 	Block_stmt 	
+	Block_head 	Block
+Block_head Block
+8 	Block_head 	
+	Func
+Func
+9 	Func 	
+	_def_ 	Id 	_(_ 	Paramlist 	_)_
+_def_ Id _(_ Paramlist _)_
+10 	Id_ 	
+	_literals_
+_literals_
+   BRANCH 0
+10 	Paramlist 	
+	Pos_paramlist
+Pos_paramlist
+11 	Pos_paramlist 	
+	Pos_paramtuple
+Pos_paramtuple
+12 	Pos_paramtuple 	
+	Simple_var
+Simple_var
+13 	Simple_var 	
+	Id
+Id
+14 	Id_ 	
+	_self_
+_self_
+   BRANCH -6
+8 	Block 	
+	Blockbegin 	Prog 	Blockend
+Blockbegin Prog Blockend
+9 	Blockbegin 	
+	_:$blockbegin_
+_:$blockbegin_
+   BRANCH 0
+9 	Prog 	
+	Stmt 	Stmt
+Stmt Stmt
+10 	Stmt 	
+	Single_stmt
+Single_stmt
+11 	Single_stmt 	
+	Exprlist 	_;_
+Exprlist _;_
+12 	Exprlist 	
+	Val_label__is__expr
+Val_label__is__expr
+13 	Val_label__is__expr 	
+	Val
+Val
+14 	Val 	
+	String
+String
+15 	String 	
+	Str_val
+Str_val
+16 	Str_val 	
+	_"""returns a list of the translated text in the leafs"""_
+_"""returns a list of the translated text in the leafs"""_
+   BRANCH -6
+10 	Stmt 	
+	Single_stmt
+Single_stmt
+11 	Single_stmt 	
+	Func_stmt 	_;_
+Func_stmt _;_
+12 	Func_stmt 	
+	_return_ 	Exprlist
+_return_ Exprlist
+13 	Exprlist 	
+	Val_label__is__expr
+Val_label__is__expr
+14 	Val_label__is__expr 	
+	Val
+Val
+15 	Val 	
+	Generator
+Generator
+16 	Generator 	
+	List_gen
+List_gen
+17 	List_gen 	
+	_[_ 	Gen_expr 	_]_
+_[_ Gen_expr _]_
+18 	Gen_expr 	
+	Val_label__is__expr 	For 	If
+Val_label__is__expr For If
+19 	Val_label__is__expr 	
+	Val
+Val
+20 	Val 	
+	Var
+Var
+21 	Var 	
+	Var 	_._ 	Id
+Var _._ Id
+22 	Var 	
+	Id
+Id
+23 	Id_ 	
+	_v_
+_v_
+   BRANCH -1
+22 	Id_ 	
+	_name_
+_name_
+   BRANCH -3
+19 	For_ 	
+	_for_ 	Varlist 	_in_ 	Exprlist
+_for_ Varlist _in_ Exprlist
+20 	Varlist 	
+	Vartuple
+Vartuple
+21 	Vartuple 	
+	Var
+Var
+22 	Var 	
+	Id
+Id
+23 	Id_ 	
+	_v_
+_v_
+   BRANCH -3
+20 	Exprlist 	
+	Funccall__is__expr
+Funccall__is__expr
+21 	Funccall__is__expr 	
+	Val_label__is__expr 	_(_ 	_)_
+Val_label__is__expr _(_ _)_
+22 	Val_label__is__expr 	
+	Val
+Val
+23 	Val 	
+	Var
+Var
+24 	Var 	
+	Var 	_._ 	Id
+Var _._ Id
+25 	Var 	
+	Id
+Id
+26 	Id_ 	
+	_self_
+_self_
+   BRANCH -1
+25 	Id_ 	
+	_walk_
+_walk_
+   BRANCH -6
+19 	If_ 	
+	_if_ 	Val_label__is__expr
+_if_ Val_label__is__expr
+20 	Val_label__is__expr 	
+	Val
+Val
+21 	Val 	
+	Var
+Var
+22 	Var 	
+	Var 	_._ 	Id
+Var _._ Id
+23 	Var 	
+	Id
+Id
+24 	Id_ 	
+	_v_
+_v_
+   BRANCH -1
+23 	Id_ 	
+	_empty_
+_empty_
+   BRANCH -14
+9 	Blockend 	
+	_$blockend_
+_$blockend_
+   BRANCH -3
+6 	Stmt 	
+	Block_stmt
+Block_stmt
+7 	Block_stmt 	
+	Block_head 	Block
+Block_head Block
+8 	Block_head 	
+	Func
+Func
+9 	Func 	
+	_def_ 	Id 	_(_ 	Paramlist 	_)_
+_def_ Id _(_ Paramlist _)_
+10 	Id_ 	
+	_words_
+_words_
+   BRANCH 0
+10 	Paramlist 	
+	Pos_paramlist
+Pos_paramlist
+11 	Pos_paramlist 	
+	Pos_paramtuple
+Pos_paramtuple
+12 	Pos_paramtuple 	
+	Simple_var
+Simple_var
+13 	Simple_var 	
+	Id
+Id
+14 	Id_ 	
+	_self_
+_self_
+   BRANCH -6
+8 	Block 	
+	Blockbegin 	Prog 	Blockend
+Blockbegin Prog Blockend
+9 	Blockbegin 	
+	_:$blockbegin_
+_:$blockbegin_
+   BRANCH 0
+9 	Prog 	
+	Stmt 	Stmt 	Stmt 	Stmt 	Stmt 	Stmt 	Stmt 	Stmt
+Stmt Stmt Stmt Stmt Stmt Stmt Stmt Stmt
+10 	Stmt 	
+	Single_stmt
+Single_stmt
+11 	Single_stmt 	
+	Exprlist 	_;_
+Exprlist _;_
+12 	Exprlist 	
+	Val_label__is__expr
+Val_label__is__expr
+13 	Val_label__is__expr 	
+	Val
+Val
+14 	Val 	
+	String
+String
+15 	String 	
+	Str_val
+Str_val
+16 	Str_val 	
+	_"""returns a list of the literal text in the leafs"""_
+_"""returns a list of the literal text in the leafs"""_
+   BRANCH -6
+10 	Stmt 	
+	Single_stmt
+Single_stmt
+11 	Single_stmt 	
+	Assign_stmt 	_;_
+Assign_stmt _;_
+12 	Assign_stmt 	
+	Assign
+Assign
+13 	Assign 	
+	Varlist 	_=_ 	Exprlist
+Varlist _=_ Exprlist
+14 	Varlist 	
+	Vartuple
+Vartuple
+15 	Vartuple 	
+	Var
+Var
+16 	Var 	
+	Id
+Id
+17 	Id_ 	
+	_L_
+_L_
+   BRANCH -3
+14 	Exprlist 	
+	Val_label__is__expr
+Val_label__is__expr
+15 	Val_label__is__expr 	
+	Val
+Val
+16 	Val 	
+	List
+List
+17 	List_ 	
+	_[_ 	_]_
+_[_ _]_
+   BRANCH -7
+10 	Stmt 	
+	Single_stmt
+Single_stmt
+11 	Single_stmt 	
+	Assign_stmt 	_;_
+Assign_stmt _;_
+12 	Assign_stmt 	
+	Assign
+Assign
+13 	Assign 	
+	Varlist 	_=_ 	Exprlist
+Varlist _=_ Exprlist
+14 	Varlist 	
+	Vartuple
+Vartuple
+15 	Vartuple 	
+	Var
+Var
+16 	Var 	
+	Id
+Id
+17 	Id_ 	
+	_temp_
+_temp_
+   BRANCH -3
+14 	Exprlist 	
+	Val_label__is__expr
+Val_label__is__expr
+15 	Val_label__is__expr 	
+	Val
+Val
+16 	Val 	
+	Var
+Var
+17 	Var 	
+	Var 	_._ 	Id
+Var _._ Id
+18 	Var 	
+	Id
+Id
+19 	Id_ 	
+	_Tree_
+_Tree_
+   BRANCH -1
+18 	Id_ 	
+	_out_
+_out_
+   BRANCH -8
+10 	Stmt 	
+	Single_stmt
+Single_stmt
+11 	Single_stmt 	
+	Assign_stmt 	_;_
+Assign_stmt _;_
+12 	Assign_stmt 	
+	Assign
+Assign
+13 	Assign 	
+	Varlist 	_=_ 	Exprlist
+Varlist _=_ Exprlist
+14 	Varlist 	
+	Vartuple
+Vartuple
+15 	Vartuple 	
+	Var
+Var
+16 	Var 	
+	Var 	_._ 	Id
+Var _._ Id
+17 	Var 	
+	Id
+Id
+18 	Id_ 	
+	_Tree_
+_Tree_
+   BRANCH -1
+17 	Id_ 	
+	_out_
+_out_
+   BRANCH -3
+14 	Exprlist 	
+	Val_label__is__expr
+Val_label__is__expr
+15 	Val_label__is__expr 	
+	Val
+Val
+16 	Val 	
+	Var
+Var
+17 	Var 	
+	Id
+Id
+18 	Id_ 	
+	_L_
+_L_
+   BRANCH -8
+10 	Stmt 	
+	Single_stmt
+Single_stmt
+11 	Single_stmt 	
+	Exprlist 	_;_
+Exprlist _;_
+12 	Exprlist 	
+	Funccall__is__expr
+Funccall__is__expr
+13 	Funccall__is__expr 	
+	Val_label__is__expr 	_(_ 	_)_
+Val_label__is__expr _(_ _)_
+14 	Val_label__is__expr 	
+	Val
+Val
+15 	Val 	
+	Var
+Var
+16 	Var 	
+	Var 	_._ 	Id
+Var _._ Id
+17 	Var 	
+	Id
+Id
+18 	Id_ 	
+	_self_
+_self_
+   BRANCH -1
+17 	Id_ 	
+	_visitchildren_
+_visitchildren_
+   BRANCH -7
+10 	Stmt 	
+	Single_stmt
+Single_stmt
+11 	Single_stmt 	
+	Assign_stmt 	_;_
+Assign_stmt _;_
+12 	Assign_stmt 	
+	Assign
+Assign
+13 	Assign 	
+	Varlist 	_=_ 	Exprlist
+Varlist _=_ Exprlist
+14 	Varlist 	
+	Vartuple
+Vartuple
+15 	Vartuple 	
+	Var
+Var
+16 	Var 	
+	Var 	_._ 	Id
+Var _._ Id
+17 	Var 	
+	Id
+Id
+18 	Id_ 	
+	_Tree_
+_Tree_
+   BRANCH -1
+17 	Id_ 	
+	_out_
+_out_
+   BRANCH -3
+14 	Exprlist 	
+	Val_label__is__expr
+Val_label__is__expr
+15 	Val_label__is__expr 	
+	Val
+Val
+16 	Val 	
+	Var
+Var
+17 	Var 	
+	Id
+Id
+18 	Id_ 	
+	_temp_
+_temp_
+   BRANCH -8
+10 	Stmt 	
+	Single_stmt
+Single_stmt
+11 	Single_stmt 	
+	Exprlist 	_;_
+Exprlist _;_
+12 	Exprlist 	
+	Val_label__is__expr
+Val_label__is__expr
+13 	Val_label__is__expr 	
+	Val
+Val
+14 	Val 	
+	String
+String
+15 	String 	
+	Str_val
+Str_val
+16 	Str_val 	
+	_"""
+        temp= Tree.write
+        Tree.write= lambda Tree,x: L.append(x)
+        self.visitchildren()
+        Tree.write= temp
+        """_
+_"""
+        temp= Tree.write
+        Tree.write= lambda Tree,x: L.append(x)
+        self.visitchildren()
+        Tree.write= temp
+        """_
+   BRANCH -6
+10 	Stmt 	
+	Single_stmt
+Single_stmt
+11 	Single_stmt 	
+	Func_stmt 	_;_
+Func_stmt _;_
+12 	Func_stmt 	
+	_return_ 	Exprlist
+_return_ Exprlist
+13 	Exprlist 	
+	Val_label__is__expr
+Val_label__is__expr
+14 	Val_label__is__expr 	
+	Val
+Val
+15 	Val 	
+	Var
+Var
+16 	Var 	
+	Id
+Id
+17 	Id_ 	
+	_L_
+_L_
+   BRANCH -8
+9 	Blockend 	
+	_$blockend_
+_$blockend_
+   BRANCH -3
+6 	Stmt 	
+	Block_stmt
+Block_stmt
+7 	Block_stmt 	
+	Block_head 	Block
+Block_head Block
+8 	Block_head 	
+	Func
+Func
+9 	Func 	
+	_def_ 	Id 	_(_ 	Paramlist 	_)_
+_def_ Id _(_ Paramlist _)_
+10 	Id_ 	
+	_text_
+_text_
+   BRANCH 0
+10 	Paramlist 	
+	Pos_paramlist
+Pos_paramlist
+11 	Pos_paramlist 	
+	Pos_paramtuple
+Pos_paramtuple
+12 	Pos_paramtuple 	
+	Simple_var
+Simple_var
+13 	Simple_var 	
+	Id
+Id
+14 	Id_ 	
+	_self_
+_self_
+   BRANCH -6
+8 	Block 	
+	Blockbegin 	Prog 	Blockend
+Blockbegin Prog Blockend
+9 	Blockbegin 	
+	_:$blockbegin_
+_:$blockbegin_
+   BRANCH 0
+9 	Prog 	
+	Stmt 	Stmt
+Stmt Stmt
+10 	Stmt 	
+	Single_stmt
+Single_stmt
+11 	Single_stmt 	
+	Exprlist 	_;_
+Exprlist _;_
+12 	Exprlist 	
+	Val_label__is__expr
+Val_label__is__expr
+13 	Val_label__is__expr 	
+	Val
+Val
+14 	Val 	
+	String
+String
+15 	String 	
+	Str_val
+Str_val
+16 	Str_val 	
+	_"""returns a string of the translated text in the leafs"""_
+_"""returns a string of the translated text in the leafs"""_
+   BRANCH -6
+10 	Stmt 	
+	Single_stmt
+Single_stmt
+11 	Single_stmt 	
+	Func_stmt 	_;_
+Func_stmt _;_
+12 	Func_stmt 	
+	_return_ 	Exprlist
+_return_ Exprlist
+13 	Exprlist 	
+	Funccall__is__expr
+Funccall__is__expr
+14 	Funccall__is__expr 	
+	Attr__is__expr 	_(_ 	_)_
+Attr__is__expr _(_ _)_
+15 	Attr__is__expr 	
+	Funccall__is__expr 	_._ 	Id
+Funccall__is__expr _._ Id
+16 	Funccall__is__expr 	
+	Attr__is__expr 	_(_ 	Arglist 	_)_
+Attr__is__expr _(_ Arglist _)_
+17 	Attr__is__expr 	
+	Val_label__is__expr 	_._ 	Id
+Val_label__is__expr _._ Id
+18 	Val_label__is__expr 	
+	Val
+Val
+19 	Val 	
+	String
+String
+20 	String 	
+	Str_val
+Str_val
+21 	Str_val 	
+	_''_
+_''_
+   BRANCH -3
+18 	Id_ 	
+	_join_
+_join_
+   BRANCH -1
+17 	Arglist 	
+	Pos_arglist
+Pos_arglist
+18 	Pos_arglist 	
+	Pos_arg
+Pos_arg
+19 	Pos_arg 	
+	Funccall__is__expr
+Funccall__is__expr
+20 	Funccall__is__expr 	
+	Val_label__is__expr 	_(_ 	_)_
+Val_label__is__expr _(_ _)_
+21 	Val_label__is__expr 	
+	Val
+Val
+22 	Val 	
+	Var
+Var
+23 	Var 	
+	Var 	_._ 	Id
+Var _._ Id
+24 	Var 	
+	Id
+Id
+25 	Id_ 	
+	_self_
+_self_
+   BRANCH -1
+24 	Id_ 	
+	_words_
+_words_
+   BRANCH -8
+16 	Id_ 	
+	_rstrip_
+_rstrip_
+   BRANCH -7
+9 	Blockend 	
+	_$blockend_
+_$blockend_
+   BRANCH -3
+6 	Stmt 	
+	Block_stmt
+Block_stmt
+7 	Block_stmt 	
+	Block_head 	Block
+Block_head Block
+8 	Block_head 	
+	Func
+Func
+9 	Func 	
+	_def_ 	Id 	_(_ 	Paramlist 	_)_
+_def_ Id _(_ Paramlist _)_
+10 	Id_ 	
+	_ot_
+_ot_
+   BRANCH 0
+10 	Paramlist 	
+	Pos_paramlist
+Pos_paramlist
+11 	Pos_paramlist 	
+	Pos_paramtuple
+Pos_paramtuple
+12 	Pos_paramtuple 	
+	Simple_var
+Simple_var
+13 	Simple_var 	
+	Id
+Id
+14 	Id_ 	
+	_self_
+_self_
+   BRANCH -6
+8 	Block 	
+	Blockbegin 	Prog 	Blockend
+Blockbegin Prog Blockend
+9 	Blockbegin 	
+	_:$blockbegin_
+_:$blockbegin_
+   BRANCH 0
+9 	Prog 	
+	Stmt 	Stmt
+Stmt Stmt
+10 	Stmt 	
+	Single_stmt
+Single_stmt
+11 	Single_stmt 	
+	Exprlist 	_;_
+Exprlist _;_
+12 	Exprlist 	
+	Val_label__is__expr
+Val_label__is__expr
+13 	Val_label__is__expr 	
+	Val
+Val
+14 	Val 	
+	String
+String
+15 	String 	
+	Str_val
+Str_val
+16 	Str_val 	
+	_"""returns original text in the leafs"""_
+_"""returns original text in the leafs"""_
+   BRANCH -6
+10 	Stmt 	
+	Single_stmt
+Single_stmt
+11 	Single_stmt 	
+	Func_stmt 	_;_
+Func_stmt _;_
+12 	Func_stmt 	
+	_return_ 	Exprlist
+_return_ Exprlist
+13 	Exprlist 	
+	Funccall__is__expr
+Funccall__is__expr
+14 	Funccall__is__expr 	
+	Attr__is__expr 	_(_ 	Gen_expr 	_)_
+Attr__is__expr _(_ Gen_expr _)_
+15 	Attr__is__expr 	
+	Val_label__is__expr 	_._ 	Id
+Val_label__is__expr _._ Id
+16 	Val_label__is__expr 	
+	Val
+Val
+17 	Val 	
+	String
+String
+18 	String 	
+	Str_val
+Str_val
+19 	Str_val 	
+	_''_
+_''_
+   BRANCH -3
+16 	Id_ 	
+	_join_
+_join_
+   BRANCH -1
+15 	Gen_expr 	
+	Dash_calc__is__expr 	For 	If
+Dash_calc__is__expr For If
+16 	Dash_calc__is__expr 	
+	Val_label__is__expr 	_+_ 	Val_label__is__expr
+Val_label__is__expr _+_ Val_label__is__expr
+17 	Val_label__is__expr 	
+	Val
+Val
+18 	Val 	
+	Var
+Var
+19 	Var 	
+	Var 	_._ 	Id
+Var _._ Id
+20 	Var 	
+	Id
+Id
+21 	Id_ 	
+	_v_
+_v_
+   BRANCH -1
+20 	Id_ 	
+	_name_
+_name_
+   BRANCH -3
+17 	Val_label__is__expr 	
+	Val
+Val
+18 	Val 	
+	Var
+Var
+19 	Var 	
+	Var 	_._ 	Id
+Var _._ Id
+20 	Var 	
+	Id
+Id
+21 	Id_ 	
+	_v_
+_v_
+   BRANCH -1
+20 	Id_ 	
+	_space_
+_space_
+   BRANCH -4
+16 	For_ 	
+	_for_ 	Varlist 	_in_ 	Exprlist
+_for_ Varlist _in_ Exprlist
+17 	Varlist 	
+	Vartuple
+Vartuple
+18 	Vartuple 	
+	Var
+Var
+19 	Var 	
+	Id
+Id
+20 	Id_ 	
+	_v_
+_v_
+   BRANCH -3
+17 	Exprlist 	
+	Funccall__is__expr
+Funccall__is__expr
+18 	Funccall__is__expr 	
+	Val_label__is__expr 	_(_ 	_)_
+Val_label__is__expr _(_ _)_
+19 	Val_label__is__expr 	
+	Val
+Val
+20 	Val 	
+	Var
+Var
+21 	Var 	
+	Var 	_._ 	Id
+Var _._ Id
+22 	Var 	
+	Id
+Id
+23 	Id_ 	
+	_self_
+_self_
+   BRANCH -1
+22 	Id_ 	
+	_walk_
+_walk_
+   BRANCH -6
+16 	If_ 	
+	_if_ 	Val_label__is__expr
+_if_ Val_label__is__expr
+17 	Val_label__is__expr 	
+	Val
+Val
+18 	Val 	
+	Var
+Var
+19 	Var 	
+	Var 	_._ 	Id
+Var _._ Id
+20 	Var 	
+	Id
+Id
+21 	Id_ 	
+	_v_
+_v_
+   BRANCH -1
+20 	Id_ 	
+	_empty_
+_empty_
+   BRANCH -11
+9 	Blockend 	
+	_$blockend_
+_$blockend_
+   BRANCH -3
+6 	Stmt 	
+	Block_stmt
+Block_stmt
+7 	Block_stmt 	
+	Block_head 	Block
+Block_head Block
+8 	Block_head 	
+	Func
+Func
+9 	Func 	
+	_def_ 	Id 	_(_ 	Paramlist 	_(_ 	_)_
+_def_ Id _(_ Paramlist _(_ _)_
+10 	Id_ 	
+	_transform_
+_transform_
+   BRANCH 0
+10 	Paramlist 	
+	Pos_paramlist 	_,_ 	Kparamlist
+Pos_paramlist _,_ Kparamlist
+11 	Pos_paramlist 	
+	Pos_paramtuple 	_,_ 	Pos_paramtuple
+Pos_paramtuple _,_ Pos_paramtuple
+12 	Pos_paramtuple 	
+	Simple_var
+Simple_var
+13 	Simple_var 	
+	Id
+Id
+14 	Id_ 	
+	_self_
+_self_
+   BRANCH -2
+12 	Pos_paramtuple 	
+	Simple_var
+Simple_var
+13 	Simple_var 	
+	Id
+Id
+14 	Id_ 	
+	_S_
+_S_
+   BRANCH -3
+11 	Kparamlist 	
+	Kparam
+Kparam
+12 	Kparam 	
+	Pos_paramtuple 	_=_

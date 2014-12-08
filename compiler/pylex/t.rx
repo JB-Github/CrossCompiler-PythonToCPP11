@@ -1,0 +1,43 @@
+
+lower= [a-z]
+upper= [A-Z]
+letter= lower|upper
+letter_= letter|'_'
+digit= [0-9]
+var= letter_ (letter_|digit)*
+
+
+int= digit+
+exp= [eE][+-]? int
+decimal= '.' digit*
+float=  int exp | int? decimal exp? # vollstaendig?? | decimal exp?
+
+comment= '#' [^\n]*
+space= (\t | \n | \\ | ' ' | comment)+
+
+operator= {
+	**= <<= >>= //= ^= |= &= %= /= *= -= += <> != == >= <= >> << // **
+ 	; = ` . : , @ [ ]  ( )  > < ~ ^ | & % / * - +
+ } | '{' | '}'
+
+op_unused= {? $}
+
+
+quote= {''' """ ' "}
+prefix= { r B Br BR uR bR b U ur br u R Ur UR }
+str= prefix? "'''" (\\.|[^\\])*? "'''"
+   | prefix? '"""' (\\.|[^\\])*? '"""'
+   | prefix? ['] (\\.|[^\\'\n])* [']
+   | prefix? ["] (\\.|[^\\"\n])* ["]
+
+#str= prefix? quote
+
+keyword= {
+	continue	finally	lambda	return	import	except	assert
+	global	raise	class	print	break	yield	while	exec
+	pass	else	with	elif	from	try		for		def
+	not		del		and		is		in		if		or		as
+}
+
+
+

@@ -1,0 +1,63 @@
+\input{header}
+
+
+\title{ Einfacher? Crosscompiler von Python nach C++ }
+\subject{Programmierpraktikum}
+\author{Felix Helsch \\ Julian Buchhorn}
+\date{\today}
+
+\usepackage[version=3]{mhchem}
+\usepackage{rotating}
+\usepackage{booktabs}
+
+\newcommand{\cc}[1]{\multicolumn{1}{c}{#1}} %Cell-Center
+\newcommand{\C}[2]{\multicolumn{#1}{|c|}{#2}} %multiCol-wall
+\newcommand{\mc}[2]{\multicolumn{#1}{c}{#2}} %multicol
+
+\inlinecodestyle{python}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}                                       
+
+\pagestyle{empty}
+\maketitle
+\tableofcontents
+
+\clearpage 
+\pagestyle{fancy}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Einleitung}
+
+\subsubsection*{Code Schrift}
+Text mit \ttt{Code} \ttt{Schrift} .
+
+\subsubsection*{Inline Code}
+\begin{lstlisting}
+inline code test
+\end{lstlisting}
+
+\subsubsection*{Numerierter Inline Code}
+\begin{nrcode}
+import math
+
+nr code test
+\end{nrcode}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\appendix
+\newpage
+\input{Kapitel/Anhang}
+
+\clearpage
+\listoffigures
+\clearpage
+\listoftables
+\clearpage
+\nocite{*}
+\printbibliography
+
+\end{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
