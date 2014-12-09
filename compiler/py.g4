@@ -109,7 +109,7 @@ expr
 	//Brackets
 	: expr '(' (arglist | gen_expr)? ')' 	#funccall__is__expr //Semantics!!
 	| expr '[' slice_ ']'					#index__is__expr  	//Reihenfolge!!
-	| '(' expr ')' 							#brackets__is__expr
+	| '(' (expr)? ')' 						#brackets__is__expr //VON JB GEAENDERT 09.12.14
 
 	| expr '.' id_ 	#attr__is__expr
 
@@ -254,6 +254,7 @@ Float :  Digit+ Exp | Digit+ Decimal Exp? | Decimal Exp?;
 
 Comment : '#' ~[\n]* -> channel(HIDDEN);//skip;
 Space : ( '\t' | '\n' | '\r' | '\\' | ' ' )+ -> channel(HIDDEN);//skip;
+At : '@' Letter? -> skip; //VON JB GEAENDERT 09.12.14
 
 Str : '\'\'\'' ('\\'.|~[\\])*? '\'\'\''
     | '"""' ('\\'.|~[\\])*? '"""'
