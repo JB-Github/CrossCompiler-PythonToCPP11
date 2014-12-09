@@ -177,7 +177,7 @@ class vertex(NamedList):
         For example:
         "Id(Expr+Int)"
         is seperated in the 6 tokens
-        'Id', '(', 'Expr', '+', 'Int' ')'
+        'Id', '(', 'Expr', '+', 'Int', ')'
 
         "x+=-7(a b)"
         is seperated in the 7 tokens

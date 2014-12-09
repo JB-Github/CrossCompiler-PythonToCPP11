@@ -53,7 +53,9 @@ rel_module : '.'* module | '.'+ ;
 ////-------------------------------------------------------------
 
 block_stmt : block_head block | ifelse | trycatch ;//| func_block ;
-block_head :  loop | func | class_ | with_ ;
+block_head : decorator* (func | class_) | loop | with_ ;
+
+decorator : '@' id_ ('(' exprlist ')')? ';' ;
 
 loop: (while_ | for_) (else_ block)? ;
 while_ : 'while' expr ;
@@ -109,7 +111,7 @@ expr
 	//Brackets
 	: expr '(' (arglist | gen_expr)? ')' 	#funccall__is__expr //Semantics!!
 	| expr '[' slice_ ']'					#index__is__expr  	//Reihenfolge!!
-	| '(' expr ')' 							#brackets__is__expr
+	| '(' expr? ')' 						#brackets__is__expr
 
 	| expr '.' id_ 	#attr__is__expr
 
@@ -135,8 +137,6 @@ expr
 
 	| val 	#val_label__is__expr
 
-
-	//| generator
 	| lambda_ 	#lambda_label__is__expr
 
 	| <assoc=right> expr if_ else_ expr		#ternary__is__expr
@@ -194,7 +194,6 @@ kparamlist : kparam (',' kparam)* ;
 kparam : pos_paramtuple '=' expr; //only Python2
 
 //Function Call
-//funccall : simple_var '(' arglist? ')' ;
 arglist
 	: pos_arglist (',' karglist)?
 	| karglist
@@ -209,7 +208,7 @@ karg : simple_var '=' expr;
 
 var
 	: id_
-	| '(' var ')' //immer???
+	| '(' var ')' //immer??
 	| var '.' id_
 	| var '[' slice_ ']'
 ;
@@ -250,10 +249,10 @@ Operator : '=' | '>='| '>>'| '*='| '<>'| '<<'| '<='| '%='| '//='| '!='| '%'| '^=
 
 Var : Letter_ (Letter_|Digit)*;
 Int : Digit+;
-Float :  Digit+ Exp | Digit+ Decimal Exp? | Decimal Exp?;
+Float :  Digit+ Exp | Digit* Decimal Exp? ;
 
-Comment : '#' ~[\n]* -> channel(HIDDEN);//skip;
-Space : ( '\t' | '\n' | '\r' | '\\' | ' ' )+ -> channel(HIDDEN);//skip;
+Comment : '#' ~[\n]* -> channel(HIDDEN);
+Space : ( '\t' | '\n' | '\r' | '\\' | ' ' )+ -> channel(HIDDEN);
 
 Str : '\'\'\'' ('\\'.|~[\\])*? '\'\'\''
     | '"""' ('\\'.|~[\\])*? '"""'
@@ -270,11 +269,3 @@ fragment Digit : [0-9];
 fragment Exp : [eE][+-]? Int;
 fragment Decimal : '.' Digit*;
 
-
-
-
-/*abc
-	: ('b' {_input.LA(1).equals('c')}? {System.out.println("1111111111111111");}
-	| 'a'|'c')+
-;
-*/

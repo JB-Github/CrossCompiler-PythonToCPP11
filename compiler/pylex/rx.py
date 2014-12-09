@@ -229,7 +229,7 @@ regex.flag= r'\(\?[a-z]+\)'
 regex.update()
 
 #pdb.set_trace()
-rx= RxColl(os.path.dirname(__file__)+'\\t.rx') #RxCollection for lexing python
+rx= RxColl(os.path.dirname(__file__)+'/py.rx') #RxCollection for lexing python
 
 
 

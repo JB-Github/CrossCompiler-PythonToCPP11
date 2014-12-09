@@ -1,4 +1,3 @@
-
 from math import *
 import string
 import re
@@ -82,7 +81,7 @@ def convert_indent(TL):
                     Indents.append(ind)
                     #TL2[-1]= token('space', ' ') #remove ':'
                     TL2.append( token('blockbegin', '$blockbegin') )
-            #Dedent
+            #Dedent / no change
             else:
                 if ind>0:
                     raise CompilerError("Unexpected indentation increase", TL, i)
@@ -116,7 +115,7 @@ def space2braces(pyfile):
 
     #pdb.set_trace()
 
-    S= open(pyfile).read().strip()+'\n'#+'\r' #EOF
+    S= open(pyfile).read()+'\n' #EOF
 
     CompilerError.file= pyfile
     CompilerError.phase= 'Lexer'

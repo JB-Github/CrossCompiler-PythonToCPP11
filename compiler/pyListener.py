@@ -238,6 +238,15 @@ class pyListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by pyParser#decorator.
+    def enterDecorator(self, ctx):
+        pass
+
+    # Exit a parse tree produced by pyParser#decorator.
+    def exitDecorator(self, ctx):
+        pass
+
+
     # Enter a parse tree produced by pyParser#exprlist.
     def enterExprlist(self, ctx):
         pass
