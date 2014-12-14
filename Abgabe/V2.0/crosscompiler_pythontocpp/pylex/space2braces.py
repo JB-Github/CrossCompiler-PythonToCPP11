@@ -117,7 +117,7 @@ def space2braces(pyfile):
 
     S= open(pyfile).read()+'\n' #EOF
 
-    S.replace('\r\n', '\n') #for portability
+    S= S.replace('\r\n', '\n') #for portability
 
     CompilerError.file= pyfile
     CompilerError.phase= 'Lexer'

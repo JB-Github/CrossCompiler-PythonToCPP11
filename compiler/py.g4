@@ -55,7 +55,7 @@ rel_module : '.'* module | '.'+ ;
 block_stmt : block_head block | ifelse | trycatch ;//| func_block ;
 block_head : decorator* (func | class_) | loop | with_ ;
 
-decorator : '@' id_ ('(' exprlist ')')? ';' ;
+decorator : '@' id_ '(' (arglist | gen_expr) ')'? ';' ;  //methods!!
 
 loop: (while_ | for_) (else_ block)? ;
 while_ : 'while' expr ;
