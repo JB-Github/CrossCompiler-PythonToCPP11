@@ -7,8 +7,8 @@ Test program  for codegeneration
 def f(x):$blockbegin
     """calculate""";
     return x**2 + x*4 - (x-3) /x -1.3e2+2\
-           +5;
-$blockend #comment
+           +5; #comment
+$blockend
 
 
 
@@ -21,7 +21,7 @@ if __name__=='__main__':$blockbegin
             L[i]= f(i+1);
         $blockend
         else:$blockbegin
-            L[i]+=1;
+            L[i]+=1; # com
         $blockend
     $blockend
 

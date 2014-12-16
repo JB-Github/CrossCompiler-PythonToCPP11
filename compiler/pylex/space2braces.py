@@ -88,6 +88,12 @@ def convert_indent(TL):
 
                 elif ind<0:
                     TL2.append( token(';',';') )
+                    #comments
+                    #pdb.set_trace()
+                    ind_nl= t.str.find('\n')
+                    TL2.append( token('space', t.str[:ind_nl]) )
+                    t= token(t.name, t.str[ind_nl:])
+
                     while ind<0:
                         ind+= Indents.pop()
                         TL2.append( token('blockend', '\n'+sum(Indents)*' '+'$blockend') )
@@ -110,7 +116,7 @@ def convert_indent(TL):
 def space2braces(pyfile):
     """
     Inserts tokens for blockbegin and blockend and statement end in "pyfile".
-    Generated text is saved in file with appended underscore
+    Generated text is saved in file with the same name and appended underscore
     """
 
     #pdb.set_trace()

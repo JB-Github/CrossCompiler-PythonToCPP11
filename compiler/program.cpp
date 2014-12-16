@@ -11,8 +11,8 @@ Test program  for codegeneration
 double f(double x) {
     /*calculate*/
     return pow(x, 2)+ x*4 - (x-3) /(double) x-1.3e2+2
-           +5;
-} //comment
+           +5; //comment
+}
 
 
 
@@ -25,7 +25,7 @@ int main() {
             L[i]= f(i+1);
         }
         else {
-            L[i]++;
+            L[i]++; // com
         }
     }
 

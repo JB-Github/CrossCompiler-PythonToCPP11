@@ -16,7 +16,7 @@ def ctxname(ctx):
     return name[name.find('.')+1:name.find('Context')]
 
 def pyname(S):
-    return S.capitalize().rstrip('_')
+    return S.capitalize().rstrip('_') #not for CamelCase!!
 
 
 S= open('py.g4').read()
@@ -161,7 +161,7 @@ def pytree(File):
             v.nr= None
     #remove vertices of redundant labels
     for v in AST:
-        if v.name.endswith('_label'):
+        if v.name.endswith('__label'):
             v2= v[0]
             v2.parent= v.parent
 

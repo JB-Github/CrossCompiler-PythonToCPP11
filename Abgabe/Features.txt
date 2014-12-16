@@ -1,0 +1,14 @@
+Features
+---------
+
+Sowohl Lexer als auch Parser funktionieren soweit getestet mit jedem Python Programm.
+(nur Uncicode wird nicht richtig unterstützt)
+
+Bei der Codegenerierung werden bisher nur grundlegende Synatxelemente unterstützt:
+- Schleifen, if-elif-else, print stmt
+
+Für unser Testprogramm mussten wir wie gesagt einige Annahmen zur Vereinfachungen treffen:
+
+- Funktionsdefinitionen bei denen Rückgabewert und alle Parameter vom Typ double sind sollten funktionieren
+- Variablendeklarationen werden noch nicht unterstützt, da man dafür ja die Liste der Variablen im Gültigkeitsbereich aufbauen müsste. Für das Array haben wir einfach angenommen, das an der entsprechenden Stelle ein Array deklariert wird.
+- Und insbesondere benötigt ein Python Programm, das übersetzt werden soll einen "if __name__=='__main__'" Block. Denn um zu erkennen, an welcher Stelle man den main Block in C++ platzieren könnte, bräuchte man auch wieder die Liste der Variablen

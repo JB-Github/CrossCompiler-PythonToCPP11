@@ -117,6 +117,8 @@ def space2braces(pyfile):
 
     S= open(pyfile).read()+'\n' #EOF
 
+    S= S.replace('\n', '\r\n')
+
     S= S.replace('\r\n', '\n') #for portability
 
     CompilerError.file= pyfile

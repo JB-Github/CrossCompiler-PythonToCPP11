@@ -17,6 +17,10 @@ rx['optvar']= "var '?'?"
 
 class NamedList(pd.Series):
     """Ordered Key-Value List"""
+
+    def __nonzero__(self):
+        return not self.empty
+
     def add(self, k, v, rename=True):
         """appends new entry and numbers duplicate names"""
         nr=''
@@ -92,7 +96,7 @@ class vertex(NamedList):
     def __eq__(self, S):
         return S==self.name
     def __nonzero__(self):
-        return bool(self.name)
+        return bool(self.name) or not self.empty #??
 
     def rename(self, old, new=None, inplace=True):
         """changes (unique) keyname in children of vertex"""
@@ -191,7 +195,7 @@ class vertex(NamedList):
             vertex.isa_VL= self.is1(TL[0])
             return vertex.isa_VL
 
-        vertex.isa_VL=[]  #Vertex-List
+        vertex.isa_VL= NamedList() #Vertex-List
         PD= collections.deque(TL)  #Pattern-Deque
         #pdb.set_trace()
 
@@ -204,7 +208,7 @@ class vertex(NamedList):
         if self.name==PD[0]:
             #pdb.set_trace()
             PD.popleft()
-            VL.append(self)
+            VL.add(self.name, self)#append(self)
             return True
 
         elif self.empty:
@@ -219,10 +223,10 @@ class vertex(NamedList):
         return True
 
     def literals(self):
-        """returns a list of the translated text in the leafs"""
-        return [v.name for v in self.walk() if v.empty]
-    def words(self): #tauschen!
         """returns a list of the literal text in the leafs"""
+        return [v.name for v in self.walk() if v.empty]
+    def words(self):
+        """returns a list of the translated text in the leafs"""
         L=[]
         temp= Tree.out
         Tree.out= L
@@ -265,6 +269,8 @@ class vertex(NamedList):
           Id = Expr1 * Expr2
         Could be transformed by the String pattern
           "Id(Expr1, Expr2, '13')"
+        Into
+          Id.text() + '(' + Expr1.text() + ',' + Expr2.text() + ',' + '13' + ')'
 
         """
 
@@ -429,15 +435,12 @@ def f(vtx):
     assert len(var)==1
     var= ''.join(var).strip()
 
-    #for-each
-    if EL.literals()[0]!='range':
-        vtx.transform("'for' ('auto' var : Exprlist)", locals())
-
     #for-range
-    else:
+    if EL.isa("range(Arglist)"):
+
         #pdb.set_trace()
-        start,stop,step = EL.Expr.Funccall.Arglist.find('Expr', 3)#[v.text().strip()
-                           #for v in EL.Expr.Funccall.Arglist.find('Expr', 3)]
+        start,stop,step = vtx.isa_VL.Arglist.find('Expr', 3)
+
         if not stop:
             start,stop = stop,start
         stop= stop.text()
@@ -461,6 +464,11 @@ def f(vtx):
         stop= var+comp+stop
 
         vtx.transform("'for' (start; stop; step)", locals())
+
+    #for-each
+    else:
+        vtx.transform("'for' ('auto' var : Exprlist)", locals())
+
 
 
 
@@ -494,8 +502,7 @@ def f(vtx):
 @tree_action('Funccall')
 def f(vtx):
     if vtx.isa('len(Expr)'):
-        expr= vtx.isa_VL[2]
-        vtx.transform("expr.'size'()", locals())
+        vtx.transform("Expr.'size'()", vtx.isa_VL)
     else:
         vtx.visitchildren()
 
@@ -527,9 +534,11 @@ def f(vtx):
     if EL.isa('[Expr] * Int') : #check for var decalaration!!
         #pdb.set_trace()
         assert not Id==False
-        _,Expr,_,_,Int= vtx.isa_VL
+        Expr= vtx.isa_VL.Expr
+        Int= vtx.isa_VL.Int
+        #_,Expr,_,_,Int= vtx.isa_VL
 
-        if Expr.isa('0'):
+        if Expr.is1('0'):
             vtx.transform("'array'<'double',Int> Id={}", locals())
         else:
             #pdb.set_trace()

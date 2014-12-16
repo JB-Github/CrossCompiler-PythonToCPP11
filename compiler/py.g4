@@ -135,9 +135,9 @@ expr
 	| expr 'and' expr 	#and__is__expr
 	| expr 'or' expr 	#or__is__expr
 
-	| val 	#val_label__is__expr
+	| val 	#val__label__is__expr
 
-	| lambda_ 	#lambda_label__is__expr
+	| lambda_ 	#lambda__label__is__expr
 
 	| <assoc=right> expr if_ else_ expr		#ternary__is__expr
 ;
