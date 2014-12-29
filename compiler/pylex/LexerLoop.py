@@ -48,9 +48,12 @@ def lex(prog):
     quotes= {'#', "'", '"', "'''", '"""'}
     strprefix= {'r', 'u', 'ur', 'R', 'U', 'UR', 'Ur',
                 'uR', 'b', 'B', 'br', 'Br', 'bR', 'BR'}
+
+
     ##--------------------------------------------------------
+    ##Lexing
     pyfile= open('program.py')
-    S= pyfile.read()#+'\r' #EOF
+    S= pyfile.read().replace('\r\n', '\n') #EOF
 
     CompilerError.file= pyfile.name
     CompilerError.phase= 'Lexer'

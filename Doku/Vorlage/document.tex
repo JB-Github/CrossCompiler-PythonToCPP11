@@ -1,3 +1,4 @@
+
 \input{header}
 
 
@@ -5,6 +6,8 @@
 \subject{Programmierpraktikum}
 \author{Felix Helsch \\ Julian Buchhorn}
 \date{\today}
+
+\publishers{\parbox[b][8cm]{\textwidth}{\centering \textbf{Betreuer}\\Dr. Holger Arndt}}
 
 \usepackage[version=3]{mhchem}
 \usepackage{rotating}
@@ -15,6 +18,12 @@
 \newcommand{\mc}[2]{\multicolumn{#1}{c}{#2}} %multicol
 
 \inlinecodestyle{python}
+\lstset{ escapeinside= {\#(*} {*)} }
+\lstset{
+ rangeprefix= \#\\*,
+ includerangemarker= false,
+ texcl= false, %??
+}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}                                       
 
@@ -32,16 +41,36 @@
 Text mit \ttt{Code} \ttt{Schrift} .
 
 \subsubsection*{Inline Code}
-\begin{lstlisting}
+\begin{lstlisting}[caption=CAP]
 inline code test
 \end{lstlisting}
 
+\vspace{4ex}
 \subsubsection*{Numerierter Inline Code}
-\begin{nrcode}
+\begin{nrcode}[caption=CCC, label=pynr, linerange={a-c, d-e}]
 import math
-
-nr code test
+#\*a
+2
+nr code test #(*\label{txtline}*)
+4
+5
+#\*b
+6
+7
+#\*c
+8
+9
+#\*d
+10
+11
+#\*e
+12
 \end{nrcode}
+
+Referenz für Code \ref{pynr} Zeile \ref{txtline}.
+
+Referenz für Code \ref{pycode} Zeile \ref{test_arith}.
+
 
 
 
@@ -55,6 +84,8 @@ nr code test
 \listoffigures
 \clearpage
 \listoftables
+\clearpage
+\lstlistoflistings
 \clearpage
 \nocite{*}
 \printbibliography

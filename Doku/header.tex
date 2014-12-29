@@ -132,9 +132,10 @@ backgroundcolor=\color{bgcolor},
 
 
 % External codefiles
-\newcommand\codefile[2]{{
-\codestyle{#1}
-\lstinputlisting{#2}}}
+\newcommand\codefile[3][,]{{
+\codestyle{#2}
+\lstinputlisting[#1]{#3}
+}}
 
 %%%%%
 
@@ -189,10 +190,12 @@ backgroundcolor=\color{bgcolor},
 
 
 %\newenvironment{nrcode}{\lstlisting}}{\endlstlisting}
-\lstnewenvironment{nrcode}{%\renewcommand\lstlistingname{xxx}%
-\lstset{numbers=left, frame=single}}%
-{}
+%\renewcommand\lstlistingname{xxx}%
 %[numbers=left, frame=single]
+\lstnewenvironment{nrcode}[1][,]{
+\lstset{numbers=left, frame=single, #1}
+}{}
+
 \newenvironment{source}{\quote}{\endquote}
 
 %%Inline-Code-Setup
@@ -200,6 +203,8 @@ backgroundcolor=\color{bgcolor},
 \codestyle{#1}
 \lstset{numbers=none , frame=none, basicstyle= \ttfamily\small\color[RGB]{49,102,145}, aboveskip={0.5\baselineskip}}%, backgroundcolor=\color{white}}
 }
+
+\lstset{escapeinside={\#(*}{*)}} %fuer labels!
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Stil der Zitate und der Bibliographie

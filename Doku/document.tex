@@ -1,3 +1,4 @@
+
 \input{header}
 
 
@@ -5,6 +6,8 @@
 \subject{Programmierpraktikum}
 \author{Felix Helsch \\ Julian Buchhorn}
 \date{\today}
+
+\publishers{\parbox[b][8cm]{\textwidth}{\centering \textbf{Betreuer}\\Dr. Holger Arndt}}
 
 \usepackage[version=3]{mhchem}
 \usepackage{rotating}
@@ -15,6 +18,12 @@
 \newcommand{\mc}[2]{\multicolumn{#1}{c}{#2}} %multicol
 
 \inlinecodestyle{python}
+\lstset{ escapeinside= {\#(*} {*)} }
+\lstset{
+ rangeprefix= \#\\*,
+ includerangemarker= false,
+ texcl= false, %??
+}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}                                       
 
@@ -28,20 +37,41 @@
 
 \section{Einleitung}
 
-\subsubsection*{Code Schrift}
-Text mit \ttt{Code} \ttt{Schrift} .
+Im Rahmen eines Programmierpraktikums an der bergischen Universität Wuppertal haben wir einen Compiler von Python zu C++ geschrieben. Dabei ging es in erster Linie darum, zu verstehen, wie ein Compiler funktioniert und nicht einen vollständigen Compiler zu schreiben.
 
-\subsubsection*{Inline Code}
-\begin{lstlisting}
-inline code test
-\end{lstlisting}
+Als vorläufiges Ziel haben wir un gesetzt ein einfaches Testprogramm mit grundlegenden Syntaxelementen zu übersetzen (s. Lst. \ref{pyprog}).
 
-\subsubsection*{Numerierter Inline Code}
-\begin{nrcode}
-import math
+\codefile[caption= Python Testprogramm für den Compiler, label=pyprog]{python}{program.py}
 
-nr code test
-\end{nrcode}
+Das Ziel haben wir erreicht, unser Compiler kann in seinem momentanen Zustand das Python Programm übersetzen und liefert das C++ Programm in Listing \ref{cppprog}. Dabei mussten wie erwartet einige Annahmen über das Programm gemacht werden um die Übersetzung zu vereinfachen.
+
+\codefile[caption= Vom Compiler erzeugtes C++ Programm, label=cppprog]{c++}{program.cpp}
+
+
+In den folgenden Kapiteln werden wir noch erklären wie man den Compiler verwenden kann, welche Programme man dafür benötigt und welche Features der Compiler im Moment unterstützt. Zum Schluss werden wir noch kurz auf die Struktur des Codes eingehen, den wir geschrieben haben.
+
+Für eine detailliertere Erklärung verweisen wir auf die Bachelorarbeit von Felix Helsch ..., in welcher die Erstellung des Compilers fortgeführt wird.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Verwendung}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Programme}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Features}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Codestruktur}
+
+
 
 
 
@@ -49,15 +79,51 @@ nr code test
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \appendix
 \newpage
-\input{Kapitel/Anhang}
+%\input{Kapitel/Anhang}
 
 \clearpage
 \listoffigures
 \clearpage
 \listoftables
 \clearpage
+\lstlistoflistings
+\clearpage
 \nocite{*}
 \printbibliography
 
 \end{document}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection*{Code Schrift}
+Text mit \ttt{Code} \ttt{Schrift} .
+
+\subsubsection*{Inline Code}
+\begin{lstlisting}[caption=CAP]
+inline code test
+\end{lstlisting}
+
+\vspace{4ex}
+\subsubsection*{Numerierter Inline Code}
+\begin{nrcode}[caption=CCC, label=pynr, linerange={a-c, d-e}]
+import math
+#\*a
+2
+nr code test #(*\label{txtline}*)
+4
+5
+#\*b
+6
+7
+#\*c
+8
+9
+#\*d
+10
+11
+#\*e
+12
+\end{nrcode}
+
+Referenz für Code \ref{pynr} Zeile \ref{txtline}.
+
+Referenz für Code \ref{pycode} Zeile \ref{test_arith}.

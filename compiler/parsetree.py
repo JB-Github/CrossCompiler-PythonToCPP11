@@ -118,16 +118,21 @@ class vertex(NamedList):
     def walk(self):
         """iterates over all vertices"""
         yield self
-        """
-        brk= yield self
-        if brk:
-            print '   BRK'
-            exc
-        """
+
         for v in self:
             for w in v.walk():
                 yield w
 
+    def walk2(self):
+        """iterates over all vertices"""
+        brk= yield self
+        if brk: return
+
+        for v in self:
+            VI= v.walk2()
+            for w in VI:
+                brk= yield w
+                if brk: VI.send(brk)
 
     def dfind(self, S):
         D= collections.defaultdict(str)
@@ -595,3 +600,9 @@ int main() {
 
     else:
         vtx.visitchildren()
+
+"""
+@tree_action('Func_stmt')
+def f(vtx):
+    if not vtx.inside('Func_block'):
+"""
