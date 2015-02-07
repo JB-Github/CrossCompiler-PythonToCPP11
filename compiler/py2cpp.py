@@ -1,6 +1,7 @@
 from pylex.space2braces import space2braces
 from pylex import LexerLoop
 from antlr2py import pytree
+import sys
 import os
 
 def compile_grammar():
@@ -24,7 +25,7 @@ def py2cpp(prog):
 
 if __name__=='__main__':
 
-    prog= 'program.py'
+    prog= sys.argv[1]
     AST= py2cpp(prog)
 
     #Kontrollausgaben
