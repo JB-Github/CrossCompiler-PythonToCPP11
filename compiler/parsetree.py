@@ -270,12 +270,12 @@ class vertex(NamedList):
         - every unknown character between known tokens is also inserted
           literally
 
-        E.g. a theoretical vertex which consists out of the direct child vertices
+        I.e. a theoretical vertex which consists out of the direct child vertices
           Id = Expr1 * Expr2
         Could be transformed by the String pattern
           "Id(Expr1, Expr2, '13')"
         Into
-          Id.text() + '(' + Expr1.text() + ',' + Expr2.text() + ',' + '13' + ')'
+          Id.text() + '(' + Expr1.text() + ',' + Expr2.text() + ',' + '13' + ')' #ungenau!!
 
         """
 

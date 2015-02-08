@@ -4,31 +4,31 @@ titlepage,
 a4paper,
 ngerman,
 captions=tableheading,
-toc=bibliography, 
+toc=bibliography,
 toc=listof,
 numbers=noenddot
 ] {scrartcl}
 
-\usepackage{ifpdf}                     
-\usepackage[T1]{fontenc}       
-\usepackage[utf8]{inputenc}    
+\usepackage{ifpdf}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
 \usepackage{microtype}
 \usepackage{amsmath, amssymb, amstext}
 %\usepackage{palatino}            % andere Schriftart
 \usepackage[ngerman]{babel}       % Deutsch !
 \usepackage[babel, german=quotes]{csquotes}
-\usepackage{color}                
+\usepackage{color}
 \usepackage{graphicx}             % Bilder einbinden ermöglichen
 \usepackage{url}                  % Besserew
 \usepackage[textsize=small, textwidth=0.8in]{todonotes} % \todo noch zu tun
-\usepackage{multirow}             % Zusammenfassen von Tabellenzellen 
+\usepackage{multirow}             % Zusammenfassen von Tabellenzellen
 \usepackage{upgreek}              % nicht-kursive Griechische Buchstaben
 \usepackage{textcomp}             % \textperthousand  (promille)
 \usepackage{rotating}             % rotierte Information
-\usepackage[format=plain, indention=1cm, scriptsize,font=sf, labelfont=bf, nooneline]{caption} 
+\usepackage[format=plain, indention=1cm, scriptsize,font=sf, labelfont=bf, nooneline]{caption}
 \usepackage{subfigure}%veraltet??
-                                  % modif Bildunterschriften 
-\renewcommand{\captionfont}{\small \sffamily \slshape} 
+                                  % modif Bildunterschriften
+\renewcommand{\captionfont}{\small \sffamily \slshape}
 \renewcommand{\captionlabelfont}{\small \sffamily \slshape \bfseries   }
 
 \usepackage[section]{placeins}
@@ -83,7 +83,7 @@ numbers=noenddot
 	filecolor=LinkColor,%
 	menucolor=LinkColor,%
 	urlcolor=LinkColor,
-	breaklinks=true	
+	breaklinks=true
 }
 
 %%%%Codedarstellung
@@ -190,7 +190,7 @@ backgroundcolor=\color{bgcolor},
 
 
 %\newenvironment{nrcode}{\lstlisting}}{\endlstlisting}
-%\renewcommand\lstlistingname{xxx}%
+%\renewcommand\lstlistingname{Programm} %umbenennen??
 %[numbers=left, frame=single]
 \lstnewenvironment{nrcode}[1][,]{
 \lstset{numbers=left, frame=single, #1}

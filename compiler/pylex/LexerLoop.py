@@ -52,7 +52,7 @@ def lex(prog):
 
     ##--------------------------------------------------------
     ##Lexing
-    pyfile= open('program.py')
+    pyfile= open(prog)
     S= pyfile.read().replace('\r\n', '\n') #EOF
 
     CompilerError.file= pyfile.name

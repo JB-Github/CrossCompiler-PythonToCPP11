@@ -30,6 +30,12 @@
 \pagestyle{empty}
 \maketitle
 \tableofcontents
+%\clearpage
+\listoffigures
+%\clearpage
+%\listoftables
+%\clearpage
+\lstlistoflistings
 
 \clearpage
 \pagestyle{fancy}
@@ -37,7 +43,7 @@
 
 \section{Einleitung}
 
-Im Rahmen eines Programmierpraktikums, an der Bergischen Universität Wuppertal, haben wir einen Compiler von Python zu C++ geschrieben. Dabei ging es in erster Linie darum, zu verstehen, wie ein Compiler funktioniert und nicht darum einen vollständigen Compiler zu schreiben.
+Im Rahmen eines Programmierpraktikums an der Bergischen Universität Wuppertal haben wir einen Compiler von Python zu C++ geschrieben. Dabei ging es in erster Linie darum, zu verstehen wie ein Compiler funktioniert und nicht darum einen vollständigen Compiler zu schreiben.
 
 Als vorläufiges Ziel hatten wir uns gesetzt ein einfaches Testprogramm mit grundlegenden Syntaxelementen zu übersetzen (vgl. Lst. \ref{pyprog}).
 
@@ -57,25 +63,68 @@ Für eine detailliertere Erklärung verweisen wir auf die Bachelorarbeit von Fel
 
 \section{Verwendung}
 
-Um den Compiler zu verwenden muss das Python-Script "`py2cpp.py"' ausgeführt werden. Als Parameter muss das zu übersetzende Programm angegeben werden: \\ \\
-python py2cpp.py program.py\\
+Um ein Python Programm nach C++ zu compilieren, muss man nur das Main-Programm \ttt{py2cpp.py} aufrufen und dabei den Namen des zu übersetzenden Programms als Kommandozeilenparameter angeben. Das heißt, dass zum Beispiel unser Testprogramm \ttt{program.py} mit dem folgenden Konsolenbefehl übersetzt werden kann:
+\begin{lstlisting}
+python py2cpp.py program.py
+\end{lstlisting}
+Dafür muss man allerdings die benötigten Programme installiert haben (s. Kapitel \ref{progs}) und beachten, dass das zu übersetzende Programm nur die momentan unterstützten Features enthält (s. Kapitel \ref{features}).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Programme}
+\section{Installation} \label{progs}
 
-Um den Compiler zu verwenden muss das Python-Script "`py2cpp.py"' ausgeführt werden. Als Parameter muss das zu übersetzende Programm angegeben werden: \\ \\
-python py2cpp.py program.py\\
+Zuerst muss man das Archiv mit den Compilerdateien herunterladen \cite{py2cpp} und an einer beliebigen Stelle auspacken.
+Außerdem müssen Python und C++ installiert sein (siehe nächster Abschnitt).
+Innerhalb dieses Verzeichnisses kann der Compiler dann wie beschrieben aufgerufen werden, wenn sich die zu übersetzende Datei ebenfalls im selben Verzeichnis befindet.
+Sonst sollte man entsprechend den absoluten Pfad angeben.
+
+
+\subsection{Benötigte Programme}
+
+Folgende Programme werden zur Verwendung des Compilers in jedem Fall benötigt, jeweils in der angegebenen Version oder einer neueren:
+
+\begin{itemize}
+\item \ttt{Python} 2.7
+\begin{itemize}
+\item \ttt{pandas} 0.15.2
+\end{itemize}
+
+\item \ttt{C++} 11
+\item \texttt{Python-Runtime für Antlr} 4.4.1
+\end{itemize}
+%%
+
+Die \ttt{Python-Runtime} ist in dem Compiler Archiv schon enthalten, braucht also nicht extra installiert werden. Falls man sie doch runterladen möchte findet man sie in der entsprechenden Sektion der \ttt{Antlr} Website \cite{pyruntime}.
+
+\ttt{pandas} ist ein Package für Python welches der Compiler ebenfalls benötigt. Da \ttt{pandas} wiederum von den Packages \ttt{numpy}, \ttt{python-dateutil} und \ttt{pytz} abhängt, müssen diese ebenfalls installiert werden. Falls man diese Installationen nicht alle manuell durchführen will, bietet es sich hier an einen Package Manager zu benutzten (für Python unter Windows z.B. \ttt{Anaconda}). Für eine detaillierte Installationanleitung verweisen wir auf die Website von Pandas  \cite{pandas}.
+
+\subsection{Optionale Programme}
+
+Die nachfolgenden Programme werden prinzipiell nur benötigt, wenn man die Grammatik \ttt{py.g4} neukompillieren möchte:
+\begin{itemize}
+\item \ttt{Antlr} 4.4
+
+\begin{itemize}
+\item \ttt{Java} 1.6
+\end{itemize}
+\end{itemize}
+
+\ttt{Antlr} bietet allerdings auch noch zusätzliche Funktionen für die sich eine Installation lohnen kann. Zum Beispiel kann \ttt{Antlr} auch grafische Ansichten des Parsetrees erzeugen (s. Abbildung \ref{g:tree}), welche sehr nützlich sind zur Fehlersuche, oder einfach nur um die Struktur des Parsetrees besser zu verstehen. Außerdem kann die Grammatik dann nicht nur für \ttt{Python} kompilliert werden, sondern auch für die anderen Sprachen welche \ttt{Antlr}  unterstützt.
+
+
+Da \ttt{Antlr} in \ttt{Java} geschrieben ist, benötigt es auch eine \ttt{Java} Installation. Insgesamt ist die Installation von \ttt{Antlr} etwas aufwändiger (insbesonder unter Windows), weswegen wir dazu noch eine ausführlichere Anleitung verfasst haben, welche sich in Abschnitt \ref{Antlr} des Anhangs befindet. Insbesondere für die Installation unter Linux wollen wie aber auch auf die Anleitung auf der \ttt{Antlr} Website verweisen \cite{antlr}.
+
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Features}
+\section{Features} \label{features}
 
-\begin{center}
- \includegraphics[width=0.8\linewidth]{Bilder/program_func_parse_tree2.png}
- \captionof{figure}{ Beispiel Parsetree }
-\end{center}
+\subsection{Unterstützte Syntaxelemente}
+
+\subsection{Fehlererkennung}
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -91,7 +140,13 @@ python py2cpp.py program.py\\
 
 \newpage
 
-\section{Installation}
+\section{Installation und Verwendung von Antlr} \label{Antlr}
+
+\ttt{Antlr} ist prinzipiell ein Parser-Generator mit ähnlicher Syntax wie \ttt{Yacc} oder \ttt{Bison}. Der hauptsächliche Unterschied liegt darin das im Gegensatz zu \ttt{Yacc} einen recursiv-descent Parser erzeugt. Daraus ergibt sich der Vorteil, dass \ttt{Antlr} bessere Fehlermeldungen erzeugen kann, aber ein Nachteil ist, dass keine indirekte Linksrekursion möglich ist.
+
+Für eine Erklärung der Syntax verweisen wir auf die \ttt{Antlr} Homepage \cite{antlrH}, in diesem Kapitel werden nur die Installation beschrieben und die benötigten Kommandozeilenaufrufe für \ttt{Antlr} bzw. den erzeugten Parser.
+
+\subsection{Installation}
 
 Um den Compiler ausführen zu können, muss Python in der Version 2.7 installiert sein. Außerdem werden die Python-Bibliotheken Numpy und Pandas, sowie deren Abhängigkeiten, benötigt. Am einfachsten ist es, hierfür einen Package-Manager wie zum Beispiel Anaconda zu installieren. \\ \\
 
@@ -109,14 +164,19 @@ Wenn die enthaltene Python Grammatik geändert werden soll und diese somit neu c
 
 \end{enumerate}
 
+
+\subsection{Rekompilieren und grafische Synataxtree-Ansicht}
+
+
+
+\begin{center}
+ \includegraphics[width=0.8\linewidth]{Bilder/program_func_parse_tree2.png}
+ \captionof{figure}{ Beispiel Parsetree } \label{g:tree}
+\end{center}
+
 %\input{Kapitel/Anhang}
 
-\clearpage
-\listoffigures
-\clearpage
-\listoftables
-\clearpage
-\lstlistoflistings
+
 \clearpage
 \nocite{*}
 \printbibliography

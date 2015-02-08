@@ -25,7 +25,12 @@ def py2cpp(prog):
 
 if __name__=='__main__':
 
-    prog= sys.argv[1]
+    if len(sys.argv)>1:
+        prog= sys.argv[1]
+    else:
+        prog= 'program.py'
+        #prog= raw_input("Programm: ")
+        
     AST= py2cpp(prog)
 
     #Kontrollausgaben

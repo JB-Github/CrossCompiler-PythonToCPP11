@@ -3,6 +3,7 @@ from pyLexer import pyLexer
 from pyParser import pyParser
 from pyListener import pyListener
 import sys
+import os
 import re
 import cPickle as pickle
 from parsetree import Tree, vertex
@@ -18,8 +19,9 @@ def ctxname(ctx):
 def pyname(S):
     return S.capitalize().rstrip('_') #not for CamelCase!!
 
+DIR= os.path.dirname(__file__)
 
-S= open('py.g4').read()
+S= open(DIR+'/py.g4').read()
 PL= re.findall(r'\n[ \t]*([a-z]\w*)\s*:', S)
 PL.extend( re.findall(r'\s+#([a-z]\w*)\s+', S) ) #ungenau!!
 Tree.patterns= {pyname(s) for s in PL}
