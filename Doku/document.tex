@@ -30,12 +30,15 @@
 \pagestyle{empty}
 \maketitle
 \tableofcontents
-%\clearpage
+
+\lstlistoflistings
 \listoffigures
+%\clearpage
+%\listoffigures
 %\clearpage
 %\listoftables
 %\clearpage
-\lstlistoflistings
+%\lstlistoflistings
 
 \clearpage
 \pagestyle{fancy}
@@ -56,7 +59,7 @@ Das Ziel haben wir erreicht. Unser Compiler kann in seinem momentanen Zustand da
 
 In den folgenden Kapiteln werden wir erklären wie man den Compiler verwenden kann, welche Programme benötigt werden und welche Features der Compiler im Moment unterstützt. Zum Schluss werden wir noch kurz auf die Struktur des Codes eingehen, den wir geschrieben haben.
 
-Für eine detailliertere Erklärung verweisen wir auf die Bachelorarbeit von Felix Helsch verwiesen..., in welcher die Erstellung des Compilers fortgeführt wird.
+Für eine detailliertere Erklärung verweisen wir auf die Bachelorarbeit von Felix Helsch ..., in welcher die Erstellung des Compilers fortgeführt wird.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -90,13 +93,13 @@ Folgende Programme werden zur Verwendung des Compilers in jedem Fall benötigt, 
 \end{itemize}
 
 \item \ttt{C++} 11
-\item \texttt{Python-Runtime für Antlr} 4.4.1
+\item \texttt{Python-Runtime für Antlr} 4.4
 \end{itemize}
 %%
 
 Die \ttt{Python-Runtime} ist in dem Compiler Archiv schon enthalten, braucht also nicht extra installiert werden. Falls man sie doch runterladen möchte findet man sie in der entsprechenden Sektion der \ttt{Antlr} Website \cite{pyruntime}.
 
-\ttt{pandas} ist ein Package für Python welches der Compiler ebenfalls benötigt. Da \ttt{pandas} wiederum von den Packages \ttt{numpy}, \ttt{python-dateutil} und \ttt{pytz} abhängt, müssen diese ebenfalls installiert werden. Falls man diese Installationen nicht alle manuell durchführen will, bietet es sich hier an einen Package Manager zu benutzten (für Python unter Windows z.B. \ttt{Anaconda}). Für eine detaillierte Installationanleitung verweisen wir auf die Website von Pandas  \cite{pandas}.
+\ttt{pandas} ist ein Package für Python welches der Compiler ebenfalls benötigt. Da \ttt{pandas} wiederum von den Packages \ttt{numpy}, \ttt{python-dateutil} und \ttt{pytz} abhängt, müssen diese ebenfalls installiert werden. Falls man diese Installationen nicht alle manuell durchführen will, bietet es sich hier an einen Package Manager zu benutzten (für Python unter Windows z.B. \ttt{Anaconda}). Für eine detaillierte Installationanleitung verweisen wir auf die Website von \ttt{pandas}  \cite{pandas}.
 
 \subsection{Optionale Programme}
 
@@ -112,7 +115,7 @@ Die nachfolgenden Programme werden prinzipiell nur benötigt, wenn man die Gramm
 \ttt{Antlr} bietet allerdings auch noch zusätzliche Funktionen für die sich eine Installation lohnen kann. Zum Beispiel kann \ttt{Antlr} auch grafische Ansichten des Parsetrees erzeugen (s. Abbildung \ref{g:tree}), welche sehr nützlich sind zur Fehlersuche, oder einfach nur um die Struktur des Parsetrees besser zu verstehen. Außerdem kann die Grammatik dann nicht nur für \ttt{Python} kompilliert werden, sondern auch für die anderen Sprachen welche \ttt{Antlr}  unterstützt.
 
 
-Da \ttt{Antlr} in \ttt{Java} geschrieben ist, benötigt es auch eine \ttt{Java} Installation. Insgesamt ist die Installation von \ttt{Antlr} etwas aufwändiger (insbesonder unter Windows), weswegen wir dazu noch eine ausführlichere Anleitung verfasst haben, welche sich in Abschnitt \ref{Antlr} des Anhangs befindet. Insbesondere für die Installation unter Linux wollen wie aber auch auf die Anleitung auf der \ttt{Antlr} Website verweisen \cite{antlr}.
+Da \ttt{Antlr} in \ttt{Java} geschrieben ist, benötigt es auch eine \ttt{Java} Installation. Insgesamt ist die Installation von \ttt{Antlr} etwas aufwändiger (insbesondere unter Windows), weswegen wir dazu noch eine ausführlichere Anleitung verfasst haben, welche sich in Abschnitt \ref{antlr:I} des Anhangs befindet. Insbesondere für die Installation unter Linux wollen wir aber auch auf die Anleitung auf der \ttt{Antlr} Website verweisen \cite{antlr}.
 
 
 
@@ -123,6 +126,19 @@ Da \ttt{Antlr} in \ttt{Java} geschrieben ist, benötigt es auch eine \ttt{Java} 
 
 \subsection{Unterstützte Syntaxelemente}
 
+Sowohl Lexer als auch Parser unterstützen prinzipiell alle Syntaxelemente  von \ttt{Pathon} und funktionieren -- soweit getestetet -- mit allen Python Programmen. \todo{ richtig?? }
+
+Bei der Codegenerierung werden bis jetzt nur die grundlegenden Synatxelemente untersutützt: Schleifen, if-elif-else, print stmt. Von den Schleifen wird insbesondere auch die Python for Schleife entwSchleife oder eine foreach Schleife übersetzt.
+
+Für unser Testprogramm mussten wir wie bereits erwähnt einige Annahmen zur Vereinfachung treffen:
+
+Alle Typdeklarationen haben wir als \ttt{double} angenommen. Dadurch sind einfach Funktionen wie in Zeile \ref{func} des Programms möglich. 
+Insbesondere werden Variablendeklarationen noch nicht unterstützt. In Zeile \ref{array_decl} mussten wir deshalb einfach annehmen, das ein \ttt{array} deklariert wird.
+
+Außerdem benötigt das Python Programm noch ein \ttt{if}~ \ttt{__name__=='__main__'} Block um beim Übersetzen zu erkennen, an welcher Stelle die \ttt{main} Funktion in C++ platziert werden soll.
+
+ 
+
 \subsection{Fehlererkennung}
 
 
@@ -131,22 +147,47 @@ Da \ttt{Antlr} in \ttt{Java} geschrieben ist, benötigt es auch eine \ttt{Java} 
 
 \section{Codestruktur}
 
+Schleißlich wollen wir in diesem Abschnitt noch kurz die Struktur unseres Codes erklären, damit man die Funktion des Compilers bei Interesse besser nachvollziehen kann.
+
+In der \ttt{main} Datei \ttt{py2cpp.py} werden die verschiedenen Programmteile des Compilers aufgerufen:
+
+\begin{description}
+
+\item[\texttt{LexerLoop.lex(prog)}] Ruft den schleifenbasierten Lexer auf. Dieser Lexer hat den Vorteil das es einfacher ist an bestimmten Stellen Fehlermeldungen einzufügen, da das Programm Buchstabe für Buchstabe durchlaufen wird.
+
+ Der Lexer welchen wir eigentlich verwendet haben, basiert auf regulären Ausdrücken und wird als Teil von \ttt{space2braces(prog)} aufgerufen.
+ 
+\item[\ttt{space2braces(prog)}] Lext das Programm mit regulären Audrücken und findet aus der Einrückung Blockanfang und -ende herraus und fügt entsprechende Tokens ein (ebenso für Statement Ende). Gibt den Namen der so generierten Programmdatei zurück.
+
+\item[\ttt{compile_grammar()}] Damit kann die Antlr Grammatik \ttt{py.g4} optional  auch diekt aus dem Wrapper neukompilliert werden. Beim kompillieren zu Python erzeugt Antlr die Dateien: \ttt{pyLexer.py}, \ttt{pyListener.py}, \ttt{pyParser.py}, \ttt{py.tokens} und  \ttt{pyLexer.tokens}.
+
+\item[\ttt{pytree(prog_)}] Parst das umgewandelte Programm \ttt{prog_} mit dem aus der Antlr Grammatik generierten Parser. Anschließend wird der Parsetree mit dem Listener von Antlr durchlaufen und in unserem eigenen Parsetree gespeichert, welcher dann zurückgegeben wird.
+
+
+\item[\ttt{AST.tofile(prog.replace('.py', '.cpp'))}] Durchläuft den Parsetree, wandelt die Python Syntax in C++ Syntax um und speichert das Ergebnis unter demselben Namen wie das Ausgangsprogramm, nur mit Endung \ttt{cpp} statt \ttt{py}.
+
+\end{description}
+
+\ttt{space2braces(...)} ist definiert in \ttt{space2braces.py} und befindet sich im Ordner \ttt{pylex} zusammen mit den restlichen Dateien, welche für den Lexer benötigt werden
+
+\ttt{pytree(...)} ist definiert in \ttt{antlr2py.py} und ruft \ttt{parsetree.py} auf, wo die Datenstruktur für den Parsetree definiert ist, welche die Methode \ttt{tofile} besitzt. In \ttt{parsetree.py} befinden sich im Moment außerdem auch die Visitor Methoden für den Parsetree, das heißt dort findet die eigentliche Codegenerierung statt.
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \appendix
 \newpage
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newpage
 
-\section{Installation und Verwendung von Antlr} \label{Antlr}
+\section{Installation und Verwendung von Antlr} 
 
-\ttt{Antlr} ist prinzipiell ein Parser-Generator mit ähnlicher Syntax wie \ttt{Yacc} oder \ttt{Bison}. Der hauptsächliche Unterschied liegt darin das im Gegensatz zu \ttt{Yacc} einen recursiv-descent Parser erzeugt. Daraus ergibt sich der Vorteil, dass \ttt{Antlr} bessere Fehlermeldungen erzeugen kann, aber ein Nachteil ist, dass keine indirekte Linksrekursion möglich ist.
+\ttt{Antlr} ist prinzipiell ein Parser-Generator mit ähnlicher Syntax wie \ttt{Yacc} oder \ttt{Bison}. Der hauptsächliche Unterschied liegt darin, dass im Gegensatz zu \ttt{Yacc} ein recursiv-descent Parser erzeugt wird. Daraus ergibt sich der Vorteil, dass \ttt{Antlr} bessere Fehlermeldungen erzeugen kann. Ein Nachteil ist, dass keine indirekte Linksrekursion möglich ist.
 
 Für eine Erklärung der Syntax verweisen wir auf die \ttt{Antlr} Homepage \cite{antlrH}, in diesem Kapitel werden nur die Installation beschrieben und die benötigten Kommandozeilenaufrufe für \ttt{Antlr} bzw. den erzeugten Parser.
 
-\subsection{Installation}
+\subsection{Installation} \label{antlr:I}
 
 Um den Compiler ausführen zu können, muss Python in der Version 2.7 installiert sein. Außerdem werden die Python-Bibliotheken Numpy und Pandas, sowie deren Abhängigkeiten, benötigt. Am einfachsten ist es, hierfür einen Package-Manager wie zum Beispiel Anaconda zu installieren. \\ \\
 

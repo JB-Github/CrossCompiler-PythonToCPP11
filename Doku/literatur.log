@@ -1,0 +1,53 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9) (preloaded format=pdftex 2015.2.11)  11 FEB 2015 19:36
+entering extended mode
+**C:/Users/Felix/Documents/GitHub/CrossCompiler-PythonToCPP11/Doku/literatur.bi
+b
+
+(C:/Users/Felix/Documents/GitHub/CrossCompiler-PythonToCPP11/Doku/literatur.bib
+
+Overfull \hbox (16.46834pt too wide) in paragraph at lines 12--17
+[]\tenrm @miscpandas, ti-tle = pan-das, In-stal-la-tion, url = http://pandas.py
+data.org/pandas-docs/stable/install.html,|
+
+\hbox(7.5+2.5)x469.75499, glue set - 1.0
+.\hbox(0.0+0.0)x20.0
+.\tenrm @
+.\tenrm m
+.\tenrm i
+.\tenrm s
+.etc.
+
+
+Overfull \hbox (156.17694pt too wide) in paragraph at lines 25--30
+[]\tenrm @miscantlr, ti-tle = antlr, In-stal-la-tion, url = https://theantlrguy
+.atlassian.net/wiki/display/ANTLR4/Getting+Started+with+ANTLR+v4,|
+
+\hbox(7.5+2.5)x469.75499, glue set - 1.0
+.\hbox(0.0+0.0)x20.0
+.\tenrm @
+.\tenrm m
+.\tenrm i
+.\tenrm s
+.etc.
+
+
+Overfull \hbox (104.55182pt too wide) in paragraph at lines 31--36
+[]\tenrm @miscpyruntime, ti-tle = antlr, python-runtime, url = https://theantlr
+guy.atlassian.net/wiki/display/ANTLR4/Python+Target,|
+
+\hbox(7.5+2.5)x469.75499, glue set - 1.0
+.\hbox(0.0+0.0)x20.0
+.\tenrm @
+.\tenrm m
+.\tenrm i
+.\tenrm s
+.etc.
+
+)
+*
+! Emergency stop.
+<*> ...ssCompiler-PythonToCPP11/Doku/literatur.bib
+                                                  
+End of file on the terminal!
+
+!  ==> Fatal error occurred, no output PDF file produced!

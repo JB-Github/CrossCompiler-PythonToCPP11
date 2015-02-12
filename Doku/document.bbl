@@ -24,50 +24,60 @@
       \field{sortinithash}{a08a9549c5c2429f8cec5d1a581b26ca}
       \field{labeltitle}{Compiler}
       \field{title}{Compiler}
+      \field{urlday}{08}
+      \field{urlmonth}{02}
+      \field{urlyear}{2015}
       \verb{url}
       \verb ??
       \endverb
-      \warn{\item Datamodel: Entry 'py2cpp' (literatur.bib): Invalid format '2015-2-8' of date field 'urldate' - ignoring}
     \endentry
     \entry{pyruntime}{misc}{}
       \field{sortinit}{0}
       \field{sortinithash}{a08a9549c5c2429f8cec5d1a581b26ca}
       \field{labeltitle}{antlr, python-runtime}
       \field{title}{antlr, python-runtime}
+      \field{urlday}{08}
+      \field{urlmonth}{02}
+      \field{urlyear}{2015}
       \verb{url}
       \verb https://theantlrguy.atlassian.net/wiki/display/ANTLR4/Python+Target
       \endverb
-      \warn{\item Datamodel: Entry 'pyruntime' (literatur.bib): Invalid format '2015-2-8' of date field 'urldate' - ignoring}
     \endentry
     \entry{pandas}{misc}{}
       \field{sortinit}{0}
       \field{sortinithash}{a08a9549c5c2429f8cec5d1a581b26ca}
       \field{labeltitle}{pandas, Installation}
       \field{title}{pandas, Installation}
+      \field{urlday}{08}
+      \field{urlmonth}{02}
+      \field{urlyear}{2015}
       \verb{url}
       \verb http://pandas.pydata.org/pandas-docs/stable/install.html
       \endverb
-      \warn{\item Datamodel: Entry 'pandas' (literatur.bib): Invalid format '2015-2-8' of date field 'urldate' - ignoring}
     \endentry
     \entry{antlr}{misc}{}
       \field{sortinit}{0}
       \field{sortinithash}{a08a9549c5c2429f8cec5d1a581b26ca}
       \field{labeltitle}{antlr, Installation}
       \field{title}{antlr, Installation}
+      \field{urlday}{08}
+      \field{urlmonth}{02}
+      \field{urlyear}{2015}
       \verb{url}
       \verb https://theantlrguy.atlassian.net/wiki/display/ANTLR4/Getting+Started+with+ANTLR+v4
       \endverb
-      \warn{\item Datamodel: Entry 'antlr' (literatur.bib): Invalid format '2015-2-8' of date field 'urldate' - ignoring}
     \endentry
     \entry{antlrH}{misc}{}
       \field{sortinit}{0}
       \field{sortinithash}{a08a9549c5c2429f8cec5d1a581b26ca}
       \field{labeltitle}{antlr, Homepage}
       \field{title}{antlr, Homepage}
+      \field{urlday}{08}
+      \field{urlmonth}{02}
+      \field{urlyear}{2015}
       \verb{url}
       \verb http://www.antlr.org/
       \endverb
-      \warn{\item Datamodel: Entry 'antlrH' (literatur.bib): Invalid format '2015-2-8' of date field 'urldate' - ignoring}
     \endentry
   \endsortlist
 \endrefsection

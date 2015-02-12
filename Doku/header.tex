@@ -5,7 +5,7 @@ a4paper,
 ngerman,
 captions=tableheading,
 toc=bibliography,
-toc=listof,
+%toc=listof,
 numbers=noenddot
 ] {scrartcl}
 
@@ -208,5 +208,7 @@ backgroundcolor=\color{bgcolor},
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Stil der Zitate und der Bibliographie
-\usepackage[style=numeric, backend=biber, bibencoding=utf8, bibwarn=true, sorting=none]{biblatex}
+\usepackage[style=numeric, backend=biber, bibencoding=utf8, bibwarn=true, sorting=none
+			%, hyperref=true, backref=true
+]{biblatex}
 \addbibresource{literatur.bib}

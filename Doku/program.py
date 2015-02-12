@@ -4,7 +4,7 @@ from __future__ import division
 Test program  for codegeneration
 """
 
-def f(x):
+def f(x): #(*\label{func}*)
     """calculate"""
     return x**2 + x*4 - (x-3) /x -1.3e2+2\
            +5 #comment

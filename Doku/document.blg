@@ -1,21 +1,15 @@
 [0] Config.pm:320> INFO - This is Biber 1.9
 [0] Config.pm:323> INFO - Logfile is 'document.blg'
-[38] biber-MSWIN:274> INFO - === %a %b %e, %Y, %H:%M:%S
-[39] Biber.pm:333> INFO - Reading 'document.bcf'
-[130] Biber.pm:632> INFO - Using all citekeys in bib section 0
-[172] Biber.pm:3051> INFO - Processing section 0
-[203] Biber.pm:3189> INFO - Looking for bibtex format file 'literatur.bib' for section 0
-[206] bibtex.pm:990> INFO - Decoding LaTeX character macros into UTF-8
-[208] bibtex.pm:864> INFO - Found BibTeX data source 'literatur.bib'
-[222] Utils.pm:144> WARN - Datamodel: Entry 'antlrH' (literatur.bib): Invalid format '2015-2-8' of date field 'urldate' - ignoring
-[223] Utils.pm:144> WARN - Datamodel: Entry 'pyruntime' (literatur.bib): Invalid format '2015-2-8' of date field 'urldate' - ignoring
-[224] Utils.pm:144> WARN - Datamodel: Entry 'antlr' (literatur.bib): Invalid format '2015-2-8' of date field 'urldate' - ignoring
-[224] Utils.pm:144> WARN - Datamodel: Entry 'py2cpp' (literatur.bib): Invalid format '2015-2-8' of date field 'urldate' - ignoring
-[225] Utils.pm:144> WARN - Datamodel: Entry 'pandas' (literatur.bib): Invalid format '2015-2-8' of date field 'urldate' - ignoring
-[288] UCollate.pm:66> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[288] UCollate.pm:66> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
-[288] Biber.pm:2928> INFO - Sorting list 'none' of type 'entry' with scheme 'none' and locale 'de-DE'
-[289] Biber.pm:2932> INFO - No sort tailoring available for locale 'de-DE'
-[302] bbl.pm:517> INFO - Writing 'document.bbl' with encoding 'UTF-8'
-[303] bbl.pm:606> INFO - Output to document.bbl
-[303] Biber.pm:106> INFO - WARNINGS: 5
+[55] biber-MSWIN:274> INFO - === %a %b %e, %Y, %H:%M:%S
+[55] Biber.pm:333> INFO - Reading 'document.bcf'
+[141] Biber.pm:632> INFO - Using all citekeys in bib section 0
+[177] Biber.pm:3051> INFO - Processing section 0
+[210] Biber.pm:3189> INFO - Looking for bibtex format file 'literatur.bib' for section 0
+[213] bibtex.pm:990> INFO - Decoding LaTeX character macros into UTF-8
+[214] bibtex.pm:864> INFO - Found BibTeX data source 'literatur.bib'
+[4930] UCollate.pm:66> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[4930] UCollate.pm:66> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
+[4930] Biber.pm:2928> INFO - Sorting list 'none' of type 'entry' with scheme 'none' and locale 'de-DE'
+[4930] Biber.pm:2932> INFO - No sort tailoring available for locale 'de-DE'
+[4948] bbl.pm:517> INFO - Writing 'document.bbl' with encoding 'UTF-8'
+[4949] bbl.pm:606> INFO - Output to document.bbl
