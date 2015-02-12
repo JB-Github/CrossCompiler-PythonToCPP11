@@ -132,14 +132,70 @@ Bei der Codegenerierung werden bis jetzt nur die grundlegenden Synatxelemente un
 
 Für unser Testprogramm mussten wir wie bereits erwähnt einige Annahmen zur Vereinfachung treffen:
 
-Alle Typdeklarationen haben wir als \ttt{double} angenommen. Dadurch sind einfach Funktionen wie in Zeile \ref{func} des Programms möglich. 
+Alle Typdeklarationen haben wir als \ttt{double} angenommen. Dadurch ist das Übersetzen von einfachen Funktionen wie in Zeile \ref{func} des Programms möglich.
+
 Insbesondere werden Variablendeklarationen noch nicht unterstützt. In Zeile \ref{array_decl} mussten wir deshalb einfach annehmen, das ein \ttt{array} deklariert wird.
 
-Außerdem benötigt das Python Programm noch ein \ttt{if}~ \ttt{__name__=='__main__'} Block um beim Übersetzen zu erkennen, an welcher Stelle die \ttt{main} Funktion in C++ platziert werden soll.
+Außerdem benötigt das Python Programm noch einen \ttt{if}~ \ttt{__name__=='__main__'} Block um beim Übersetzen zu erkennen, an welcher Stelle die \ttt{main} Funktion in C++ platziert werden soll.
 
  
 
 \subsection{Fehlererkennung}
+
+Der Compiler erkennt auch Fehler im zu compillierenden Programm und gibt entsprechende Fehlermeldungen aus, die auch möglichst genau anzeigen, an welcher Stelle der Fehler aufegetreten ist und um welche Art von Fehler es sich handelt:
+
+Ändert man z.B. Zeile \ref{par_err} des Tesprogramms in
+\begin{lstlisting}
+    for i in range(len(L):
+\end{lstlisting}
+erkennt der Lexer die fehlende Klammer und gibt folgende Meldung aus:
+\begin{lstlisting}
+CompilerError: 
+---------------------------------------------------------------
+ Lexer, File "program.py", line 18, col 19:
+---------------------------------------------------------------
+    L= [0]*10
+
+    for i in range(len(L):
+                  ^
+  ERR: Missing Closer for  ( 
+\end{lstlisting}
+
+Ebenso werden falsche Operatoren erkannt, z.B. bei Änderung von Zeile \ref{op_err}:
+\begin{lstlisting}
+CompilerError: 
+---------------------------------------------------------------
+ Lexer, File "program.py", line 22, col 20:
+---------------------------------------------------------------
+            L[i]= f(i+1)
+        else:
+            L[i]+==1
+                   ^
+  ERR: Unknown operator +== 
+\end{lstlisting}
+
+Und auch inkorrekte Einrückung (Änderung in Zeile \ref{ind_err}):
+\begin{lstlisting}
+CompilerError: 
+---------------------------------------------------------------
+ Lexer, File "program.py", line 21, col 9:
+---------------------------------------------------------------
+        if i>3:
+            L[i]= f(i+1)
+         else:
+        ^
+  ERR: Dedentation to incorrect level  
+\end{lstlisting}
+
+\todo{Antlr Error}
+
+Natürlich ist die Fehlerkennung noch nicht vollständig. Das ist für diesen Crosscompiler aber auch nicht unbedingt nötig, da man normalerweise davon ausgehen kann, dass das zu übersetzende Python Programm korrekt ist.
+
+Aber man kann erkennen, dass die Fehlererkennung mit unserem Compiler auch gut möglich ist und bei Bedarf könnte sie auch noch entsprechend erweitert werden.
+
+
+
+
 
 
 
@@ -147,7 +203,7 @@ Außerdem benötigt das Python Programm noch ein \ttt{if}~ \ttt{__name__=='__mai
 
 \section{Codestruktur}
 
-Schleißlich wollen wir in diesem Abschnitt noch kurz die Struktur unseres Codes erklären, damit man die Funktion des Compilers bei Interesse besser nachvollziehen kann.
+Schließlich wollen wir in diesem Abschnitt noch kurz die Struktur unseres Codes erklären, damit man die Funktion des Compilers bei Interesse besser nachvollziehen kann.
 
 In der \ttt{main} Datei \ttt{py2cpp.py} werden die verschiedenen Programmteile des Compilers aufgerufen:
 

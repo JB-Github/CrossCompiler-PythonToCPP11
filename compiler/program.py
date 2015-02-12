@@ -19,7 +19,7 @@ if __name__=='__main__':
         if i>3:
             L[i]= f(i+1)
         else:
-            L[i]+=1 # com
+            L[i]+=1
 
     for x in L:
         print x
