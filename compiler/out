@@ -17,12 +17,15 @@ _from_ Rel_module _import_ Id_list
 	Module
 Module
 7 	Module 	
+	Id_dot
+Id_dot
+8 	Id_dot 	
 	Id
 Id
-8 	Id_ 	
+9 	Id_ 	
 	___future___
 ___future___
-   BRANCH -2
+   BRANCH -3
 6 	Id_list 	
 	Id_alias
 Id_alias
@@ -40,9 +43,9 @@ Single_stmt
 	Exprlist 	_;_
 Exprlist _;_
 4 	Exprlist 	
-	Val_label__is__expr
-Val_label__is__expr
-5 	Val_label__is__expr 	
+	Val__label__is__expr
+Val__label__is__expr
+5 	Val__label__is__expr 	
 	Val
 Val
 6 	Val 	
@@ -108,9 +111,9 @@ Single_stmt
 	Exprlist 	_;_
 Exprlist _;_
 8 	Exprlist 	
-	Val_label__is__expr
-Val_label__is__expr
-9 	Val_label__is__expr 	
+	Val__label__is__expr
+Val__label__is__expr
+9 	Val__label__is__expr 	
 	Val
 Val
 10 	Val 	
@@ -136,14 +139,14 @@ _return_ Exprlist
 	Dash_calc__is__expr
 Dash_calc__is__expr
 10 	Dash_calc__is__expr 	
-	Dash_calc__is__expr 	_+_ 	Val_label__is__expr
-Dash_calc__is__expr _+_ Val_label__is__expr
+	Dash_calc__is__expr 	_+_ 	Val__label__is__expr
+Dash_calc__is__expr _+_ Val__label__is__expr
 11 	Dash_calc__is__expr 	
-	Dash_calc__is__expr 	_+_ 	Val_label__is__expr
-Dash_calc__is__expr _+_ Val_label__is__expr
+	Dash_calc__is__expr 	_+_ 	Val__label__is__expr
+Dash_calc__is__expr _+_ Val__label__is__expr
 12 	Dash_calc__is__expr 	
-	Dash_calc__is__expr 	_-_ 	Val_label__is__expr
-Dash_calc__is__expr _-_ Val_label__is__expr
+	Dash_calc__is__expr 	_-_ 	Val__label__is__expr
+Dash_calc__is__expr _-_ Val__label__is__expr
 13 	Dash_calc__is__expr 	
 	Dash_calc__is__expr 	_-_ 	Dot_calc__is__expr
 Dash_calc__is__expr _-_ Dot_calc__is__expr
@@ -151,9 +154,9 @@ Dash_calc__is__expr _-_ Dot_calc__is__expr
 	Exponentiation__is__expr 	_+_ 	Dot_calc__is__expr
 Exponentiation__is__expr _+_ Dot_calc__is__expr
 15 	Exponentiation__is__expr 	
-	Val_label__is__expr 	_**_ 	Val_label__is__expr
-Val_label__is__expr _**_ Val_label__is__expr
-16 	Val_label__is__expr 	
+	Val__label__is__expr 	_**_ 	Val__label__is__expr
+Val__label__is__expr _**_ Val__label__is__expr
+16 	Val__label__is__expr 	
 	Val
 Val
 17 	Val 	
@@ -166,7 +169,7 @@ Id
 	_x_
 _x_
    BRANCH -3
-16 	Val_label__is__expr 	
+16 	Val__label__is__expr 	
 	Val
 Val
 17 	Val 	
@@ -180,9 +183,9 @@ Int
 _2_
    BRANCH -4
 15 	Dot_calc__is__expr 	
-	Val_label__is__expr 	_*_ 	Val_label__is__expr
-Val_label__is__expr _*_ Val_label__is__expr
-16 	Val_label__is__expr 	
+	Val__label__is__expr 	_*_ 	Val__label__is__expr
+Val__label__is__expr _*_ Val__label__is__expr
+16 	Val__label__is__expr 	
 	Val
 Val
 17 	Val 	
@@ -195,7 +198,7 @@ Id
 	_x_
 _x_
    BRANCH -3
-16 	Val_label__is__expr 	
+16 	Val__label__is__expr 	
 	Val
 Val
 17 	Val 	
@@ -209,15 +212,15 @@ Int
 _4_
    BRANCH -5
 14 	Dot_calc__is__expr 	
-	Brackets__is__expr 	_/_ 	Val_label__is__expr
-Brackets__is__expr _/_ Val_label__is__expr
+	Brackets__is__expr 	_/_ 	Val__label__is__expr
+Brackets__is__expr _/_ Val__label__is__expr
 15 	Brackets__is__expr 	
 	_(_ 	Dash_calc__is__expr 	_)_
 _(_ Dash_calc__is__expr _)_
 16 	Dash_calc__is__expr 	
-	Val_label__is__expr 	_-_ 	Val_label__is__expr
-Val_label__is__expr _-_ Val_label__is__expr
-17 	Val_label__is__expr 	
+	Val__label__is__expr 	_-_ 	Val__label__is__expr
+Val__label__is__expr _-_ Val__label__is__expr
+17 	Val__label__is__expr 	
 	Val
 Val
 18 	Val 	
@@ -230,7 +233,7 @@ Id
 	_x_
 _x_
    BRANCH -3
-17 	Val_label__is__expr 	
+17 	Val__label__is__expr 	
 	Val
 Val
 18 	Val 	
@@ -243,7 +246,7 @@ Int
 	_3_
 _3_
    BRANCH -5
-15 	Val_label__is__expr 	
+15 	Val__label__is__expr 	
 	Val
 Val
 16 	Val 	
@@ -256,7 +259,7 @@ Id
 	_x_
 _x_
    BRANCH -5
-13 	Val_label__is__expr 	
+13 	Val__label__is__expr 	
 	Val
 Val
 14 	Val 	
@@ -269,7 +272,7 @@ Float
 	_1.3e2_
 _1.3e2_
    BRANCH -4
-12 	Val_label__is__expr 	
+12 	Val__label__is__expr 	
 	Val
 Val
 13 	Val 	
@@ -282,7 +285,7 @@ Int
 	_2_
 _2_
    BRANCH -4
-11 	Val_label__is__expr 	
+11 	Val__label__is__expr 	
 	Val
 Val
 12 	Val 	
@@ -312,9 +315,9 @@ If Block
 	_if_ 	Comparison__is__expr
 _if_ Comparison__is__expr
 6 	Comparison__is__expr 	
-	Val_label__is__expr 	Op_cmp 	Val_label__is__expr
-Val_label__is__expr Op_cmp Val_label__is__expr
-7 	Val_label__is__expr 	
+	Val__label__is__expr 	Op_cmp 	Val__label__is__expr
+Val__label__is__expr Op_cmp Val__label__is__expr
+7 	Val__label__is__expr 	
 	Val
 Val
 8 	Val 	
@@ -331,7 +334,7 @@ ___name___
 	_==_
 _==_
    BRANCH 0
-7 	Val_label__is__expr 	
+7 	Val__label__is__expr 	
 	Val
 Val
 8 	Val 	
@@ -383,9 +386,9 @@ _L_
 	Dot_calc__is__expr
 Dot_calc__is__expr
 12 	Dot_calc__is__expr 	
-	Val_label__is__expr 	_*_ 	Val_label__is__expr
-Val_label__is__expr _*_ Val_label__is__expr
-13 	Val_label__is__expr 	
+	Val__label__is__expr 	_*_ 	Val__label__is__expr
+Val__label__is__expr _*_ Val__label__is__expr
+13 	Val__label__is__expr 	
 	Val
 Val
 14 	Val 	
@@ -395,9 +398,9 @@ List
 	_[_ 	Exprlist 	_]_
 _[_ Exprlist _]_
 16 	Exprlist 	
-	Val_label__is__expr
-Val_label__is__expr
-17 	Val_label__is__expr 	
+	Val__label__is__expr
+Val__label__is__expr
+17 	Val__label__is__expr 	
 	Val
 Val
 18 	Val 	
@@ -410,7 +413,7 @@ Int
 	_0_
 _0_
    BRANCH -7
-13 	Val_label__is__expr 	
+13 	Val__label__is__expr 	
 	Val
 Val
 14 	Val 	
@@ -455,9 +458,9 @@ _i_
 	Funccall__is__expr
 Funccall__is__expr
 13 	Funccall__is__expr 	
-	Val_label__is__expr 	_(_ 	Arglist 	_)_
-Val_label__is__expr _(_ Arglist _)_
-14 	Val_label__is__expr 	
+	Val__label__is__expr 	_(_ 	Arglist 	_)_
+Val__label__is__expr _(_ Arglist _)_
+14 	Val__label__is__expr 	
 	Val
 Val
 15 	Val 	
@@ -480,9 +483,9 @@ Pos_arg
 	Funccall__is__expr
 Funccall__is__expr
 17 	Funccall__is__expr 	
-	Val_label__is__expr 	_(_ 	Arglist 	_)_
-Val_label__is__expr _(_ Arglist _)_
-18 	Val_label__is__expr 	
+	Val__label__is__expr 	_(_ 	Arglist 	_)_
+Val__label__is__expr _(_ Arglist _)_
+18 	Val__label__is__expr 	
 	Val
 Val
 19 	Val 	
@@ -502,9 +505,9 @@ Pos_arglist
 	Pos_arg
 Pos_arg
 20 	Pos_arg 	
-	Val_label__is__expr
-Val_label__is__expr
-21 	Val_label__is__expr 	
+	Val__label__is__expr
+Val__label__is__expr
+21 	Val__label__is__expr 	
 	Val
 Val
 22 	Val 	
@@ -540,9 +543,9 @@ If Block Else Block
 	_if_ 	Comparison__is__expr
 _if_ Comparison__is__expr
 15 	Comparison__is__expr 	
-	Val_label__is__expr 	Op_cmp 	Val_label__is__expr
-Val_label__is__expr Op_cmp Val_label__is__expr
-16 	Val_label__is__expr 	
+	Val__label__is__expr 	Op_cmp 	Val__label__is__expr
+Val__label__is__expr Op_cmp Val__label__is__expr
+16 	Val__label__is__expr 	
 	Val
 Val
 17 	Val 	
@@ -559,7 +562,7 @@ _i_
 	_>_
 _>_
    BRANCH 0
-16 	Val_label__is__expr 	
+16 	Val__label__is__expr 	
 	Val
 Val
 17 	Val 	
@@ -611,9 +614,9 @@ Id
 _L_
    BRANCH -1
 23 	Slice_ 	
-	Val_label__is__expr
-Val_label__is__expr
-24 	Val_label__is__expr 	
+	Val__label__is__expr
+Val__label__is__expr
+24 	Val__label__is__expr 	
 	Val
 Val
 25 	Val 	
@@ -630,9 +633,9 @@ _i_
 	Funccall__is__expr
 Funccall__is__expr
 21 	Funccall__is__expr 	
-	Val_label__is__expr 	_(_ 	Arglist 	_)_
-Val_label__is__expr _(_ Arglist _)_
-22 	Val_label__is__expr 	
+	Val__label__is__expr 	_(_ 	Arglist 	_)_
+Val__label__is__expr _(_ Arglist _)_
+22 	Val__label__is__expr 	
 	Val
 Val
 23 	Val 	
@@ -655,9 +658,9 @@ Pos_arg
 	Dash_calc__is__expr
 Dash_calc__is__expr
 25 	Dash_calc__is__expr 	
-	Val_label__is__expr 	_+_ 	Val_label__is__expr
-Val_label__is__expr _+_ Val_label__is__expr
-26 	Val_label__is__expr 	
+	Val__label__is__expr 	_+_ 	Val__label__is__expr
+Val__label__is__expr _+_ Val__label__is__expr
+26 	Val__label__is__expr 	
 	Val
 Val
 27 	Val 	
@@ -670,7 +673,7 @@ Id
 	_i_
 _i_
    BRANCH -3
-26 	Val_label__is__expr 	
+26 	Val__label__is__expr 	
 	Val
 Val
 27 	Val 	
@@ -724,9 +727,9 @@ Id
 _L_
    BRANCH -1
 21 	Slice_ 	
-	Val_label__is__expr
-Val_label__is__expr
-22 	Val_label__is__expr 	
+	Val__label__is__expr
+Val__label__is__expr
+22 	Val__label__is__expr 	
 	Val
 Val
 23 	Val 	
@@ -744,9 +747,9 @@ _i_
 _+=_
    BRANCH 0
 20 	Exprlist 	
-	Val_label__is__expr
-Val_label__is__expr
-21 	Val_label__is__expr 	
+	Val__label__is__expr
+Val__label__is__expr
+21 	Val__label__is__expr 	
 	Val
 Val
 22 	Val 	
@@ -796,9 +799,9 @@ Id
 _x_
    BRANCH -3
 12 	Exprlist 	
-	Val_label__is__expr
-Val_label__is__expr
-13 	Val_label__is__expr 	
+	Val__label__is__expr
+Val__label__is__expr
+13 	Val__label__is__expr 	
 	Val
 Val
 14 	Val 	
@@ -831,9 +834,9 @@ Print_stmt _;_
 	_print_ 	Exprlist
 _print_ Exprlist
 14 	Exprlist 	
-	Val_label__is__expr
-Val_label__is__expr
-15 	Val_label__is__expr 	
+	Val__label__is__expr
+Val__label__is__expr
+15 	Val__label__is__expr 	
 	Val
 Val
 16 	Val 	
@@ -860,9 +863,9 @@ Print_stmt _;_
 	_print_ 	Exprlist
 _print_ Exprlist
 10 	Exprlist 	
-	Val_label__is__expr 	_,_ 	Val_label__is__expr
-Val_label__is__expr _,_ Val_label__is__expr
-11 	Val_label__is__expr 	
+	Val__label__is__expr 	_,_ 	Val__label__is__expr
+Val__label__is__expr _,_ Val__label__is__expr
+11 	Val__label__is__expr 	
 	Val
 Val
 12 	Val 	
@@ -875,7 +878,7 @@ Str_val
 	_'program'_
 _'program'_
    BRANCH -3
-11 	Val_label__is__expr 	
+11 	Val__label__is__expr 	
 	Val
 Val
 12 	Val 	

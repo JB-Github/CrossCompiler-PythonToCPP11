@@ -16,7 +16,7 @@ def py2cpp(prog):
     LexerLoop.lex(prog) #for lexical errors
 
     prog_= space2braces(prog)
-    #compile_grammar()
+    compile_grammar()
     AST= pytree(prog_)
     AST.tofile(prog.replace('.py', '.cpp'))
 

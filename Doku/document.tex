@@ -2,7 +2,7 @@
 \input{header}
 
 
-\title{ Einfacher? Crosscompiler von Python nach C++ }
+\title{ Einfacher Crosscompiler von Python nach C++ }
 \subject{Programmierpraktikum}
 \author{Felix Helsch \\ Julian Buchhorn}
 \date{\today}
@@ -66,12 +66,12 @@ Für eine detailliertere Erklärung verweisen wir auf die Bachelorarbeit von Fel
 
 \section{Verwendung}
 
-Um ein Python Programm nach C++ zu compilieren, muss man nur das Main-Programm \ttt{py2cpp.py} aufrufen und dabei den Namen des zu übersetzenden Programms als Kommandozeilenparameter angeben. Das heißt, dass zum Beispiel unser Testprogramm \ttt{program.py} mit dem folgenden Konsolenbefehl übersetzt werden kann:
+Um ein Python Programm nach C++ zu compilieren, muss man nur das Main-Programm \path{py2cpp.py aufrüfen} und dabei den Namen des zu übersetzenden Programms als Kommandozeilenparameter angeben. Das heißt, dass zum Beispiel unser Testprogramm \ttt{program.py} mit dem folgenden Konsolenbefehl übersetzt werden kann:
 \begin{lstlisting}
 python py2cpp.py program.py
 \end{lstlisting}
 Dafür muss man allerdings die benötigten Programme installiert haben (s. Kapitel \ref{progs}) und beachten, dass das zu übersetzende Programm nur die momentan unterstützten Features enthält (s. Kapitel \ref{features}).
-
+\enlargethispage{1cm}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Installation} \label{progs}
@@ -126,17 +126,17 @@ Da \ttt{Antlr} in \ttt{Java} geschrieben ist, benötigt es auch eine \ttt{Java} 
 
 \subsection{Unterstützte Syntaxelemente}
 
-Sowohl Lexer als auch Parser unterstützen prinzipiell alle Syntaxelemente  von \ttt{Pathon} und funktionieren -- soweit getestetet -- mit allen Python Programmen. \todo{ richtig?? }
+Sowohl Lexer als auch Parser unterstützen prinzipiell alle Syntaxelemente von \ttt{Python} und funktionieren -- soweit getestetet -- mit allen Python Programmen. \todo{ richtig?? }
 
-Bei der Codegenerierung werden bis jetzt nur die grundlegenden Synatxelemente untersutützt: Schleifen, if-elif-else, print stmt. Von den Schleifen wird insbesondere auch die Python for Schleife entwSchleife oder eine foreach Schleife übersetzt.
+Bei der Codegenerierung werden bis jetzt nur die grundlegenden Synatxelemente untersutützt: Schleifen, if-elif-else, print Statement. Von den Schleifen wird insbesondere auch die Python for Schleife je nachdem in eine Zähl- oder eine foreach Schleife übersetzt.
 
 Für unser Testprogramm mussten wir wie bereits erwähnt einige Annahmen zur Vereinfachung treffen:
 
 Alle Typdeklarationen haben wir als \ttt{double} angenommen. Dadurch ist das Übersetzen von einfachen Funktionen wie in Zeile \ref{func} des Programms möglich.
 
-Insbesondere werden Variablendeklarationen noch nicht unterstützt. In Zeile \ref{array_decl} mussten wir deshalb einfach annehmen, das ein \ttt{array} deklariert wird.
+Insbesondere werden Variablendeklarationen noch nicht unterstützt. In Zeile \ref{array_decl} mussten wir deshalb einfach annehmen, dass ein \ttt{array} deklariert wird.
 
-Außerdem benötigt das Python Programm noch einen \ttt{if}~ \ttt{__name__=='__main__'} Block um beim Übersetzen zu erkennen, an welcher Stelle die \ttt{main} Funktion in C++ platziert werden soll.
+Außerdem benötigt das Python Programm noch einen \ttt{if __name__=="__main__"} Block um beim Übersetzen zu erkennen, an welcher Stelle die \ttt{main} Funktion in C++ platziert werden soll.
 
  
 
@@ -146,9 +146,14 @@ Der Compiler erkennt auch Fehler im zu compillierenden Programm und gibt entspre
 
 Ändert man z.B. Zeile \ref{par_err} des Tesprogramms in
 \begin{lstlisting}
-    for i in range(len(L):
+for i in range(len(L):
 \end{lstlisting}
+
 erkennt der Lexer die fehlende Klammer und gibt folgende Meldung aus:
+%\begin{lstlisting}[basicstyle= {\ttfamily\footnotesize\color[RGB]{49,102,145}}]
+%[basicstyle= \codesize{\tiny}]
+%\lstset{basicstyle= {\ttfamily\tiny\color[RGB]{49,102,145}}}
+%\codesize{\footnotesize}
 \begin{lstlisting}
 CompilerError: 
 ---------------------------------------------------------------
@@ -161,6 +166,8 @@ CompilerError:
   ERR: Missing Closer for  ( 
 \end{lstlisting}
 
+\clearpage
+
 Ebenso werden falsche Operatoren erkannt, z.B. bei Änderung von Zeile \ref{op_err}:
 \begin{lstlisting}
 CompilerError: 
@@ -170,8 +177,8 @@ CompilerError:
             L[i]= f(i+1)
         else:
             L[i]+==1
-                   ^
-  ERR: Unknown operator +== 
+                  ^
+  ERR: Unknown operator +==
 \end{lstlisting}
 
 Und auch inkorrekte Einrückung (Änderung in Zeile \ref{ind_err}):
@@ -187,7 +194,16 @@ CompilerError:
   ERR: Dedentation to incorrect level  
 \end{lstlisting}
 
-\todo{Antlr Error}
+Außerdem werden auch die Fehler automatisch weitergeleitet, welche der mit Antlr erstellte Parser findet. Antlr gibt typischerweise die betroffene Zeilen- und Spaltennummer an, sowie das nicht passende Zeichen und die Alternativen welche an dieser Stelle möglich wären. Zum Beispiel erzeugt eine Änderung von Zeile \ref{parse_err} in
+\begin{lstlisting}
+if i=7>3:
+\end{lstlisting}
+die Fehlermeldung
+\begin{lstlisting}
+line 20:12 mismatched input '=' expecting {'!=', '**', '>>', '^', '(', '>=', '<', '//', '<>', '+', '/', '<<', 'if', '<=', '&', 'is', '*', '.', ':', '[', '==', '|', '>', 'or', '%', 'in', 'and', 'not', '-', ':$blockbegin'}
+\end{lstlisting}
+da eine Zuweisung in Python immer ein eigenes Statement ist und keine Expression.\\
+
 
 Natürlich ist die Fehlerkennung noch nicht vollständig. Das ist für diesen Crosscompiler aber auch nicht unbedingt nötig, da man normalerweise davon ausgehen kann, dass das zu übersetzende Python Programm korrekt ist.
 
@@ -198,7 +214,7 @@ Aber man kann erkennen, dass die Fehlererkennung mit unserem Compiler auch gut m
 
 
 
-
+\clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Codestruktur}
@@ -209,11 +225,11 @@ In der \ttt{main} Datei \ttt{py2cpp.py} werden die verschiedenen Programmteile d
 
 \begin{description}
 
-\item[\texttt{LexerLoop.lex(prog)}] Ruft den schleifenbasierten Lexer auf. Dieser Lexer hat den Vorteil das es einfacher ist an bestimmten Stellen Fehlermeldungen einzufügen, da das Programm Buchstabe für Buchstabe durchlaufen wird.
+\item[\texttt{LexerLoop.lex(prog)}] Ruft den schleifenbasierten Lexer auf. Dieser Lexer hat den Vorteil, dass es einfacher ist an bestimmten Stellen Fehlermeldungen einzufügen, da das Programm Buchstabe für Buchstabe durchlaufen wird.
 
  Der Lexer welchen wir eigentlich verwendet haben, basiert auf regulären Ausdrücken und wird als Teil von \ttt{space2braces(prog)} aufgerufen.
  
-\item[\ttt{space2braces(prog)}] Lext das Programm mit regulären Audrücken und findet aus der Einrückung Blockanfang und -ende herraus und fügt entsprechende Tokens ein (ebenso für Statement Ende). Gibt den Namen der so generierten Programmdatei zurück.
+\item[\ttt{space2braces(prog)}] Lext das Programm mit regulären Audrücken, findet aus der Einrückung Blockanfang und -ende herraus und fügt entsprechende Tokens ein (ebenso für Statement Ende). Gibt den Namen der so generierten Programmdatei zurück.
 
 \item[\ttt{compile_grammar()}] Damit kann die Antlr Grammatik \ttt{py.g4} optional  auch diekt aus dem Wrapper neukompilliert werden. Beim kompillieren zu Python erzeugt Antlr die Dateien: \ttt{pyLexer.py}, \ttt{pyListener.py}, \ttt{pyParser.py}, \ttt{py.tokens} und  \ttt{pyLexer.tokens}.
 
@@ -245,33 +261,65 @@ Für eine Erklärung der Syntax verweisen wir auf die \ttt{Antlr} Homepage \cite
 
 \subsection{Installation} \label{antlr:I}
 
-Um den Compiler ausführen zu können, muss Python in der Version 2.7 installiert sein. Außerdem werden die Python-Bibliotheken Numpy und Pandas, sowie deren Abhängigkeiten, benötigt. Am einfachsten ist es, hierfür einen Package-Manager wie zum Beispiel Anaconda zu installieren. \\ \\
-
-Wenn die enthaltene Python Grammatik geändert werden soll und diese somit neu compiliert werden muss, ist die Installation etwas aufwändiger. Im Folgenden werden die Installationsschritte für Windows und Linux gezeigt.
+Im folgenden geben wir die einzelnen Installationsschritte für Antlr an:
 
 \begin{enumerate}
 
 \item Installation des Java Development Kit (SDK/JDK) in der Version 1.6 oder höher
 
-\item Download des "`Complete ANTLR 4.4 Java binaries jar"'-Paketes (oder neuer) von der \href{http://www.antlr.org/download.html}{Download-Seite des ANTLR-Projektes}
+\item Download \ttt{Complete ANTLR 4.4 Java binaries jar} (oder neuer) \cite{antlrD}
 
-\item Kopieren der heruntergeladenen Java-Bibliothek in den "`jre/lib/ext"'-Ordner des JDK (zum Beispiel: $"`C:\textbackslash Program Files (x86)\textbackslash Java\textbackslash jdk1.8.0\_25 \textbackslash jre\textbackslash lib\textbackslash ext"'$ \\ bzw. unter Linux: $/usr/lib64/jdk1.8.0\_25/jre/lib/ext/$)
 
-\item Hinzufügen der jar-Datei zum Klassenpfad
+
+\item Kopieren der heruntergeladenen Java-Bibliothek in den \ttt{jre/lib/ext} Ordner des JDK (zum Beispiel: \verb|C:\Program Files (x86)\Java\jdk1.8.0\_25\jre\lib\ext| \\ bzw. unter Linux: \verb|/usr/lib64/jdk1.8.0/_25/jre/lib/ext/|)
+
+
+\item Hinzufügen der \ttt{.jar} Datei zum Klassenpfad \todo{ jre vs jdk? }
+
+\emph{Optional}: Alias Einträge für Antlr und das Ausführen des Parsers anlegen
 
 \end{enumerate}
 
+Den Path- und die Aliaseinträge kann man unter Windows zum Beispiel vornehmen in dem man die folgenden Zeilen zum Powershell Profil hinzufügt:
 
-\subsection{Rekompilieren und grafische Synataxtree-Ansicht}
+\begin{nrcode}[caption= Path- und Aliaseinträge für Antlr am Beispiel von Powershell unter Windows]
+$env:Path+= ";C:\Program Files\Java\jre8\lib\ext\antlr-4.5-complete.jar"
+
+function antlr {java org.antlr.v4.Tool $args}
+function grun {java org.antlr.v4.runtime.misc.TestRig $args}
+\end{nrcode}
+%$ %fix highliting
 
 
 
+
+\subsection{Rekompilieren und grafische Syntaxtree-Ansicht}
+
+Nachdem man Antlr wie im vorherigen Kapitel beschrieben installiert hat, kann man eine Grammatik kompillieren indem man Antlr mit dem jeweiligen Grammatiknamen aufruft, dass heißt für unsere Pythongrammatik \ttt{py.g4}:
+\begin{lstlisting}
+antlr py.g4
+\end{lstlisting}
+Standardmäßig wird aus der Grammtik nun ein Parser in Java generiert. Möchte man den Parser in einer anderen Sprache verwenden, kann man die Grammtik auch in eine andere Zielsprache kompillieren, sofern sie von Antlr unterstützt wird. Für Python 2 zum Beispiel ändert man den Aufruf dafür folgendermaßen ab: \enlargethispage{1cm}
+\begin{lstlisting}
+antlr py.g4 -Dlanguage=Python2
+\end{lstlisting}
+
+
+
+Mit dem Java Parser kann man auch noch weitere Funktionen von Antlr nutzen, so ist es dann z.B. möglich beim Parsen eine grafische Darstellung des Parsetrees anzuzeigen, wie in Abbildung \ref{g:tree}. Der dargestellte Parsetree zeigt eine Funktion aus unserem Beispielprogramm.
+
+Zur Erzeugung des Parsetrees kompilliert man zuerst die Grammatik nach Java, übersetzt dann die Java Dateien in ausführbare Dateien und wendet schließlich den Parser auf das gewünschte Programm an. Das heißt für unser Grammatik angewendet auf unser Beispielprogramm verwendet man die folgenden Aufrufe:
+\begin{lstlisting}
+antlr py.g4
+javac py*.java
+grun py prog -gui "program.py"
+\end{lstlisting}
+Das zweite Argument  beim Ausführen des Parsers ist die Startregel der Grammatik (hier \ttt{prog}).
 \begin{center}
  \includegraphics[width=0.8\linewidth]{Bilder/program_func_parse_tree2.png}
  \captionof{figure}{ Beispiel Parsetree } \label{g:tree}
 \end{center}
 
-%\input{Kapitel/Anhang}
 
 
 \clearpage

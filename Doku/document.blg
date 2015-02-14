@@ -1,15 +1,17 @@
 [0] Config.pm:320> INFO - This is Biber 1.9
 [0] Config.pm:323> INFO - Logfile is 'document.blg'
-[55] biber-MSWIN:274> INFO - === %a %b %e, %Y, %H:%M:%S
-[55] Biber.pm:333> INFO - Reading 'document.bcf'
-[141] Biber.pm:632> INFO - Using all citekeys in bib section 0
-[177] Biber.pm:3051> INFO - Processing section 0
-[210] Biber.pm:3189> INFO - Looking for bibtex format file 'literatur.bib' for section 0
-[213] bibtex.pm:990> INFO - Decoding LaTeX character macros into UTF-8
-[214] bibtex.pm:864> INFO - Found BibTeX data source 'literatur.bib'
-[4930] UCollate.pm:66> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[4930] UCollate.pm:66> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
-[4930] Biber.pm:2928> INFO - Sorting list 'none' of type 'entry' with scheme 'none' and locale 'de-DE'
-[4930] Biber.pm:2932> INFO - No sort tailoring available for locale 'de-DE'
-[4948] bbl.pm:517> INFO - Writing 'document.bbl' with encoding 'UTF-8'
-[4949] bbl.pm:606> INFO - Output to document.bbl
+[44] biber-MSWIN:274> INFO - === %a %b %e, %Y, %H:%M:%S
+[44] Biber.pm:333> INFO - Reading 'document.bcf'
+[120] Biber.pm:632> INFO - Using all citekeys in bib section 0
+[153] Biber.pm:3051> INFO - Processing section 0
+[184] Biber.pm:3189> INFO - Looking for bibtex format file 'literatur.bib' for section 0
+[188] bibtex.pm:990> INFO - Decoding LaTeX character macros into UTF-8
+[189] bibtex.pm:864> INFO - Found BibTeX data source 'literatur.bib'
+[205] Utils.pm:144> WARN - Datamodel: Entry 'py2cpp' (literatur.bib): Invalid format '??' of date field 'urldate' - ignoring
+[270] UCollate.pm:66> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[271] UCollate.pm:66> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
+[271] Biber.pm:2928> INFO - Sorting list 'none' of type 'entry' with scheme 'none' and locale 'de-DE'
+[271] Biber.pm:2932> INFO - No sort tailoring available for locale 'de-DE'
+[283] bbl.pm:517> INFO - Writing 'document.bbl' with encoding 'UTF-8'
+[284] bbl.pm:606> INFO - Output to document.bbl
+[284] Biber.pm:106> INFO - WARNINGS: 1

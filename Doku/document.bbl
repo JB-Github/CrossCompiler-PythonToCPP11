@@ -24,12 +24,10 @@
       \field{sortinithash}{a08a9549c5c2429f8cec5d1a581b26ca}
       \field{labeltitle}{Compiler}
       \field{title}{Compiler}
-      \field{urlday}{08}
-      \field{urlmonth}{02}
-      \field{urlyear}{2015}
       \verb{url}
       \verb ??
       \endverb
+      \warn{\item Datamodel: Entry 'py2cpp' (literatur.bib): Invalid format '??' of date field 'urldate' - ignoring}
     \endentry
     \entry{pyruntime}{misc}{}
       \field{sortinit}{0}
@@ -77,6 +75,18 @@
       \field{urlyear}{2015}
       \verb{url}
       \verb http://www.antlr.org/
+      \endverb
+    \endentry
+    \entry{antlrD}{misc}{}
+      \field{sortinit}{0}
+      \field{sortinithash}{a08a9549c5c2429f8cec5d1a581b26ca}
+      \field{labeltitle}{antlr, Download}
+      \field{title}{antlr, Download}
+      \field{urlday}{08}
+      \field{urlmonth}{02}
+      \field{urlyear}{2015}
+      \verb{url}
+      \verb http://www.antlr.org/download.html
       \endverb
     \endentry
   \endsortlist

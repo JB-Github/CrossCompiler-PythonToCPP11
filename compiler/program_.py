@@ -21,7 +21,7 @@ if __name__=='__main__':$blockbegin
             L[i]= f(i+1);
         $blockend
         else:$blockbegin
-            L[i]+=1; # com
+            L[i]+=1;
         $blockend
     $blockend
 

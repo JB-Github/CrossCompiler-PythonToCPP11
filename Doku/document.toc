@@ -9,8 +9,8 @@
 \contentsline {section}{\numberline {4}Features}{6}{section.4}
 \contentsline {subsection}{\numberline {4.1}Unterst\IeC {\"u}tzte Syntaxelemente}{6}{subsection.4.1}
 \contentsline {subsection}{\numberline {4.2}Fehlererkennung}{6}{subsection.4.2}
-\contentsline {section}{\numberline {5}Codestruktur}{7}{section.5}
+\contentsline {section}{\numberline {5}Codestruktur}{8}{section.5}
 \contentsline {section}{\numberline {A}Installation und Verwendung von Antlr}{9}{appendix.A}
 \contentsline {subsection}{\numberline {A.1}Installation}{9}{subsection.A.1}
-\contentsline {subsection}{\numberline {A.2}Rekompilieren und grafische Synataxtree-Ansicht}{10}{subsection.A.2}
+\contentsline {subsection}{\numberline {A.2}Rekompilieren und grafische Syntaxtree-Ansicht}{9}{subsection.A.2}
 \contentsline {section}{\nonumberline Literatur}{11}{section*.6}

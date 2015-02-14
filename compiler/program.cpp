@@ -25,7 +25,7 @@ int main() {
             L[i]= f(i+1);
         }
         else {
-            L[i]++; // com
+            L[i]++;
         }
     }
 

@@ -53,17 +53,17 @@ def lex(prog):
     ##--------------------------------------------------------
     ##Lexing
     pyfile= open(prog)
-    S= pyfile.read().replace('\r\n', '\n') #EOF
+    S= pyfile.read().replace('\r\n', '\n') + '$' #EOF
 
     CompilerError.file= pyfile.name
     CompilerError.phase= 'Lexer'
 
-    ##EOF
-    c= S[-1]
-    if c in op_undefined:
-        raise CompilerError('Undefined Operator', S, -1, c)
-    else:
-        S+= '$'
+    # ##EOF
+    # c= S[-1]
+    # if c in op_undefined:
+    #     raise CompilerError('Undefined Operator', S, -1, c)
+    # else:
+    #     S+= '$'
 
 
     i=0
@@ -97,7 +97,7 @@ def lex(prog):
                 if w+S[i] in operators3:
                     w+= S[i]; i+=1
                 elif S[i] in op_binary:
-                    raise CompilerError('Unknown operator', S,i+1,w+S[i])
+                    raise CompilerError('Unknown operator', S,i,w+S[i])
             wtype= 'operator'
         #Strings, Comments
         elif c in quotes:

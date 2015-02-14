@@ -19,7 +19,7 @@ numbers=noenddot
 \usepackage[babel, german=quotes]{csquotes}
 \usepackage{color}
 \usepackage{graphicx}             % Bilder einbinden ermöglichen
-\usepackage{url}                  % Besserew
+\usepackage[obeyspaces]{url}                  % Besserew
 \usepackage[textsize=small, textwidth=0.8in]{todonotes} % \todo noch zu tun
 \usepackage{multirow}             % Zusammenfassen von Tabellenzellen
 \usepackage{upgreek}              % nicht-kursive Griechische Buchstaben
@@ -185,9 +185,12 @@ backgroundcolor=\color{bgcolor},
 \newcommand{\gq}[1]{\glqq #1\grqq ~} %German Quotes
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newcommand{\ttt}[1]{\texttt{#1}} %Code Schrift
+\newcommand{\ttt}[1]{\verb|#1|} %Code Schrift
 \DeclareUrlCommand\ttt{\texttt{\urlstyle{same}}}
 
+% \newcommand{\codesize}[1]{ basicstyle= {\ttfamily#1\color[RGB]{49,102,145}} }
+%\newcommand{\codesize}[1]{ \ttfamily#1\color[RGB]{49,102,145} }
+\newcommand{\codesize}[1]{ \lstset{ basicstyle= {\ttfamily#1\color[RGB]{49,102,145}} } }
 
 %\newenvironment{nrcode}{\lstlisting}}{\endlstlisting}
 %\renewcommand\lstlistingname{Programm} %umbenennen??

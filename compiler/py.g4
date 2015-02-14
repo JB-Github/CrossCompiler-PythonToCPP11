@@ -3,6 +3,7 @@ grammar py;
 ////Parser////
 ////-------------------------------------------------------------
 
+start : prog EOF ;
 prog : stmt+ ;
 
 stmt : single_stmt | block_stmt ;
@@ -47,15 +48,16 @@ id_alias : id_ ('as' id_)? ;
 
 mod_list : mod_alias (',' mod_alias)? ;
 mod_alias : module ('as' id_)? ;
-module : id_ ('.' id_)* ;
+module : id_dot ;
 rel_module : '.'* module | '.'+ ;
 
+id_dot : id_ ('.' id_)* ;
 ////-------------------------------------------------------------
 
 block_stmt : block_head block | ifelse | trycatch ;//| func_block ;
 block_head : decorator* (func | class_) | loop | with_ ;
 
-decorator : '@' id_ '(' (arglist | gen_expr) ')'? ';' ;  //methods!!
+decorator : '@' id_dot ('(' (arglist | gen_expr) ')')? ';' ;  //methods!!
 
 loop: (while_ | for_) (else_ block)? ;
 while_ : 'while' expr ;
@@ -179,10 +181,11 @@ dictitem : expr ':' expr ;
 //Function Defintion
 func : 'def' id_ '(' paramlist? ')';
 paramlist
-	: pos_paramlist (',' kparamlist)?  (',' '*'simple_var)? (',' '**'simple_var)?
-	| kparamlist (',' '*'simple_var)? (',' '**'simple_var)?
-	| '*'simple_var (',' '**'simple_var)?
-	| '**'simple_var
+	: ( pos_paramlist (',' kparamlist)?  (',' '*'simple_var)? (',' '**'simple_var)?
+	|   kparamlist (',' '*'simple_var)? (',' '**'simple_var)?
+	|   '*'simple_var (',' '**'simple_var)?
+	|   '**'simple_var
+	) ','?
 ; //unschoen!!
 
 pos_paramlist : pos_paramtuple (',' pos_paramtuple)* ;
@@ -195,8 +198,8 @@ kparam : pos_paramtuple '=' expr; //only Python2
 
 //Function Call
 arglist
-	: pos_arglist (',' karglist)?
-	| karglist
+	: pos_arglist (',' karglist)? ','?
+	| karglist ','?
 ;
 pos_arglist : pos_arg (',' pos_arg)* ;
 pos_arg : ('*'|'**')? expr ;
