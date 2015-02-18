@@ -126,13 +126,13 @@ Da \ttt{Antlr} in \ttt{Java} geschrieben ist, benötigt es auch eine \ttt{Java} 
 
 \subsection{Unterstützte Syntaxelemente}
 
-Sowohl Lexer als auch Parser unterstützen prinzipiell alle Syntaxelemente von Python und funktionieren -- soweit getestetet -- mit allen Python Programmen. %\todo{ richtig?? }
+Sowohl Lexer als auch Parser unterstützen prinzipiell alle Syntaxelemente von Python und funktionieren -- soweit getestet -- mit allen Python Programmen. %\todo{ richtig?? }
 
 Bei der Codegenerierung werden bis jetzt nur die grundlegenden Syntaxelemente unterstützt: Schleifen, \ttt{if-elif-else} und \ttt{print} Statement. Von den Schleifen wird insbesondere auch die Python \ttt{for} Schleife je nachdem in eine Zähl- oder eine \ttt{foreach} Schleife übersetzt.
 
-Für unser Testprogramm mussten wir wie bereits erwähnt einige Annahmen zur Vereinfachung treffen:
+Für unser Testprogramm mussten wir, wie bereits erwähnt, einige Annahmen zur Vereinfachung treffen:
 
-Alle Typdeklarationen haben wir als \ttt{double} angenommen. Dadurch ist das Übersetzen von einfachen Funktionen wie in Zeile \ref{func} des Programms möglich.
+Alle Typdeklarationen haben wir als \ttt{double} angenommen. Dadurch ist das Übersetzen von einfachen Funktionen, wie in Zeile \ref{func} des Programms, möglich.
 
 Insbesondere werden Variablendeklarationen noch nicht unterstützt. In Zeile \ref{array_decl} mussten wir deshalb einfach annehmen, dass ein \ttt{array} deklariert wird.
 
@@ -142,7 +142,7 @@ Außerdem benötigt das Python Programm noch einen \ttt{if __name__=="__main__"}
 
 \subsection{Fehlererkennung}
 
-Der Compiler erkennt auch Fehler im zu compillierenden Programm und gibt entsprechende Fehlermeldungen aus, die möglichst genau anzeigen, an welcher Stelle der Fehler aufgetreten ist und um welche Art von Fehler es sich handelt:
+Der Compiler erkennt auch Fehler im zu kompilierenden Programm und gibt entsprechende Fehlermeldungen aus, die möglichst genau anzeigen, an welcher Stelle der Fehler aufgetreten ist und um welche Art von Fehler es sich handelt:
 
 Ändert man z.B. Zeile \ref{par_err} des Testprogramms in
 \begin{lstlisting}
@@ -181,7 +181,7 @@ CompilerError:
   ERR: Unknown operator +==
 \end{lstlisting}
 
-Und auch inkorrekte Einrückung (Änderung in Zeile \ref{ind_err}):
+Und auch inkorrekte Einrückungen (Änderung in Zeile \ref{ind_err}):
 \begin{lstlisting}
 CompilerError: 
 ---------------------------------------------------------------
@@ -205,7 +205,7 @@ line 20:12 mismatched input '=' expecting {'!=', '**', '>>', '^', '(', '>=', '<'
 da eine Zuweisung in Python immer ein eigenes Statement ist und keine Expression.\\
 
 
-Natürlich ist die Fehlerkennung noch nicht vollständig. Das ist für diesen Crosscompiler aber auch nicht unbedingt nötig, da man normalerweise davon ausgehen kann, dass das zu übersetzende Python Programm korrekt ist.
+Natürlich ist die Fehlererkennung noch nicht vollständig. Das ist für diesen Crosscompiler aber auch nicht unbedingt nötig, da man normalerweise davon ausgehen kann, dass das zu übersetzende Python Programm korrekt ist.
 
 Aber man kann erkennen, dass die Fehlererkennung mit unserem Compiler auch gut möglich ist und bei Bedarf könnte sie auch noch entsprechend erweitert werden.
 
@@ -231,7 +231,7 @@ In der \ttt{main} Datei \ttt{py2cpp.py} werden die verschiedenen Programmteile d
  
 \item[\ttt{space2braces(prog)}] Lext das Programm mit regulären Audrücken, findet aus der Einrückung Blockanfang und -ende herraus und fügt entsprechende Tokens ein (ebenso für Statement Ende). Gibt den Namen der so generierten Programmdatei zurück.
 
-\item[\ttt{compile_grammar()}] Damit kann das Neukompillieren der Antlr Grammatik \ttt{py.g4} optional  auch direkt aus dem  Wrapper gestartet werden. Beim kompillieren zu Python erzeugt Antlr die Dateien: \ttt{pyLexer.py}, \ttt{pyListener.py}, \ttt{pyParser.py}, \ttt{py.tokens} und  \ttt{pyLexer.tokens}.
+\item[\ttt{compile_grammar()}] Damit kann das Neukompilieren der Antlr Grammatik \ttt{py.g4} optional  auch direkt aus dem  Wrapper gestartet werden. Beim kompilieren zu Python erzeugt Antlr die Dateien: \ttt{pyLexer.py}, \ttt{pyListener.py}, \ttt{pyParser.py}, \ttt{py.tokens} und  \ttt{pyLexer.tokens}.
 
 \item[\ttt{pytree(prog_)}] Parst das umgewandelte Programm \ttt{prog_} mit dem aus der Antlr Grammatik generierten Parser. Anschließend wird der Parsetree mit dem Listener von Antlr durchlaufen und in unserem eigenen Parsetree gespeichert, welcher dann zurückgegeben wird.
 
@@ -274,13 +274,13 @@ Im folgenden geben wir die einzelnen Installationsschritte für Antlr an:
 \item Kopieren der heruntergeladenen Java-Bibliothek in den \ttt{jre/lib/ext} Ordner des JDK (zum Beispiel: \verb|C:\Program Files (x86)\Java\jdk1.8.0_25\jre\lib\ext| \\ bzw. unter Linux: \verb|/usr/lib64/jdk1.8.0_25/jre/lib/ext/|)
 
 
-\item Hinzufügen der \ttt{.jar} Datei zum Klassenpfad \todo{ jre vs jdk? }
+\item Hinzufügen der \ttt{.jar} Datei zum Klassenpfad \todo{ jre vs jdk? => geht beides!}
 
 \emph{Optional}: Alias Einträge für Antlr und das Ausführen des Parsers anlegen
 
 \end{enumerate}
 
-Den Path- und die Aliaseinträge kann man unter Windows zum Beispiel vornehmen in dem man die folgenden Zeilen zum Powershell Profil hinzufügt:
+Den Path- und die Aliaseinträge kann man unter Windows zum Beispiel vornehmen in dem man die folgenden Zeilen zum Powershell Profil hinzufügt: \todo {execution policy}
 
 \begin{nrcode}[caption= Path- und Aliaseinträge für Antlr am Beispiel von Powershell unter Windows]
 $env:Path+= ";C:\Program Files\Java\jre8\lib\ext\antlr-4.5-complete.jar"
@@ -295,11 +295,11 @@ function grun {java org.antlr.v4.runtime.misc.TestRig $args}
 
 \subsection{Rekompilieren und grafische Syntaxtree-Ansicht}
 
-Nachdem man Antlr wie im vorherigen Kapitel beschrieben installiert hat, kann man eine Grammatik kompillieren indem man Antlr mit dem jeweiligen Grammatiknamen aufruft, dass heißt für unsere Pythongrammatik \ttt{py.g4}:
+Nachdem man Antlr wie im vorherigen Kapitel beschrieben installiert hat, kann man eine Grammatik kompilieren indem man Antlr mit dem jeweiligen Grammatiknamen aufruft, dass heißt für unsere Pythongrammatik \ttt{py.g4}:
 \begin{lstlisting}
 antlr py.g4
 \end{lstlisting}
-Standardmäßig wird aus der Grammtik nun ein Parser in Java generiert. Möchte man den Parser in einer anderen Sprache verwenden, kann man die Grammtik auch in eine andere Zielsprache kompillieren, sofern sie von Antlr unterstützt wird. Für Python 2 zum Beispiel ändert man den Aufruf dafür folgendermaßen ab: \enlargethispage{1cm}
+Standardmäßig wird aus der Grammatik nun ein Parser in Java generiert. Möchte man den Parser in einer anderen Sprache verwenden, kann man die Grammatik auch in eine andere Zielsprache kompilieren, sofern sie von Antlr unterstützt wird. Für Python 2 zum Beispiel ändert man den Aufruf dafür folgendermaßen ab: \enlargethispage{1cm}
 \begin{lstlisting}
 antlr py.g4 -Dlanguage=Python2
 \end{lstlisting}
@@ -308,7 +308,7 @@ antlr py.g4 -Dlanguage=Python2
 
 Mit dem Java Parser kann man auch noch weitere Funktionen von Antlr nutzen, so ist es dann z.B. möglich beim Parsen eine grafische Darstellung des Parsetrees anzuzeigen, wie in Abbildung \ref{g:tree}. Der dargestellte Parsetree zeigt eine Funktion aus unserem Beispielprogramm.
 
-Zur Erzeugung des Parsetrees kompilliert man zuerst die Grammatik nach Java, übersetzt dann die Java Dateien in ausführbare Dateien und wendet schließlich den Parser auf das gewünschte Programm an. Das heißt für unser Grammatik angewendet auf unser Beispielprogramm verwendet man die folgenden Aufrufe:
+Zur Erzeugung des Parsetrees kompiliert man zuerst die Grammatik nach Java, übersetzt dann die Java Dateien in ausführbare Dateien und wendet schließlich den Parser auf das gewünschte Programm an. Das heißt für unser Grammatik angewendet auf unser Beispielprogramm verwendet man die folgenden Aufrufe: \todo {???}
 \begin{lstlisting}
 antlr py.g4
 javac py*.java
