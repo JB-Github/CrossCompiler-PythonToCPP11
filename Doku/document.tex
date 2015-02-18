@@ -231,7 +231,7 @@ In der \ttt{main} Datei \ttt{py2cpp.py} werden die verschiedenen Programmteile d
  
 \item[\ttt{space2braces(prog)}] Lext das Programm mit regulären Audrücken, findet aus der Einrückung Blockanfang und -ende herraus und fügt entsprechende Tokens ein (ebenso für Statement Ende). Gibt den Namen der so generierten Programmdatei zurück.
 
-\item[\ttt{compile_grammar()}] Damit kann die Antlr Grammatik \ttt{py.g4} optional  auch diekt aus dem Wrapper neukompilliert werden. Beim kompillieren zu Python erzeugt Antlr die Dateien: \ttt{pyLexer.py}, \ttt{pyListener.py}, \ttt{pyParser.py}, \ttt{py.tokens} und  \ttt{pyLexer.tokens}.
+\item[\ttt{compile_grammar()}] Damit kann das Neukompillieren der Antlr Grammatik \ttt{py.g4} optional  auch direkt aus dem  Wrapper gestartet werden. Beim kompillieren zu Python erzeugt Antlr die Dateien: \ttt{pyLexer.py}, \ttt{pyListener.py}, \ttt{pyParser.py}, \ttt{py.tokens} und  \ttt{pyLexer.tokens}.
 
 \item[\ttt{pytree(prog_)}] Parst das umgewandelte Programm \ttt{prog_} mit dem aus der Antlr Grammatik generierten Parser. Anschließend wird der Parsetree mit dem Listener von Antlr durchlaufen und in unserem eigenen Parsetree gespeichert, welcher dann zurückgegeben wird.
 
@@ -317,7 +317,7 @@ grun py prog -gui "program.py"
 Das zweite Argument  beim Ausführen des Parsers ist die Startregel der Grammatik (hier \ttt{prog}).
 \begin{center}
  \includegraphics[width=0.8\linewidth]{Bilder/program_func_parse_tree2.png}
- \captionof{figure}{ Beispiel Parsetree } \label{g:tree}
+ \captionof{figure}{ Beispiel$  $ Parsetree } \label{g:tree}
 \end{center}
 
 
