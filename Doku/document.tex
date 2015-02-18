@@ -59,14 +59,14 @@ Das Ziel haben wir erreicht. Unser Compiler kann in seinem momentanen Zustand da
 
 In den folgenden Kapiteln werden wir erklären wie man den Compiler verwenden kann, welche Programme benötigt werden und welche Features der Compiler im Moment unterstützt. Zum Schluss werden wir noch kurz auf die Struktur des Codes eingehen, den wir geschrieben haben.
 
-Für eine detailliertere Erklärung verweisen wir auf die Bachelorarbeit von Felix Helsch ..., in welcher die Erstellung des Compilers fortgeführt wird.
+Für eine detailliertere Erklärung verweisen wir auf die Bachelorarbeit von Felix Helsch, in welcher die Erstellung des Compilers fortgeführt wird.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Verwendung}
 
-Um ein Python Programm nach C++ zu compilieren, muss man nur das Main-Programm \path{py2cpp.py aufrüfen} und dabei den Namen des zu übersetzenden Programms als Kommandozeilenparameter angeben. Das heißt, dass zum Beispiel unser Testprogramm \ttt{program.py} mit dem folgenden Konsolenbefehl übersetzt werden kann:
+Um ein Python Programm nach C++ zu compilieren, muss man nur das Main-Programm \path{py2cpp.py} aufrufen und dabei den Namen des zu übersetzenden Programms als Kommandozeilenparameter angeben. Das heißt, dass zum Beispiel unser Testprogramm \ttt{program.py} mit dem folgenden Konsolenbefehl übersetzt werden kann:
 \begin{lstlisting}
 python py2cpp.py program.py
 \end{lstlisting}
@@ -126,9 +126,9 @@ Da \ttt{Antlr} in \ttt{Java} geschrieben ist, benötigt es auch eine \ttt{Java} 
 
 \subsection{Unterstützte Syntaxelemente}
 
-Sowohl Lexer als auch Parser unterstützen prinzipiell alle Syntaxelemente von \ttt{Python} und funktionieren -- soweit getestetet -- mit allen Python Programmen. \todo{ richtig?? }
+Sowohl Lexer als auch Parser unterstützen prinzipiell alle Syntaxelemente von Python und funktionieren -- soweit getestetet -- mit allen Python Programmen. %\todo{ richtig?? }
 
-Bei der Codegenerierung werden bis jetzt nur die grundlegenden Synatxelemente untersutützt: Schleifen, if-elif-else, print Statement. Von den Schleifen wird insbesondere auch die Python for Schleife je nachdem in eine Zähl- oder eine foreach Schleife übersetzt.
+Bei der Codegenerierung werden bis jetzt nur die grundlegenden Syntaxelemente unterstützt: Schleifen, \ttt{if-elif-else} und \ttt{print} Statement. Von den Schleifen wird insbesondere auch die Python \ttt{for} Schleife je nachdem in eine Zähl- oder eine \ttt{foreach} Schleife übersetzt.
 
 Für unser Testprogramm mussten wir wie bereits erwähnt einige Annahmen zur Vereinfachung treffen:
 
@@ -136,15 +136,15 @@ Alle Typdeklarationen haben wir als \ttt{double} angenommen. Dadurch ist das Üb
 
 Insbesondere werden Variablendeklarationen noch nicht unterstützt. In Zeile \ref{array_decl} mussten wir deshalb einfach annehmen, dass ein \ttt{array} deklariert wird.
 
-Außerdem benötigt das Python Programm noch einen \ttt{if __name__=="__main__"} Block um beim Übersetzen zu erkennen, an welcher Stelle die \ttt{main} Funktion in C++ platziert werden soll.
+Außerdem benötigt das Python Programm noch einen \ttt{if __name__=="__main__"}-Block um beim Übersetzen zu erkennen, an welcher Stelle die \ttt{main} Funktion in C++ platziert werden soll.
 
  
 
 \subsection{Fehlererkennung}
 
-Der Compiler erkennt auch Fehler im zu compillierenden Programm und gibt entsprechende Fehlermeldungen aus, die auch möglichst genau anzeigen, an welcher Stelle der Fehler aufegetreten ist und um welche Art von Fehler es sich handelt:
+Der Compiler erkennt auch Fehler im zu compillierenden Programm und gibt entsprechende Fehlermeldungen aus, die möglichst genau anzeigen, an welcher Stelle der Fehler aufgetreten ist und um welche Art von Fehler es sich handelt:
 
-Ändert man z.B. Zeile \ref{par_err} des Tesprogramms in
+Ändert man z.B. Zeile \ref{par_err} des Testprogramms in
 \begin{lstlisting}
 for i in range(len(L):
 \end{lstlisting}
@@ -271,7 +271,7 @@ Im folgenden geben wir die einzelnen Installationsschritte für Antlr an:
 
 
 
-\item Kopieren der heruntergeladenen Java-Bibliothek in den \ttt{jre/lib/ext} Ordner des JDK (zum Beispiel: \verb|C:\Program Files (x86)\Java\jdk1.8.0\_25\jre\lib\ext| \\ bzw. unter Linux: \verb|/usr/lib64/jdk1.8.0/_25/jre/lib/ext/|)
+\item Kopieren der heruntergeladenen Java-Bibliothek in den \ttt{jre/lib/ext} Ordner des JDK (zum Beispiel: \verb|C:\Program Files (x86)\Java\jdk1.8.0_25\jre\lib\ext| \\ bzw. unter Linux: \verb|/usr/lib64/jdk1.8.0_25/jre/lib/ext/|)
 
 
 \item Hinzufügen der \ttt{.jar} Datei zum Klassenpfad \todo{ jre vs jdk? }

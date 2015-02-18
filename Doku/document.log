@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9) (preloaded format=pdflatex 2015.2.8)  18 FEB 2015 20:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9) (preloaded format=pdflatex 2015.2.8)  18 FEB 2015 21:36
 entering extended mode
 **document.tex
 (document.tex
@@ -3377,16 +3377,14 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 127.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 127.
-Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
-ine 129.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 130.
+(babel)             in language  on input line 131.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 130.
+(babel)             in language  on input line 131.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 130.
+(babel)             in language  on input line 131.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 130.
+(babel)             in language  on input line 131.
 [5]
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 143.
@@ -3439,12 +3437,8 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 262.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 262.
-
-Overfull \hbox (5.23727pt too wide) in paragraph at lines 274--275
-\T1/aer/m/n/10.95 (-20) JDK (zum Bei-spiel: []\T1/aett/bx/n/10.95 C:\Program Fi
--les (x86)\Java\jdk1.8.0\_25\jre\lib\ext 
- []
-
+Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
+ine 277.
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 296.
 Package babel Info: Redefining ngerman shorthand "~
@@ -3457,7 +3451,8 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 311.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 311.
-[9] <Bilder/program_func_parse_tree2.png, id=278, 565.36218pt x 703.12688pt>
+ [9]
+<Bilder/program_func_parse_tree2.png, id=277, 565.36218pt x 703.12688pt>
 File: Bilder/program_func_parse_tree2.png Graphic file (type png)
 
 <use Bilder/program_func_parse_tree2.png>
@@ -3499,38 +3494,47 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 329.
  (document.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 329.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 329.
-Package rerunfilecheck Info: File `document.out' has not changed.
-(rerunfilecheck)             Checksum: 859E0265BD13C21D1FCDCCAABC780E5C;838.
 
+
+Package rerunfilecheck Warning: File `document.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `document.out':
+(rerunfilecheck)             Before: 859E0265BD13C21D1FCDCCAABC780E5C;838
+(rerunfilecheck)             After:  FA3847A4C210790EA7488CC027661A21;838.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package logreq Info: Writing requests to 'document.run.xml'.
  ) 
 Here is how much of TeX's memory you used:
- 40909 strings out of 493698
- 780508 string characters out of 3144413
- 1283614 words of memory out of 3000000
- 43116 multiletter control sequences out of 15000+200000
- 76660 words of font info for 335 fonts, out of 3000000 for 9000
+ 40893 strings out of 493698
+ 780343 string characters out of 3144413
+ 1281614 words of memory out of 3000000
+ 43114 multiletter control sequences out of 15000+200000
+ 75610 words of font info for 323 fonts, out of 3000000 for 9000
  1029 hyphenation exceptions out of 8191
  75i,12n,100p,10420b,3435s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\Felix\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\
-tcrm1000.pk> <C:\Users\Felix\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\
-ec\dpi600\tcrm1095.pk> <C:\Users\Felix\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour
-\jknappen\ec\dpi600\tcrm0900.pk><C:/Program Files/MiKTeX 2.9/fonts/type1/public
-/amsfonts/cm/cmbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfont
-s/cm/cmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmc
-sc10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb>
-<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Progr
-am Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/M
-iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsl10.pfb><C:/Program Files/MiKTeX 2.
-9/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Program Files/MiKTeX 2.9/font
-s/type1/public/amsfonts/cm/cmssi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
-/public/amsfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/
-amsfonts/cm/cmtt10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts
-/cm/cmtt9.pfb>
-Output written on document.pdf (11 pages, 269947 bytes).
+pdfTeX warning (dest): name{section*.6} has been referenced but does not exis
+t, replaced by a fixed one
+
+ <C:\Users\Felix\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\tc
+rm1000.pk> <C:\Users\Felix\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec
+\dpi600\tcrm1095.pk> <C:\Users\Felix\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\j
+knappen\ec\dpi600\tcrm0900.pk><C:/Program Files/MiKTeX 2.9/fonts/type1/public/a
+msfonts/cm/cmbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/
+cm/cmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc
+10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C
+:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program
+ Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiK
+TeX 2.9/fonts/type1/public/amsfonts/cm/cmsl10.pfb><C:/Program Files/MiKTeX 2.9/
+fonts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/
+type1/public/amsfonts/cm/cmssi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/p
+ublic/amsfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/am
+sfonts/cm/cmtt10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/c
+m/cmtt9.pfb>
+Output written on document.pdf (11 pages, 269392 bytes).
 PDF statistics:
  388 PDF objects out of 1000 (max. 8388607)
  161 named destinations out of 1000 (max. 500000)
