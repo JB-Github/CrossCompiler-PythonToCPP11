@@ -308,7 +308,7 @@ antlr py.g4 -Dlanguage=Python2
 
 Mit dem Java Parser kann man auch noch weitere Funktionen von Antlr nutzen, so ist es dann z.B. möglich beim Parsen eine grafische Darstellung des Parsetrees anzuzeigen, wie in Abbildung \ref{g:tree}. Der dargestellte Parsetree zeigt eine Funktion aus unserem Beispielprogramm.
 
-Zur Erzeugung des Parsetrees kompiliert man zuerst die Grammatik nach Java, übersetzt dann die Java Dateien in ausführbare Dateien und wendet schließlich den Parser auf das gewünschte Programm an. Das heißt für unser Grammatik angewendet auf unser Beispielprogramm verwendet man die folgenden Aufrufe: \todo {???}
+Zur Erzeugung des Parsetrees kompiliert man zuerst die Grammatik nach Java, übersetzt dann die Java Dateien in ausführbare Dateien und wendet schließlich den Parser auf das gewünschte Programm an. Das heißt für unsere Grammatik, angewendet auf unser Beispielprogramm, verwendet man die folgenden Aufrufe:
 \begin{lstlisting}
 antlr py.g4
 javac py*.java
